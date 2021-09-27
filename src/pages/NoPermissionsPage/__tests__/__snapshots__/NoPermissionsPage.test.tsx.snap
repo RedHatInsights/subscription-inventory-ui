@@ -32,7 +32,7 @@ exports[`No Permissions Page renders correctly 1`] = `
           data-ouia-component-type="PF4/Title"
           data-ouia-safe="true"
         >
-          You do not have access to Manifests
+          You do not have access to Inventory
         </h5>
         <div
           class="pf-c-empty-state__body"

@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/RedHatInsights/frontend-starter-app.svg?branch=master)](https://travis-ci.org/RedHatInsights/frontend-starter-app)
 
-# Subscription Central
+# Subscription Inventory
 
 An app to handle subscription management on cloud.redhat.com, built using the [Starter App](https://github.com/RedHatInsights/frontend-starter-app) for Red Hat Insights products that includes Patternfly 4 and shared Red Hat cloud service frontend components.
 
@@ -12,10 +12,10 @@ An app to handle subscription management on cloud.redhat.com, built using the [S
 
 3. Open one of the following environments behind the Red Hat VPN and accept the certs:
 
-- https://ci.foo.redhat.com:1337/beta/insights/subscriptions/manifests
-- https://qa.foo.redhat.com:1337/beta/insights/subscriptions/manifests
-- https://stage.foo.redhat.com:1337/beta/insights/subscriptions/manifests
-- https://prod.foo.redhat.com:1337/beta/insights/subscriptions/manifests
+- https://ci.foo.redhat.com:1337/beta/insights/subscriptions/inventory
+- https://qa.foo.redhat.com:1337/beta/insights/subscriptions/inventory
+- https://stage.foo.redhat.com:1337/beta/insights/subscriptions/inventory
+- https://prod.foo.redhat.com:1337/beta/insights/subscriptions/inventory
 
 Should you need more help, there is a [comprehensive quick start guide in the Storybook Documentation.](https://github.com/RedHatInsights/insights-frontend-storybook/blob/master/src/docs/welcome/quickStart/DOC.md)
 
