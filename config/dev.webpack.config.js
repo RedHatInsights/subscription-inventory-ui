@@ -6,7 +6,7 @@ const { config: webpackConfig, plugins } = config({
   debug: true,
   https: true,
   useFileHash: false,
-  modules: ['manifests'],
+  modules: ['subscriptionInventory'],
   useProxy: true,
   useCloud: true,
   ...(process.env.BETA && { deployment: 'beta/apps' })
@@ -15,7 +15,7 @@ const { config: webpackConfig, plugins } = config({
 plugins.push(
   require('@redhat-cloud-services/frontend-components-config/federated-modules')({
     root: resolve(__dirname, '../'),
-    moduleName: 'manifests',
+    moduleName: 'subscriptionInventory',
     useFileHash: false
   })
 );

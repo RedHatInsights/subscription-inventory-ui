@@ -1,5 +1,5 @@
 {
-  "name": "subscription-central",
+  "name": "subscription-inventory",
   "version": "0.0.1",
   "private": false,
   "scripts": {
@@ -158,6 +158,6 @@
     "webpack-cli": "4.5.0"
   },
   "insights": {
-    "appname": "manifests"
+    "appname": "subscription-inventory"
   }
 }

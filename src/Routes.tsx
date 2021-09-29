@@ -8,7 +8,7 @@ const OopsPage = lazy(() => import('./pages/OopsPage'));
 const NoPermissionsPage = lazy(() => import('./pages/NoPermissionsPage'));
 
 export const Routes: ReactNode = () => (
-  <div className="manifests">
+  <div className="inventory">
     <Suspense fallback={<Processing />}>
       <Authentication>
         <Switch>

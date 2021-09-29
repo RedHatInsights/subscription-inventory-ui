@@ -1,5 +1,5 @@
 const SECTION = 'insights';
-const APP_ID = 'manifests';
+const APP_ID = 'subscription-inventory';
 const FRONTEND_PORT = 8002;
 const routes = {};
 

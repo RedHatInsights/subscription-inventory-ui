@@ -11,7 +11,7 @@ const NoPermissionsPage = () => {
 
   return (
     <Main>
-      <NotAuthorized serviceName="Manifests" />
+      <NotAuthorized serviceName="Inventory" />
     </Main>
   );
 };

@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     insights.chrome.init();
 
-    insights.chrome.identifyApp('inventory');
+    insights.chrome.identifyApp('subscriptionInventory');
     const unregister = insights.chrome.on('APP_NAVIGATION', (event) => {
       const partialURL = getPartialRouteFromPath(event.domEvent.href);
       history.push(partialURL);
