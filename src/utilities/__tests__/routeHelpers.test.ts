@@ -18,14 +18,14 @@ describe('utilities/getBaseName', () => {
 
 describe('getPartialRouteFromPath method', () => {
   it('gets the root partial correctly', () => {
-    expect(getPartialRouteFromPath('/insights/subscriptions/manifests')).toEqual('/');
+    expect(getPartialRouteFromPath('/insights/subscriptions/inventory')).toEqual('/');
   });
 
   it('gets the root partial correctly with a trailing slash', () => {
-    expect(getPartialRouteFromPath('/insights/subscriptions/manifests/')).toEqual('/');
+    expect(getPartialRouteFromPath('/insights/subscriptions/inventory/')).toEqual('/');
   });
 
   it('gets the oops route correctly', () => {
-    expect(getPartialRouteFromPath('/insights/subscriptions/manifests/oops')).toEqual('/oops');
+    expect(getPartialRouteFromPath('/insights/subscriptions/inventory/oops')).toEqual('/oops');
   });
 });

@@ -31,32 +31,49 @@ const PageContainer = () => (
 );
 
 const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean, isError: boolean) => {
+  const user = {
+    accountNumber: '8675309',
+    isOrgAdmin: orgAdminStatus,
+    isSCACapable: true
+  };
   (useUser as jest.Mock).mockReturnValue({
     isLoading: isLoading,
     isFetching: false,
     isSuccess: true,
     isError: isError,
-    data: {
-      isOrgAdmin: orgAdminStatus,
-      isSCACapable: true
-    }
+    data: user
   });
 
   if (isError === false) {
-    queryClient.setQueryData('user', { isSCACapable: true, isOrgAdmin: orgAdminStatus });
+    queryClient.setQueryData('user', user);
   }
 };
 
 describe('SubscriptionInventoryPage', () => {
-  it('renders an error message when user call fails', async () => {
-    window.insights = {};
-    const isLoading = false;
-    const isOrgAdmin = false;
-    const isError = true;
-    mockAuthenticateUser(isLoading, isOrgAdmin, isError);
+  let isError = false;
+  const isLoading = false;
+  const isOrgAdmin = false;
 
+  beforeEach(() => {
+    window.insights = {};
+    mockAuthenticateUser(isLoading, isOrgAdmin, isError);
+  });
+
+  it('renders correctly', async () => {
     const { container } = render(<PageContainer />);
     await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
     expect(container).toMatchSnapshot();
+  });
+
+  describe('when the user call fails', () => {
+    beforeAll(() => {
+      isError = true;
+    });
+
+    it('renders an error message when user call fails', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
   });
 });

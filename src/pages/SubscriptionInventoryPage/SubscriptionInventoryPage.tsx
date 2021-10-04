@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { withRouter } from 'react-router-dom';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
+import { PageSection, Title } from '@patternfly/react-core';
 import { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
@@ -15,7 +16,11 @@ const SubscriptionInventoryPage: FC = () => {
       <PageHeader>
         <PageHeaderTitle title="Subscription Inventory" />
       </PageHeader>
-      <Main>Main stuff.</Main>
+      <Main>
+        <PageSection variant="light">
+          <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
+        </PageSection>
+      </Main>
     </>
   );
 };

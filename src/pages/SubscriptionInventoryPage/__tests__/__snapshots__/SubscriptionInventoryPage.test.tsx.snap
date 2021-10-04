@@ -1,6 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubscriptionInventoryPage renders an error message when user call fails 1`] = `
+exports[`SubscriptionInventoryPage renders correctly 1`] = `
+<div>
+  <section
+    class="pf-l-page-header pf-c-page-header pf-l-page__main-section pf-c-page__main-section pf-m-light"
+    widget-type="InsightsPageHeader"
+  >
+    <h1
+      class="pf-c-title pf-m-2xl"
+      data-ouia-component-id="OUIA-Generated-Title-1"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
+      widget-type="InsightsPageHeaderTitle"
+    >
+       
+      Subscription Inventory
+       
+    </h1>
+  </section>
+  <section
+    class="pf-l-page__main-section pf-c-page__main-section"
+    page-type=""
+  >
+    <section
+      class="pf-c-page__main-section pf-m-light"
+    >
+      <h2
+        class="pf-c-title pf-m-xl"
+        data-ouia-component-id="OUIA-Generated-Title-2"
+        data-ouia-component-type="PF4/Title"
+        data-ouia-safe="true"
+      >
+        All subscriptions for account 
+        8675309
+      </h2>
+    </section>
+  </section>
+</div>
+`;
+
+exports[`SubscriptionInventoryPage when the user call fails renders an error message when user call fails 1`] = `
 <div>
   <div
     class="pf-c-empty-state pf-m-lg ins-c-empty-state__unavailable pf-m-redhat-font"
@@ -24,7 +63,7 @@ exports[`SubscriptionInventoryPage renders an error message when user call fails
       </svg>
       <h5
         class="pf-c-title pf-m-lg"
-        data-ouia-component-id="OUIA-Generated-Title-1"
+        data-ouia-component-id="OUIA-Generated-Title-3"
         data-ouia-component-type="PF4/Title"
         data-ouia-safe="true"
       >

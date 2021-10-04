@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import { getConfig, authenticateUser } from '../utilities/platformServices';
 
 interface User {
+  accountNumber: string;
   isOrgAdmin: boolean;
   isSCACapable: boolean;
 }
@@ -28,6 +29,7 @@ const getUser = (): Promise<User> => {
   return Promise.all([authenticateUser(), fetchSCACapableStatus()]).then(
     ([userStatus, scaStatusResponse]) => {
       const user: User = {
+        accountNumber: userStatus.identity.account_number,
         isOrgAdmin: userStatus.identity.user.is_org_admin === true,
         isSCACapable: scaStatusResponse.body.simpleContentAccessCapable === true
       };
