@@ -8,7 +8,10 @@ const { config: webpackConfig, plugins } = config({
   useFileHash: false,
   modules: ['subscriptionInventory'],
   useProxy: true,
-  useCloud: true,
+  appUrl: process.env.BETA
+    ? '/beta/insights/subscriptions/inventory'
+    : '/insights/subscriptions/inventory',
+  env: process.env.BETA ? 'stage-beta' : 'stage-stable',
   ...(process.env.BETA && { deployment: 'beta/apps' })
 });
 
