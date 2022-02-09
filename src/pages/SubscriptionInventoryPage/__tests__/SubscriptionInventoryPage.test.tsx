@@ -30,9 +30,15 @@ const PageContainer = () => (
   </QueryClientProvider>
 );
 
-const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean, isError: boolean) => {
+const mockAuthenticateUser = (
+  isLoading: boolean,
+  orgAdminStatus: boolean,
+  isError: boolean,
+  canReadProducts: boolean
+) => {
   const user = {
     accountNumber: '8675309',
+    canReadProducts: canReadProducts,
     isOrgAdmin: orgAdminStatus,
     isSCACapable: true
   };
@@ -49,14 +55,19 @@ const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean, isErr
   }
 };
 
+jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
+jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
+
 describe('SubscriptionInventoryPage', () => {
   let isError = false;
+  let canReadProducts = true;
   const isLoading = false;
   const isOrgAdmin = false;
 
   beforeEach(() => {
     window.insights = {};
-    mockAuthenticateUser(isLoading, isOrgAdmin, isError);
+    jest.resetAllMocks();
+    mockAuthenticateUser(isLoading, isOrgAdmin, isError, canReadProducts);
   });
 
   it('renders correctly', async () => {
@@ -71,6 +82,18 @@ describe('SubscriptionInventoryPage', () => {
     });
 
     it('renders an error message when user call fails', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the user does not have proper permissions', () => {
+    beforeAll(() => {
+      canReadProducts = false;
+    });
+
+    it('renders not authorized page', async () => {
       const { container } = render(<PageContainer />);
       await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
       expect(container).toMatchSnapshot();

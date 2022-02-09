@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
-import { authenticateUser } from '../../utilities/platformServices';
+import { authenticateUser, getUserRbacPermissions } from '../../utilities/platformServices';
 import useUser from '../useUser';
 import { createQueryWrapper } from '../../utilities/testHelpers';
 
@@ -12,7 +12,8 @@ beforeEach(() => {
 
 jest.mock('../../utilities/platformServices', () => ({
   ...(jest.requireActual('../../utilities/platformServices') as Record<string, unknown>),
-  authenticateUser: jest.fn()
+  authenticateUser: jest.fn(),
+  getUserRbacPermissions: jest.fn()
 }));
 
 describe('useUser hook', () => {
@@ -33,6 +34,10 @@ describe('useUser hook', () => {
       }
     };
 
+    (getUserRbacPermissions as jest.Mock).mockResolvedValue([
+      { permission: 'subscriptions:products:read' }
+    ]);
+
     fetch.mockResponseOnce(JSON.stringify(mockSCAStatusResponse));
 
     const { result, waitFor } = renderHook(() => useUser(), {
@@ -41,7 +46,11 @@ describe('useUser hook', () => {
 
     await waitFor(() => result.current.isSuccess);
 
-    expect(result.current.data).toEqual({ isOrgAdmin: true, isSCACapable: true });
+    expect(result.current.data).toEqual({
+      canReadProducts: true,
+      isOrgAdmin: true,
+      isSCACapable: true
+    });
   });
 
   it('does not return anything if the Authenticate User API call fails', async () => {
