@@ -1,57 +1,36 @@
-interface RawProduct {
-  Name: string;
-  SKU: string;
-  ProductLine: string;
-  Count: number;
-}
+import { useQuery, QueryObserverResult } from 'react-query';
+import Cookies from 'js-cookie';
 
-interface Product {
+type ProductEntry = {
   name: string;
-  sku: string;
   productLine: string;
-  count: number;
-}
-
-const rawProducts: RawProduct[] = [
-  {
-    Name: 'Red Hat Metered OSD Pay as You Go',
-    SKU: 'MSTEST1',
-    ProductLine: 'Miscellaneous',
-    Count: 3
-  },
-  {
-    Name: 'Red Hat Satellite Infrastructure Subscription',
-    SKU: 'MCT3718',
-    ProductLine: 'Red Hat Satellite',
-    Count: 50
-  },
-  {
-    Name: 'Internal Engineering SKU for Shadow Content',
-    SKU: 'SER0410',
-    ProductLine: 'RHEL',
-    Count: 1
-  },
-  {
-    Name: 'Red Hat Enterprise Linux for Service Providers, Premium - On Demand',
-    SKU: 'RH00497',
-    ProductLine: 'RHEL',
-    Count: 14
-  }
-];
-
-const getProducts = (): Product[] => {
-  return rawProducts.map((rawProduct) => {
-    return {
-      name: rawProduct.Name,
-      sku: rawProduct.SKU,
-      productLine: rawProduct.ProductLine,
-      count: rawProduct.Count
-    };
-  });
+  quantity: number;
+  sku: string;
 };
 
-const useProducts = (): Product[] => {
-  return getProducts();
+interface ProductApiData {
+  body: ProductEntry[];
+}
+
+const fetchProductData = async (): Promise<ProductEntry[]> => {
+  const jwtToken = Cookies.get('cs_jwt');
+
+  const response = await fetch('/api/rhsm/v2/products', {
+    headers: { Authorization: `Bearer ${jwtToken}` }
+  });
+
+  const productResponseData: ProductApiData = await response.json();
+
+  return productResponseData.body;
+};
+
+const getProducts = async (): Promise<ProductEntry[]> => {
+  const productData = await fetchProductData();
+  return productData;
+};
+
+const useProducts = (): QueryObserverResult<ProductEntry[], unknown> => {
+  return useQuery('products', () => getProducts());
 };
 
 export { useProducts as default };
