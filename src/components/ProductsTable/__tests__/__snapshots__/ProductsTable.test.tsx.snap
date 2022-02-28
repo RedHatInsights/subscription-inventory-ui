@@ -20,16 +20,78 @@ exports[`ProductsTable renders correctly 1`] = `
         data-ouia-safe="true"
       >
         <th
-          class=""
+          aria-sort="none"
+          class="pf-c-table__sort"
           scope="col"
         >
-          Name
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Name
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
         </th>
         <th
-          class=""
+          aria-sort="none"
+          class="pf-c-table__sort"
           scope="col"
         >
-          Quantity
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Quantity
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
         </th>
       </tr>
     </thead>
@@ -57,7 +119,7 @@ exports[`ProductsTable renders correctly 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Space Blaster
+              A
               <br />
               <small
                 class=""
@@ -66,7 +128,7 @@ exports[`ProductsTable renders correctly 1`] = `
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                blasters
+                letters
               </small>
             </h3>
           </div>
@@ -104,6 +166,460 @@ exports[`ProductsTable when loading renders the loading state 1`] = `
       />
     </span>
   </div>
+</div>
+`;
+
+exports[`ProductsTable when row column headings are clicked can sort by name 1`] = `
+<div>
+  <table
+    aria-label="Products"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="ascending"
+          class="pf-c-table__sort pf-m-selected"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Name
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M88 166.059V468c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12V166.059h46.059c21.382 0 32.09-25.851 16.971-40.971l-86.059-86.059c-9.373-9.373-24.569-9.373-33.941 0l-86.059 86.059c-15.119 15.119-4.411 40.971 16.971 40.971H88z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Quantity
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-9"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-10"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                BMW Volt
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-11"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              B
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-12"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Audi PT Cruiser
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-13"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Z
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-14"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Bentley Jetta
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ProductsTable when row column headings are clicked can sort by quantity 1`] = `
+<div>
+  <table
+    aria-label="Products"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Name
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          aria-sort="ascending"
+          class="pf-c-table__sort pf-m-selected"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Quantity
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M88 166.059V468c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12V166.059h46.059c21.382 0 32.09-25.851 16.971-40.971l-86.059-86.059c-9.373-9.373-24.569-9.373-33.941 0l-86.059 86.059c-15.119 15.119-4.411 40.971 16.971 40.971H88z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-21"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Z
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-22"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Chevrolet Fortwo
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          1
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-23"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              B
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-24"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Mercedes Benz 1
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-25"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-26"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                Polestar Expedition
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 

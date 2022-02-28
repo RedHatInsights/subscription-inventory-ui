@@ -1,7 +1,7 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import Cookies from 'js-cookie';
 
-type ProductEntry = {
+type Product = {
   name: string;
   productLine: string;
   quantity: number;
@@ -9,10 +9,10 @@ type ProductEntry = {
 };
 
 interface ProductApiData {
-  body: ProductEntry[];
+  body: Product[];
 }
 
-const fetchProductData = async (): Promise<ProductEntry[]> => {
+const fetchProductData = async (): Promise<Product[]> => {
   const jwtToken = Cookies.get('cs_jwt');
 
   const response = await fetch('/api/rhsm/v2/products', {
@@ -24,13 +24,13 @@ const fetchProductData = async (): Promise<ProductEntry[]> => {
   return productResponseData.body;
 };
 
-const getProducts = async (): Promise<ProductEntry[]> => {
+const getProducts = async (): Promise<Product[]> => {
   const productData = await fetchProductData();
   return productData;
 };
 
-const useProducts = (): QueryObserverResult<ProductEntry[], unknown> => {
+const useProducts = (): QueryObserverResult<Product[], unknown> => {
   return useQuery('products', () => getProducts());
 };
 
-export { useProducts as default };
+export { Product, useProducts as default };

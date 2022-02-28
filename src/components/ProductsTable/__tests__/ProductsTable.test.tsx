@@ -1,9 +1,10 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ProductsTable from '../ProductsTable';
 import useProducts from '../../../hooks/useProducts';
 import { get, def } from 'bdd-lazy-var';
+import factories from '../../../utilities/factories';
 
 jest.mock('../../../hooks/useProducts');
 jest.mock('uuid', () => {
@@ -21,18 +22,15 @@ const Table = () => (
 describe('ProductsTable', () => {
   def('loading', () => false);
   def('error', () => false);
+  def('data', () => [
+    factories.product.build({ name: 'A', productLine: 'letters', quantity: 3, sku: 'AAA111' })
+  ]);
+
   beforeEach(() => {
     (useProducts as jest.Mock).mockReturnValue({
       isLoading: get('loading'),
       error: get('error'),
-      data: [
-        {
-          name: 'Space Blaster',
-          productLine: 'blasters',
-          quantity: 3,
-          sku: 'ABC123'
-        }
-      ]
+      data: get('data')
     });
   });
 
@@ -58,6 +56,30 @@ describe('ProductsTable', () => {
     it('renders the error state', () => {
       const { container } = render(<Table />);
 
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when row column headings are clicked', () => {
+    def('data', () => [
+      factories.product.build({ name: 'Z', quantity: 1 }),
+      factories.product.build({ name: 'A', quantity: 3 }),
+      factories.product.build({ name: 'B', quantity: 2 })
+    ]);
+
+    it('can sort by name', () => {
+      const { container } = render(<Table />);
+
+      const nameLabel = screen.getByText('Name');
+      fireEvent.click(nameLabel);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by quantity', () => {
+      const { container } = render(<Table />);
+
+      const quantityLabel = screen.getByText('Quantity');
+      fireEvent.click(quantityLabel);
       expect(container).toMatchSnapshot();
     });
   });
