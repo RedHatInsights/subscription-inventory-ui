@@ -22,9 +22,7 @@ const Table = () => (
 describe('ProductsTable', () => {
   def('loading', () => false);
   def('error', () => false);
-  def('data', () => [
-    factories.product.build({ name: 'A', productLine: 'letters', quantity: 3, sku: 'AAA111' })
-  ]);
+  def('data', () => [factories.product.build({ name: 'A', productLine: 'letters', quantity: 3 })]);
 
   beforeEach(() => {
     (useProducts as jest.Mock).mockReturnValue({
@@ -62,9 +60,9 @@ describe('ProductsTable', () => {
 
   describe('when row column headings are clicked', () => {
     def('data', () => [
-      factories.product.build({ name: 'Z', quantity: 1 }),
-      factories.product.build({ name: 'A', quantity: 3 }),
-      factories.product.build({ name: 'B', quantity: 2 })
+      factories.product.build({ name: 'Z', quantity: 1, productLine: 'letters' }),
+      factories.product.build({ name: 'A', quantity: 3, productLine: 'letters' }),
+      factories.product.build({ name: 'B', quantity: 2, productLine: 'letters' })
     ]);
 
     it('can sort by name', () => {
@@ -80,6 +78,31 @@ describe('ProductsTable', () => {
 
       const quantityLabel = screen.getByText('Quantity');
       fireEvent.click(quantityLabel);
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when using pagination', () => {
+    def('data', () => [
+      ...factories.product.buildList(10, { name: 'A', quantity: 1, productLine: 'letters' }),
+      factories.product.build({ name: 'Z', quantity: 2, productLine: 'letters' })
+    ]);
+
+    it('can change page', () => {
+      const { container } = render(<Table />);
+
+      const nextPage = screen.getAllByLabelText('Go to next page')[0];
+      fireEvent.click(nextPage);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can change per page', () => {
+      const { container } = render(<Table />);
+
+      const perPageArrow = screen.getAllByLabelText('Items per page')[0];
+      fireEvent.click(perPageArrow);
+      const perPageAmount = screen.getByText('20 per page');
+      fireEvent.click(perPageAmount);
       expect(container).toMatchSnapshot();
     });
   });
