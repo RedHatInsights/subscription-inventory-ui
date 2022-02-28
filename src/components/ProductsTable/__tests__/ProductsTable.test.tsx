@@ -68,16 +68,30 @@ describe('ProductsTable', () => {
     it('can sort by name', () => {
       const { container } = render(<Table />);
 
-      const nameLabel = screen.getByText('Name');
-      fireEvent.click(nameLabel);
+      fireEvent.click(screen.getByText('Name'));
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by name, reversed', () => {
+      const { container } = render(<Table />);
+
+      fireEvent.click(screen.getByText('Name'));
+      fireEvent.click(screen.getByText('Name'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by quantity', () => {
       const { container } = render(<Table />);
 
-      const quantityLabel = screen.getByText('Quantity');
-      fireEvent.click(quantityLabel);
+      fireEvent.click(screen.getByText('Quantity'));
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by quantity, reversed', () => {
+      const { container } = render(<Table />);
+
+      fireEvent.click(screen.getByText('Quantity'));
+      fireEvent.click(screen.getByText('Quantity'));
       expect(container).toMatchSnapshot();
     });
   });

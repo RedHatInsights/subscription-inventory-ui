@@ -1250,14 +1250,14 @@ exports[`ProductsTable when row column headings are clicked can sort by name 1`]
 </div>
 `;
 
-exports[`ProductsTable when row column headings are clicked can sort by quantity 1`] = `
+exports[`ProductsTable when row column headings are clicked can sort by name, reversed 1`] = `
 <div>
   <div
     class="pf-c-pagination"
-    data-ouia-component-id="OUIA-Generated-Pagination-top-5"
+    data-ouia-component-id="OUIA-Generated-Pagination-top-6"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-8"
+    id="pagination-options-menu-10"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1306,10 +1306,10 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-8"
+          id="pagination-options-menu-toggle-10"
           type="button"
         >
           <span
@@ -1344,7 +1344,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-33"
+          data-ouia-component-id="OUIA-Generated-Button-plain-41"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1373,7 +1373,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-34"
+          data-ouia-component-id="OUIA-Generated-Button-plain-42"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1422,7 +1422,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-35"
+          data-ouia-component-id="OUIA-Generated-Button-plain-43"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1451,7 +1451,661 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-36"
+          data-ouia-component-id="OUIA-Generated-Button-plain-44"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <table
+    aria-label="Products"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="descending"
+          class="pf-c-table__sort pf-m-selected"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Name
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Quantity
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-27"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Z
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-28"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          1
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-29"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              B
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-30"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-31"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-32"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="pf-c-pagination pf-m-bottom"
+    data-ouia-component-id="OUIA-Generated-Pagination-bottom-6"
+    data-ouia-component-type="PF4/Pagination"
+    data-ouia-safe="true"
+    id="pagination-options-menu-11"
+    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+  >
+    <div
+      class="pf-c-options-menu pf-m-top"
+      data-ouia-component-type="PF4/PaginationOptionsMenu"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+      >
+        <span
+          class="pf-c-options-menu__toggle-text"
+        >
+          <b>
+            1
+             - 
+            3
+          </b>
+           
+          of
+           
+          <b>
+            3
+          </b>
+           
+          
+        </span>
+        <button
+          aria-expanded="false"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-11"
+          type="button"
+        >
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Pagination"
+      class="pf-c-pagination__nav"
+    >
+      <div
+        class="pf-c-pagination__nav-control pf-m-first"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to first page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="first"
+          data-ouia-component-id="OUIA-Generated-Button-plain-45"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to previous page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="previous"
+          data-ouia-component-id="OUIA-Generated-Button-plain-46"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-page-select"
+      >
+        <input
+          aria-label="Current page"
+          class="pf-c-form-control"
+          disabled=""
+          max="1"
+          min="1"
+          type="number"
+          value="1"
+        />
+        <span
+          aria-hidden="true"
+        >
+          of
+           
+          1
+        </span>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to next page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="next"
+          data-ouia-component-id="OUIA-Generated-Button-plain-47"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control pf-m-last"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to last page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="last"
+          data-ouia-component-id="OUIA-Generated-Button-plain-48"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`ProductsTable when row column headings are clicked can sort by quantity 1`] = `
+<div>
+  <div
+    class="pf-c-pagination"
+    data-ouia-component-id="OUIA-Generated-Pagination-top-8"
+    data-ouia-component-type="PF4/Pagination"
+    data-ouia-safe="true"
+    id="pagination-options-menu-14"
+    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+  >
+    <div
+      class="pf-c-pagination__total-items"
+    >
+      <b>
+        1
+         - 
+        3
+      </b>
+       
+      of
+       
+      <b>
+        3
+      </b>
+       
+      
+    </div>
+    <div
+      class="pf-c-options-menu"
+      data-ouia-component-type="PF4/PaginationOptionsMenu"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+      >
+        <span
+          class="pf-c-options-menu__toggle-text"
+        >
+          <b>
+            1
+             - 
+            3
+          </b>
+           
+          of
+           
+          <b>
+            3
+          </b>
+           
+          
+        </span>
+        <button
+          aria-expanded="false"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-15"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-14"
+          type="button"
+        >
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Pagination"
+      class="pf-c-pagination__nav"
+    >
+      <div
+        class="pf-c-pagination__nav-control pf-m-first"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to first page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="first"
+          data-ouia-component-id="OUIA-Generated-Button-plain-57"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to previous page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="previous"
+          data-ouia-component-id="OUIA-Generated-Button-plain-58"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-page-select"
+      >
+        <input
+          aria-label="Current page"
+          class="pf-c-form-control"
+          disabled=""
+          max="1"
+          min="1"
+          type="number"
+          value="1"
+        />
+        <span
+          aria-hidden="true"
+        >
+          of
+           
+          1
+        </span>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to next page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="next"
+          data-ouia-component-id="OUIA-Generated-Button-plain-59"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control pf-m-last"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to last page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="last"
+          data-ouia-component-id="OUIA-Generated-Button-plain-60"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1586,7 +2240,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-21"
+              data-ouia-component-id="OUIA-Generated-Text-39"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1595,7 +2249,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-22"
+                data-ouia-component-id="OUIA-Generated-Text-40"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1627,7 +2281,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-23"
+              data-ouia-component-id="OUIA-Generated-Text-41"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1636,7 +2290,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-24"
+                data-ouia-component-id="OUIA-Generated-Text-42"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1668,7 +2322,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-25"
+              data-ouia-component-id="OUIA-Generated-Text-43"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1677,7 +2331,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-26"
+                data-ouia-component-id="OUIA-Generated-Text-44"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1698,10 +2352,10 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
   </table>
   <div
     class="pf-c-pagination pf-m-bottom"
-    data-ouia-component-id="OUIA-Generated-Pagination-bottom-5"
+    data-ouia-component-id="OUIA-Generated-Pagination-bottom-8"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-9"
+    id="pagination-options-menu-15"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -1733,10 +2387,10 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-16"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-9"
+          id="pagination-options-menu-toggle-15"
           type="button"
         >
           <span
@@ -1771,7 +2425,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-37"
+          data-ouia-component-id="OUIA-Generated-Button-plain-61"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1800,7 +2454,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-38"
+          data-ouia-component-id="OUIA-Generated-Button-plain-62"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1849,7 +2503,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-39"
+          data-ouia-component-id="OUIA-Generated-Button-plain-63"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1878,7 +2532,661 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-40"
+          data-ouia-component-id="OUIA-Generated-Button-plain-64"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`ProductsTable when row column headings are clicked can sort by quantity, reversed 1`] = `
+<div>
+  <div
+    class="pf-c-pagination"
+    data-ouia-component-id="OUIA-Generated-Pagination-top-11"
+    data-ouia-component-type="PF4/Pagination"
+    data-ouia-safe="true"
+    id="pagination-options-menu-20"
+    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+  >
+    <div
+      class="pf-c-pagination__total-items"
+    >
+      <b>
+        1
+         - 
+        3
+      </b>
+       
+      of
+       
+      <b>
+        3
+      </b>
+       
+      
+    </div>
+    <div
+      class="pf-c-options-menu"
+      data-ouia-component-type="PF4/PaginationOptionsMenu"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+      >
+        <span
+          class="pf-c-options-menu__toggle-text"
+        >
+          <b>
+            1
+             - 
+            3
+          </b>
+           
+          of
+           
+          <b>
+            3
+          </b>
+           
+          
+        </span>
+        <button
+          aria-expanded="false"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-21"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-20"
+          type="button"
+        >
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Pagination"
+      class="pf-c-pagination__nav"
+    >
+      <div
+        class="pf-c-pagination__nav-control pf-m-first"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to first page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="first"
+          data-ouia-component-id="OUIA-Generated-Button-plain-81"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to previous page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="previous"
+          data-ouia-component-id="OUIA-Generated-Button-plain-82"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-page-select"
+      >
+        <input
+          aria-label="Current page"
+          class="pf-c-form-control"
+          disabled=""
+          max="1"
+          min="1"
+          type="number"
+          value="1"
+        />
+        <span
+          aria-hidden="true"
+        >
+          of
+           
+          1
+        </span>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to next page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="next"
+          data-ouia-component-id="OUIA-Generated-Button-plain-83"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control pf-m-last"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to last page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="last"
+          data-ouia-component-id="OUIA-Generated-Button-plain-84"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <table
+    aria-label="Products"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Name
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          aria-sort="descending"
+          class="pf-c-table__sort pf-m-selected"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Quantity
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-57"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-58"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          3
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-59"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              B
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-60"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="00000000-0000-0000-0000-000000000000"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-61"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              Z
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-62"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                letters
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="pf-c-pagination pf-m-bottom"
+    data-ouia-component-id="OUIA-Generated-Pagination-bottom-11"
+    data-ouia-component-type="PF4/Pagination"
+    data-ouia-safe="true"
+    id="pagination-options-menu-21"
+    style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
+  >
+    <div
+      class="pf-c-options-menu pf-m-top"
+      data-ouia-component-type="PF4/PaginationOptionsMenu"
+      data-ouia-safe="true"
+    >
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+      >
+        <span
+          class="pf-c-options-menu__toggle-text"
+        >
+          <b>
+            1
+             - 
+            3
+          </b>
+           
+          of
+           
+          <b>
+            3
+          </b>
+           
+          
+        </span>
+        <button
+          aria-expanded="false"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-22"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-21"
+          type="button"
+        >
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Pagination"
+      class="pf-c-pagination__nav"
+    >
+      <div
+        class="pf-c-pagination__nav-control pf-m-first"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to first page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="first"
+          data-ouia-component-id="OUIA-Generated-Button-plain-85"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to previous page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="previous"
+          data-ouia-component-id="OUIA-Generated-Button-plain-86"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-page-select"
+      >
+        <input
+          aria-label="Current page"
+          class="pf-c-form-control"
+          disabled=""
+          max="1"
+          min="1"
+          type="number"
+          value="1"
+        />
+        <span
+          aria-hidden="true"
+        >
+          of
+           
+          1
+        </span>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to next page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="next"
+          data-ouia-component-id="OUIA-Generated-Button-plain-87"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          disabled=""
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="pf-c-pagination__nav-control pf-m-last"
+      >
+        <button
+          aria-disabled="true"
+          aria-label="Go to last page"
+          class="pf-c-button pf-m-plain pf-m-disabled"
+          data-action="last"
+          data-ouia-component-id="OUIA-Generated-Button-plain-88"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -1956,10 +3264,10 @@ exports[`ProductsTable when using pagination can change page 1`] = `
 <div>
   <div
     class="pf-c-pagination"
-    data-ouia-component-id="OUIA-Generated-Pagination-top-7"
+    data-ouia-component-id="OUIA-Generated-Pagination-top-13"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-12"
+    id="pagination-options-menu-24"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2008,10 +3316,10 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-25"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-12"
+          id="pagination-options-menu-toggle-24"
           type="button"
         >
           <span
@@ -2046,7 +3354,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-49"
+          data-ouia-component-id="OUIA-Generated-Button-plain-97"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="button"
@@ -2074,7 +3382,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-50"
+          data-ouia-component-id="OUIA-Generated-Button-plain-98"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="button"
@@ -2121,7 +3429,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-51"
+          data-ouia-component-id="OUIA-Generated-Button-plain-99"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2150,7 +3458,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-52"
+          data-ouia-component-id="OUIA-Generated-Button-plain-100"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2285,7 +3593,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-47"
+              data-ouia-component-id="OUIA-Generated-Text-83"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2294,7 +3602,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-48"
+                data-ouia-component-id="OUIA-Generated-Text-84"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2315,10 +3623,10 @@ exports[`ProductsTable when using pagination can change page 1`] = `
   </table>
   <div
     class="pf-c-pagination pf-m-bottom"
-    data-ouia-component-id="OUIA-Generated-Pagination-bottom-7"
+    data-ouia-component-id="OUIA-Generated-Pagination-bottom-13"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-13"
+    id="pagination-options-menu-25"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2350,10 +3658,10 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-26"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-13"
+          id="pagination-options-menu-toggle-25"
           type="button"
         >
           <span
@@ -2388,7 +3696,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-53"
+          data-ouia-component-id="OUIA-Generated-Button-plain-101"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="button"
@@ -2416,7 +3724,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-54"
+          data-ouia-component-id="OUIA-Generated-Button-plain-102"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           type="button"
@@ -2463,7 +3771,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-55"
+          data-ouia-component-id="OUIA-Generated-Button-plain-103"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2492,7 +3800,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-56"
+          data-ouia-component-id="OUIA-Generated-Button-plain-104"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2522,10 +3830,10 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
 <div>
   <div
     class="pf-c-pagination"
-    data-ouia-component-id="OUIA-Generated-Pagination-top-9"
+    data-ouia-component-id="OUIA-Generated-Pagination-top-15"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-16"
+    id="pagination-options-menu-28"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -2574,10 +3882,10 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-17"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-29"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-17"
+          id="pagination-options-menu-toggle-29"
           type="button"
         >
           <span
@@ -2612,7 +3920,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-65"
+          data-ouia-component-id="OUIA-Generated-Button-plain-113"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2641,7 +3949,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-66"
+          data-ouia-component-id="OUIA-Generated-Button-plain-114"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2690,7 +3998,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-67"
+          data-ouia-component-id="OUIA-Generated-Button-plain-115"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2719,7 +4027,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-68"
+          data-ouia-component-id="OUIA-Generated-Button-plain-116"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -2854,7 +4162,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-69"
+              data-ouia-component-id="OUIA-Generated-Text-105"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2863,7 +4171,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-70"
+                data-ouia-component-id="OUIA-Generated-Text-106"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2895,7 +4203,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-71"
+              data-ouia-component-id="OUIA-Generated-Text-107"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2904,7 +4212,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-72"
+                data-ouia-component-id="OUIA-Generated-Text-108"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2936,7 +4244,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-73"
+              data-ouia-component-id="OUIA-Generated-Text-109"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2945,7 +4253,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-74"
+                data-ouia-component-id="OUIA-Generated-Text-110"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2977,7 +4285,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-75"
+              data-ouia-component-id="OUIA-Generated-Text-111"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2986,7 +4294,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-76"
+                data-ouia-component-id="OUIA-Generated-Text-112"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3018,7 +4326,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-77"
+              data-ouia-component-id="OUIA-Generated-Text-113"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3027,7 +4335,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-78"
+                data-ouia-component-id="OUIA-Generated-Text-114"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3059,7 +4367,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-79"
+              data-ouia-component-id="OUIA-Generated-Text-115"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3068,7 +4376,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-80"
+                data-ouia-component-id="OUIA-Generated-Text-116"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3100,7 +4408,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-81"
+              data-ouia-component-id="OUIA-Generated-Text-117"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3109,7 +4417,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-82"
+                data-ouia-component-id="OUIA-Generated-Text-118"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3141,7 +4449,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-83"
+              data-ouia-component-id="OUIA-Generated-Text-119"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3150,7 +4458,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-84"
+                data-ouia-component-id="OUIA-Generated-Text-120"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3182,7 +4490,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-85"
+              data-ouia-component-id="OUIA-Generated-Text-121"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3191,7 +4499,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-86"
+                data-ouia-component-id="OUIA-Generated-Text-122"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3223,7 +4531,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-87"
+              data-ouia-component-id="OUIA-Generated-Text-123"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3232,7 +4540,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-88"
+                data-ouia-component-id="OUIA-Generated-Text-124"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3264,7 +4572,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-89"
+              data-ouia-component-id="OUIA-Generated-Text-125"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3273,7 +4581,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-90"
+                data-ouia-component-id="OUIA-Generated-Text-126"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3294,10 +4602,10 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
   </table>
   <div
     class="pf-c-pagination pf-m-bottom"
-    data-ouia-component-id="OUIA-Generated-Pagination-bottom-9"
+    data-ouia-component-id="OUIA-Generated-Pagination-bottom-15"
     data-ouia-component-type="PF4/Pagination"
     data-ouia-safe="true"
-    id="pagination-options-menu-17"
+    id="pagination-options-menu-29"
     style="--pf-c-pagination__nav-page-select--c-form-control--width-chars: 2;"
   >
     <div
@@ -3329,10 +4637,10 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-expanded="false"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
-          data-ouia-component-id="OUIA-Generated-DropdownToggle-18"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-30"
           data-ouia-component-type="PF4/DropdownToggle"
           data-ouia-safe="true"
-          id="pagination-options-menu-toggle-18"
+          id="pagination-options-menu-toggle-30"
           type="button"
         >
           <span
@@ -3367,7 +4675,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to first page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="first"
-          data-ouia-component-id="OUIA-Generated-Button-plain-69"
+          data-ouia-component-id="OUIA-Generated-Button-plain-117"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -3396,7 +4704,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to previous page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="previous"
-          data-ouia-component-id="OUIA-Generated-Button-plain-70"
+          data-ouia-component-id="OUIA-Generated-Button-plain-118"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -3445,7 +4753,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to next page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="next"
-          data-ouia-component-id="OUIA-Generated-Button-plain-71"
+          data-ouia-component-id="OUIA-Generated-Button-plain-119"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""
@@ -3474,7 +4782,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           aria-label="Go to last page"
           class="pf-c-button pf-m-plain pf-m-disabled"
           data-action="last"
-          data-ouia-component-id="OUIA-Generated-Button-plain-72"
+          data-ouia-component-id="OUIA-Generated-Button-plain-120"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           disabled=""

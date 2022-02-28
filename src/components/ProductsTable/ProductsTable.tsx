@@ -17,9 +17,7 @@ const ProductsTable: FunctionComponent = () => {
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const { isFetching, isLoading, error, data } = useProducts();
-
   const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
-
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
 
   const getSortableRowValues = (product: Product): (string | number)[] => {
