@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
+import { get, def } from 'bdd-lazy-var';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('react-router-dom', () => ({
@@ -59,15 +60,20 @@ jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</
 jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
 
 describe('SubscriptionInventoryPage', () => {
-  let isError = false;
-  let canReadProducts = true;
-  const isLoading = false;
-  const isOrgAdmin = false;
+  def('isLoading', () => false);
+  def('isOrgAdmin', () => false);
+  def('isError', () => false);
+  def('canReadProducts', () => true);
 
   beforeEach(() => {
     window.insights = {};
     jest.resetAllMocks();
-    mockAuthenticateUser(isLoading, isOrgAdmin, isError, canReadProducts);
+    mockAuthenticateUser(
+      get('isLoading'),
+      get('isOrgAdmin'),
+      get('isError'),
+      get('canReadProducts')
+    );
   });
 
   it('renders correctly', async () => {
@@ -77,9 +83,7 @@ describe('SubscriptionInventoryPage', () => {
   });
 
   describe('when the user call fails', () => {
-    beforeAll(() => {
-      isError = true;
-    });
+    def('isError', () => true);
 
     it('renders an error message when user call fails', async () => {
       const { container } = render(<PageContainer />);
@@ -89,11 +93,9 @@ describe('SubscriptionInventoryPage', () => {
   });
 
   describe('when the user does not have proper permissions', () => {
-    beforeAll(() => {
-      canReadProducts = false;
-    });
+    def('canReadProducts', () => false);
 
-    it('renders not authorized page', async () => {
+    it('redirects to not authorized page', async () => {
       const { container } = render(<PageContainer />);
       await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
       expect(container).toMatchSnapshot();
