@@ -34,6 +34,9 @@ exports[`SubscriptionInventoryPage renders correctly 1`] = `
         All subscriptions for account 
         8675309
       </h2>
+      <div>
+        Products Table
+      </div>
     </section>
   </section>
 </div>
@@ -86,3 +89,5 @@ exports[`SubscriptionInventoryPage when the user call fails renders an error mes
   </div>
 </div>
 `;
+
+exports[`SubscriptionInventoryPage when the user does not have proper permissions redirects to not authorized page 1`] = `<div />`;

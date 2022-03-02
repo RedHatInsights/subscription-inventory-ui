@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
+import { get, def } from 'bdd-lazy-var';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('react-router-dom', () => ({
@@ -30,9 +31,15 @@ const PageContainer = () => (
   </QueryClientProvider>
 );
 
-const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean, isError: boolean) => {
+const mockAuthenticateUser = (
+  isLoading: boolean,
+  orgAdminStatus: boolean,
+  isError: boolean,
+  canReadProducts: boolean
+) => {
   const user = {
     accountNumber: '8675309',
+    canReadProducts: canReadProducts,
     isOrgAdmin: orgAdminStatus,
     isSCACapable: true
   };
@@ -49,14 +56,24 @@ const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean, isErr
   }
 };
 
+jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
+jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
+
 describe('SubscriptionInventoryPage', () => {
-  let isError = false;
-  const isLoading = false;
-  const isOrgAdmin = false;
+  def('isLoading', () => false);
+  def('isOrgAdmin', () => false);
+  def('isError', () => false);
+  def('canReadProducts', () => true);
 
   beforeEach(() => {
     window.insights = {};
-    mockAuthenticateUser(isLoading, isOrgAdmin, isError);
+    jest.resetAllMocks();
+    mockAuthenticateUser(
+      get('isLoading'),
+      get('isOrgAdmin'),
+      get('isError'),
+      get('canReadProducts')
+    );
   });
 
   it('renders correctly', async () => {
@@ -66,11 +83,19 @@ describe('SubscriptionInventoryPage', () => {
   });
 
   describe('when the user call fails', () => {
-    beforeAll(() => {
-      isError = true;
-    });
+    def('isError', () => true);
 
     it('renders an error message when user call fails', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the user does not have proper permissions', () => {
+    def('canReadProducts', () => false);
+
+    it('redirects to not authorized page', async () => {
       const { container } = render(<PageContainer />);
       await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
       expect(container).toMatchSnapshot();

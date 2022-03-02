@@ -1,4 +1,9 @@
-import { authenticateUser, getConfig } from '../platformServices';
+import {
+  authenticateUser,
+  getConfig,
+  getEnvironment,
+  getUserRbacPermissions
+} from '../platformServices';
 
 beforeEach(() => {
   window.insights = {
@@ -40,5 +45,41 @@ describe('Authenticate User method', () => {
     } catch (e) {
       expect(e.message).toEqual('Error authenticating user: Error getting user');
     }
+  });
+});
+
+describe('getUserRbacPermissions', () => {
+  it('should return a promise with user RBAC permissions', () => {
+    window.insights.chrome.getUserPermissions = jest
+      .fn()
+      .mockResolvedValue([{ resourceDefinitions: [], permission: 'subscriptions:products:read' }]);
+
+    expect(getUserRbacPermissions()).resolves.toEqual([
+      { resourceDefinitions: [], permission: 'subscriptions:products:read' }
+    ]);
+  });
+
+  it('should throw an error if rejected', () => {
+    window.insights.chrome.getUserPermissions = jest.fn().mockImplementation(() => {
+      throw new Error('Nope');
+    });
+
+    try {
+      authenticateUser();
+    } catch (e) {
+      expect(e.message).toEqual('Error getting user permissions: Nope');
+    }
+  });
+});
+
+describe('getEnvironment', () => {
+  it('returns the environment', () => {
+    window.insights.chrome.getEnvironment = jest.fn().mockReturnValue('qa');
+    expect(getEnvironment()).toEqual('qa');
+  });
+
+  it('returns "ci" if environment is not specified', () => {
+    window.insights.chrome.getEnvironment = jest.fn().mockReturnValue(null);
+    expect(getEnvironment()).toEqual('ci');
   });
 });
