@@ -74,6 +74,10 @@
     "/node_modules/(?!@redhat-cloud-services)",
     "/node_modules/(?!@patternfly)"
   ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "@babel/runtime": "7.10.0",
     "@patternfly/patternfly": "4.171.1",
