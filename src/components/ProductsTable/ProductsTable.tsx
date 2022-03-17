@@ -3,8 +3,11 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/
 import { v4 as uuid } from 'uuid';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import {
+  Flex,
+  FlexItem,
   Pagination,
   PaginationVariant,
+  SearchInput,
   Text,
   TextContent,
   TextVariants
@@ -16,6 +19,7 @@ const ProductsTable: FunctionComponent = () => {
   const columnNames = { name: 'Name', quantity: 'Quantity' };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
+  const [searchValue, setSearchValue] = useState('');
   const { isFetching, isLoading, error, data } = useProducts();
   const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
@@ -70,11 +74,32 @@ const ProductsTable: FunctionComponent = () => {
     setPage(1);
   };
 
+  const clearSearch = () => {
+    setSearchValue('');
+    setPage(1);
+  };
+
+  const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
+    return data.filter((entry: Product) => {
+      return (entry.name || '').toLowerCase().includes(searchValue.toLowerCase().trim());
+    });
+  };
+
+  const countProducts = (data: Product[], searchValue: string): number => {
+    const filteredData = filterDataBySearchTerm(data, searchValue);
+    return filteredData.length;
+  };
+
+  const handleSearch = (searchValue: string) => {
+    setSearchValue(searchValue);
+    setPage(1);
+  };
+
   const pagination = (variant = PaginationVariant.top) => {
     return (
       <Pagination
         isDisabled={isFetching}
-        itemCount={data.length}
+        itemCount={countProducts(data, searchValue)}
         perPage={perPage}
         page={page}
         onSetPage={handleSetPage}
@@ -92,11 +117,27 @@ const ProductsTable: FunctionComponent = () => {
 
   const Results: FunctionComponent = () => {
     const sortedProducts = sortProducts(data, activeSortIndex);
-    const paginatedProducts = getPage(sortedProducts);
+    const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
+    const paginatedProducts = getPage(searchedProducts);
 
     return (
       <>
-        {pagination()}
+        <Flex
+          direction={{ default: 'column', md: 'row' }}
+          justifyContent={{ default: 'justifyContentSpaceBetween' }}
+        >
+          <FlexItem>
+            {data.length > 0 && (
+              <SearchInput
+                placeholder="Filter by name, version or UUID"
+                value={searchValue}
+                onChange={handleSearch}
+                onClear={clearSearch}
+              />
+            )}
+          </FlexItem>
+          <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+        </Flex>
         <TableComposable aria-label="Products" ouiaId={uuid()} ouiaSafe={true}>
           <Thead>
             <Tr ouiaId={uuid()} ouiaSafe={true}>
