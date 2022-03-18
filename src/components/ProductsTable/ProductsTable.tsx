@@ -74,6 +74,11 @@ const ProductsTable: FunctionComponent = () => {
     setPage(1);
   };
 
+  const handleSearch = (searchValue: string) => {
+    setSearchValue(searchValue);
+    setPage(1);
+  };
+
   const clearSearch = () => {
     setSearchValue('');
     setPage(1);
@@ -88,11 +93,6 @@ const ProductsTable: FunctionComponent = () => {
   const countProducts = (data: Product[], searchValue: string): number => {
     const filteredData = filterDataBySearchTerm(data, searchValue);
     return filteredData.length;
-  };
-
-  const handleSearch = (searchValue: string) => {
-    setSearchValue(searchValue);
-    setPage(1);
   };
 
   const pagination = (variant = PaginationVariant.top) => {
@@ -129,7 +129,7 @@ const ProductsTable: FunctionComponent = () => {
           <FlexItem>
             {data.length > 0 && (
               <SearchInput
-                placeholder="Filter by name, version or UUID"
+                placeholder="Filter by Name"
                 value={searchValue}
                 onChange={handleSearch}
                 onClear={clearSearch}
