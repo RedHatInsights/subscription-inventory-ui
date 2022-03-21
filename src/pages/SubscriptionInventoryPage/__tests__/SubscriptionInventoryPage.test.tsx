@@ -7,9 +7,11 @@ import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
+import useProducts from '../../../hooks/useProducts';
 import { get, def } from 'bdd-lazy-var';
 
 jest.mock('../../../hooks/useUser');
+jest.mock('../../../hooks/useProducts');
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
   useLocation: () => ({
@@ -32,7 +34,6 @@ const PageContainer = () => (
 );
 
 const mockAuthenticateUser = (
-  isLoading: boolean,
   orgAdminStatus: boolean,
   isError: boolean,
   canReadProducts: boolean
@@ -44,7 +45,7 @@ const mockAuthenticateUser = (
     isSCACapable: true
   };
   (useUser as jest.Mock).mockReturnValue({
-    isLoading: isLoading,
+    isLoading: false,
     isFetching: false,
     isSuccess: true,
     isError: isError,
@@ -60,20 +61,21 @@ jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</
 jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
 
 describe('SubscriptionInventoryPage', () => {
-  def('isLoading', () => false);
-  def('isOrgAdmin', () => false);
-  def('isError', () => false);
+  def('orgAdmin', () => false);
+  def('userError', () => false);
   def('canReadProducts', () => true);
+  def('productsLoading', () => false);
+  def('productsError', () => false);
 
   beforeEach(() => {
     window.insights = {};
     jest.resetAllMocks();
-    mockAuthenticateUser(
-      get('isLoading'),
-      get('isOrgAdmin'),
-      get('isError'),
-      get('canReadProducts')
-    );
+    mockAuthenticateUser(get('orgAdmin'), get('userError'), get('canReadProducts'));
+    (useProducts as jest.Mock).mockReturnValue({
+      isLoading: get('productsLoading'),
+      error: get('productsError'),
+      data: []
+    });
   });
 
   it('renders correctly', async () => {
@@ -83,7 +85,7 @@ describe('SubscriptionInventoryPage', () => {
   });
 
   describe('when the user call fails', () => {
-    def('isError', () => true);
+    def('userError', () => true);
 
     it('renders an error message when user call fails', async () => {
       const { container } = render(<PageContainer />);
@@ -98,6 +100,26 @@ describe('SubscriptionInventoryPage', () => {
     it('redirects to not authorized page', async () => {
       const { container } = render(<PageContainer />);
       await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the products call fails', () => {
+    def('productsError', () => true);
+
+    it('renders the error page', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useProducts).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the products are loading', () => {
+    def('productsLoading', () => true);
+
+    it('renders the loading component', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useProducts).toHaveBeenCalledTimes(1));
       expect(container).toMatchSnapshot();
     });
   });

@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
-import { v4 as uuid } from 'uuid';
-import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import {
   Flex,
   FlexItem,
@@ -12,15 +10,18 @@ import {
   TextContent,
   TextVariants
 } from '@patternfly/react-core';
-import { Processing } from '../../components/emptyState';
-import useProducts, { Product } from '../../hooks/useProducts';
+import { Product } from '../../hooks/useProducts';
 
-const ProductsTable: FunctionComponent = () => {
+interface ProductsTableProps {
+  data: Product[] | undefined;
+  isFetching: boolean;
+}
+
+const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
   const columnNames = { name: 'Name', quantity: 'Quantity' };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [searchValue, setSearchValue] = useState('');
-  const { isFetching, isLoading, error, data } = useProducts();
   const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
 
@@ -115,39 +116,42 @@ const ProductsTable: FunctionComponent = () => {
     return products.slice(first, last);
   };
 
-  const Results: FunctionComponent = () => {
-    const sortedProducts = sortProducts(data, activeSortIndex);
-    const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
-    const paginatedProducts = getPage(searchedProducts);
+  const sortedProducts = sortProducts(data, activeSortIndex);
+  const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
+  const paginatedProducts = getPage(searchedProducts);
 
-    return (
-      <>
-        <Flex
-          direction={{ default: 'column', md: 'row' }}
-          justifyContent={{ default: 'justifyContentSpaceBetween' }}
-        >
-          <FlexItem>
-            {data.length > 0 && (
-              <SearchInput
-                placeholder="Filter by Name"
-                value={searchValue}
-                onChange={handleSearch}
-                onClear={clearSearch}
-              />
-            )}
-          </FlexItem>
-          <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
-        </Flex>
-        <TableComposable aria-label="Products" ouiaId={uuid()} ouiaSafe={true}>
-          <Thead>
-            <Tr ouiaId={uuid()} ouiaSafe={true}>
-              <Th sort={getSortParams(0)}>{columnNames.name}</Th>
-              <Th sort={getSortParams(1)}>{columnNames.quantity}</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {paginatedProducts.map((datum, rowIndex) => (
-              <Tr key={rowIndex} ouiaId={uuid()} ouiaSafe={true}>
+  return (
+    <>
+      <Flex
+        direction={{ default: 'column', md: 'row' }}
+        justifyContent={{ default: 'justifyContentSpaceBetween' }}
+      >
+        <FlexItem>
+          {data.length > 0 && (
+            <SearchInput
+              placeholder="Filter by Name"
+              value={searchValue}
+              onChange={handleSearch}
+              onClear={clearSearch}
+            />
+          )}
+        </FlexItem>
+        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+      </Flex>
+      {/* @ts-ignore */}
+      <TableComposable aria-label="Products">
+        <Thead>
+          {/* @ts-ignore */}
+          <Tr>
+            <Th sort={getSortParams(0)}>{columnNames.name}</Th>
+            <Th sort={getSortParams(1)}>{columnNames.quantity}</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {paginatedProducts.map((datum, rowIndex) => (
+            <React.Fragment key={rowIndex}>
+              {/* @ts-ignore */}
+              <Tr>
                 <Td dataLabel={columnNames.name}>
                   <TextContent>
                     <Text component={TextVariants.h3}>
@@ -159,21 +163,13 @@ const ProductsTable: FunctionComponent = () => {
                 </Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
               </Tr>
-            ))}
-          </Tbody>
-        </TableComposable>
-        {pagination(PaginationVariant.bottom)}
-      </>
-    );
-  };
-
-  if (isLoading && !error) {
-    return <Processing />;
-  } else if (!isLoading && !error) {
-    return <Results />;
-  } else {
-    return <Unavailable />;
-  }
+            </React.Fragment>
+          ))}
+        </Tbody>
+      </TableComposable>
+      {pagination(PaginationVariant.bottom)}
+    </>
+  );
 };
 
-export default ProductsTable;
+export { ProductsTable as default, ProductsTableProps };
