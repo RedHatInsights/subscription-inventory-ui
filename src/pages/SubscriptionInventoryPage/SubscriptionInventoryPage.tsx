@@ -9,7 +9,7 @@ import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
 import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
-import useProducts, { Product } from '../../hooks/useProducts';
+import useProducts from '../../hooks/useProducts';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
