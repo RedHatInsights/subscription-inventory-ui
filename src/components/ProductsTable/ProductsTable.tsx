@@ -87,7 +87,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
 
   const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
     return data.filter((entry: Product) => {
-      return (entry.name || '').toLowerCase().includes(searchValue.toLowerCase().trim());
+      const searchTerm = searchValue.toLowerCase().trim();
+      const name = (entry.name || '').toLowerCase();
+      const productLine = (entry.productLine || '').toLowerCase();
+      return name.includes(searchTerm) || productLine.includes(searchTerm);
     });
   };
 

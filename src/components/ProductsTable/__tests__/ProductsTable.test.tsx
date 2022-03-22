@@ -2,14 +2,8 @@ import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';
-import useProducts from '../../../hooks/useProducts';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
-
-jest.mock('../../../hooks/useProducts');
-jest.mock('uuid', () => {
-  return { v4: jest.fn(() => '00000000-0000-0000-0000-000000000000') };
-});
 
 const queryClient = new QueryClient();
 
@@ -96,16 +90,25 @@ describe('ProductsTable', () => {
 
   describe('when the search is used', () => {
     def('data', () => [
-      factories.product.build({ name: 'Z', quantity: 2, productLine: 'letters' }),
-      factories.product.build({ name: 'A', quantity: 1, productLine: 'letters' }),
+      factories.product.build({ name: 'Z', quantity: 2, productLine: 'consonants' }),
+      factories.product.build({ name: 'A', quantity: 1, productLine: 'vowels' }),
+      factories.product.build({ name: 'P', quantity: 1, productLine: 'consonants' }),
       factories.product.build({ name: undefined, quantity: 0, productLine: undefined })
     ]);
 
-    it('refines the results', () => {
+    it('refines the results by name', () => {
       const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
 
       const input = screen.getByPlaceholderText('Filter by Name');
       fireEvent.change(input, { target: { value: 'Z' } });
+      expect(container).toMatchSnapshot();
+    });
+
+    it('refines the results by product line', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      const input = screen.getByPlaceholderText('Filter by Name');
+      fireEvent.change(input, { target: { value: 'vowels' } });
       expect(container).toMatchSnapshot();
     });
 
