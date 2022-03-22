@@ -28,21 +28,20 @@ describe('ProductsTable', () => {
   describe('when row column headings are clicked', () => {
     def('data', () => [
       factories.product.build({ name: 'Z', quantity: 1, productLine: 'letters' }),
-      factories.product.build({ name: 'A', quantity: 3, productLine: 'letters' }),
-      factories.product.build({ name: 'B', quantity: 2, productLine: 'letters' })
+      factories.product.build({ name: undefined, quantity: undefined, productLine: null }),
+      factories.product.build({ name: 'A', quantity: 3, productLine: 'vowels' }),
+      factories.product.build({ name: null, quantity: 2, productLine: 'consonants' })
     ]);
 
-    it('can sort by name', () => {
+    it('sorts by name by default', () => {
       const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
 
-      fireEvent.click(screen.getByText('Name'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by name, reversed', () => {
       const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
 
-      fireEvent.click(screen.getByText('Name'));
       fireEvent.click(screen.getByText('Name'));
       expect(container).toMatchSnapshot();
     });

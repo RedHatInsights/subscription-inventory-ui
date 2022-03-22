@@ -22,8 +22,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [searchValue, setSearchValue] = useState('');
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
 
   const getSortableRowValues = (product: Product): (string | number)[] => {
     const { name, quantity } = product;
@@ -44,24 +44,16 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
   });
 
   const sortProducts = (products: Product[], sortIndex: number) => {
-    if (sortIndex == null) return products;
-
     const sortedProducts = products.sort((a: any, b: any) => {
-      const aValue = getSortableRowValues(a)[sortIndex];
-      const bValue = getSortableRowValues(b)[sortIndex];
-      if (typeof aValue === 'number') {
-        // Numeric sort
-        if (activeSortDirection === 'asc') {
-          return (aValue as number) - (bValue as number);
-        }
-        return (bValue as number) - (aValue as number);
-      } else {
-        // String sort
-        if (activeSortDirection === 'asc') {
-          return (aValue as string).localeCompare(bValue as string);
-        }
-        return (bValue as string).localeCompare(aValue as string);
+      const aValue = getSortableRowValues(a)[sortIndex] || '';
+      const bValue = getSortableRowValues(b)[sortIndex] || '';
+      let result = 0;
+      if (aValue < bValue) {
+        result = -1;
+      } else if (aValue > bValue) {
+        result = 1;
       }
+      return activeSortDirection == 'asc' ? result : -1 * result;
     });
     return sortedProducts;
   };
