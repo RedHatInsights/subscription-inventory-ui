@@ -93,4 +93,30 @@ describe('ProductsTable', () => {
       expect(container).toMatchSnapshot();
     });
   });
+
+  describe('when the search is used', () => {
+    def('data', () => [
+      factories.product.build({ name: 'Z', quantity: 2, productLine: 'letters' }),
+      factories.product.build({ name: 'A', quantity: 1, productLine: 'letters' }),
+      factories.product.build({ name: undefined, quantity: 0, productLine: undefined })
+    ]);
+
+    it('refines the results', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      const input = screen.getByPlaceholderText('Filter by Name');
+      fireEvent.change(input, { target: { value: 'Z' } });
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can be cleared', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      const input = screen.getByPlaceholderText('Filter by Name');
+      fireEvent.change(input, { target: { value: 'Z' } });
+      const clear = screen.getByLabelText('Reset');
+      fireEvent.click(clear);
+      expect(container).toMatchSnapshot();
+    });
+  });
 });
