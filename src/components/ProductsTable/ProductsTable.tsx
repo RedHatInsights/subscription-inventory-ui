@@ -11,6 +11,7 @@ import {
   TextVariants
 } from '@patternfly/react-core';
 import { Product } from '../../hooks/useProducts';
+import { NoSearchResults } from '../emptyState';
 
 interface ProductsTableProps {
   data: Product[] | undefined;
@@ -162,6 +163,9 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           ))}
         </Tbody>
       </TableComposable>
+      {paginatedProducts.length == 0 && data.length > 0 && (
+        <NoSearchResults clearFilters={clearSearch} />
+      )}
       {pagination(PaginationVariant.bottom)}
     </>
   );
