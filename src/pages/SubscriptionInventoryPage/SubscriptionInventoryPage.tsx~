@@ -10,7 +10,6 @@ import { User } from '../../hooks/useUser';
 import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
 import useProducts from '../../hooks/useProducts';
-import PurchaseModal from '../../components/PurchaseModal';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
@@ -21,13 +20,12 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
     return (
       <>
         <PageHeader>
-          <Split hasGutter>
-            <SplitItem isFilled>
+          <Split>
+            <SplitItem>
               <PageHeaderTitle title="Subscription Inventory" />
             </SplitItem>
-            <SplitItem>
-              <PurchaseModal />
-            </SplitItem>
+            <SplitItem isFilled></SplitItem>
+            <SplitItem>Purchase subscriptions</SplitItem>
           </Split>
         </PageHeader>
         <Main>
