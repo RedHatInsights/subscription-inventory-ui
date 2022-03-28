@@ -59,6 +59,11 @@ const mockAuthenticateUser = (
 
 jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
 jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
+jest.mock('../../../components/PurchaseModal/onlineIcon.svg', () => 'Online Icon');
+jest.mock('../../../components/PurchaseModal/salesIcon.svg', () => 'Sales Icon');
+jest.mock('../../../components/PurchaseModal/partnersIcon.svg', () => 'Partners Icon');
+jest.mock('../../../components/PurchaseModal/trainingIcon.svg', () => 'Training Icon');
+jest.mock('../../../components/PurchaseModal/tryIcon.svg', () => 'Try Icon');
 
 describe('SubscriptionInventoryPage', () => {
   def('orgAdmin', () => false);
