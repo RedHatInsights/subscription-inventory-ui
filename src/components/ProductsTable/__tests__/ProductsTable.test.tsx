@@ -120,5 +120,13 @@ describe('ProductsTable', () => {
       fireEvent.click(clear);
       expect(container).toMatchSnapshot();
     });
+
+    it('renders an empty state when no results are found', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      const input = screen.getByPlaceholderText('Filter by Name');
+      fireEvent.change(input, { target: { value: 'ZZZ' } });
+      expect(container).toMatchSnapshot();
+    });
   });
 });
