@@ -11,6 +11,9 @@ import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
 import useProducts from '../../hooks/useProducts';
 import PurchaseModal from '../../components/PurchaseModal';
+import GettingStartedCard from '../../components/GettingStartedCard';
+import { Stack } from '@patternfly/react-core';
+import { StackItem } from '@patternfly/react-core';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
@@ -31,16 +34,23 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
           </Split>
         </PageHeader>
         <Main>
-          <PageSection variant="light">
-            <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
-            <>
-              {isLoading && !error && <Processing />}
+          <Stack hasGutter>
+            <StackItem>
+              <GettingStartedCard />
+            </StackItem>
+            <StackItem>
+              <PageSection variant="light">
+                <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
+                <>
+                  {isLoading && !error && <Processing />}
 
-              {!isLoading && !error && <ProductsTable data={data} isFetching={isFetching} />}
+                  {!isLoading && !error && <ProductsTable data={data} isFetching={isFetching} />}
 
-              {error && <Unavailable />}
-            </>
-          </PageSection>
+                  {error && <Unavailable />}
+                </>
+              </PageSection>
+            </StackItem>
+          </Stack>
         </Main>
       </>
     );
