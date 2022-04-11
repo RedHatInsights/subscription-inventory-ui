@@ -1,10 +1,14 @@
 import React, { FunctionComponent, useState } from 'react';
 import {
   Card,
+  CardActions,
   CardHeader,
   CardTitle,
   CardBody,
   CardExpandableContent,
+  Dropdown,
+  DropdownItem,
+  KebabToggle,
   Level,
   Label,
   Grid,
@@ -19,9 +23,30 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 
 const GettingStartedCard: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const dropdownItems = [
+    <DropdownItem key="purchase-subscriptions" component="button">
+      Purchase Subscriptions
+    </DropdownItem>,
+    <DropdownItem key="contact-customer-service" component="button">
+      Contact Customer Service
+    </DropdownItem>,
+    <DropdownItem key="contact-sales" component="button">
+      Contact Red Hat Sales
+    </DropdownItem>
+  ];
 
   const onExpand = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const onActionToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const onActionSelect = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -35,6 +60,16 @@ const GettingStartedCard: FunctionComponent = () => {
           'aria-expanded': isExpanded
         }}
       >
+        <CardActions>
+          <Dropdown
+            onSelect={onActionSelect}
+            toggle={<KebabToggle onToggle={onActionToggle} />}
+            isOpen={isDropdownOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+            position="right"
+          />
+        </CardActions>
         {isExpanded && <CardTitle id="getting-started-title">Getting started resources</CardTitle>}
         {!isExpanded && (
           <Level hasGutter>
