@@ -1,52 +1,31 @@
 import React, { FunctionComponent, useState } from 'react';
 import {
+  Button,
   Card,
-  CardActions,
   CardHeader,
   CardTitle,
   CardBody,
   CardExpandableContent,
-  Dropdown,
-  DropdownItem,
-  KebabToggle,
-  Level,
-  Label,
-  Grid,
   Flex,
+  Grid,
+  Label,
+  Level,
   List,
-  ListItem,
-  Button
+  ListItem
 } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
+import ExternalLink from '../ExternalLink';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import ClipboardCheckIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-check-icon';
+import RouteIcon from '@patternfly/react-icons/dist/esm/icons/route-icon';
+import RocketIcon from '@patternfly/react-icons/dist/esm/icons/rocket-icon';
+import GraduationCapIcon from '@patternfly/react-icons/dist/esm/icons/graduation-cap-icon';
+// import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 
 const GettingStartedCard: FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const dropdownItems = [
-    <DropdownItem key="purchase-subscriptions" component="button">
-      Purchase Subscriptions
-    </DropdownItem>,
-    <DropdownItem key="contact-customer-service" component="button">
-      Contact Customer Service
-    </DropdownItem>,
-    <DropdownItem key="contact-sales" component="button">
-      Contact Red Hat Sales
-    </DropdownItem>
-  ];
 
   const onExpand = () => {
     setIsExpanded(!isExpanded);
-  };
-
-  const onActionToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const onActionSelect = () => {
-    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -60,16 +39,6 @@ const GettingStartedCard: FunctionComponent = () => {
           'aria-expanded': isExpanded
         }}
       >
-        <CardActions>
-          <Dropdown
-            onSelect={onActionSelect}
-            toggle={<KebabToggle onToggle={onActionToggle} />}
-            isOpen={isDropdownOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-            position="right"
-          />
-        </CardActions>
         {isExpanded && <CardTitle id="getting-started-title">Getting started resources</CardTitle>}
         {!isExpanded && (
           <Level hasGutter>
@@ -91,19 +60,26 @@ const GettingStartedCard: FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="blue">
-                  Set up your cluster
+                <Label icon={<ClipboardCheckIcon />} color="blue">
+                  Activate a subscription
                 </Label>
-                <p>Continue setting up your cluster to access all you cain in the Console</p>
+                <p>Activate a subscription purchased from a third party.</p>
                 <List isPlain>
                   <ListItem>
-                    <a href="#">Add identity provider</a>
+                    <ExternalLink
+                      href="https://access.redhat.com/subscriptions/activate/redhat"
+                      variant="link"
+                    >
+                      Subscription Activation
+                    </ExternalLink>
                   </ListItem>
                   <ListItem>
-                    <a href="#">Configure alert receivers</a>
-                  </ListItem>
-                  <ListItem>
-                    <a href="#">Configure default ingress certificate</a>
+                    <ExternalLink
+                      href="https://access.redhat.com/subscriptions/activate/dell"
+                      variant="link"
+                    >
+                      Activate a Dell Service Tag
+                    </ExternalLink>
                   </ListItem>
                 </List>
               </Flex>
@@ -115,7 +91,7 @@ const GettingStartedCard: FunctionComponent = () => {
                 icon={<ArrowRightIcon />}
                 iconPosition="right"
               >
-                View all set up cluster steps
+                Contact Red hat Customer Service
               </Button>
             </Flex>
             <Flex
@@ -129,28 +105,30 @@ const GettingStartedCard: FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="purple">
-                  Guided tours
+                <Label icon={<RouteIcon />} color="blue">
+                  Explore subscription benefits
                 </Label>
-                <p>Tour some of the key features around the console</p>
+                <p>Explore the benefits of your Red Hat subscription.</p>
                 <List isPlain>
                   <ListItem>
-                    <a href="#">Tour the console</a>
-                  </ListItem>
-                  <ListItem>
-                    <a href="#">Getting started with Serverless</a>
+                    <ExternalLink
+                      href="https://www.redhat.com/en/about/subscription-model-faq"
+                      variant="link"
+                    >
+                      Red Hat subscription model FAQs
+                    </ExternalLink>
                   </ListItem>
                 </List>
               </Flex>
               <Button
-                href="#"
+                href="https://www.redhat.com/en/contact"
                 component="a"
                 variant="link"
                 isInline
                 icon={<ArrowRightIcon />}
                 iconPosition="right"
               >
-                View all guided tours
+                Talk to a Red Hatter
               </Button>
             </Flex>
             <Flex
@@ -164,31 +142,46 @@ const GettingStartedCard: FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="green">
-                  Quick starts
+                <Label icon={<RocketIcon />} color="blue">
+                  Manage users
                 </Label>
-                <p>Get started with features using our step-by-step documentation</p>
+                <p>Grant and manage access permissions for individuals.</p>
                 <List isPlain>
                   <ListItem>
-                    <a href="#">Getting started with Serverless</a>
+                    <ExternalLink
+                      href="https://access.redhat.com/start/how-to-create-and-manage-users"
+                      variant="link"
+                    >
+                      How To Create and Manage Users
+                    </ExternalLink>
                   </ListItem>
                   <ListItem>
-                    <a href="#">Explore virtualization</a>
+                    <ExternalLink
+                      href="https://access.redhat.com/start/how-to-create-and-manage-users#singleuser"
+                      variant="link"
+                    >
+                      Add a Single User
+                    </ExternalLink>
                   </ListItem>
                   <ListItem>
-                    <a href="#">Build pipelines</a>
+                    <ExternalLink
+                      href="https://access.redhat.com/start/how-to-create-and-manage-users#multipleusers"
+                      variant="link"
+                    >
+                      Add Multiple Users
+                    </ExternalLink>
                   </ListItem>
                 </List>
               </Flex>
               <Button
-                href="#"
+                href="https://access.redhat.com/articles/1757953"
                 component="a"
                 variant="link"
                 isInline
                 icon={<ArrowRightIcon />}
                 iconPosition="right"
               >
-                View all quick starts
+                View all Roles and Permissions
               </Button>
             </Flex>
             <Flex
@@ -202,34 +195,38 @@ const GettingStartedCard: FunctionComponent = () => {
                 direction={{ default: 'column' }}
                 grow={{ default: 'grow' }}
               >
-                <Label icon={<InfoCircleIcon />} color="orange">
-                  Learning resources
+                <Label icon={<GraduationCapIcon />} color="blue">
+                  Learning subscriptions
                 </Label>
-                <p>Learn about new features within the Console and get started with demo apps</p>
+                <p>Looking for learning content and subscriptions?</p>
                 <List isPlain>
                   <ListItem>
-                    <a href="#">See what is possible with the Explore page</a>
+                    <ExternalLink
+                      href="https://www.redhat.com/en/services/training-and-certification"
+                      variant="link"
+                    >
+                      Go to your learning content
+                    </ExternalLink>
                   </ListItem>
                   <ListItem>
-                    <a href="#">
-                      OpenShift 4.5: Top Tasks
-                      <ExternalLinkAltIcon />
-                    </a>
-                  </ListItem>
-                  <ListItem>
-                    <a href="#">Try a demo app</a>
+                    <ExternalLink
+                      href="https://www.redhat.com/en/services/training-and-certification/contact-us"
+                      variant="link"
+                    >
+                      Contact Red Hat Training
+                    </ExternalLink>
                   </ListItem>
                 </List>
               </Flex>
               <Button
-                href="#"
+                href="https://www.redhat.com/en/services/training-and-certification"
                 component="a"
                 variant="link"
                 isInline
                 icon={<ArrowRightIcon />}
                 iconPosition="right"
               >
-                View all learning resources
+                View all Training & Certification
               </Button>
             </Flex>
           </Grid>
