@@ -14,11 +14,11 @@ import {
   ListItem
 } from '@patternfly/react-core';
 import ExternalLink from '../ExternalLink';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import ClipboardCheckIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-check-icon';
-import RouteIcon from '@patternfly/react-icons/dist/esm/icons/route-icon';
-import RocketIcon from '@patternfly/react-icons/dist/esm/icons/rocket-icon';
-import GraduationCapIcon from '@patternfly/react-icons/dist/esm/icons/graduation-cap-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import ClipboardCheckIcon from '@patternfly/react-icons/dist/js/icons/clipboard-check-icon';
+import RouteIcon from '@patternfly/react-icons/dist/js/icons/route-icon';
+import RocketIcon from '@patternfly/react-icons/dist/js/icons/rocket-icon';
+import GraduationCapIcon from '@patternfly/react-icons/dist/js/icons/graduation-cap-icon';
 // import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 
 const GettingStartedCard: FunctionComponent = () => {
