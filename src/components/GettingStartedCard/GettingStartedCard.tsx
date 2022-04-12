@@ -28,6 +28,89 @@ const GettingStartedCard: FunctionComponent = () => {
     setIsExpanded(!isExpanded);
   };
 
+  interface ResourceListItem {
+    key: string;
+    href: string;
+    text: string;
+  }
+
+  interface ResourceListProps {
+    items: ResourceListItem[];
+  }
+
+  const ResourceList: FunctionComponent<ResourceListProps> = ({ items }) => {
+    return (
+      <List isPlain>
+        {items.map((item) => {
+          return (
+            <ListItem key={item.key}>
+              <ExternalLink href={item.href} variant="link">
+                {item.text}
+              </ExternalLink>
+            </ListItem>
+          );
+        })}
+      </List>
+    );
+  };
+
+  interface ResourceItemButtonProps {
+    href: string;
+    text: string;
+  }
+
+  const ResourceItemButton: FunctionComponent<ResourceItemButtonProps> = ({ href, text }) => {
+    return (
+      <Button
+        href={href}
+        component="a"
+        variant="link"
+        isInline
+        icon={<ArrowRightIcon />}
+        iconPosition="right"
+      >
+        {text}
+      </Button>
+    );
+  };
+
+  interface ResourceItemProps {
+    labelIcon: JSX.Element;
+    labelTitle: string;
+    labelText: string;
+    resourceList: JSX.Element;
+    button: JSX.Element;
+  }
+
+  const ResourceItem: FunctionComponent<ResourceItemProps> = ({
+    labelIcon,
+    labelTitle,
+    labelText,
+    resourceList,
+    button
+  }) => {
+    return (
+      <Flex
+        spaceItems={{ default: 'spaceItemsLg' }}
+        alignItems={{ default: 'alignItemsFlexStart' }}
+        direction={{ default: 'column' }}
+      >
+        <Flex
+          spaceItems={{ default: 'spaceItemsSm' }}
+          alignItems={{ default: 'alignItemsFlexStart' }}
+          direction={{ default: 'column' }}
+          grow={{ default: 'grow' }}
+        >
+          <Label icon={labelIcon} color="blue">
+            {labelTitle}
+          </Label>
+          <p>{labelText}</p>
+          {resourceList}
+        </Flex>
+        {button}
+      </Flex>
+    );
+  };
   return (
     <Card id="getting-started-card" isExpanded={isExpanded}>
       <CardHeader
@@ -49,186 +132,119 @@ const GettingStartedCard: FunctionComponent = () => {
       <CardExpandableContent>
         <CardBody>
           <Grid md={6} lg={3} hasGutter>
-            <Flex
-              spaceItems={{ default: 'spaceItemsLg' }}
-              alignItems={{ default: 'alignItemsFlexStart' }}
-              direction={{ default: 'column' }}
-            >
-              <Flex
-                spaceItems={{ default: 'spaceItemsSm' }}
-                alignItems={{ default: 'alignItemsFlexStart' }}
-                direction={{ default: 'column' }}
-                grow={{ default: 'grow' }}
-              >
-                <Label icon={<ClipboardCheckIcon />} color="blue">
-                  Activate a subscription
-                </Label>
-                <p>Activate a subscription purchased from a third party.</p>
-                <List isPlain>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://access.redhat.com/subscriptions/activate/redhat"
-                      variant="link"
-                    >
-                      Subscription Activation
-                    </ExternalLink>
-                  </ListItem>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://access.redhat.com/subscriptions/activate/dell"
-                      variant="link"
-                    >
-                      Activate a Dell Service Tag
-                    </ExternalLink>
-                  </ListItem>
-                </List>
-              </Flex>
-              <Button
-                href="#"
-                component="a"
-                variant="link"
-                isInline
-                icon={<ArrowRightIcon />}
-                iconPosition="right"
-              >
-                Contact Red hat Customer Service
-              </Button>
-            </Flex>
-            <Flex
-              spaceItems={{ default: 'spaceItemsLg' }}
-              alignItems={{ default: 'alignItemsFlexStart' }}
-              direction={{ default: 'column' }}
-            >
-              <Flex
-                spaceItems={{ default: 'spaceItemsSm' }}
-                alignItems={{ default: 'alignItemsFlexStart' }}
-                direction={{ default: 'column' }}
-                grow={{ default: 'grow' }}
-              >
-                <Label icon={<RouteIcon />} color="blue">
-                  Explore subscription benefits
-                </Label>
-                <p>Explore the benefits of your Red Hat subscription.</p>
-                <List isPlain>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://www.redhat.com/en/about/subscription-model-faq"
-                      variant="link"
-                    >
-                      Red Hat subscription model FAQs
-                    </ExternalLink>
-                  </ListItem>
-                </List>
-              </Flex>
-              <Button
-                href="https://www.redhat.com/en/contact"
-                component="a"
-                variant="link"
-                isInline
-                icon={<ArrowRightIcon />}
-                iconPosition="right"
-              >
-                Talk to a Red Hatter
-              </Button>
-            </Flex>
-            <Flex
-              spaceItems={{ default: 'spaceItemsLg' }}
-              alignItems={{ default: 'alignItemsFlexStart' }}
-              direction={{ default: 'column' }}
-            >
-              <Flex
-                spaceItems={{ default: 'spaceItemsSm' }}
-                alignItems={{ default: 'alignItemsFlexStart' }}
-                direction={{ default: 'column' }}
-                grow={{ default: 'grow' }}
-              >
-                <Label icon={<RocketIcon />} color="blue">
-                  Manage users
-                </Label>
-                <p>Grant and manage access permissions for individuals.</p>
-                <List isPlain>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://access.redhat.com/start/how-to-create-and-manage-users"
-                      variant="link"
-                    >
-                      How To Create and Manage Users
-                    </ExternalLink>
-                  </ListItem>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://access.redhat.com/start/how-to-create-and-manage-users#singleuser"
-                      variant="link"
-                    >
-                      Add a Single User
-                    </ExternalLink>
-                  </ListItem>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://access.redhat.com/start/how-to-create-and-manage-users#multipleusers"
-                      variant="link"
-                    >
-                      Add Multiple Users
-                    </ExternalLink>
-                  </ListItem>
-                </List>
-              </Flex>
-              <Button
-                href="https://access.redhat.com/articles/1757953"
-                component="a"
-                variant="link"
-                isInline
-                icon={<ArrowRightIcon />}
-                iconPosition="right"
-              >
-                View all Roles and Permissions
-              </Button>
-            </Flex>
-            <Flex
-              spaceItems={{ default: 'spaceItemsLg' }}
-              alignItems={{ default: 'alignItemsFlexStart' }}
-              direction={{ default: 'column' }}
-            >
-              <Flex
-                spaceItems={{ default: 'spaceItemsSm' }}
-                alignItems={{ default: 'alignItemsFlexStart' }}
-                direction={{ default: 'column' }}
-                grow={{ default: 'grow' }}
-              >
-                <Label icon={<GraduationCapIcon />} color="blue">
-                  Learning subscriptions
-                </Label>
-                <p>Looking for learning content and subscriptions?</p>
-                <List isPlain>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://www.redhat.com/en/services/training-and-certification"
-                      variant="link"
-                    >
-                      Go to your learning content
-                    </ExternalLink>
-                  </ListItem>
-                  <ListItem>
-                    <ExternalLink
-                      href="https://www.redhat.com/en/services/training-and-certification/contact-us"
-                      variant="link"
-                    >
-                      Contact Red Hat Training
-                    </ExternalLink>
-                  </ListItem>
-                </List>
-              </Flex>
-              <Button
-                href="https://www.redhat.com/en/services/training-and-certification"
-                component="a"
-                variant="link"
-                isInline
-                icon={<ArrowRightIcon />}
-                iconPosition="right"
-              >
-                View all Training & Certification
-              </Button>
-            </Flex>
+            <ResourceItem
+              labelIcon={<ClipboardCheckIcon />}
+              labelTitle="Activate a subscription"
+              labelText="Activate a subscription purchased from a third party."
+              resourceList={
+                <ResourceList
+                  items={[
+                    {
+                      key: 'subscription-activation',
+                      href: 'https://access.redhat.com/subscriptions/activate/redhat',
+                      text: 'Subscription Activation'
+                    },
+                    {
+                      key: 'activate-dell-tag',
+                      href: 'https://access.redhat.com/subscriptions/activate/dell',
+                      text: 'Activate a Dell Service Tag'
+                    }
+                  ]}
+                />
+              }
+              button={
+                <ResourceItemButton
+                  href="https://access.redhat.com/support/contact/customerService"
+                  text="Contact Red Hat Customer Service"
+                />
+              }
+            />
+            <ResourceItem
+              labelIcon={<RouteIcon />}
+              labelTitle="Explore subscription benefits"
+              labelText="Explore the benefits of your Red Hat subscription."
+              resourceList={
+                <ResourceList
+                  items={[
+                    {
+                      key: 'subscription-benefits',
+                      href: 'https://www.redhat.com/en/about/value-of-subscription',
+                      text: 'Benefits of a Red Hat subscription'
+                    },
+                    {
+                      key: 'subscription-model-faq',
+                      href: 'https://www.redhat.com/en/about/subscription-model-faq',
+                      text: 'Red Hat subscription model FAQs'
+                    }
+                  ]}
+                />
+              }
+              button={
+                <ResourceItemButton
+                  href="https://www.redhat.com/en/contact"
+                  text="Talk to a Red Hatter"
+                />
+              }
+            />
+            <ResourceItem
+              labelIcon={<RocketIcon />}
+              labelTitle="Manage users"
+              labelText="Grant and manage access permissions for individuals."
+              resourceList={
+                <ResourceList
+                  items={[
+                    {
+                      key: 'manage-users',
+                      href: 'https://access.redhat.com/start/how-to-create-and-manage-users',
+                      text: 'How To Create and Manage Users'
+                    },
+                    {
+                      key: 'add-single-user',
+                      href: 'https://access.redhat.com/start/how-to-create-and-manage-users#singleuser',
+                      text: 'Add a Single User'
+                    },
+                    {
+                      key: 'add-multiple-users',
+                      href: 'https://access.redhat.com/start/how-to-create-and-manage-users#multipleusers',
+                      text: 'Add Multiple Users'
+                    }
+                  ]}
+                />
+              }
+              button={
+                <ResourceItemButton
+                  href="https://access.redhat.com/articles/1757953"
+                  text="View all Roles and Permissions"
+                />
+              }
+            />
+            <ResourceItem
+              labelIcon={<GraduationCapIcon />}
+              labelTitle="Learning Subscriptions"
+              labelText="Looking for learning content and subscriptions?"
+              resourceList={
+                <ResourceList
+                  items={[
+                    {
+                      key: 'learning-content',
+                      href: 'https://www.redhat.com/en/services/training-and-certification',
+                      text: 'Go to your learning content'
+                    },
+                    {
+                      key: 'contact-training',
+                      href: 'https://www.redhat.com/en/services/training-and-certification/contact-us',
+                      text: 'Contact Red Hat Training'
+                    }
+                  ]}
+                />
+              }
+              button={
+                <ResourceItemButton
+                  href="https://www.redhat.com/en/services/training-and-certification"
+                  text="View all Training & Certification"
+                />
+              }
+            />
           </Grid>
         </CardBody>
       </CardExpandableContent>
