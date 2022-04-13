@@ -116,10 +116,11 @@ const GettingStartedCard: FunctionComponent = () => {
       <CardHeader
         onExpand={onExpand}
         toggleButtonProps={{
-          id: 'toggle-button',
+          id: 'resources-toggle-button',
           'aria-label': 'Actions',
-          'aria-labelledby': 'titleId toggle-button',
-          'aria-expanded': isExpanded
+          'aria-labelledby': 'titleId resources-toggle-button',
+          'aria-expanded': isExpanded,
+          'data-testid': 'resources-toggle-button'
         }}
       >
         {isExpanded && <CardTitle id="getting-started-title">Getting started resources</CardTitle>}
