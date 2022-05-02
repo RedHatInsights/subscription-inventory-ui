@@ -19,7 +19,7 @@ interface ProductsTableProps {
 }
 
 const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
-  const columnNames = { name: 'Name', quantity: 'Quantity' };
+  const columnNames = { name: 'Name', sku: 'SKU', quantity: 'Quantity' };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [searchValue, setSearchValue] = useState('');
@@ -27,8 +27,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
 
   const getSortableRowValues = (product: Product): (string | number)[] => {
-    const { name, quantity } = product;
-    return [name, quantity];
+    const { name, sku, quantity } = product;
+    return [name, sku, quantity];
   };
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
@@ -83,7 +83,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
       const searchTerm = searchValue.toLowerCase().trim();
       const name = (entry.name || '').toLowerCase();
       const productLine = (entry.productLine || '').toLowerCase();
-      return name.includes(searchTerm) || productLine.includes(searchTerm);
+      const sku = (entry.sku || '').toLowerCase();
+      return (
+        name.includes(searchTerm) || productLine.includes(searchTerm) || sku.includes(searchTerm)
+      );
     });
   };
 
@@ -125,7 +128,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
         <FlexItem>
           {data.length > 0 && (
             <SearchInput
-              placeholder="Filter by Name"
+              placeholder="Filter by Name or SKU"
               value={searchValue}
               onChange={handleSearch}
               onClear={clearSearch}
@@ -140,7 +143,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           {/* @ts-ignore */}
           <Tr>
             <Th sort={getSortParams(0)}>{columnNames.name}</Th>
-            <Th sort={getSortParams(1)}>{columnNames.quantity}</Th>
+            <Th sort={getSortParams(1)}>{columnNames.sku}</Th>
+            <Th sort={getSortParams(2)}>{columnNames.quantity}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -157,6 +161,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
                     </Text>
                   </TextContent>
                 </Td>
+                <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
               </Tr>
             </React.Fragment>
