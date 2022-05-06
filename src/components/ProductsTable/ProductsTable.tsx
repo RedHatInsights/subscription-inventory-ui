@@ -8,9 +8,10 @@ import {
   SearchInput,
   Text,
   TextContent,
-  TextVariants
+  TextVariants,
+  Badge
 } from '@patternfly/react-core';
-import { Product } from '../../hooks/useProducts';
+import { Product, UnitOfMeasure } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 
 interface ProductsTableProps {
@@ -19,16 +20,22 @@ interface ProductsTableProps {
 }
 
 const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
-  const columnNames = { name: 'Name', sku: 'SKU', quantity: 'Quantity' };
+  const columnNames = {
+    name: 'Name',
+    sku: 'SKU',
+    quantity: 'Quantity',
+    serviceLevel: 'Service Level',
+    unitOfMeasure: { name: 'Unit of measure' }
+  };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
 
-  const getSortableRowValues = (product: Product): (string | number)[] => {
-    const { name, sku, quantity } = product;
-    return [name, sku, quantity];
+  const getSortableRowValues = (product: Product): (string | number | UnitOfMeasure)[] => {
+    const { name, sku, quantity, serviceLevel, unitOfMeasure } = product;
+    return [name, sku, quantity, serviceLevel, unitOfMeasure];
   };
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
@@ -136,15 +143,28 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           )}
         </FlexItem>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+        <FlexItem style={{ width: '1450px' }}></FlexItem>
       </Flex>
       {/* @ts-ignore */}
       <TableComposable aria-label="Products">
         <Thead>
           {/* @ts-ignore */}
           <Tr>
-            <Th sort={getSortParams(0)}>{columnNames.name}</Th>
-            <Th sort={getSortParams(1)}>{columnNames.sku}</Th>
-            <Th sort={getSortParams(2)}>{columnNames.quantity}</Th>
+            <Th sort={getSortParams(0)} width={50}>
+              {columnNames.name}
+            </Th>
+            <Th sort={getSortParams(1)} width={10}>
+              {columnNames.sku}
+            </Th>
+            <Th sort={getSortParams(2)} width={10}>
+              {columnNames.quantity}
+            </Th>
+            <Th sort={getSortParams(3)} width={15}>
+              {columnNames.serviceLevel}
+            </Th>
+            <Th sort={getSortParams(4)} width={15}>
+              {columnNames.unitOfMeasure.name}
+            </Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -163,6 +183,11 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
                 </Td>
                 <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
+                <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
+                <Td dataLabel={columnNames.unitOfMeasure.name}>
+                  {datum.unitOfMeasure?.name ?? <Text style={{ color: 'red' }}>Not Available</Text>}{' '}
+                  <Badge isRead>{datum.unitOfMeasure?.quantity ?? ''}</Badge>
+                </Td>
               </Tr>
             </React.Fragment>
           ))}

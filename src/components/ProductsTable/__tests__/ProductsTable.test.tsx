@@ -18,7 +18,14 @@ describe('ProductsTable', () => {
   def('error', () => false);
   def('fetching', () => false);
   def('data', () => [
-    factories.product.build({ name: 'A', productLine: 'letters', sku: 'MOCK123', quantity: 3 })
+    factories.product.build({
+      name: 'A',
+      productLine: 'letters',
+      sku: 'MOCK123',
+      quantity: 3,
+      serviceLevel: 'Standard',
+      unitOfMeasure: { name: 'Mock', quantity: '1' }
+    })
   ]);
 
   it('renders correctly', () => {
@@ -29,19 +36,37 @@ describe('ProductsTable', () => {
 
   describe('when row column headings are clicked', () => {
     def('data', () => [
-      factories.product.build({ name: 'Z', sku: 'RH1234', quantity: 1, productLine: 'letters' }),
+      factories.product.build({
+        name: 'Z',
+        sku: 'RH1234',
+        quantity: 1,
+        productLine: 'letters',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+      }),
       factories.product.build({
         name: undefined,
         sku: undefined,
         quantity: undefined,
-        productLine: null
+        productLine: null,
+        serviceLevel: undefined,
+        unitOfMeasure: { name: 'Not Available', quantity: '' }
       }),
-      factories.product.build({ name: 'A', sku: 'MOCK123', quantity: 3, productLine: 'vowels' }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 3,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock2', quantity: '2' }
+      }),
       factories.product.build({
         name: null,
         sku: undefined,
         quantity: 2,
-        productLine: 'consonants'
+        productLine: 'consonants',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock3', quantity: '3' }
       })
     ]);
 
@@ -86,6 +111,34 @@ describe('ProductsTable', () => {
       fireEvent.click(screen.getByText('SKU'));
       expect(container).toMatchSnapshot();
     });
+
+    it('can sort by serviceLevel', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      fireEvent.click(screen.getByText('Service Level'));
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by serviceLevel, reversed', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      fireEvent.click(screen.getByText('Service Level'));
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by unitOfMeasure', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      fireEvent.click(screen.getByText('Unit of measure'));
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can sort by unitOfMeasure, reversed', () => {
+      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
+
+      fireEvent.click(screen.getByText('Unit of measure'));
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('when using pagination', () => {
@@ -94,9 +147,18 @@ describe('ProductsTable', () => {
         name: 'A',
         sku: 'MOCK123',
         quantity: 1,
-        productLine: 'letters'
+        productLine: 'letters',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock', quantity: '1' }
       }),
-      factories.product.build({ name: 'Z', sku: 'RH123', quantity: 2, productLine: 'letters' })
+      factories.product.build({
+        name: 'Z',
+        sku: 'RH123',
+        quantity: 2,
+        productLine: 'letters',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+      })
     ]);
 
     it('can change page', () => {
@@ -120,19 +182,37 @@ describe('ProductsTable', () => {
 
   describe('when the search is used', () => {
     def('data', () => [
-      factories.product.build({ name: 'Z', sku: 'RH123', quantity: 2, productLine: 'consonants' }),
-      factories.product.build({ name: 'A', sku: 'MOCK123', quantity: 1, productLine: 'vowels' }),
+      factories.product.build({
+        name: 'Z',
+        sku: 'RH123',
+        quantity: 2,
+        productLine: 'consonants',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+      }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 1,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock', quantity: '1' }
+      }),
       factories.product.build({
         name: 'P',
         sku: 'Fake123',
         quantity: 1,
-        productLine: 'consonants'
+        productLine: 'consonants',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Mock2', quantity: '4' }
       }),
       factories.product.build({
         name: undefined,
         sku: undefined,
         quantity: 0,
-        productLine: undefined
+        productLine: undefined,
+        serviceLevel: undefined,
+        unitOfMeasure: { name: 'Not Available', quantity: '' }
       })
     ]);
 
