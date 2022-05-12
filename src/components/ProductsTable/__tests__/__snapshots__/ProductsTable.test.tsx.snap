@@ -825,13 +825,13 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -850,13 +850,13 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -1048,7 +1048,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-8"
+        data-ouia-component-id="OUIA-Generated-TableRow-10"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -1245,7 +1245,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-9"
+        data-ouia-component-id="OUIA-Generated-TableRow-11"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -1258,7 +1258,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-11"
+              data-ouia-component-id="OUIA-Generated-Text-15"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1267,7 +1267,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-12"
+                data-ouia-component-id="OUIA-Generated-Text-16"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1299,18 +1299,18 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-10"
+        data-ouia-component-id="OUIA-Generated-TableRow-12"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -1323,7 +1323,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-13"
+              data-ouia-component-id="OUIA-Generated-Text-17"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1332,7 +1332,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-14"
+                data-ouia-component-id="OUIA-Generated-Text-18"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1364,18 +1364,18 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-11"
+        data-ouia-component-id="OUIA-Generated-TableRow-13"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -1388,7 +1388,72 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-15"
+              data-ouia-component-id="OUIA-Generated-Text-19"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-20"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-14"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-21"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1396,7 +1461,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-16"
+                data-ouia-component-id="OUIA-Generated-Text-22"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1420,18 +1485,16 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-12"
+        data-ouia-component-id="OUIA-Generated-TableRow-15"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -1444,7 +1507,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-17"
+              data-ouia-component-id="OUIA-Generated-Text-23"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -1452,7 +1515,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-18"
+                data-ouia-component-id="OUIA-Generated-Text-24"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -1482,12 +1545,74 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-16"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-25"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-26"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
           </span>
         </td>
       </tr>
@@ -1515,13 +1640,13 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -1767,13 +1892,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -1792,13 +1917,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -1990,7 +2115,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-13"
+        data-ouia-component-id="OUIA-Generated-TableRow-17"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -2187,7 +2312,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-14"
+        data-ouia-component-id="OUIA-Generated-TableRow-18"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -2200,7 +2325,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-19"
+              data-ouia-component-id="OUIA-Generated-Text-27"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2208,7 +2333,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-20"
+                data-ouia-component-id="OUIA-Generated-Text-28"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2232,18 +2357,16 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-15"
+        data-ouia-component-id="OUIA-Generated-TableRow-19"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -2256,7 +2379,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-21"
+              data-ouia-component-id="OUIA-Generated-Text-29"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2265,7 +2388,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-22"
+                data-ouia-component-id="OUIA-Generated-Text-30"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2297,18 +2420,18 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-16"
+        data-ouia-component-id="OUIA-Generated-TableRow-20"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -2321,7 +2444,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-23"
+              data-ouia-component-id="OUIA-Generated-Text-31"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2329,7 +2452,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-24"
+                data-ouia-component-id="OUIA-Generated-Text-32"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2359,18 +2482,18 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-17"
+        data-ouia-component-id="OUIA-Generated-TableRow-21"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -2383,7 +2506,69 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-25"
+              data-ouia-component-id="OUIA-Generated-Text-33"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-34"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-22"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-35"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -2392,7 +2577,72 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-26"
+                data-ouia-component-id="OUIA-Generated-Text-36"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-23"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-37"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-38"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -2424,12 +2674,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -2457,13 +2707,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -2709,13 +2959,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -2734,13 +2984,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -2932,7 +3182,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-18"
+        data-ouia-component-id="OUIA-Generated-TableRow-24"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -3129,7 +3379,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-19"
+        data-ouia-component-id="OUIA-Generated-TableRow-25"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -3142,7 +3392,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-27"
+              data-ouia-component-id="OUIA-Generated-Text-39"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3151,7 +3401,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-28"
+                data-ouia-component-id="OUIA-Generated-Text-40"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3183,18 +3433,18 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-20"
+        data-ouia-component-id="OUIA-Generated-TableRow-26"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -3207,7 +3457,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-29"
+              data-ouia-component-id="OUIA-Generated-Text-41"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3215,7 +3465,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-30"
+                data-ouia-component-id="OUIA-Generated-Text-42"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3245,18 +3495,18 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-21"
+        data-ouia-component-id="OUIA-Generated-TableRow-27"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -3269,7 +3519,134 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-31"
+              data-ouia-component-id="OUIA-Generated-Text-43"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-44"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-28"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-45"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-46"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-29"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-47"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3278,7 +3655,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-32"
+                data-ouia-component-id="OUIA-Generated-Text-48"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3310,18 +3687,18 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-22"
+        data-ouia-component-id="OUIA-Generated-TableRow-30"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -3334,7 +3711,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-33"
+              data-ouia-component-id="OUIA-Generated-Text-49"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -3342,7 +3719,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-34"
+                data-ouia-component-id="OUIA-Generated-Text-50"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -3366,13 +3743,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
     </tbody>
@@ -3399,13 +3774,13 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -3651,13 +4026,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -3676,13 +4051,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -3874,7 +4249,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-33"
+        data-ouia-component-id="OUIA-Generated-TableRow-45"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -4071,7 +4446,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-34"
+        data-ouia-component-id="OUIA-Generated-TableRow-46"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -4084,7 +4459,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-51"
+              data-ouia-component-id="OUIA-Generated-Text-75"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -4092,7 +4467,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-52"
+                data-ouia-component-id="OUIA-Generated-Text-76"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -4116,18 +4491,16 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-35"
+        data-ouia-component-id="OUIA-Generated-TableRow-47"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -4140,7 +4513,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-53"
+              data-ouia-component-id="OUIA-Generated-Text-77"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -4148,7 +4521,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-54"
+                data-ouia-component-id="OUIA-Generated-Text-78"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -4178,18 +4551,18 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-36"
+        data-ouia-component-id="OUIA-Generated-TableRow-48"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -4202,7 +4575,69 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-55"
+              data-ouia-component-id="OUIA-Generated-Text-79"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-80"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-49"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-81"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -4211,7 +4646,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-56"
+                data-ouia-component-id="OUIA-Generated-Text-82"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -4243,18 +4678,18 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-37"
+        data-ouia-component-id="OUIA-Generated-TableRow-50"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -4267,7 +4702,72 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-57"
+              data-ouia-component-id="OUIA-Generated-Text-83"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-84"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-51"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-85"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -4276,7 +4776,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-58"
+                data-ouia-component-id="OUIA-Generated-Text-86"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -4308,12 +4808,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -4341,13 +4841,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -4593,13 +5093,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -4618,13 +5118,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -4816,7 +5316,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-38"
+        data-ouia-component-id="OUIA-Generated-TableRow-52"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5013,7 +5513,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-39"
+        data-ouia-component-id="OUIA-Generated-TableRow-53"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5026,7 +5526,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-59"
+              data-ouia-component-id="OUIA-Generated-Text-87"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -5034,7 +5534,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-60"
+                data-ouia-component-id="OUIA-Generated-Text-88"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -5058,18 +5558,16 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-40"
+        data-ouia-component-id="OUIA-Generated-TableRow-54"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5082,7 +5580,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-61"
+              data-ouia-component-id="OUIA-Generated-Text-89"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -5090,7 +5588,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-62"
+                data-ouia-component-id="OUIA-Generated-Text-90"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -5120,18 +5618,18 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-41"
+        data-ouia-component-id="OUIA-Generated-TableRow-55"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5144,7 +5642,69 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-63"
+              data-ouia-component-id="OUIA-Generated-Text-91"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-92"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-56"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-93"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -5153,7 +5713,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-64"
+                data-ouia-component-id="OUIA-Generated-Text-94"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -5185,18 +5745,18 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-42"
+        data-ouia-component-id="OUIA-Generated-TableRow-57"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5209,7 +5769,72 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-65"
+              data-ouia-component-id="OUIA-Generated-Text-95"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-96"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-58"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-97"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -5218,7 +5843,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-66"
+                data-ouia-component-id="OUIA-Generated-Text-98"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -5250,12 +5875,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -5283,13 +5908,13 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -5535,13 +6160,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -5560,13 +6185,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -5758,7 +6383,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-23"
+        data-ouia-component-id="OUIA-Generated-TableRow-31"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5955,7 +6580,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-24"
+        data-ouia-component-id="OUIA-Generated-TableRow-32"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -5968,7 +6593,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-35"
+              data-ouia-component-id="OUIA-Generated-Text-51"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -5976,7 +6601,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-36"
+                data-ouia-component-id="OUIA-Generated-Text-52"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -6000,18 +6625,16 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-25"
+        data-ouia-component-id="OUIA-Generated-TableRow-33"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6024,7 +6647,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-37"
+              data-ouia-component-id="OUIA-Generated-Text-53"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -6032,7 +6655,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-38"
+                data-ouia-component-id="OUIA-Generated-Text-54"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -6062,18 +6685,18 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-26"
+        data-ouia-component-id="OUIA-Generated-TableRow-34"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6086,7 +6709,69 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-39"
+              data-ouia-component-id="OUIA-Generated-Text-55"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-56"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-35"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-57"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -6095,7 +6780,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-40"
+                data-ouia-component-id="OUIA-Generated-Text-58"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -6127,18 +6812,18 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-27"
+        data-ouia-component-id="OUIA-Generated-TableRow-36"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6151,7 +6836,72 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-41"
+              data-ouia-component-id="OUIA-Generated-Text-59"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-60"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-37"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-61"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -6160,7 +6910,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-42"
+                data-ouia-component-id="OUIA-Generated-Text-62"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -6192,12 +6942,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -6225,13 +6975,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -6477,13 +7227,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -6502,13 +7252,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -6700,7 +7450,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-28"
+        data-ouia-component-id="OUIA-Generated-TableRow-38"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6897,7 +7647,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-29"
+        data-ouia-component-id="OUIA-Generated-TableRow-39"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6910,7 +7660,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-43"
+              data-ouia-component-id="OUIA-Generated-Text-63"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -6918,7 +7668,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-44"
+                data-ouia-component-id="OUIA-Generated-Text-64"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -6942,18 +7692,16 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-30"
+        data-ouia-component-id="OUIA-Generated-TableRow-40"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -6966,7 +7714,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-45"
+              data-ouia-component-id="OUIA-Generated-Text-65"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -6974,7 +7722,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-46"
+                data-ouia-component-id="OUIA-Generated-Text-66"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -7004,18 +7752,18 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-31"
+        data-ouia-component-id="OUIA-Generated-TableRow-41"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -7028,7 +7776,69 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-47"
+              data-ouia-component-id="OUIA-Generated-Text-67"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-68"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-42"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-69"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -7037,7 +7847,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-48"
+                data-ouia-component-id="OUIA-Generated-Text-70"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -7069,18 +7879,18 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-32"
+        data-ouia-component-id="OUIA-Generated-TableRow-43"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -7093,7 +7903,72 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-49"
+              data-ouia-component-id="OUIA-Generated-Text-71"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-72"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-44"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-73"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -7102,7 +7977,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-50"
+                data-ouia-component-id="OUIA-Generated-Text-74"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -7134,12 +8009,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -7167,13 +8042,13 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -7419,13 +8294,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -7444,13 +8319,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -7642,7 +8517,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-43"
+        data-ouia-component-id="OUIA-Generated-TableRow-59"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -7839,7 +8714,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-44"
+        data-ouia-component-id="OUIA-Generated-TableRow-60"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -7852,7 +8727,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-67"
+              data-ouia-component-id="OUIA-Generated-Text-99"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -7860,63 +8735,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-68"
-                data-ouia-component-type="PF4/Text"
-                data-ouia-safe="true"
-                data-pf-content="true"
-              />
-            </h3>
-          </div>
-        </td>
-        <td
-          class=""
-          data-label="SKU"
-        />
-        <td
-          class=""
-          data-label="Quantity"
-        />
-        <td
-          class=""
-          data-label="Service Level"
-        />
-        <td
-          class=""
-          data-label="Unit of measure"
-        >
-          Mock3
-           
-          <span
-            class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-45"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-label="Name"
-        >
-          <div
-            class="pf-c-content"
-          >
-            <h3
-              class=""
-              data-ouia-component-id="OUIA-Generated-Text-69"
-              data-ouia-component-type="PF4/Text"
-              data-ouia-safe="true"
-              data-pf-content="true"
-            >
-              <br />
-              <small
-                class=""
-                data-ouia-component-id="OUIA-Generated-Text-70"
+                data-ouia-component-id="OUIA-Generated-Text-100"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -7946,18 +8765,18 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-46"
+        data-ouia-component-id="OUIA-Generated-TableRow-61"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -7970,7 +8789,69 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-71"
+              data-ouia-component-id="OUIA-Generated-Text-101"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-102"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-62"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-103"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -7979,7 +8860,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-72"
+                data-ouia-component-id="OUIA-Generated-Text-104"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -8011,18 +8892,18 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-47"
+        data-ouia-component-id="OUIA-Generated-TableRow-63"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -8035,7 +8916,72 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-73"
+              data-ouia-component-id="OUIA-Generated-Text-105"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-106"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-64"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-107"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -8044,7 +8990,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-74"
+                data-ouia-component-id="OUIA-Generated-Text-108"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -8076,13 +9022,67 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-65"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-109"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-110"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              />
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        />
+        <td
+          class=""
+          data-label="Service Level"
+        />
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Not Available
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          />
         </td>
       </tr>
     </tbody>
@@ -8109,13 +9109,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -8361,13 +9361,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -8386,13 +9386,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -8584,7 +9584,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-48"
+        data-ouia-component-id="OUIA-Generated-TableRow-66"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -8781,7 +9781,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-49"
+        data-ouia-component-id="OUIA-Generated-TableRow-67"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -8794,7 +9794,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-75"
+              data-ouia-component-id="OUIA-Generated-Text-111"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -8802,63 +9802,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-76"
-                data-ouia-component-type="PF4/Text"
-                data-ouia-safe="true"
-                data-pf-content="true"
-              />
-            </h3>
-          </div>
-        </td>
-        <td
-          class=""
-          data-label="SKU"
-        />
-        <td
-          class=""
-          data-label="Quantity"
-        />
-        <td
-          class=""
-          data-label="Service Level"
-        />
-        <td
-          class=""
-          data-label="Unit of measure"
-        >
-          Mock3
-           
-          <span
-            class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-50"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-label="Name"
-        >
-          <div
-            class="pf-c-content"
-          >
-            <h3
-              class=""
-              data-ouia-component-id="OUIA-Generated-Text-77"
-              data-ouia-component-type="PF4/Text"
-              data-ouia-safe="true"
-              data-pf-content="true"
-            >
-              <br />
-              <small
-                class=""
-                data-ouia-component-id="OUIA-Generated-Text-78"
+                data-ouia-component-id="OUIA-Generated-Text-112"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -8888,18 +9832,18 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-51"
+        data-ouia-component-id="OUIA-Generated-TableRow-68"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -8912,7 +9856,69 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-79"
+              data-ouia-component-id="OUIA-Generated-Text-113"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-114"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-69"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-115"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -8921,7 +9927,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-80"
+                data-ouia-component-id="OUIA-Generated-Text-116"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -8953,18 +9959,18 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-52"
+        data-ouia-component-id="OUIA-Generated-TableRow-70"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -8977,7 +9983,72 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-81"
+              data-ouia-component-id="OUIA-Generated-Text-117"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-118"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-71"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-119"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -8986,7 +10057,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-82"
+                data-ouia-component-id="OUIA-Generated-Text-120"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -9018,13 +10089,67 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-72"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-121"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-122"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              />
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        />
+        <td
+          class=""
+          data-label="Service Level"
+        />
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Not Available
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          />
         </td>
       </tr>
     </tbody>
@@ -9051,13 +10176,13 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -9303,13 +10428,13 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -9328,13 +10453,13 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               <b>
                 1
                  - 
-                4
+                6
               </b>
                
               of
                
               <b>
-                4
+                6
               </b>
                
               
@@ -9768,13 +10893,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Not Available
            
           <span
             class="pf-c-badge pf-m-read"
-          >
-            3
-          </span>
+          />
         </td>
       </tr>
       <tr
@@ -9830,12 +10953,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -9859,11 +10982,73 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
               <br />
               <small
                 class=""
                 data-ouia-component-id="OUIA-Generated-Text-8"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                consonants
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        />
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-7"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-9"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-10"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -9895,18 +11080,18 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-7"
+        data-ouia-component-id="OUIA-Generated-TableRow-8"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -9919,7 +11104,72 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-9"
+              data-ouia-component-id="OUIA-Generated-Text-11"
+              data-ouia-component-type="PF4/Text"
+              data-ouia-safe="true"
+              data-pf-content="true"
+            >
+              A
+              <br />
+              <small
+                class=""
+                data-ouia-component-id="OUIA-Generated-Text-12"
+                data-ouia-component-type="PF4/Text"
+                data-ouia-safe="true"
+                data-pf-content="true"
+              >
+                vowels
+              </small>
+            </h3>
+          </div>
+        </td>
+        <td
+          class=""
+          data-label="SKU"
+        >
+          MOCK123
+        </td>
+        <td
+          class=""
+          data-label="Quantity"
+        >
+          2
+        </td>
+        <td
+          class=""
+          data-label="Service Level"
+        >
+          Standard
+        </td>
+        <td
+          class=""
+          data-label="Unit of measure"
+        >
+          Sockets
+           
+          <span
+            class="pf-c-badge pf-m-read"
+          >
+            128
+          </span>
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-9"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-label="Name"
+        >
+          <div
+            class="pf-c-content"
+          >
+            <h3
+              class=""
+              data-ouia-component-id="OUIA-Generated-Text-13"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -9928,7 +11178,7 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-10"
+                data-ouia-component-id="OUIA-Generated-Text-14"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -9960,12 +11210,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Mock3
+          Sockets
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            3
+            128
           </span>
         </td>
       </tr>
@@ -9993,13 +11243,13 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           <b>
             1
              - 
-            4
+            6
           </b>
            
           of
            
           <b>
-            4
+            6
           </b>
            
           
@@ -10468,7 +11718,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-86"
+        data-ouia-component-id="OUIA-Generated-TableRow-106"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -10665,7 +11915,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-87"
+        data-ouia-component-id="OUIA-Generated-TableRow-107"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -10678,7 +11928,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-141"
+              data-ouia-component-id="OUIA-Generated-Text-181"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -10686,7 +11936,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-142"
+                data-ouia-component-id="OUIA-Generated-Text-182"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -10721,7 +11971,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-91"
+        data-ouia-component-id="OUIA-Generated-TableRow-111"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -10734,7 +11984,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-149"
+              data-ouia-component-id="OUIA-Generated-Text-189"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -10743,7 +11993,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-150"
+                data-ouia-component-id="OUIA-Generated-Text-190"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -10784,7 +12034,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-92"
+        data-ouia-component-id="OUIA-Generated-TableRow-112"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -10797,7 +12047,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-151"
+              data-ouia-component-id="OUIA-Generated-Text-191"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -10806,7 +12056,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-152"
+                data-ouia-component-id="OUIA-Generated-Text-192"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -10847,7 +12097,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-93"
+        data-ouia-component-id="OUIA-Generated-TableRow-113"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -10860,7 +12110,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-153"
+              data-ouia-component-id="OUIA-Generated-Text-193"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -10869,7 +12119,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-154"
+                data-ouia-component-id="OUIA-Generated-Text-194"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -11437,7 +12687,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-76"
+        data-ouia-component-id="OUIA-Generated-TableRow-96"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -11634,7 +12884,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-77"
+        data-ouia-component-id="OUIA-Generated-TableRow-97"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -11647,7 +12897,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-125"
+              data-ouia-component-id="OUIA-Generated-Text-165"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -11656,7 +12906,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-126"
+                data-ouia-component-id="OUIA-Generated-Text-166"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -12224,7 +13474,7 @@ exports[`ProductsTable when the search is used refines the results by product li
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-81"
+        data-ouia-component-id="OUIA-Generated-TableRow-101"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -12421,7 +13671,7 @@ exports[`ProductsTable when the search is used refines the results by product li
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-82"
+        data-ouia-component-id="OUIA-Generated-TableRow-102"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -12434,7 +13684,7 @@ exports[`ProductsTable when the search is used refines the results by product li
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-133"
+              data-ouia-component-id="OUIA-Generated-Text-173"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -12443,7 +13693,7 @@ exports[`ProductsTable when the search is used refines the results by product li
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-134"
+                data-ouia-component-id="OUIA-Generated-Text-174"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -13011,7 +14261,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-99"
+        data-ouia-component-id="OUIA-Generated-TableRow-119"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -13208,7 +14458,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-100"
+        data-ouia-component-id="OUIA-Generated-TableRow-120"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -13221,7 +14471,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-163"
+              data-ouia-component-id="OUIA-Generated-Text-203"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -13230,7 +14480,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-164"
+                data-ouia-component-id="OUIA-Generated-Text-204"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -13798,7 +15048,7 @@ exports[`ProductsTable when the search is used renders an empty state when no re
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-94"
+        data-ouia-component-id="OUIA-Generated-TableRow-114"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -14533,7 +15783,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-53"
+        data-ouia-component-id="OUIA-Generated-TableRow-73"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -14730,7 +15980,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-54"
+        data-ouia-component-id="OUIA-Generated-TableRow-74"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -14743,7 +15993,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-83"
+              data-ouia-component-id="OUIA-Generated-Text-123"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -14752,7 +16002,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-84"
+                data-ouia-component-id="OUIA-Generated-Text-124"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -14789,7 +16039,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
@@ -15289,7 +16539,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-64"
+        data-ouia-component-id="OUIA-Generated-TableRow-84"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15486,7 +16736,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
     >
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-65"
+        data-ouia-component-id="OUIA-Generated-TableRow-85"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15499,7 +16749,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-103"
+              data-ouia-component-id="OUIA-Generated-Text-143"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15508,7 +16758,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-104"
+                data-ouia-component-id="OUIA-Generated-Text-144"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15545,13 +16795,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-66"
+        data-ouia-component-id="OUIA-Generated-TableRow-86"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15564,7 +16814,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-105"
+              data-ouia-component-id="OUIA-Generated-Text-145"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15573,7 +16823,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-106"
+                data-ouia-component-id="OUIA-Generated-Text-146"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15610,13 +16860,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-67"
+        data-ouia-component-id="OUIA-Generated-TableRow-87"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15629,7 +16879,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-107"
+              data-ouia-component-id="OUIA-Generated-Text-147"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15638,7 +16888,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-108"
+                data-ouia-component-id="OUIA-Generated-Text-148"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15675,13 +16925,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-68"
+        data-ouia-component-id="OUIA-Generated-TableRow-88"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15694,7 +16944,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-109"
+              data-ouia-component-id="OUIA-Generated-Text-149"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15703,7 +16953,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-110"
+                data-ouia-component-id="OUIA-Generated-Text-150"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15740,13 +16990,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-69"
+        data-ouia-component-id="OUIA-Generated-TableRow-89"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15759,7 +17009,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-111"
+              data-ouia-component-id="OUIA-Generated-Text-151"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15768,7 +17018,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-112"
+                data-ouia-component-id="OUIA-Generated-Text-152"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15805,13 +17055,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-70"
+        data-ouia-component-id="OUIA-Generated-TableRow-90"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15824,7 +17074,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-113"
+              data-ouia-component-id="OUIA-Generated-Text-153"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15833,7 +17083,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-114"
+                data-ouia-component-id="OUIA-Generated-Text-154"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15870,13 +17120,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-71"
+        data-ouia-component-id="OUIA-Generated-TableRow-91"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15889,7 +17139,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-115"
+              data-ouia-component-id="OUIA-Generated-Text-155"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15898,7 +17148,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-116"
+                data-ouia-component-id="OUIA-Generated-Text-156"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -15935,13 +17185,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-72"
+        data-ouia-component-id="OUIA-Generated-TableRow-92"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -15954,7 +17204,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-117"
+              data-ouia-component-id="OUIA-Generated-Text-157"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -15963,7 +17213,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-118"
+                data-ouia-component-id="OUIA-Generated-Text-158"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -16000,13 +17250,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-73"
+        data-ouia-component-id="OUIA-Generated-TableRow-93"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -16019,7 +17269,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-119"
+              data-ouia-component-id="OUIA-Generated-Text-159"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -16028,7 +17278,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-120"
+                data-ouia-component-id="OUIA-Generated-Text-160"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -16065,13 +17315,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-74"
+        data-ouia-component-id="OUIA-Generated-TableRow-94"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -16084,7 +17334,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-121"
+              data-ouia-component-id="OUIA-Generated-Text-161"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -16093,7 +17343,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-122"
+                data-ouia-component-id="OUIA-Generated-Text-162"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -16130,13 +17380,13 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>
       <tr
         class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-75"
+        data-ouia-component-id="OUIA-Generated-TableRow-95"
         data-ouia-component-type="PF4/TableRow"
         data-ouia-safe="true"
       >
@@ -16149,7 +17399,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           >
             <h3
               class=""
-              data-ouia-component-id="OUIA-Generated-Text-123"
+              data-ouia-component-id="OUIA-Generated-Text-163"
               data-ouia-component-type="PF4/Text"
               data-ouia-safe="true"
               data-pf-content="true"
@@ -16158,7 +17408,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               <br />
               <small
                 class=""
-                data-ouia-component-id="OUIA-Generated-Text-124"
+                data-ouia-component-id="OUIA-Generated-Text-164"
                 data-ouia-component-type="PF4/Text"
                 data-ouia-safe="true"
                 data-pf-content="true"
@@ -16195,7 +17445,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           <span
             class="pf-c-badge pf-m-read"
           >
-            1
+            unlimited
           </span>
         </td>
       </tr>

@@ -42,7 +42,7 @@ describe('ProductsTable', () => {
         quantity: 1,
         productLine: 'letters',
         serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
       }),
       factories.product.build({
         name: undefined,
@@ -50,7 +50,7 @@ describe('ProductsTable', () => {
         quantity: undefined,
         productLine: null,
         serviceLevel: undefined,
-        unitOfMeasure: { name: 'Not Available', quantity: '' }
+        unitOfMeasure: undefined
       }),
       factories.product.build({
         name: 'A',
@@ -58,7 +58,15 @@ describe('ProductsTable', () => {
         quantity: 3,
         productLine: 'vowels',
         serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock2', quantity: '2' }
+        unitOfMeasure: { name: 'Cores', quantity: '2' }
+      }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 2,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Cores', quantity: 'unlimited' }
       }),
       factories.product.build({
         name: null,
@@ -67,6 +75,14 @@ describe('ProductsTable', () => {
         productLine: 'consonants',
         serviceLevel: 'Standard',
         unitOfMeasure: { name: 'Mock3', quantity: '3' }
+      }),
+      factories.product.build({
+        name: null,
+        sku: undefined,
+        quantity: 2,
+        productLine: 'consonants',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Sockets', quantity: '128' }
       })
     ]);
 
@@ -157,7 +173,7 @@ describe('ProductsTable', () => {
         quantity: 2,
         productLine: 'letters',
         serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
       })
     ]);
 
@@ -188,7 +204,7 @@ describe('ProductsTable', () => {
         quantity: 2,
         productLine: 'consonants',
         serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: '1' }
+        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
       }),
       factories.product.build({
         name: 'A',
