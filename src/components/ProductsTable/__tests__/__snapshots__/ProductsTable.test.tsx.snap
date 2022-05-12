@@ -275,10 +275,6 @@ exports[`ProductsTable renders correctly 1`] = `
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -1038,10 +1034,6 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -1984,10 +1976,6 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -2930,10 +2918,6 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -3876,10 +3860,6 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -4822,10 +4802,6 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -5768,10 +5744,6 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -6714,10 +6686,6 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -7660,10 +7628,6 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -8606,10 +8570,6 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -9552,10 +9512,6 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -10498,10 +10454,6 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -11471,10 +11423,6 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -12262,10 +12210,6 @@ exports[`ProductsTable when the search is used refines the results by product li
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -13053,10 +12997,6 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -13844,10 +13784,6 @@ exports[`ProductsTable when the search is used renders an empty state when no re
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -14583,10 +14519,6 @@ exports[`ProductsTable when using pagination can change page 1`] = `
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"
@@ -15343,10 +15275,6 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
         </nav>
       </div>
     </div>
-    <div
-      class=""
-      style="width: 1450px;"
-    />
   </div>
   <table
     aria-label="Products"

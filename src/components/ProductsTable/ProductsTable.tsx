@@ -11,7 +11,7 @@ import {
   TextVariants,
   Badge
 } from '@patternfly/react-core';
-import { Product, UnitOfMeasure } from '../../hooks/useProducts';
+import { Product, UnitOfMeasure, UoMNameOrder } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 
 interface ProductsTableProps {
@@ -25,7 +25,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
     sku: 'SKU',
     quantity: 'Quantity',
     serviceLevel: 'Service Level',
-    unitOfMeasure: { name: 'Unit of measure' }
+    unitOfMeasure: 'Unit of measure'
   };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
@@ -56,7 +56,28 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
       const aValue = getSortableRowValues(a)[sortIndex] || '';
       const bValue = getSortableRowValues(b)[sortIndex] || '';
       let result = 0;
-      if (aValue < bValue) {
+      if (
+        !['string', 'number'].includes(typeof aValue) ||
+        !['string', 'number'].includes(typeof bValue)
+      ) {
+        const uOMAValue = aValue as UnitOfMeasure;
+        const uOMBValue = bValue as UnitOfMeasure;
+        if (uOMAValue.name == uOMBValue.name) {
+          if (uOMAValue.quantity === 'unlimited') {
+            result = 1;
+          } else if (uOMBValue.quantity === 'unlimited') {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) < parseInt(uOMBValue.quantity)) {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) > parseInt(uOMBValue.quantity)) {
+            result = 1;
+          }
+        } else {
+          const aIndex = uOMAValue.name ? UoMNameOrder.indexOf(uOMAValue.name) : 3;
+          const bIndex = uOMBValue.name ? UoMNameOrder.indexOf(uOMBValue.name) : 3;
+          result = aIndex - bIndex > 0 ? 1 : -1;
+        }
+      } else if (aValue < bValue) {
         result = -1;
       } else if (aValue > bValue) {
         result = 1;
@@ -125,6 +146,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
   const sortedProducts = sortProducts(data, activeSortIndex);
   const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
   const paginatedProducts = getPage(searchedProducts);
+  // sortUoM(uOMTemp)
 
   return (
     <>
@@ -143,7 +165,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           )}
         </FlexItem>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
-        <FlexItem style={{ width: '1450px' }}></FlexItem>
       </Flex>
       {/* @ts-ignore */}
       <TableComposable aria-label="Products">
@@ -163,7 +184,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
               {columnNames.serviceLevel}
             </Th>
             <Th sort={getSortParams(4)} width={15}>
-              {columnNames.unitOfMeasure.name}
+              {columnNames.unitOfMeasure}
             </Th>
           </Tr>
         </Thead>
@@ -184,8 +205,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
                 <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
                 <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
-                <Td dataLabel={columnNames.unitOfMeasure.name}>
-                  {datum.unitOfMeasure?.name ?? <Text style={{ color: 'red' }}>Not Available</Text>}{' '}
+                <Td dataLabel={columnNames.unitOfMeasure}>
+                  {[datum.unitOfMeasure?.name ?? 'Not Available', ' ']}
                   <Badge isRead>{datum.unitOfMeasure?.quantity ?? ''}</Badge>
                 </Td>
               </Tr>

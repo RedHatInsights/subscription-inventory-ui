@@ -19,6 +19,8 @@ type UnitOfMeasure = {
   quantity: string;
 };
 
+const UoMNameOrder = ['Cores', 'Nodes', 'Sockets'];
+
 const fetchProductData = async (): Promise<Product[]> => {
   const jwtToken = Cookies.get('cs_jwt');
 
@@ -40,4 +42,4 @@ const useProducts = (): QueryObserverResult<Product[], unknown> => {
   return useQuery('products', () => getProducts());
 };
 
-export { Product, UnitOfMeasure, useProducts as default };
+export { Product, UnitOfMeasure, UoMNameOrder, useProducts as default };
