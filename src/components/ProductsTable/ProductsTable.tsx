@@ -146,7 +146,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
   const sortedProducts = sortProducts(data, activeSortIndex);
   const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
   const paginatedProducts = getPage(searchedProducts);
-  // sortUoM(uOMTemp)
 
   return (
     <>
