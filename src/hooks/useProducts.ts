@@ -6,11 +6,20 @@ type Product = {
   productLine: string;
   quantity: number;
   sku: string;
+  serviceLevel: string;
+  unitOfMeasure: UnitOfMeasure;
 };
 
 interface ProductApiData {
   body: Product[];
 }
+
+type UnitOfMeasure = {
+  name: string;
+  quantity: string;
+};
+
+const UoMNameOrder = ['Cores', 'Nodes', 'Sockets'];
 
 const fetchProductData = async (): Promise<Product[]> => {
   const jwtToken = Cookies.get('cs_jwt');
@@ -33,4 +42,4 @@ const useProducts = (): QueryObserverResult<Product[], unknown> => {
   return useQuery('products', () => getProducts());
 };
 
-export { Product, useProducts as default };
+export { Product, UnitOfMeasure, UoMNameOrder, useProducts as default };

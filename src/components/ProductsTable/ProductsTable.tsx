@@ -8,9 +8,10 @@ import {
   SearchInput,
   Text,
   TextContent,
-  TextVariants
+  TextVariants,
+  Badge
 } from '@patternfly/react-core';
-import { Product } from '../../hooks/useProducts';
+import { Product, UnitOfMeasure, UoMNameOrder } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 
 interface ProductsTableProps {
@@ -19,16 +20,22 @@ interface ProductsTableProps {
 }
 
 const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
-  const columnNames = { name: 'Name', sku: 'SKU', quantity: 'Quantity' };
+  const columnNames = {
+    name: 'Name',
+    sku: 'SKU',
+    quantity: 'Quantity',
+    serviceLevel: 'Service Level',
+    unitOfMeasure: 'Unit of measure'
+  };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
 
-  const getSortableRowValues = (product: Product): (string | number)[] => {
-    const { name, sku, quantity } = product;
-    return [name, sku, quantity];
+  const getSortableRowValues = (product: Product): (string | number | UnitOfMeasure)[] => {
+    const { name, sku, quantity, serviceLevel, unitOfMeasure } = product;
+    return [name, sku, quantity, serviceLevel, unitOfMeasure];
   };
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
@@ -49,7 +56,28 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
       const aValue = getSortableRowValues(a)[sortIndex] || '';
       const bValue = getSortableRowValues(b)[sortIndex] || '';
       let result = 0;
-      if (aValue < bValue) {
+      if (
+        !['string', 'number'].includes(typeof aValue) ||
+        !['string', 'number'].includes(typeof bValue)
+      ) {
+        const uOMAValue = aValue as UnitOfMeasure;
+        const uOMBValue = bValue as UnitOfMeasure;
+        if (uOMAValue.name == uOMBValue.name) {
+          if (uOMAValue.quantity === 'unlimited') {
+            result = 1;
+          } else if (uOMBValue.quantity === 'unlimited') {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) < parseInt(uOMBValue.quantity)) {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) > parseInt(uOMBValue.quantity)) {
+            result = 1;
+          }
+        } else {
+          const aIndex = uOMAValue.name ? UoMNameOrder.indexOf(uOMAValue.name) : 3;
+          const bIndex = uOMBValue.name ? UoMNameOrder.indexOf(uOMBValue.name) : 3;
+          result = aIndex - bIndex > 0 ? 1 : -1;
+        }
+      } else if (aValue < bValue) {
         result = -1;
       } else if (aValue > bValue) {
         result = 1;
@@ -142,9 +170,21 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
         <Thead>
           {/* @ts-ignore */}
           <Tr>
-            <Th sort={getSortParams(0)}>{columnNames.name}</Th>
-            <Th sort={getSortParams(1)}>{columnNames.sku}</Th>
-            <Th sort={getSortParams(2)}>{columnNames.quantity}</Th>
+            <Th sort={getSortParams(0)} width={50}>
+              {columnNames.name}
+            </Th>
+            <Th sort={getSortParams(1)} width={10}>
+              {columnNames.sku}
+            </Th>
+            <Th sort={getSortParams(2)} width={10}>
+              {columnNames.quantity}
+            </Th>
+            <Th sort={getSortParams(3)} width={15}>
+              {columnNames.serviceLevel}
+            </Th>
+            <Th sort={getSortParams(4)} width={15}>
+              {columnNames.unitOfMeasure}
+            </Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -163,6 +203,11 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
                 </Td>
                 <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
+                <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
+                <Td dataLabel={columnNames.unitOfMeasure}>
+                  {[datum.unitOfMeasure?.name ?? 'Not Available', ' ']}
+                  <Badge isRead>{datum.unitOfMeasure?.quantity ?? ''}</Badge>
+                </Td>
               </Tr>
             </React.Fragment>
           ))}
