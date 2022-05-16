@@ -24,7 +24,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
     name: 'Name',
     sku: 'SKU',
     quantity: 'Quantity',
-    serviceLevel: 'Service Level',
+    serviceLevel: 'Service level',
     unitOfMeasure: 'Unit of measure'
   };
   const [page, setPage] = useState(1);
