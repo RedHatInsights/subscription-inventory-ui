@@ -131,14 +131,14 @@ describe('ProductsTable', () => {
     it('can sort by serviceLevel', () => {
       const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
 
-      fireEvent.click(screen.getByText('Service Level'));
+      fireEvent.click(screen.getByText('Service level'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by serviceLevel, reversed', () => {
       const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
 
-      fireEvent.click(screen.getByText('Service Level'));
+      fireEvent.click(screen.getByText('Service level'));
       expect(container).toMatchSnapshot();
     });
 
