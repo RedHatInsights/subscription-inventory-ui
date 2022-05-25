@@ -10,15 +10,18 @@ import { User } from '../../hooks/useUser';
 import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
 import useProducts from '../../hooks/useProducts';
+import useStatus from '../../hooks/useStatus';
 import PurchaseModal from '../../components/PurchaseModal';
 import GettingStartedCard from '../../components/GettingStartedCard';
 import { Stack } from '@patternfly/react-core';
 import { StackItem } from '@patternfly/react-core';
+import StatusCountCards from '../../components/StatusCountCards';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const { isFetching, isLoading, error, data } = useProducts();
+  const statusCardData = useStatus();
+  const productData = useProducts();
 
   const Page: FunctionComponent = () => {
     return (
@@ -39,14 +42,30 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
               <GettingStartedCard />
             </StackItem>
             <StackItem>
+              <>
+                {statusCardData.isLoading && !statusCardData.error && <Processing />}
+
+                {!statusCardData.isLoading && !statusCardData.error && (
+                  <StatusCountCards
+                    statusCardData={statusCardData.data}
+                    statusIsFetching={statusCardData.isFetching}
+                  />
+                )}
+
+                {statusCardData.error && <Unavailable />}
+              </>
+            </StackItem>
+            <StackItem>
               <PageSection variant="light">
                 <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
                 <>
-                  {isLoading && !error && <Processing />}
+                  {productData.isLoading && !productData.error && <Processing />}
 
-                  {!isLoading && !error && <ProductsTable data={data} isFetching={isFetching} />}
+                  {!productData.isLoading && !productData.error && (
+                    <ProductsTable data={productData.data} isFetching={productData.isFetching} />
+                  )}
 
-                  {error && <Unavailable />}
+                  {productData.error && <Unavailable />}
                 </>
               </PageSection>
             </StackItem>
