@@ -12,6 +12,7 @@ import {
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import OutlinedCalendarIcon from '@patternfly/react-icons/dist/js/icons/calendar-icon';
 
 import { StatusCard } from '../../hooks/useStatus';
 
@@ -71,7 +72,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
         title: cardTitles.futureDated,
         content: [
           {
-            icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />,
+            icon: <OutlinedCalendarIcon />,
             count: statusCard.futureDated
           }
         ],
