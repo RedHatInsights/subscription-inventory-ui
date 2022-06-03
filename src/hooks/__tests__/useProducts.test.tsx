@@ -6,6 +6,17 @@ import useProducts from '../useProducts';
 enableFetchMocks();
 
 describe('useProducts', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'insights', {
+      value: {
+        chrome: {
+          auth: {
+            getToken: jest.fn()
+          }
+        }
+      }
+    });
+  });
   it('returns products from the API', async () => {
     const productData = [
       {

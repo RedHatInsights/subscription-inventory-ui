@@ -6,6 +6,17 @@ import useStatus from '../useStatus';
 enableFetchMocks();
 
 describe('useStatus', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'insights', {
+      value: {
+        chrome: {
+          auth: {
+            getToken: jest.fn()
+          }
+        }
+      }
+    });
+  });
   it('returns statuses from the API', async () => {
     const statusData = [
       {

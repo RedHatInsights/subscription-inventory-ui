@@ -22,7 +22,7 @@ type UnitOfMeasure = {
 const UoMNameOrder = ['Cores', 'Nodes', 'Sockets'];
 
 const fetchProductData = async (): Promise<Product[]> => {
-  const jwtToken = Cookies.get('cs_jwt');
+  const jwtToken = await window.insights.chrome.auth.getToken();
 
   const response = await fetch('/api/rhsm/v2/products', {
     headers: { Authorization: `Bearer ${jwtToken}` }

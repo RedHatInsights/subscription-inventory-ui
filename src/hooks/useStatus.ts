@@ -13,7 +13,7 @@ interface StatusApiData {
 }
 
 const fetchStatusData = async (): Promise<StatusCard> => {
-  const jwtToken = Cookies.get('cs_jwt');
+  const jwtToken = await window.insights.chrome.auth.getToken();
 
   const response = await fetch('/api/rhsm/v2/products/status', {
     headers: { Authorization: `Bearer ${jwtToken}` }

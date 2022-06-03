@@ -3,6 +3,7 @@ import { Card, CardBody, Flex, FlexItem, Gallery, Grid } from '@patternfly/react
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
+import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { StatusCard } from '../../hooks/useStatus';
 
 interface StatusCardProps {
@@ -66,7 +67,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
               <FlexItem>
-                <i className="fa fa-calendar-alt" />
+                <OutlinedCalendarAltIcon />
               </FlexItem>
               <FlexItem>{statusCard.futureDated}</FlexItem>
             </Flex>

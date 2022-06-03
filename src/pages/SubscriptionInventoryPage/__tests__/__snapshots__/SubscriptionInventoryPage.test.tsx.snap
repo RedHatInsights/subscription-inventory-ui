@@ -19,9 +19,7 @@ exports[`SubscriptionInventoryPage renders correctly 1`] = `
           data-ouia-safe="true"
           widget-type="InsightsPageHeaderTitle"
         >
-           
           Subscription Inventory
-           
         </h1>
       </div>
       <div
@@ -159,9 +157,7 @@ exports[`SubscriptionInventoryPage when the products are loading renders the loa
           data-ouia-safe="true"
           widget-type="InsightsPageHeaderTitle"
         >
-           
           Subscription Inventory
-           
         </h1>
       </div>
       <div
@@ -315,9 +311,7 @@ exports[`SubscriptionInventoryPage when the products call fails renders the erro
           data-ouia-safe="true"
           widget-type="InsightsPageHeaderTitle"
         >
-           
           Subscription Inventory
-           
         </h1>
       </div>
       <div
@@ -463,9 +457,11 @@ exports[`SubscriptionInventoryPage when the products call fails renders the erro
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                   status page
+                   
+                  status page
                 </a>
-                 for known outages.
+                 
+                for known outages.
               </div>
             </div>
           </div>
@@ -495,9 +491,7 @@ exports[`SubscriptionInventoryPage when the status cards are loading renders the
           data-ouia-safe="true"
           widget-type="InsightsPageHeaderTitle"
         >
-           
           Subscription Inventory
-           
         </h1>
       </div>
       <div
@@ -651,9 +645,7 @@ exports[`SubscriptionInventoryPage when the status cards call fails renders the 
           data-ouia-safe="true"
           widget-type="InsightsPageHeaderTitle"
         >
-           
           Subscription Inventory
-           
         </h1>
       </div>
       <div
@@ -780,9 +772,11 @@ exports[`SubscriptionInventoryPage when the status cards call fails renders the 
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                 status page
+                 
+                status page
               </a>
-               for known outages.
+               
+              for known outages.
             </div>
           </div>
         </div>
@@ -851,9 +845,11 @@ exports[`SubscriptionInventoryPage when the user call fails renders an error mes
           rel="noopener noreferrer"
           target="_blank"
         >
-           status page
+           
+          status page
         </a>
-         for known outages.
+         
+        for known outages.
       </div>
     </div>
   </div>
