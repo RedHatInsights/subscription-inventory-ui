@@ -57,8 +57,11 @@ const mockAuthenticateUser = (
   }
 };
 
-jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
-jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
+const productsTableMock = () => <div>Products Table</div>;
+const noPermissionsMock = () => <div>Not Authorized</div>;
+
+jest.mock('../../../components/ProductsTable', () => productsTableMock);
+jest.mock('../../NoPermissionsPage', () => noPermissionsMock);
 jest.mock('../../../components/PurchaseModal/onlineIcon.svg', () => 'Online Icon');
 jest.mock('../../../components/PurchaseModal/salesIcon.svg', () => 'Sales Icon');
 jest.mock('../../../components/PurchaseModal/partnersIcon.svg', () => 'Partners Icon');
