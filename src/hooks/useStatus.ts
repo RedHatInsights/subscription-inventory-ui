@@ -1,5 +1,4 @@
 import { useQuery, QueryObserverResult } from 'react-query';
-import Cookies from 'js-cookie';
 
 type StatusCard = {
   active: number;

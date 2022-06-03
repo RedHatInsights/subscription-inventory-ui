@@ -59,8 +59,11 @@ const mockAuthenticateUser = (
   }
 };
 
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/StatusCountCards', () => () => <div>Status Count Cards</div>);
+// eslint-disable-next-line react/display-name
 jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
+// eslint-disable-next-line react/display-name
 jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
 jest.mock('../../../components/PurchaseModal/onlineIcon.svg', () => 'Online Icon');
 jest.mock('../../../components/PurchaseModal/salesIcon.svg', () => 'Sales Icon');
