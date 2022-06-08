@@ -23,6 +23,8 @@ const UoMNameOrder = ['Cores', 'Nodes', 'Sockets'];
 const fetchProductData = async (): Promise<Product[]> => {
   const jwtToken = await window.insights.chrome.auth.getToken();
 
+  await new Promise((r) => setTimeout(r, 200));
+
   const response = await fetch('/api/rhsm/v2/products', {
     headers: { Authorization: `Bearer ${jwtToken}` }
   });

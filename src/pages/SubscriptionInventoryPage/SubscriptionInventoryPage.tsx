@@ -20,8 +20,8 @@ import StatusCountCards from '../../components/StatusCountCards';
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const statusCardData = useStatus();
   const productData = useProducts();
+  const statusCardData = useStatus();
 
   const Page: FunctionComponent = () => {
     return (
