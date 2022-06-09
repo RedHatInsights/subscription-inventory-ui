@@ -8,10 +8,12 @@ import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
+import useStatus from '../../../hooks/useStatus';
 import { get, def } from 'bdd-lazy-var';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useProducts');
+jest.mock('../../../hooks/useStatus');
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
   useLocation: () => ({
@@ -57,11 +59,12 @@ const mockAuthenticateUser = (
   }
 };
 
-const productsTableMock = () => <div>Products Table</div>;
-const noPermissionsMock = () => <div>Not Authorized</div>;
-
-jest.mock('../../../components/ProductsTable', () => productsTableMock);
-jest.mock('../../NoPermissionsPage', () => noPermissionsMock);
+// eslint-disable-next-line react/display-name
+jest.mock('../../../components/StatusCountCards', () => () => <div>Status Count Cards</div>);
+// eslint-disable-next-line react/display-name
+jest.mock('../../../components/ProductsTable', () => () => <div>Products Table</div>);
+// eslint-disable-next-line react/display-name
+jest.mock('../../NoPermissionsPage', () => () => <div>Not Authorized</div>);
 jest.mock('../../../components/PurchaseModal/onlineIcon.svg', () => 'Online Icon');
 jest.mock('../../../components/PurchaseModal/salesIcon.svg', () => 'Sales Icon');
 jest.mock('../../../components/PurchaseModal/partnersIcon.svg', () => 'Partners Icon');
@@ -74,6 +77,8 @@ describe('SubscriptionInventoryPage', () => {
   def('canReadProducts', () => true);
   def('productsLoading', () => false);
   def('productsError', () => false);
+  def('statusCardsLoading', () => false);
+  def('statusCardsError', () => false);
 
   beforeEach(() => {
     window.insights = {};
@@ -82,6 +87,11 @@ describe('SubscriptionInventoryPage', () => {
     (useProducts as jest.Mock).mockReturnValue({
       isLoading: get('productsLoading'),
       error: get('productsError'),
+      data: []
+    });
+    (useStatus as jest.Mock).mockReturnValue({
+      isLoading: get('statusCardsLoading'),
+      error: get('statusCardsError'),
       data: []
     });
   });
@@ -128,6 +138,26 @@ describe('SubscriptionInventoryPage', () => {
     it('renders the loading component', async () => {
       const { container } = render(<PageContainer />);
       await waitFor(() => expect(useProducts).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the status cards call fails', () => {
+    def('statusCardsError', () => true);
+
+    it('renders the error page', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useStatus).toHaveBeenCalledTimes(1));
+      expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('when the status cards are loading', () => {
+    def('statusCardsLoading', () => true);
+
+    it('renders the loading component', async () => {
+      const { container } = render(<PageContainer />);
+      await waitFor(() => expect(useStatus).toHaveBeenCalledTimes(1));
       expect(container).toMatchSnapshot();
     });
   });

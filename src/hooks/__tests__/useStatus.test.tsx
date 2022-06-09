@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
 import { createQueryWrapper } from '../../utilities/testHelpers';
-import useProducts from '../useProducts';
+import useStatus from '../useStatus';
 
 enableFetchMocks();
 
-describe('useProducts', () => {
+describe('useStatus', () => {
   beforeEach(() => {
     Object.defineProperty(window, 'insights', {
       value: {
@@ -17,24 +17,24 @@ describe('useProducts', () => {
       }
     });
   });
-  it('returns products from the API', async () => {
-    const productData = [
+  it('returns statuses from the API', async () => {
+    const statusData = [
       {
-        name: 'Truck',
-        productLine: 'vehicles',
-        quantity: 1400,
-        sku: 'ZZZ777'
+        active: 30,
+        expiringSoon: 5,
+        expired: 1,
+        futureDated: 3
       }
     ];
 
-    fetch.mockResponseOnce(JSON.stringify({ body: [...productData] }));
+    fetch.mockResponseOnce(JSON.stringify({ body: [...statusData] }));
 
-    const { result, waitFor } = renderHook(() => useProducts(false), {
+    const { result, waitFor } = renderHook(() => useStatus(), {
       wrapper: createQueryWrapper()
     });
 
     await waitFor(() => result.current.isSuccess);
 
-    expect(result.current.data).toEqual(productData);
+    expect(result.current.data).toEqual(statusData);
   });
 });
