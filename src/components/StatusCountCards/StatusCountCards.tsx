@@ -22,7 +22,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
   return (
     <Grid hasGutter>
       <Gallery hasGutter style={{ display: 'flex', flexDirection: 'row' }}>
-        <Card style={{ flex: 1 }}>
+        <Card id="active-card" style={{ flex: 1 }}>
           <CardBody>{cardTitles.active}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -33,7 +33,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
             </Flex>
           </CardBody>
         </Card>
-        <Card style={{ flex: 1 }}>
+        <Card id="expiringSoon-card" style={{ flex: 1 }}>
           <CardBody>{cardTitles.expiringSoon}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -44,7 +44,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
             </Flex>
           </CardBody>
         </Card>
-        <Card style={{ flex: 1 }}>
+        <Card id="expired-card" style={{ flex: 1 }}>
           <CardBody>{cardTitles.expired}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -55,7 +55,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
             </Flex>
           </CardBody>
         </Card>
-        <Card style={{ flex: 1 }}>
+        <Card id="futureDated-card" style={{ flex: 1 }}>
           <CardBody>{cardTitles.futureDated}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
