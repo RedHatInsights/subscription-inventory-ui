@@ -3,7 +3,7 @@ import { render, waitFor } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider, useStore } from 'react-redux';
+import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';

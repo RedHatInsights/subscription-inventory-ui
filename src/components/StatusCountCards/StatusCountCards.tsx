@@ -19,13 +19,6 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
     futureDated: 'Future dated'
   };
 
-  const getStatusCard = (statusCard: StatusCard): StatusCard => {
-    const { active, expiringSoon, expired, futureDated } = statusCard;
-    return statusCard;
-  };
-
-  const statusCard = getStatusCard(statusCardData);
-
   return (
     <Grid hasGutter>
       <Gallery hasGutter style={{ display: 'flex', flexDirection: 'row' }}>
@@ -36,7 +29,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
               <FlexItem>
                 <CheckCircleIcon color="var(--pf-global--success-color--100)" />
               </FlexItem>
-              <FlexItem>{statusCard.active}</FlexItem>
+              <FlexItem>{statusCardData.active}</FlexItem>
             </Flex>
           </CardBody>
         </Card>
@@ -47,7 +40,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
               <FlexItem>
                 <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />
               </FlexItem>
-              <FlexItem>{statusCard.expiringSoon}</FlexItem>
+              <FlexItem>{statusCardData.expiringSoon}</FlexItem>
             </Flex>
           </CardBody>
         </Card>
@@ -58,7 +51,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
               <FlexItem>
                 <ExclamationCircleIcon className="pf-u-danger-color-100" />
               </FlexItem>
-              <FlexItem>{statusCard.expired}</FlexItem>
+              <FlexItem>{statusCardData.expired}</FlexItem>
             </Flex>
           </CardBody>
         </Card>
@@ -69,7 +62,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData }
               <FlexItem>
                 <OutlinedCalendarAltIcon />
               </FlexItem>
-              <FlexItem>{statusCard.futureDated}</FlexItem>
+              <FlexItem>{statusCardData.futureDated}</FlexItem>
             </Flex>
           </CardBody>
         </Card>
