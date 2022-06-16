@@ -1,15 +1,19 @@
 import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
+import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/helpers';
 
 const queryClient = new QueryClient();
 
 const Table: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => (
   <QueryClientProvider client={queryClient}>
-    <ProductsTable data={data} isFetching={isFetching} />
+    <BrowserRouter>
+      <ProductsTable data={data} isFetching={isFetching} />
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
