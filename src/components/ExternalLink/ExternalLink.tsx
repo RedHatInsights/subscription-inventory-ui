@@ -3,14 +3,15 @@ import { Button } from '@patternfly/react-core';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 
 interface ExternalLinkProps {
-  href: string;
   children: ReactNode | string;
+  href: string;
+  variant?: string;
 }
 
-const ExternalLink: FC<ExternalLinkProps> = ({ href, children }) => {
+const ExternalLink: FC<ExternalLinkProps> = ({ children, href, variant = 'link' }) => {
   return (
     <Button
-      variant="link"
+      variant={variant}
       component="a"
       href={href}
       target="_blank"

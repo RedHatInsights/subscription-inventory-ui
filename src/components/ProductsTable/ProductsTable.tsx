@@ -1,28 +1,41 @@
 import React, { FunctionComponent, useState } from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
-import { v4 as uuid } from 'uuid';
-import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import {
+  Flex,
+  FlexItem,
   Pagination,
   PaginationVariant,
+  SearchInput,
   Text,
   TextContent,
-  TextVariants
+  TextVariants,
+  Badge
 } from '@patternfly/react-core';
-import { Processing } from '../../components/emptyState';
-import useProducts, { Product } from '../../hooks/useProducts';
+import { Product, UnitOfMeasure, UoMNameOrder } from '../../hooks/useProducts';
+import { NoSearchResults } from '../emptyState';
 
-const ProductsTable: FunctionComponent = () => {
-  const columnNames = { name: 'Name', quantity: 'Quantity' };
+interface ProductsTableProps {
+  data: Product[] | undefined;
+  isFetching: boolean;
+}
+
+const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
+  const columnNames = {
+    name: 'Name',
+    sku: 'SKU',
+    quantity: 'Quantity',
+    serviceLevel: 'Service level',
+    unitOfMeasure: 'Unit of measure'
+  };
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
-  const { isFetching, isLoading, error, data } = useProducts();
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
+  const [searchValue, setSearchValue] = useState('');
+  const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
 
-  const getSortableRowValues = (product: Product): (string | number)[] => {
-    const { name, quantity } = product;
-    return [name, quantity];
+  const getSortableRowValues = (product: Product): (string | number | UnitOfMeasure)[] => {
+    const { name, sku, quantity, serviceLevel, unitOfMeasure } = product;
+    return [name, sku, quantity, serviceLevel, unitOfMeasure];
   };
 
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
@@ -39,24 +52,37 @@ const ProductsTable: FunctionComponent = () => {
   });
 
   const sortProducts = (products: Product[], sortIndex: number) => {
-    if (sortIndex == null) return products;
-
     const sortedProducts = products.sort((a: any, b: any) => {
-      const aValue = getSortableRowValues(a)[sortIndex];
-      const bValue = getSortableRowValues(b)[sortIndex];
-      if (typeof aValue === 'number') {
-        // Numeric sort
-        if (activeSortDirection === 'asc') {
-          return (aValue as number) - (bValue as number);
+      const aValue = getSortableRowValues(a)[sortIndex] || '';
+      const bValue = getSortableRowValues(b)[sortIndex] || '';
+      let result = 0;
+      if (
+        !['string', 'number'].includes(typeof aValue) ||
+        !['string', 'number'].includes(typeof bValue)
+      ) {
+        const uOMAValue = aValue as UnitOfMeasure;
+        const uOMBValue = bValue as UnitOfMeasure;
+        if (uOMAValue.name == uOMBValue.name) {
+          if (uOMAValue.quantity === 'unlimited') {
+            result = 1;
+          } else if (uOMBValue.quantity === 'unlimited') {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) < parseInt(uOMBValue.quantity)) {
+            result = -1;
+          } else if (parseInt(uOMAValue.quantity) > parseInt(uOMBValue.quantity)) {
+            result = 1;
+          }
+        } else {
+          const aIndex = uOMAValue.name ? UoMNameOrder.indexOf(uOMAValue.name) : 3;
+          const bIndex = uOMBValue.name ? UoMNameOrder.indexOf(uOMBValue.name) : 3;
+          result = aIndex - bIndex > 0 ? 1 : -1;
         }
-        return (bValue as number) - (aValue as number);
-      } else {
-        // String sort
-        if (activeSortDirection === 'asc') {
-          return (aValue as string).localeCompare(bValue as string);
-        }
-        return (bValue as string).localeCompare(aValue as string);
+      } else if (aValue < bValue) {
+        result = -1;
+      } else if (aValue > bValue) {
+        result = 1;
       }
+      return activeSortDirection == 'asc' ? result : -1 * result;
     });
     return sortedProducts;
   };
@@ -70,11 +96,38 @@ const ProductsTable: FunctionComponent = () => {
     setPage(1);
   };
 
+  const handleSearch = (searchValue: string) => {
+    setSearchValue(searchValue);
+    setPage(1);
+  };
+
+  const clearSearch = () => {
+    setSearchValue('');
+    setPage(1);
+  };
+
+  const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
+    return data.filter((entry: Product) => {
+      const searchTerm = searchValue.toLowerCase().trim();
+      const name = (entry.name || '').toLowerCase();
+      const productLine = (entry.productLine || '').toLowerCase();
+      const sku = (entry.sku || '').toLowerCase();
+      return (
+        name.includes(searchTerm) || productLine.includes(searchTerm) || sku.includes(searchTerm)
+      );
+    });
+  };
+
+  const countProducts = (data: Product[], searchValue: string): number => {
+    const filteredData = filterDataBySearchTerm(data, searchValue);
+    return filteredData.length;
+  };
+
   const pagination = (variant = PaginationVariant.top) => {
     return (
       <Pagination
         isDisabled={isFetching}
-        itemCount={data.length}
+        itemCount={countProducts(data, searchValue)}
         perPage={perPage}
         page={page}
         onSetPage={handleSetPage}
@@ -90,23 +143,55 @@ const ProductsTable: FunctionComponent = () => {
     return products.slice(first, last);
   };
 
-  const Results: FunctionComponent = () => {
-    const sortedProducts = sortProducts(data, activeSortIndex);
-    const paginatedProducts = getPage(sortedProducts);
+  const sortedProducts = sortProducts(data, activeSortIndex);
+  const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
+  const paginatedProducts = getPage(searchedProducts);
 
-    return (
-      <>
-        {pagination()}
-        <TableComposable aria-label="Products" ouiaId={uuid()} ouiaSafe={true}>
-          <Thead>
-            <Tr ouiaId={uuid()} ouiaSafe={true}>
-              <Th sort={getSortParams(0)}>{columnNames.name}</Th>
-              <Th sort={getSortParams(1)}>{columnNames.quantity}</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {paginatedProducts.map((datum, rowIndex) => (
-              <Tr key={rowIndex} ouiaId={uuid()} ouiaSafe={true}>
+  return (
+    <>
+      <Flex
+        direction={{ default: 'column', md: 'row' }}
+        justifyContent={{ default: 'justifyContentSpaceBetween' }}
+      >
+        <FlexItem>
+          {data.length > 0 && (
+            <SearchInput
+              placeholder="Filter by Name or SKU"
+              value={searchValue}
+              onChange={handleSearch}
+              onClear={clearSearch}
+            />
+          )}
+        </FlexItem>
+        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+      </Flex>
+      {/* @ts-ignore */}
+      <TableComposable aria-label="Products">
+        <Thead>
+          {/* @ts-ignore */}
+          <Tr>
+            <Th sort={getSortParams(0)} width={50}>
+              {columnNames.name}
+            </Th>
+            <Th sort={getSortParams(1)} width={10}>
+              {columnNames.sku}
+            </Th>
+            <Th sort={getSortParams(2)} width={10}>
+              {columnNames.quantity}
+            </Th>
+            <Th sort={getSortParams(3)} width={15}>
+              {columnNames.serviceLevel}
+            </Th>
+            <Th sort={getSortParams(4)} width={15}>
+              {columnNames.unitOfMeasure}
+            </Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {paginatedProducts.map((datum, rowIndex) => (
+            <React.Fragment key={rowIndex}>
+              {/* @ts-ignore */}
+              <Tr>
                 <Td dataLabel={columnNames.name}>
                   <TextContent>
                     <Text component={TextVariants.h3}>
@@ -116,23 +201,24 @@ const ProductsTable: FunctionComponent = () => {
                     </Text>
                   </TextContent>
                 </Td>
+                <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
                 <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
+                <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
+                <Td dataLabel={columnNames.unitOfMeasure}>
+                  {[datum.unitOfMeasure?.name ?? 'Not Available', ' ']}
+                  <Badge isRead>{datum.unitOfMeasure?.quantity ?? ''}</Badge>
+                </Td>
               </Tr>
-            ))}
-          </Tbody>
-        </TableComposable>
-        {pagination(PaginationVariant.bottom)}
-      </>
-    );
-  };
-
-  if (isLoading && !error) {
-    return <Processing />;
-  } else if (!isLoading && !error) {
-    return <Results />;
-  } else {
-    return <Unavailable />;
-  }
+            </React.Fragment>
+          ))}
+        </Tbody>
+      </TableComposable>
+      {paginatedProducts.length == 0 && data.length > 0 && (
+        <NoSearchResults clearFilters={clearSearch} />
+      )}
+      {pagination(PaginationVariant.bottom)}
+    </>
+  );
 };
 
-export default ProductsTable;
+export { ProductsTable as default, ProductsTableProps };
