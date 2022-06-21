@@ -8,6 +8,7 @@ import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
 import useSingleProduct from '../../../hooks/useSingleProduct';
+import { Product } from '../../../hooks/useProducts';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useSingleProduct');
@@ -59,32 +60,26 @@ const mockAuthenticateUser = (
   });
 };
 
-const mockSingleProduct = (hasUom: boolean) => {
+const mockSingleProduct = (hasData: boolean) => {
+  const data: Product = {
+    name: hasData ? 'TEST Name' : '',
+    productLine: hasData ? 'TEST Line' : '',
+    quantity: hasData ? 3 : 0,
+    sku: hasData ? 'TESTSKU' : '',
+    serviceLevel: hasData ? 'TEST serviceLevel' : '',
+    serviceType: hasData ? 'TEST serviceType' : '',
+    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null
+  };
+
   (useSingleProduct as jest.Mock).mockReturnValue({
     isLoading: false,
     isFetching: false,
     isSuccess: true,
     isError: false,
-    data: {
-      name: 'TEST Name',
-      productLine: 'TEST Line',
-      quantity: 3,
-      sku: 'TESTSKU',
-      serviceLevel: '',
-      serviceType: '',
-      unitOfMeasure: hasUom ? { name: 'test', quantity: 2 } : null
-    }
+    data
   });
 
-  queryClient.setQueryData('singleProduct.TESTSKU', {
-    name: 'TEST Name',
-    productLine: 'TEST Line',
-    quantity: 3,
-    sku: 'TESTSKU',
-    serviceLevel: 'TEST serviceLevel',
-    serviceType: 'TEST serviceType',
-    unitOfMeasure: hasUom ? { name: 'test', quantity: 2 } : null
-  });
+  queryClient.setQueryData('singleProduct.TESTSKU', data);
 };
 
 describe('Details Page', () => {

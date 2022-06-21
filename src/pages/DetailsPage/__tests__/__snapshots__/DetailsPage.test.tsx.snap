@@ -110,7 +110,7 @@ exports[`Details Page renders data 1`] = `
         <b>
           Support level: 
         </b>
-        Not Available
+        TEST serviceLevel
       </li>
       <li
         class="pf-u-mt-0"
@@ -118,7 +118,7 @@ exports[`Details Page renders data 1`] = `
         <b>
           Support type: 
         </b>
-        Not Available
+        TEST serviceType
       </li>
       <li
         class="pf-u-mt-0"
@@ -184,7 +184,7 @@ exports[`Details Page renders not available for missing data 1`] = `
               />
             </svg>
           </span>
-          TEST Name
+          
            
         </li>
       </ol>
@@ -195,9 +195,7 @@ exports[`Details Page renders not available for missing data 1`] = `
       data-ouia-component-type="PF4/Title"
       data-ouia-safe="true"
       widget-type="InsightsPageHeaderTitle"
-    >
-      TEST Name
-    </h1>
+    />
     <ul
       class="pf-c-list pf-m-plain"
     >
@@ -207,7 +205,7 @@ exports[`Details Page renders not available for missing data 1`] = `
         <b>
           SKU: 
         </b>
-        TESTSKU
+        Not Available
       </li>
       <li
         class="pf-u-mt-0"
@@ -215,7 +213,7 @@ exports[`Details Page renders not available for missing data 1`] = `
         <b>
           Quantity: 
         </b>
-        3
+        0
       </li>
       <li
         class="pf-u-mt-0"
