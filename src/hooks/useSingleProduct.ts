@@ -1,13 +1,12 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import { Product } from './useProducts';
-import Cookies from 'js-cookie';
 
 interface SingleProductApiData {
   body: Product;
 }
 
 const fetchProductData = async (sku: string): Promise<Product> => {
-  const jwtToken = Cookies.get('cs_jwt');
+  const jwtToken = await window.insights.chrome.auth.getToken();
 
   const response = await fetch(`/api/rhsm/v2/products/${sku}`, {
     headers: { Authorization: `Bearer ${jwtToken}` }
