@@ -8,6 +8,7 @@ export default Factory.define<Product>(() => ({
   quantity: Faker.datatype.number(),
   sku: Faker.datatype.uuid(),
   serviceLevel: Faker.datatype.string(),
+  serviceType: Faker.datatype.string(),
   unitOfMeasure: uOMFake
 }));
 

@@ -13,6 +13,7 @@ import {
 } from '@patternfly/react-core';
 import { Product, UnitOfMeasure, UoMNameOrder } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
+import { Link } from 'react-router-dom';
 
 interface ProductsTableProps {
   data: Product[] | undefined;
@@ -195,7 +196,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
                 <Td dataLabel={columnNames.name}>
                   <TextContent>
                     <Text component={TextVariants.h3}>
-                      {datum.name}
+                      <Link to={`/${datum.sku}`}>{datum.name}</Link>
                       <br />
                       <Text component={TextVariants.small}>{datum.productLine}</Text>
                     </Text>

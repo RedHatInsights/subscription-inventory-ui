@@ -6,6 +6,7 @@ import Authentication from './components/Authentication';
 const SubscriptionInventoryPage = lazy(() => import('./pages/SubscriptionInventoryPage'));
 const OopsPage = lazy(() => import('./pages/OopsPage'));
 const NoPermissionsPage = lazy(() => import('./pages/NoPermissionsPage'));
+const DetailsPage = lazy(() => import('./pages/DetailsPage'));
 
 export const Routes: ReactNode = () => (
   <div className="inventory">
@@ -15,6 +16,7 @@ export const Routes: ReactNode = () => (
           <Route exact path="/" component={SubscriptionInventoryPage} />
           <Route path="/oops" component={OopsPage} />
           <Route path="/no-permissions" component={NoPermissionsPage} />
+          <Route path="/:SKU" component={DetailsPage} />
           {/* Finally, catch all unmatched routes */}
           <Route>
             <Redirect to="/oops" />

@@ -504,7 +504,11 @@ exports[`ProductsTable renders correctly 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -1263,7 +1267,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -1328,7 +1336,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -1393,7 +1405,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -1458,6 +1474,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -1512,6 +1531,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -1574,6 +1596,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2330,6 +2355,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2384,7 +2412,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -2449,6 +2481,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2511,6 +2546,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2573,7 +2611,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -2638,7 +2680,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -3397,7 +3443,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -3462,6 +3512,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -3524,6 +3577,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -3586,7 +3642,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -3651,7 +3711,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -3716,6 +3780,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4464,6 +4531,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4518,6 +4588,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4580,6 +4653,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4642,7 +4718,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -4707,7 +4787,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -4772,7 +4856,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -5531,6 +5619,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5585,6 +5676,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5647,6 +5741,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5709,7 +5806,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -5774,7 +5875,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -5839,7 +5944,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -6598,6 +6707,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6652,6 +6764,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6714,6 +6829,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6776,7 +6894,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -6841,7 +6963,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -6906,7 +7032,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -7665,6 +7795,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7719,6 +7852,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7781,6 +7917,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7843,7 +7982,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -7908,7 +8051,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -7973,7 +8120,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -8732,6 +8883,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -8794,6 +8948,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -8856,7 +9013,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -8921,7 +9082,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -8986,7 +9151,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -9051,6 +9220,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9799,6 +9971,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9861,6 +10036,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9923,7 +10101,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -9988,7 +10170,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -10053,7 +10239,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -10118,6 +10308,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10866,6 +11059,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10920,6 +11116,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10982,6 +11181,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -11044,7 +11246,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -11109,7 +11315,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -11174,7 +11384,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -11933,6 +12147,9 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -11989,7 +12206,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -12052,7 +12273,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              P
+              <a
+                href="/Fake123"
+              >
+                P
+              </a>
               <br />
               <small
                 class=""
@@ -12115,7 +12340,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -12902,7 +13131,11 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -13689,7 +13922,11 @@ exports[`ProductsTable when the search is used refines the results by product li
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -14476,7 +14713,11 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -15998,7 +16239,11 @@ exports[`ProductsTable when using pagination can change page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -16754,7 +16999,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16819,7 +17068,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16884,7 +17137,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16949,7 +17206,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17014,7 +17275,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17079,7 +17344,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17144,7 +17413,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17209,7 +17482,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17274,7 +17551,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17339,7 +17620,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17404,7 +17689,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
