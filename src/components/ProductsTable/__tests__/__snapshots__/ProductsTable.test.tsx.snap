@@ -1304,12 +1304,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -1373,12 +1373,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -1442,12 +1442,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -1564,12 +1564,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -2448,12 +2448,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -2513,12 +2513,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -2647,12 +2647,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -2716,12 +2716,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -3478,12 +3478,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -3543,12 +3543,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -3677,12 +3677,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -3746,12 +3746,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -4618,12 +4618,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -4752,12 +4752,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -4821,12 +4821,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -4890,12 +4890,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -5705,12 +5705,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -5839,12 +5839,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -5908,12 +5908,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -5977,12 +5977,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -6792,12 +6792,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -6926,12 +6926,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -6995,12 +6995,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -7064,12 +7064,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -7879,12 +7879,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -8013,12 +8013,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -8082,12 +8082,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8151,12 +8151,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8874,8 +8874,10 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-pf-content="true"
             >
               <a
-                href="/undefined"
-              />
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -8884,7 +8886,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                consonants
+                letters
               </small>
             </h3>
           </div>
@@ -8892,12 +8894,14 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        />
+        >
+          RH1234
+        </td>
         <td
           class=""
           data-label="Quantity"
         >
-          2
+          1
         </td>
         <td
           class=""
@@ -8909,12 +8913,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8974,12 +8978,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -9043,12 +9047,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -9112,12 +9116,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -9142,10 +9146,8 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-pf-content="true"
             >
               <a
-                href="/RH1234"
-              >
-                Z
-              </a>
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9154,7 +9156,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                letters
+                consonants
               </small>
             </h3>
           </div>
@@ -9162,14 +9164,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        >
-          RH1234
-        </td>
+        />
         <td
           class=""
           data-label="Quantity"
         >
-          1
+          2
         </td>
         <td
           class=""
@@ -9961,8 +9961,10 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-pf-content="true"
             >
               <a
-                href="/undefined"
-              />
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -9971,7 +9973,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                consonants
+                letters
               </small>
             </h3>
           </div>
@@ -9979,12 +9981,14 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        />
+        >
+          RH1234
+        </td>
         <td
           class=""
           data-label="Quantity"
         >
-          2
+          1
         </td>
         <td
           class=""
@@ -9996,12 +10000,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -10061,12 +10065,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -10130,12 +10134,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -10199,12 +10203,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -10229,10 +10233,8 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-pf-content="true"
             >
               <a
-                href="/RH1234"
-              >
-                Z
-              </a>
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10241,7 +10243,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                letters
+                consonants
               </small>
             </h3>
           </div>
@@ -10249,14 +10251,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        >
-          RH1234
-        </td>
+        />
         <td
           class=""
           data-label="Quantity"
         >
-          1
+          2
         </td>
         <td
           class=""
@@ -11140,12 +11140,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -11274,12 +11274,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -11343,12 +11343,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -11412,12 +11412,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -12233,11 +12233,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            1
+          </span>
         </td>
       </tr>
       <tr
@@ -12300,11 +12302,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock2
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            4
+          </span>
         </td>
       </tr>
       <tr
@@ -12367,11 +12371,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -13153,11 +13159,13 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -13939,11 +13947,13 @@ exports[`ProductsTable when the search is used refines the results by product li
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            1
+          </span>
         </td>
       </tr>
     </tbody>
@@ -14725,11 +14735,13 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -17004,12 +17016,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17073,12 +17085,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17142,12 +17154,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17211,12 +17223,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17280,12 +17292,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17349,12 +17361,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17418,12 +17430,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17487,12 +17499,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17556,12 +17568,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17625,12 +17637,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
