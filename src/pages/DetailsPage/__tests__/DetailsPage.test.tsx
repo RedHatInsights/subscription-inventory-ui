@@ -68,7 +68,19 @@ const mockSingleProduct = (hasData: boolean) => {
     sku: hasData ? 'TESTSKU' : '',
     serviceLevel: hasData ? 'TEST serviceLevel' : '',
     serviceType: hasData ? 'TEST serviceType' : '',
-    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null
+    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null,
+    subscriptions: hasData
+      ? [
+          {
+            number: '1234',
+            contractNumber: '2345',
+            quantity: '1',
+            endDate: '2022-10-24T04:00:00.000Z',
+            status: 'Active',
+            startDate: '2021-10-24T04:00:00.000Z'
+          }
+        ]
+      : []
   };
 
   (useSingleProduct as jest.Mock).mockReturnValue({

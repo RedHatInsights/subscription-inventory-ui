@@ -8,6 +8,16 @@ type Product = {
   serviceLevel: string;
   serviceType: string;
   unitOfMeasure: UnitOfMeasure;
+  subscriptions?: Subscription[];
+};
+
+type Subscription = {
+  contractNumber: string;
+  endDate: string;
+  number: string;
+  quantity: string;
+  startDate: string;
+  status: string;
 };
 
 interface ProductApiData {
@@ -49,4 +59,4 @@ const useProducts = (
   return useQuery(`products.${filter}`, () => getProducts(filter, setDelay));
 };
 
-export { Product, UnitOfMeasure, UoMNameOrder, useProducts as default };
+export { Product, Subscription, UnitOfMeasure, UoMNameOrder, useProducts as default };

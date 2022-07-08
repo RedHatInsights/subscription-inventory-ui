@@ -1,4 +1,5 @@
 import { Badge, Breadcrumb, BreadcrumbItem, List, ListItem } from '@patternfly/react-core';
+import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent } from 'react';
 import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
@@ -7,6 +8,7 @@ import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
+import SubscriptionTable from '../../components/SubscriptionTable';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -62,6 +64,13 @@ const DetailsPage: FunctionComponent = () => {
 
         {error && <Unavailable />}
       </PageHeader>
+      <Main>
+        <>
+          {isLoading && !error && <Processing />}
+          {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
+          {error && <Unavailable />}
+        </>
+      </Main>
     </>
   );
 
