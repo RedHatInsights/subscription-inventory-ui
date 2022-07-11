@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Card, CardBody, Flex, FlexItem, Gallery, Grid } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
@@ -19,7 +19,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
     expired: 'Expired',
     futureDated: 'Future dated'
   };
-  
+
   const handleSetFilter = (filter: string) => {
     setFilter(filter);
   };
@@ -27,13 +27,14 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
   return (
     <Grid hasGutter>
       <Gallery hasGutter style={{ display: 'flex', flexDirection: 'row' }}>
-        <Card 
-         id="active-card" 
-         filter = "active"
-         onClick={() => handleSetFilter("active")}
-         hasSelectableInput
-         isSelectableRaised
-         style={{ flex: 1 }}>
+        <Card
+          id="active-card"
+          filter="active"
+          onClick={() => handleSetFilter('active')}
+          hasSelectableInput
+          isSelectableRaised
+          style={{ flex: 1 }}
+        >
           <CardBody>{cardTitles.active}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -44,12 +45,13 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
             </Flex>
           </CardBody>
         </Card>
-        <Card 
-         id='expiringSoon-card'
-         onClick={() => handleSetFilter("expiringSoon")}
-         hasSelectableInput
-         isSelectableRaised
-         style={{ flex: 1 }}>
+        <Card
+          id="expiringSoon-card"
+          onClick={() => handleSetFilter('expiringSoon')}
+          hasSelectableInput
+          isSelectableRaised
+          style={{ flex: 1 }}
+        >
           <CardBody>{cardTitles.expiringSoon}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -60,12 +62,13 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
             </Flex>
           </CardBody>
         </Card>
-        <Card 
-         id='expired-card'
-         onClick={() => handleSetFilter("expired")}
-         hasSelectableInput
-         isSelectableRaised
-         style={{ flex: 1 }}>
+        <Card
+          id="expired-card"
+          onClick={() => handleSetFilter('expired')}
+          hasSelectableInput
+          isSelectableRaised
+          style={{ flex: 1 }}
+        >
           <CardBody>{cardTitles.expired}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -77,11 +80,12 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
           </CardBody>
         </Card>
         <Card
-          id='futureDated-card'
-          onClick={() => handleSetFilter("futureDated")}
+          id="futureDated-card"
+          onClick={() => handleSetFilter('futureDated')}
           hasSelectableInput
           isSelectableRaised
-          style={{ flex: 1 }}>
+          style={{ flex: 1 }}
+        >
           <CardBody>{cardTitles.futureDated}</CardBody>
           <CardBody>
             <Flex spaceItems={{ default: 'spaceItemsSm' }}>
@@ -97,4 +101,4 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
   );
 };
 
-export {StatusCountCards as default, StatusCardProps};
+export { StatusCountCards as default, StatusCardProps };

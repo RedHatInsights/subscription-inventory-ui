@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';
 import { get, def } from 'bdd-lazy-var';
@@ -11,18 +11,25 @@ const queryClient = new QueryClient();
 const Table: FunctionComponent<ProductsTableProps> = ({ data, isFetching, filter }) => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <ProductsTable data={data} isFetching={isFetching} filter={filter} setFilter={() => {}}  />
+      <ProductsTable
+        data={data}
+        isFetching={isFetching}
+        filter={filter}
+        setFilter={() => {
+          ('');
+        }}
+      />
     </BrowserRouter>
   </QueryClientProvider>
 );
 
-const removeFilter = jest.fn()
+const removeFilter = jest.fn();
 
 describe('ProductsTable', () => {
   def('loading', () => false);
   def('error', () => false);
   def('fetching', () => false);
-  def('filter', () => "" );
+  def('filter', () => '');
   def('data', () => [
     factories.product.build({
       name: 'A',
@@ -35,7 +42,16 @@ describe('ProductsTable', () => {
   ]);
 
   it('renders correctly', () => {
-    const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}}  />);
+    const { container } = render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={() => {
+          ('');
+        }}
+      />
+    );
 
     expect(container).toMatchSnapshot();
   });
@@ -93,27 +109,63 @@ describe('ProductsTable', () => {
     ]);
 
     it('sorts by name by default', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by name, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Name'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by quantity', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Quantity'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by quantity, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Quantity'));
       fireEvent.click(screen.getByText('Quantity'));
@@ -121,42 +173,96 @@ describe('ProductsTable', () => {
     });
 
     it('can sort by sku', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('SKU'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by sku, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('SKU'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by serviceLevel', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Service level'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by serviceLevel, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Service level'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by unitOfMeasure', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Unit of measure'));
       expect(container).toMatchSnapshot();
     });
 
     it('can sort by unitOfMeasure, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Unit of measure'));
       expect(container).toMatchSnapshot();
@@ -184,7 +290,16 @@ describe('ProductsTable', () => {
     ]);
 
     it('can change page', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const nextPage = screen.getAllByLabelText('Go to next page')[0];
       fireEvent.click(nextPage);
@@ -192,7 +307,16 @@ describe('ProductsTable', () => {
     });
 
     it('can change per page', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const perPageArrow = screen.getAllByLabelText('Items per page')[0];
       fireEvent.click(perPageArrow);
@@ -239,7 +363,16 @@ describe('ProductsTable', () => {
     ]);
 
     it('refines the results by name', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'Z' } });
@@ -247,7 +380,16 @@ describe('ProductsTable', () => {
     });
 
     it('refines the results by product line', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'vowels' } });
@@ -255,7 +397,16 @@ describe('ProductsTable', () => {
     });
 
     it('can be cleared', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'Z' } });
@@ -265,7 +416,16 @@ describe('ProductsTable', () => {
     });
 
     it('renders an empty state when no results are found', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'ZZZ' } });
@@ -273,7 +433,16 @@ describe('ProductsTable', () => {
     });
 
     it('refines the results by sku', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            ('');
+          }}
+        />
+      );
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'RH123' } });
@@ -282,7 +451,7 @@ describe('ProductsTable', () => {
   });
 
   describe('when the active filter is set', () => {
-    def('filter', () => "active");
+    def('filter', () => 'active');
     def('data', () => [
       factories.product.build({
         name: 'Z',
@@ -303,13 +472,31 @@ describe('ProductsTable', () => {
     ]);
 
     it('renders with filter enabled', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'active';
+          }}
+        />
+      );
 
       expect(container).toMatchSnapshot();
     });
 
-    it('renders status filter',async () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+    it('renders status filter', async () => {
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'active';
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByLabelText('close'));
 
@@ -318,43 +505,78 @@ describe('ProductsTable', () => {
     });
 
     it('clears filters when inline clicked', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'active';
+          }}
+        />
+      );
 
       fireEvent.click(screen.getByText('Clear filters'));
 
       expect(removeFilter).toHaveBeenCalled;
       expect(container).toMatchSnapshot();
-    })
+    });
   });
 
   describe('when the expiringSoon filter is set', () => {
-    def('filter', () => "expiringSoon");
+    def('filter', () => 'expiringSoon');
 
     it('renders with filter enabled', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'expiringSoon';
+          }}
+        />
+      );
 
       expect(container).toMatchSnapshot();
     });
   });
 
   describe('when the expired filter is set', () => {
-    def('filter', () => "expired");
+    def('filter', () => 'expired');
 
     it('renders with filter enabled', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'expired';
+          }}
+        />
+      );
 
       expect(container).toMatchSnapshot();
     });
   });
 
   describe('when the futureDated filter is set', () => {
-    def('filter', () => "futureDated");
+    def('filter', () => 'futureDated');
 
     it('renders with filter enabled', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} filter={get('filter')}  setFilter={() => {}} />);
+      const { container } = render(
+        <Table
+          data={get('data')}
+          isFetching={get('fetching')}
+          filter={get('filter')}
+          setFilter={() => {
+            'futureDated';
+          }}
+        />
+      );
 
       expect(container).toMatchSnapshot();
     });
   });
-
 });

@@ -42,7 +42,10 @@ const getProducts = async (filter: string, setDelay: boolean): Promise<Product[]
   return productData;
 };
 
-const useProducts = (filter:string, setDelay: boolean): QueryObserverResult<Product[], unknown> => {
+const useProducts = (
+  filter: string,
+  setDelay: boolean
+): QueryObserverResult<Product[], unknown> => {
   return useQuery(`products.${filter}`, () => getProducts(filter, setDelay));
 };
 
