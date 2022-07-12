@@ -152,22 +152,12 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     return products.slice(first, last);
   };
 
-  const getFilter = (filter: string): string => {
-    switch (filter) {
-      case 'active': {
-        return 'Active';
-      }
-      case 'expiringSoon': {
-        return 'Expiring soon';
-      }
-      case 'expired': {
-        return 'Expired';
-      }
-      case 'futureDated': {
-        return 'Future dated';
-      }
-    }
-  };
+  const filterMap = new Map<string, string>([
+    ['active', 'Active'],
+    ['expiringSoon', 'Expiring soon'],
+    ['expired', 'Expired'],
+    ['futureDated', 'Future dated']
+  ]);
 
   const removeFilter = () => {
     setFilter('');
@@ -200,7 +190,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           {filter != '' && (
             <ChipGroup categoryName="Status">
               <Chip id="status-chip" key={filter} onClick={() => removeFilter()}>
-                {getFilter(filter)}
+                {filterMap.get(filter)}
               </Chip>
             </ChipGroup>
           )}

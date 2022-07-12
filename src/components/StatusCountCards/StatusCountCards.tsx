@@ -20,17 +20,13 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
     futureDated: 'Future dated'
   };
 
-  const handleSetFilter = (filter: string) => {
-    setFilter(filter);
-  };
-
   return (
     <Grid hasGutter>
       <Gallery hasGutter style={{ display: 'flex', flexDirection: 'row' }}>
         <Card
           id="active-card"
           filter="active"
-          onClick={() => handleSetFilter('active')}
+          onClick={() => setFilter('active')}
           hasSelectableInput
           isSelectableRaised
           style={{ flex: 1 }}
@@ -47,7 +43,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
         </Card>
         <Card
           id="expiringSoon-card"
-          onClick={() => handleSetFilter('expiringSoon')}
+          onClick={() => setFilter('expiringSoon')}
           hasSelectableInput
           isSelectableRaised
           style={{ flex: 1 }}
@@ -64,7 +60,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
         </Card>
         <Card
           id="expired-card"
-          onClick={() => handleSetFilter('expired')}
+          onClick={() => setFilter('expired')}
           hasSelectableInput
           isSelectableRaised
           style={{ flex: 1 }}
@@ -81,7 +77,7 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({ statusCardData, 
         </Card>
         <Card
           id="futureDated-card"
-          onClick={() => handleSetFilter('futureDated')}
+          onClick={() => setFilter('futureDated')}
           hasSelectableInput
           isSelectableRaised
           style={{ flex: 1 }}

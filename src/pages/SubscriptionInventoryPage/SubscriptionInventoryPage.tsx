@@ -18,11 +18,11 @@ import { StackItem } from '@patternfly/react-core';
 import StatusCountCards from '../../components/StatusCountCards';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
-  const [Filter, setFilter] = useState<string>('');
+  const [filter, setFilter] = useState<string>('');
 
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const productData = useProducts(Filter, true);
+  const productData = useProducts(filter, true);
   const statusCardData = useStatus();
 
   const Page: FunctionComponent = () => {
@@ -68,7 +68,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                     <ProductsTable
                       data={productData.data}
                       isFetching={productData.isFetching}
-                      filter={Filter}
+                      filter={filter}
                       setFilter={setFilter}
                     />
                   )}
