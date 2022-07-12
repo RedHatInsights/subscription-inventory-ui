@@ -189,7 +189,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         <FlexItem>
           {filter != '' && (
             <ChipGroup categoryName="Status">
-              <Chip id="status-chip" key={filter} onClick={() => removeFilter()}>
+              <Chip id="status-chip" key={filter} onClick={removeFilter}>
                 {filterMap.get(filter)}
               </Chip>
             </ChipGroup>
@@ -197,7 +197,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         </FlexItem>
         <FlexItem>
           {filter != '' && (
-            <Button variant="link" isInline onClick={() => removeFilter()}>
+            <Button variant="link" isInline onClick={removeFilter}>
               Clear filters
             </Button>
           )}
