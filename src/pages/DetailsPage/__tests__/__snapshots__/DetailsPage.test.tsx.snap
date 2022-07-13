@@ -664,13 +664,13 @@ exports[`Details Page renders data 1`] = `
                 class=""
                 data-label="Start date"
               >
-                2021-10-23
+                2021-10-24
               </td>
               <td
                 class=""
                 data-label="End date"
               >
-                2022-10-23
+                2022-10-24
               </td>
             </tr>
           </tbody>
