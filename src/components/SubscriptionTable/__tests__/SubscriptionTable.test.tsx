@@ -119,4 +119,48 @@ describe('Subscription Table', () => {
       expect(container).toMatchSnapshot();
     });
   });
+
+  describe('pagination', () => {
+    def('data', () => [
+      ...factories.subscription.buildList(10, {
+        number: '1235',
+        contractNumber: '2345',
+        quantity: '1',
+        endDate: '2022-10-26T04:00:00.000Z',
+        status: 'Active',
+        startDate: '2021-10-20T04:00:00.000Z'
+      }),
+      factories.subscription.build({
+        number: '1236',
+        contractNumber: '2346',
+        quantity: '4',
+        endDate: '2022-10-27T04:00:00.000Z',
+        status: 'Active',
+        startDate: '2021-10-23T04:00:00.000Z'
+      })
+    ]);
+
+    it('pages', () => {
+      const { container } = render(<Table subscriptions={get('data')} />);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can change page', () => {
+      const { container } = render(<Table subscriptions={get('data')} />);
+
+      const nextPage = screen.getAllByLabelText('Go to next page')[0];
+      fireEvent.click(nextPage);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can change per page', () => {
+      const { container } = render(<Table subscriptions={get('data')} />);
+
+      const perPageArrow = screen.getAllByLabelText('Items per page')[0];
+      fireEvent.click(perPageArrow);
+      const perPageAmount = screen.getByText('20 per page');
+      fireEvent.click(perPageAmount);
+      expect(container).toMatchSnapshot();
+    });
+  });
 });

@@ -9,6 +9,7 @@ import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable'
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
+import useFeatureFlag from '../../hooks/useFeatureFlag';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -16,6 +17,7 @@ const DetailsPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
+  const tableIsEnabled = useFeatureFlag('subscriptionInventory.detailsTable');
 
   const missingText = 'Not Available';
 
@@ -64,13 +66,15 @@ const DetailsPage: FunctionComponent = () => {
 
         {error && <Unavailable />}
       </PageHeader>
-      <Main>
-        <>
-          {isLoading && !error && <Processing />}
-          {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
-          {error && <Unavailable />}
-        </>
-      </Main>
+      {tableIsEnabled && (
+        <Main>
+          <>
+            {isLoading && !error && <Processing />}
+            {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
+            {error && <Unavailable />}
+          </>
+        </Main>
+      )}
     </>
   );
 

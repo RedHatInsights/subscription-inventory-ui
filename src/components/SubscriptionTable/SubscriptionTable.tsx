@@ -1,4 +1,6 @@
+import { types } from '@babel/core';
 import { CardTitle } from '@patternfly/react-core';
+import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
 import { CardBody } from '@patternfly/react-core';
 import { SearchInput } from '@patternfly/react-core';
 import { Card } from '@patternfly/react-core';
@@ -52,6 +54,8 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
     };
   });
 
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(10);
   const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
   const [searchValue, setSearchValue] = React.useState('');
@@ -118,23 +122,57 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
     });
   };
 
+  const getPage = (subscriptions: TypeCorrectedSubscription[]) => {
+    const first = (page - 1) * perPage;
+    const last = first + perPage;
+    return subscriptions.slice(first, last);
+  };
+
   const sortedSubscriptions = sortSubscriptions(castData, activeSortIndex);
   const filteredSubscriptions = filter(sortedSubscriptions, searchValue);
+  const pagedSubscriptions = getPage(filteredSubscriptions);
+
+  const pagination = (variant = PaginationVariant.top) => {
+    return (
+      <Pagination
+        itemCount={subscriptions.length}
+        perPage={perPage}
+        page={page}
+        onSetPage={(_e: React.MouseEvent, p: number) => {
+          setPage(p);
+        }}
+        onPerPageSelect={(_e: React.MouseEvent, p: number) => {
+          setPerPage(p);
+          setPage(1);
+        }}
+        variant={variant}
+      />
+    );
+  };
 
   return (
     <>
       <Card>
         <CardTitle>Subscription Details</CardTitle>
         <CardBody>
-          <SearchInput
-            placeholder="Filter by subscription or contract number"
-            value={searchValue}
-            onChange={(val: string) => setSearchValue(val)}
-            onClear={() => setSearchValue('')}
-            className="pf-u-w-25"
-          />
+          <Flex
+            direction={{ default: 'column', md: 'row' }}
+            justifyContent={{ default: 'justifyContentSpaceBetween' }}
+          >
+            <FlexItem>
+              {pagedSubscriptions.length > 0 && (
+                <SearchInput
+                  placeholder="Filter by subscription or contract number"
+                  value={searchValue}
+                  onChange={(val: string) => setSearchValue(val)}
+                  onClear={() => setSearchValue('')}
+                />
+              )}
+            </FlexItem>
+            <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+          </Flex>
           {/* @ts-ignore */}
-          <TableComposable aria-label="subscriptions">
+          <TableComposable aria-label="subscriptions" variant="compact">
             <Thead>
               {/* @ts-ignore */}
               <Tr>
@@ -156,7 +194,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
               </Tr>
             </Thead>
             <Tbody>
-              {filteredSubscriptions.map((subscription, i) => (
+              {pagedSubscriptions.map((subscription, i) => (
                 <React.Fragment key={i}>
                   {/* @ts-ignore */}
                   <Tr>

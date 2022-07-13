@@ -12,6 +12,10 @@ import { Product } from '../../../hooks/useProducts';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useSingleProduct');
+jest.mock('../../../hooks/useFeatureFlag', () => ({
+  __esModule: true,
+  default: jest.fn((_: string) => true)
+}));
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
   useLocation: () => ({
