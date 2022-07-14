@@ -1,4 +1,3 @@
-import { types } from '@babel/core';
 import { CardTitle } from '@patternfly/react-core';
 import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
 import { CardBody } from '@patternfly/react-core';
@@ -152,80 +151,75 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
 
   return (
     <>
-      <Card>
-        <CardTitle>Subscription Details</CardTitle>
-        <CardBody>
-          <Flex
-            direction={{ default: 'column', md: 'row' }}
-            justifyContent={{ default: 'justifyContentSpaceBetween' }}
-          >
-            <FlexItem>
-              {pagedSubscriptions.length > 0 && (
-                <SearchInput
-                  placeholder="Filter by subscription or contract number"
-                  value={searchValue}
-                  onChange={(val: string) => setSearchValue(val)}
-                  onClear={() => setSearchValue('')}
-                />
-              )}
-            </FlexItem>
-            <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
-          </Flex>
+      <Flex
+        direction={{ default: 'column', md: 'row' }}
+        justifyContent={{ default: 'justifyContentSpaceBetween' }}
+      >
+        <FlexItem>
+          {castData.length > 0 && (
+            <SearchInput
+              placeholder="Filter by subscription or contract number"
+              value={searchValue}
+              onChange={(val: string) => setSearchValue(val)}
+              onClear={() => setSearchValue('')}
+            />
+          )}
+        </FlexItem>
+        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+      </Flex>
+      {/* @ts-ignore */}
+      <TableComposable aria-label="subscriptions" variant="compact">
+        <Thead>
           {/* @ts-ignore */}
-          <TableComposable aria-label="subscriptions" variant="compact">
-            <Thead>
+          <Tr>
+            <Th sort={getSortParams(0)} width={25}>
+              {columnNames.number}
+            </Th>
+            <Th sort={getSortParams(1)} width={20}>
+              {columnNames.contractNumber}
+            </Th>
+            <Th sort={getSortParams(2)} width={25}>
+              {columnNames.quantity}
+            </Th>
+            <Th sort={getSortParams(3)} width={15}>
+              {columnNames.startDate}
+            </Th>
+            <Th sort={getSortParams(4)} width={15}>
+              {columnNames.endDate}
+            </Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {pagedSubscriptions.map((subscription, i) => (
+            <React.Fragment key={i}>
               {/* @ts-ignore */}
               <Tr>
-                <Th sort={getSortParams(0)} width={25}>
-                  {columnNames.number}
-                </Th>
-                <Th sort={getSortParams(1)} width={20}>
-                  {columnNames.contractNumber}
-                </Th>
-                <Th sort={getSortParams(2)} width={25}>
-                  {columnNames.quantity}
-                </Th>
-                <Th sort={getSortParams(3)} width={15}>
-                  {columnNames.startDate}
-                </Th>
-                <Th sort={getSortParams(4)} width={15}>
-                  {columnNames.endDate}
-                </Th>
+                <Td dataLabel={columnNames.number}>
+                  {subscription.number == -1 ? 'Not Available' : subscription.number}
+                </Td>
+                <Td dataLabel={columnNames.contractNumber}>
+                  {subscription.contractNumber == -1
+                    ? 'Not Available'
+                    : subscription.contractNumber}
+                </Td>
+                <Td dataLabel={columnNames.quantity}>
+                  {subscription.quantity == -1 ? 'Not Available' : subscription.quantity}
+                </Td>
+                <Td dataLabel={columnNames.startDate}>
+                  {subscription.startDate == new Date(0)
+                    ? 'Not Available'
+                    : printDate(subscription.startDate)}
+                </Td>
+                <Td dataLabel={columnNames.endDate}>
+                  {subscription.endDate == new Date(0)
+                    ? 'Not Available'
+                    : printDate(subscription.endDate)}
+                </Td>
               </Tr>
-            </Thead>
-            <Tbody>
-              {pagedSubscriptions.map((subscription, i) => (
-                <React.Fragment key={i}>
-                  {/* @ts-ignore */}
-                  <Tr>
-                    <Td dataLabel={columnNames.number}>
-                      {subscription.number == -1 ? 'Not Available' : subscription.number}
-                    </Td>
-                    <Td dataLabel={columnNames.contractNumber}>
-                      {subscription.contractNumber == -1
-                        ? 'Not Available'
-                        : subscription.contractNumber}
-                    </Td>
-                    <Td dataLabel={columnNames.quantity}>
-                      {subscription.quantity == -1 ? 'Not Available' : subscription.quantity}
-                    </Td>
-                    <Td dataLabel={columnNames.startDate}>
-                      {subscription.startDate == new Date(0)
-                        ? 'Not Available'
-                        : printDate(subscription.startDate)}
-                    </Td>
-                    <Td dataLabel={columnNames.endDate}>
-                      {subscription.endDate == new Date(0)
-                        ? 'Not Available'
-                        : printDate(subscription.endDate)}
-                    </Td>
-                  </Tr>
-                </React.Fragment>
-              ))}
-            </Tbody>
-          </TableComposable>
-        </CardBody>
-      </Card>
+            </React.Fragment>
+          ))}
+        </Tbody>
+      </TableComposable>
     </>
   );
 };

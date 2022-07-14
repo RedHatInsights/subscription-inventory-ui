@@ -1,4 +1,4 @@
-import { Badge, Breadcrumb, BreadcrumbItem, List, ListItem } from '@patternfly/react-core';
+import { Badge, Breadcrumb, BreadcrumbItem, List, ListItem, PageSection, Title } from '@patternfly/react-core';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent } from 'react';
@@ -68,11 +68,12 @@ const DetailsPage: FunctionComponent = () => {
       </PageHeader>
       {tableIsEnabled && (
         <Main>
-          <>
+          <PageSection variant="light">
+            <Title headingLevel="h2">Subscriptions</Title>
             {isLoading && !error && <Processing />}
             {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
             {error && <Unavailable />}
-          </>
+          </PageSection>
         </Main>
       )}
     </>
