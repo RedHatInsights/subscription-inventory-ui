@@ -150,7 +150,7 @@ exports[`Details Page renders data 1`] = `
         data-ouia-component-type="PF4/Title"
         data-ouia-safe="true"
       >
-        Subscriptions
+        Subscription details
       </h2>
       <div
         class="pf-l-flex pf-m-column pf-m-row-on-md pf-m-justify-content-space-between"
@@ -791,7 +791,7 @@ exports[`Details Page renders not available for missing data 1`] = `
         data-ouia-component-type="PF4/Title"
         data-ouia-safe="true"
       >
-        Subscriptions
+        Subscription details
       </h2>
       <div
         class="pf-l-flex pf-m-column pf-m-row-on-md pf-m-justify-content-space-between"

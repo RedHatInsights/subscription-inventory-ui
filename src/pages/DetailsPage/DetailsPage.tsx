@@ -77,7 +77,7 @@ const DetailsPage: FunctionComponent = () => {
       {tableIsEnabled && (
         <Main>
           <PageSection variant="light">
-            <Title headingLevel="h2">Subscriptions</Title>
+            <Title headingLevel="h2">Subscription details</Title>
             {isLoading && !error && <Processing />}
             {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
             {error && <Unavailable />}
