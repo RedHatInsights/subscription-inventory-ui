@@ -1,8 +1,5 @@
-import { CardTitle } from '@patternfly/react-core';
 import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
-import { CardBody } from '@patternfly/react-core';
 import { SearchInput } from '@patternfly/react-core';
-import { Card } from '@patternfly/react-core';
 import { TableComposable, Tbody, Td, Th, Thead, ThProps, Tr } from '@patternfly/react-table';
 import { parseInt } from 'lodash';
 import React, { FunctionComponent } from 'react';
