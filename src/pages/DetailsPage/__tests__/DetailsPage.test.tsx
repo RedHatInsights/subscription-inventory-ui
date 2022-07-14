@@ -91,7 +91,7 @@ const mockSingleProduct = (hasData: boolean) => {
     isLoading: false,
     isFetching: false,
     isSuccess: true,
-    isError: false,
+    error: false,
     data
   });
 
@@ -143,6 +143,21 @@ describe('Details Page', () => {
     const canReadProducts = true;
     mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
     mockSingleProduct(false);
+
+    const { container } = render(<Page />);
+
+    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(1));
+    expect(container).toMatchSnapshot();
+  });
+
+  it('handles errors', async () => {
+    (useSingleProduct as jest.Mock).mockReturnValue({
+      isLoading: false,
+      isFetching: false,
+      isSuccess: false,
+      error: true,
+      data: []
+    });
 
     const { container } = render(<Page />);
 
