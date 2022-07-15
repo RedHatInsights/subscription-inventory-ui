@@ -9,44 +9,41 @@ exports[`ProductsTable renders correctly 1`] = `
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -104,6 +101,7 @@ exports[`ProductsTable renders correctly 1`] = `
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
@@ -504,7 +502,11 @@ exports[`ProductsTable renders correctly 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -586,6 +588,7 @@ exports[`ProductsTable renders correctly 1`] = `
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
@@ -768,44 +771,41 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -863,6 +863,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
@@ -1263,7 +1264,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -1299,12 +1304,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -1328,7 +1333,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -1364,12 +1373,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -1393,7 +1402,11 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -1429,12 +1442,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -1458,6 +1471,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -1512,6 +1528,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -1545,12 +1564,12 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -1574,6 +1593,9 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -1653,6 +1675,7 @@ exports[`ProductsTable when row column headings are clicked can sort by name, re
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
@@ -1835,44 +1858,41 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -1930,6 +1950,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
@@ -2330,6 +2351,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2384,7 +2408,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -2420,12 +2448,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -2449,6 +2477,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2482,12 +2513,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -2511,6 +2542,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -2573,7 +2607,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -2609,12 +2647,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -2638,7 +2676,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -2674,12 +2716,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -2720,6 +2762,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
@@ -2902,44 +2945,41 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -2997,6 +3037,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
@@ -3397,7 +3438,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -3433,12 +3478,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -3462,6 +3507,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -3495,12 +3543,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -3524,6 +3572,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -3586,7 +3637,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -3622,12 +3677,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -3651,7 +3706,11 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -3687,12 +3746,12 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -3716,6 +3775,9 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -3787,6 +3849,7 @@ exports[`ProductsTable when row column headings are clicked can sort by quantity
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
@@ -3969,44 +4032,41 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -4064,6 +4124,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-15"
@@ -4464,6 +4525,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4518,6 +4582,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4551,12 +4618,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -4580,6 +4647,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -4642,7 +4712,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -4678,12 +4752,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -4707,7 +4781,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -4743,12 +4821,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -4772,7 +4850,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -4808,12 +4890,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -4854,6 +4936,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-16"
@@ -5036,44 +5119,41 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -5131,6 +5211,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-17"
@@ -5531,6 +5612,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5585,6 +5669,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5618,12 +5705,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -5647,6 +5734,9 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -5709,7 +5799,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -5745,12 +5839,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -5774,7 +5868,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -5810,12 +5908,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -5839,7 +5937,11 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -5875,12 +5977,12 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -5921,6 +6023,7 @@ exports[`ProductsTable when row column headings are clicked can sort by serviceL
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-18"
@@ -6103,44 +6206,41 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -6198,6 +6298,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
@@ -6598,6 +6699,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6652,6 +6756,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6685,12 +6792,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -6714,6 +6821,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -6776,7 +6886,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -6812,12 +6926,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -6841,7 +6955,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -6877,12 +6995,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -6906,7 +7024,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -6942,12 +7064,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -6988,6 +7110,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku 1`] 
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
@@ -7170,44 +7293,41 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -7265,6 +7385,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
@@ -7665,6 +7786,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7719,6 +7843,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7752,12 +7879,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -7781,6 +7908,9 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -7843,7 +7973,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -7879,12 +8013,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -7908,7 +8042,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -7944,12 +8082,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -7973,7 +8111,11 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -8009,12 +8151,12 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8055,6 +8197,7 @@ exports[`ProductsTable when row column headings are clicked can sort by sku, rev
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
@@ -8237,44 +8380,41 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -8332,6 +8472,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-19"
@@ -8732,6 +8873,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -8740,7 +8886,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                consonants
+                letters
               </small>
             </h3>
           </div>
@@ -8748,12 +8894,14 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        />
+        >
+          RH1234
+        </td>
         <td
           class=""
           data-label="Quantity"
         >
-          2
+          1
         </td>
         <td
           class=""
@@ -8765,12 +8913,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8794,6 +8942,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -8827,12 +8978,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -8856,7 +9007,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -8892,12 +9047,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -8921,7 +9076,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -8957,12 +9116,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -8986,7 +9145,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -8995,7 +9156,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                letters
+                consonants
               </small>
             </h3>
           </div>
@@ -9003,14 +9164,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        >
-          RH1234
-        </td>
+        />
         <td
           class=""
           data-label="Quantity"
         >
-          1
+          2
         </td>
         <td
           class=""
@@ -9051,6 +9210,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9122,6 +9284,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-20"
@@ -9304,44 +9467,41 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -9399,6 +9559,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-21"
@@ -9799,6 +9960,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -9807,7 +9973,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                consonants
+                letters
               </small>
             </h3>
           </div>
@@ -9815,12 +9981,14 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        />
+        >
+          RH1234
+        </td>
         <td
           class=""
           data-label="Quantity"
         >
-          2
+          1
         </td>
         <td
           class=""
@@ -9832,12 +10000,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -9861,6 +10029,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -9894,12 +10065,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -9923,7 +10094,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -9959,12 +10134,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -9988,7 +10163,11 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -10024,12 +10203,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -10053,7 +10232,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10062,7 +10243,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
                 data-ouia-safe="true"
                 data-pf-content="true"
               >
-                letters
+                consonants
               </small>
             </h3>
           </div>
@@ -10070,14 +10251,12 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         <td
           class=""
           data-label="SKU"
-        >
-          RH1234
-        </td>
+        />
         <td
           class=""
           data-label="Quantity"
         >
-          1
+          2
         </td>
         <td
           class=""
@@ -10118,6 +10297,9 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10189,6 +10371,7 @@ exports[`ProductsTable when row column headings are clicked can sort by unitOfMe
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-22"
@@ -10371,44 +10554,41 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -10466,6 +10646,7 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
@@ -10866,6 +11047,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10920,6 +11104,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -10953,12 +11140,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock3
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            3
           </span>
         </td>
       </tr>
@@ -10982,6 +11169,9 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -11044,7 +11234,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -11080,12 +11274,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            2
           </span>
         </td>
       </tr>
@@ -11109,7 +11303,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -11145,12 +11343,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Cores
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -11174,7 +11372,11 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH1234"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -11210,12 +11412,12 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
           class=""
           data-label="Unit of measure"
         >
-          Sockets
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            128
+            unlimited
           </span>
         </td>
       </tr>
@@ -11256,6 +11458,7 @@ exports[`ProductsTable when row column headings are clicked sorts by name by def
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
@@ -11438,44 +11641,41 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -11533,6 +11733,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-31"
@@ -11933,6 +12134,9 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
+              <a
+                href="/undefined"
+              />
               <br />
               <small
                 class=""
@@ -11989,7 +12193,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -12025,11 +12233,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            1
+          </span>
         </td>
       </tr>
       <tr
@@ -12052,7 +12262,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              P
+              <a
+                href="/Fake123"
+              >
+                P
+              </a>
               <br />
               <small
                 class=""
@@ -12088,11 +12302,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock2
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            4
+          </span>
         </td>
       </tr>
       <tr
@@ -12115,7 +12331,11 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -12151,11 +12371,13 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -12195,6 +12417,7 @@ exports[`ProductsTable when the search is used can be cleared 1`] = `
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-32"
@@ -12377,73 +12600,66 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value="Z"
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value="Z"
+            />
+          </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-113"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
               />
-            </span>
-            <span
-              class="pf-c-search-input__utilities"
-            >
-              <span
-                class="pf-c-search-input__clear"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Reset"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-113"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </span>
-            </span>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -12502,6 +12718,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-27"
@@ -12902,7 +13119,11 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -12938,11 +13159,13 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -12982,6 +13205,7 @@ exports[`ProductsTable when the search is used refines the results by name 1`] =
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-28"
@@ -13164,73 +13388,66 @@ exports[`ProductsTable when the search is used refines the results by product li
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value="vowels"
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value="vowels"
+            />
+          </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-122"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
               />
-            </span>
-            <span
-              class="pf-c-search-input__utilities"
-            >
-              <span
-                class="pf-c-search-input__clear"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Reset"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-122"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </span>
-            </span>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -13289,6 +13506,7 @@ exports[`ProductsTable when the search is used refines the results by product li
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-29"
@@ -13689,7 +13907,11 @@ exports[`ProductsTable when the search is used refines the results by product li
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -13725,11 +13947,13 @@ exports[`ProductsTable when the search is used refines the results by product li
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            1
+          </span>
         </td>
       </tr>
     </tbody>
@@ -13769,6 +13993,7 @@ exports[`ProductsTable when the search is used refines the results by product li
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-30"
@@ -13951,73 +14176,66 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value="RH123"
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value="RH123"
+            />
+          </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-149"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
               />
-            </span>
-            <span
-              class="pf-c-search-input__utilities"
-            >
-              <span
-                class="pf-c-search-input__clear"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Reset"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-149"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </span>
-            </span>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -14076,6 +14294,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-35"
@@ -14476,7 +14695,11 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -14512,11 +14735,13 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
           class=""
           data-label="Unit of measure"
         >
-          Not Available
+          Mock1
            
           <span
             class="pf-c-badge pf-m-read"
-          />
+          >
+            unlimited
+          </span>
         </td>
       </tr>
     </tbody>
@@ -14556,6 +14781,7 @@ exports[`ProductsTable when the search is used refines the results by sku 1`] = 
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-36"
@@ -14738,73 +14964,66 @@ exports[`ProductsTable when the search is used renders an empty state when no re
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value="ZZZ"
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value="ZZZ"
+            />
+          </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-140"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
               />
-            </span>
-            <span
-              class="pf-c-search-input__utilities"
-            >
-              <span
-                class="pf-c-search-input__clear"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Reset"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-140"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </span>
-            </span>
-          </div>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -14863,6 +15082,7 @@ exports[`ProductsTable when the search is used renders an empty state when no re
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-33"
@@ -15324,6 +15544,7 @@ exports[`ProductsTable when the search is used renders an empty state when no re
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-34"
@@ -15506,44 +15727,41 @@ exports[`ProductsTable when using pagination can change page 1`] = `
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -15601,6 +15819,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-23"
@@ -15998,7 +16217,11 @@ exports[`ProductsTable when using pagination can change page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -16080,6 +16303,7 @@ exports[`ProductsTable when using pagination can change page 1`] = `
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-24"
@@ -16259,44 +16483,41 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
       class=""
     >
       <div
-        class="pf-c-search-input"
+        class="pf-c-text-input-group"
       >
         <div
-          class="pf-c-input-group"
+          class="pf-c-text-input-group__main pf-m-icon"
         >
-          <div
-            class="pf-c-search-input__bar"
+          <span
+            class="pf-c-text-input-group__text"
           >
             <span
-              class="pf-c-search-input__text"
+              class="pf-c-text-input-group__icon"
             >
-              <span
-                class="pf-c-search-input__icon"
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                  />
-                </svg>
-              </span>
-              <input
-                aria-label="Search input"
-                class="pf-c-search-input__text-input"
-                placeholder="Filter by Name or SKU"
-                value=""
-              />
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
             </span>
-            
-          </div>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              placeholder="Filter by Name or SKU"
+              type="text"
+              value=""
+            />
+          </span>
         </div>
+        
       </div>
     </div>
     <div
@@ -16354,6 +16575,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
             </span>
             <button
               aria-expanded="false"
+              aria-haspopup="listbox"
               aria-label="Items per page"
               class="  pf-c-options-menu__toggle-button"
               data-ouia-component-id="OUIA-Generated-DropdownToggle-25"
@@ -16754,7 +16976,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16790,12 +17016,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -16819,7 +17045,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16855,12 +17085,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -16884,7 +17114,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16920,12 +17154,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -16949,7 +17183,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -16985,12 +17223,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17014,7 +17252,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17050,12 +17292,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17079,7 +17321,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17115,12 +17361,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17144,7 +17390,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17180,12 +17430,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17209,7 +17459,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17245,12 +17499,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17274,7 +17528,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17310,12 +17568,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17339,7 +17597,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              A
+              <a
+                href="/MOCK123"
+              >
+                A
+              </a>
               <br />
               <small
                 class=""
@@ -17375,12 +17637,12 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
           class=""
           data-label="Unit of measure"
         >
-          Mock1
+          Mock
            
           <span
             class="pf-c-badge pf-m-read"
           >
-            unlimited
+            1
           </span>
         </td>
       </tr>
@@ -17404,7 +17666,11 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
               data-ouia-safe="true"
               data-pf-content="true"
             >
-              Z
+              <a
+                href="/RH123"
+              >
+                Z
+              </a>
               <br />
               <small
                 class=""
@@ -17486,6 +17752,7 @@ exports[`ProductsTable when using pagination can change per page 1`] = `
         </span>
         <button
           aria-expanded="false"
+          aria-haspopup="listbox"
           aria-label="Items per page"
           class="  pf-c-options-menu__toggle-button"
           data-ouia-component-id="OUIA-Generated-DropdownToggle-26"

@@ -6,6 +6,7 @@ type Product = {
   quantity: number;
   sku: string;
   serviceLevel: string;
+  serviceType: string;
   unitOfMeasure: UnitOfMeasure;
 };
 

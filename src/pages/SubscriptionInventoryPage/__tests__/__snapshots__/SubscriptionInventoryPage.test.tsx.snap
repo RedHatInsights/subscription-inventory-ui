@@ -270,6 +270,7 @@ exports[`SubscriptionInventoryPage when the products are loading renders the loa
             class="pf-l-bullseye"
           >
             <span
+              aria-label="Contents"
               aria-valuetext="Loading..."
               class="pf-c-spinner pf-m-xl"
               role="progressbar"
@@ -585,6 +586,7 @@ exports[`SubscriptionInventoryPage when the status cards are loading renders the
           class="pf-l-bullseye"
         >
           <span
+            aria-label="Contents"
             aria-valuetext="Loading..."
             class="pf-c-spinner pf-m-xl"
             role="progressbar"
