@@ -88,6 +88,30 @@ describe('ProductsTable', () => {
         quantity: 2,
         productLine: 'vowels',
         serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Cores', quantity: '3' }
+      }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 2,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Cores', quantity: '2' }
+      }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 2,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
+        unitOfMeasure: { name: 'Cores', quantity: '1' }
+      }),
+      factories.product.build({
+        name: 'A',
+        sku: 'MOCK123',
+        quantity: 2,
+        productLine: 'vowels',
+        serviceLevel: 'Standard',
         unitOfMeasure: { name: 'Cores', quantity: 'unlimited' }
       }),
       factories.product.build({
