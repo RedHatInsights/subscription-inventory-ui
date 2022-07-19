@@ -112,6 +112,9 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
 
   const clearSearch = () => {
     setSearchValue('');
+    if (filter != '') {
+      removeFilter();
+    }
     setPage(1);
   };
 
@@ -251,7 +254,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           ))}
         </Tbody>
       </TableComposable>
-      {paginatedProducts.length == 0 && data.length > 0 && (
+      {paginatedProducts.length == 0 && data.length >= 0 && (
         <NoSearchResults clearFilters={clearSearch} />
       )}
       {pagination(PaginationVariant.bottom)}
