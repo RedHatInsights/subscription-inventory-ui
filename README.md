@@ -8,7 +8,7 @@ An app to handle subscription management on cloud.redhat.com, built using the [S
 
 1. The first time you clone the repo, run `npm install`
 
-2. Add IPs to /etc/hosts by running `vi /etc/hosts`, then add the following:
+2. Add IPs to /etc/hosts by running `sudo vi /etc/hosts`, then add the following:
 
 ```
  127.0.0.1 prod.foo.redhat.com
@@ -17,6 +17,7 @@ An app to handle subscription management on cloud.redhat.com, built using the [S
  127.0.0.1 ci.foo.redhat.com
 
 ```
+***Note***: The above command may differ if running on a machine other than Linux
 
 3. `npm run start` or `npm run start:beta`, depending on whether you want to run in stable or beta mode.
 
