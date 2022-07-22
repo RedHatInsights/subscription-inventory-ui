@@ -242,7 +242,7 @@ exports[`Details Page renders data 1`] = `
         class="pf-u-mt-0"
       >
         <b>
-          Unit of Measure: 
+          Capacity: 
         </b>
         test
          
@@ -889,7 +889,7 @@ exports[`Details Page renders not available for missing data 1`] = `
         class="pf-u-mt-0"
       >
         <b>
-          Unit of Measure: 
+          Capacity: 
         </b>
         Not Available
       </li>
