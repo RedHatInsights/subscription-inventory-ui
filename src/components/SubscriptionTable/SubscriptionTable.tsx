@@ -59,7 +59,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
 
   const clearFilters = () => {
     setSearchValue('');
-  }
+  };
 
   const columnNames = {
     number: 'Subscription number',
