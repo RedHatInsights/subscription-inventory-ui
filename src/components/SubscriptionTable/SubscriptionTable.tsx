@@ -1,4 +1,5 @@
 import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
+import { NoSearchResults } from '../emptyState';
 import { SearchInput } from '@patternfly/react-core';
 import { TableComposable, Tbody, Td, Th, Thead, ThProps, Tr } from '@patternfly/react-table';
 import { parseInt } from 'lodash';
@@ -55,6 +56,10 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
   const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
   const [searchValue, setSearchValue] = React.useState('');
+
+  const clearFilters = () => {
+    setSearchValue('');
+  };
 
   const columnNames = {
     number: 'Subscription number',
@@ -217,6 +222,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
           ))}
         </Tbody>
       </TableComposable>
+      {pagedSubscriptions.length == 0 && <NoSearchResults clearFilters={clearFilters} />}
     </>
   );
 };
