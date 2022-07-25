@@ -19,9 +19,12 @@ interface TypeCorrectedSubscription {
 }
 
 const printDate = (date: Date) => {
-  const month = date.getMonth() + 1;
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
 
-  return `${date.getFullYear()}-${month < 10 ? `0${month}` : month}-${date.getDate()}`;
+  return `${date.getUTCFullYear()}-${month < 10 ? `0${month}` : month}-${
+    day < 10 ? `0${day}` : day
+  }`;
 };
 
 const safeParseInt: (n: string) => number = (n: string) => {
