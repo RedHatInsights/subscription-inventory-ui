@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
-import { getBaseName } from '@redhat-cloud-services/frontend-components-utilities/helpers';
 
 const queryClient = new QueryClient();
 
@@ -27,8 +26,7 @@ describe('ProductsTable', () => {
       productLine: 'letters',
       sku: 'MOCK123',
       quantity: 3,
-      serviceLevel: 'Standard',
-      unitOfMeasure: { name: 'Mock', quantity: '1' }
+      serviceLevel: 'Standard'
     })
   ]);
 
@@ -45,48 +43,42 @@ describe('ProductsTable', () => {
         sku: 'RH1234',
         quantity: 1,
         productLine: 'letters',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: undefined,
         sku: undefined,
         quantity: undefined,
         productLine: null,
-        serviceLevel: undefined,
-        unitOfMeasure: undefined
+        serviceLevel: undefined
       }),
       factories.product.build({
         name: 'A',
         sku: 'MOCK123',
         quantity: 3,
         productLine: 'vowels',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Cores', quantity: '2' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: 'A',
         sku: 'MOCK123',
         quantity: 2,
         productLine: 'vowels',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Cores', quantity: 'unlimited' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: null,
         sku: undefined,
         quantity: 2,
         productLine: 'consonants',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock3', quantity: '3' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: null,
         sku: undefined,
         quantity: 2,
         productLine: 'consonants',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Sockets', quantity: '128' }
+        serviceLevel: 'Standard'
       })
     ]);
 
@@ -145,20 +137,6 @@ describe('ProductsTable', () => {
       fireEvent.click(screen.getByText('Service level'));
       expect(container).toMatchSnapshot();
     });
-
-    it('can sort by unitOfMeasure', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
-
-      fireEvent.click(screen.getByText('Unit of measure'));
-      expect(container).toMatchSnapshot();
-    });
-
-    it('can sort by unitOfMeasure, reversed', () => {
-      const { container } = render(<Table data={get('data')} isFetching={get('fetching')} />);
-
-      fireEvent.click(screen.getByText('Unit of measure'));
-      expect(container).toMatchSnapshot();
-    });
   });
 
   describe('when using pagination', () => {
@@ -168,16 +146,14 @@ describe('ProductsTable', () => {
         sku: 'MOCK123',
         quantity: 1,
         productLine: 'letters',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock', quantity: '1' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: 'Z',
         sku: 'RH123',
         quantity: 2,
         productLine: 'letters',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
+        serviceLevel: 'Standard'
       })
     ]);
 
@@ -207,32 +183,28 @@ describe('ProductsTable', () => {
         sku: 'RH123',
         quantity: 2,
         productLine: 'consonants',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: 'A',
         sku: 'MOCK123',
         quantity: 1,
         productLine: 'vowels',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock', quantity: '1' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: 'P',
         sku: 'Fake123',
         quantity: 1,
         productLine: 'consonants',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock2', quantity: '4' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: undefined,
         sku: undefined,
         quantity: 0,
         productLine: undefined,
-        serviceLevel: undefined,
-        unitOfMeasure: { name: 'Not Available', quantity: '' }
+        serviceLevel: undefined
       })
     ]);
 

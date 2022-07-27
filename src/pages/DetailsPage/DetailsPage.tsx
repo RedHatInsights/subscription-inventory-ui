@@ -47,7 +47,7 @@ const DetailsPage: FunctionComponent = () => {
                 {data.serviceType || missingText}
               </ListItem>
               <ListItem className="pf-u-mt-0">
-                <b>Unit of Measure: </b>
+                <b>Capacity: </b>
                 {data.unitOfMeasure ? (
                   <>
                     {data.unitOfMeasure.name} <Badge isRead>{data.unitOfMeasure.quantity}</Badge>
