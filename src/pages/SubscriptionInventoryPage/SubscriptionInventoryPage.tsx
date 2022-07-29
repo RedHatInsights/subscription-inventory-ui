@@ -1,4 +1,4 @@
-import React, { FunctionComponent, PropsWithChildren } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
@@ -18,9 +18,11 @@ import { StackItem } from '@patternfly/react-core';
 import StatusCountCards from '../../components/StatusCountCards';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
+  const [filter, setFilter] = useState<string>('');
+
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const productData = useProducts(true);
+  const productData = useProducts(filter, true);
   const statusCardData = useStatus();
 
   const Page: FunctionComponent = () => {
@@ -49,6 +51,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                   <StatusCountCards
                     statusCardData={statusCardData.data}
                     statusIsFetching={statusCardData.isFetching}
+                    setFilter={setFilter}
                   />
                 )}
 
@@ -62,7 +65,12 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                   {productData.isLoading && !productData.error && <Processing />}
 
                   {!productData.isLoading && !productData.error && (
-                    <ProductsTable data={productData.data} isFetching={productData.isFetching} />
+                    <ProductsTable
+                      data={productData.data}
+                      isFetching={productData.isFetching}
+                      filter={filter}
+                      setFilter={setFilter}
+                    />
                   )}
 
                   {productData.error && <Unavailable />}
