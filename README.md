@@ -8,9 +8,21 @@ An app to handle subscription management on cloud.redhat.com, built using the [S
 
 1. The first time you clone the repo, run `npm install`
 
-2. `npm run start` or `npm run start:beta`, depending on whether you want to run in stable or beta mode.
+2. Add IPs to /etc/hosts by running `sudo vi /etc/hosts`, then add the following:
 
-3. Open one of the following environments behind the Red Hat VPN and accept the certs:
+```
+ 127.0.0.1 prod.foo.redhat.com
+ 127.0.0.1 stage.foo.redhat.com
+ 127.0.0.1 qa.foo.redhat.com
+ 127.0.0.1 ci.foo.redhat.com
+
+```
+
+**_Note_**: The above command may differ if running on a machine other than Linux
+
+3. `npm run start` or `npm run start:beta`, depending on whether you want to run in stable or beta mode.
+
+4. Open one of the following environments behind the Red Hat VPN and accept the certs:
 
 - https://ci.foo.redhat.com:1337/beta/insights/subscriptions/inventory
 - https://qa.foo.redhat.com:1337/beta/insights/subscriptions/inventory

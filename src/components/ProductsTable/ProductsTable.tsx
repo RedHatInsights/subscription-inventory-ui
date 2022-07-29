@@ -13,13 +13,21 @@ import {
 import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
+import { Button, Chip, ChipGroup } from '@patternfly/react-core';
 
 interface ProductsTableProps {
   data: Product[] | undefined;
   isFetching: boolean;
+  filter: string;
+  setFilter(filter: string): void;
 }
 
-const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching }) => {
+const ProductsTable: FunctionComponent<ProductsTableProps> = ({
+  data,
+  isFetching,
+  filter,
+  setFilter
+}) => {
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
@@ -81,6 +89,9 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
 
   const clearSearch = () => {
     setSearchValue('');
+    if (filter != '') {
+      removeFilter();
+    }
     setPage(1);
   };
 
@@ -121,6 +132,17 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
     return products.slice(first, last);
   };
 
+  const filterMap = new Map<string, string>([
+    ['active', 'Active'],
+    ['expiringSoon', 'Expiring soon'],
+    ['expired', 'Expired'],
+    ['futureDated', 'Future dated']
+  ]);
+
+  const removeFilter = () => {
+    setFilter('');
+  };
+
   const sortedProducts = sortProducts(data, activeSortIndex);
   const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
   const paginatedProducts = getPage(searchedProducts);
@@ -142,6 +164,24 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           )}
         </FlexItem>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
+      </Flex>
+      <Flex>
+        <FlexItem>
+          {filter != '' && (
+            <ChipGroup categoryName="Status">
+              <Chip id="status-chip" key={filter} onClick={removeFilter}>
+                {filterMap.get(filter)}
+              </Chip>
+            </ChipGroup>
+          )}
+        </FlexItem>
+        <FlexItem>
+          {filter != '' && (
+            <Button variant="link" isInline onClick={removeFilter}>
+              Clear filters
+            </Button>
+          )}
+        </FlexItem>
       </Flex>
       {/* @ts-ignore */}
       <TableComposable aria-label="Products">
@@ -184,9 +224,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({ data, isFetching
           ))}
         </Tbody>
       </TableComposable>
-      {paginatedProducts.length == 0 && data.length > 0 && (
-        <NoSearchResults clearFilters={clearSearch} />
-      )}
+      {paginatedProducts.length == 0 && <NoSearchResults clearFilters={clearSearch} />}
       {pagination(PaginationVariant.bottom)}
     </>
   );

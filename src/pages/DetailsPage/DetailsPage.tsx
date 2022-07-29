@@ -1,4 +1,13 @@
-import { Badge, Breadcrumb, BreadcrumbItem, List, ListItem } from '@patternfly/react-core';
+import {
+  Badge,
+  Breadcrumb,
+  BreadcrumbItem,
+  List,
+  ListItem,
+  PageSection,
+  Title
+} from '@patternfly/react-core';
+import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent } from 'react';
 import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
@@ -7,6 +16,8 @@ import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
+import SubscriptionTable from '../../components/SubscriptionTable';
+import useFeatureFlag from '../../hooks/useFeatureFlag';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -14,6 +25,7 @@ const DetailsPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
+  const tableIsEnabled = useFeatureFlag('subscriptionInventory.detailsTable');
 
   const missingText = 'Not Available';
 
@@ -62,6 +74,16 @@ const DetailsPage: FunctionComponent = () => {
 
         {error && <Unavailable />}
       </PageHeader>
+      {tableIsEnabled && (
+        <Main>
+          <PageSection variant="light">
+            <Title headingLevel="h2">Subscription details</Title>
+            {isLoading && !error && <Processing />}
+            {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
+            {error && <Unavailable />}
+          </PageSection>
+        </Main>
+      )}
     </>
   );
 
