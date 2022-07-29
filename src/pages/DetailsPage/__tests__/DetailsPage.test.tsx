@@ -12,6 +12,10 @@ import { Product } from '../../../hooks/useProducts';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useSingleProduct');
+jest.mock('../../../hooks/useFeatureFlag', () => ({
+  __esModule: true,
+  default: jest.fn((_: string) => true)
+}));
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
   useLocation: () => ({
@@ -68,14 +72,26 @@ const mockSingleProduct = (hasData: boolean) => {
     sku: hasData ? 'TESTSKU' : '',
     serviceLevel: hasData ? 'TEST serviceLevel' : '',
     serviceType: hasData ? 'TEST serviceType' : '',
-    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null
+    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null,
+    subscriptions: hasData
+      ? [
+          {
+            number: '1234',
+            contractNumber: '2345',
+            quantity: '1',
+            endDate: '2022-10-24T04:00:00.000Z',
+            status: 'Active',
+            startDate: '2021-10-24T04:00:00.000Z'
+          }
+        ]
+      : []
   };
 
   (useSingleProduct as jest.Mock).mockReturnValue({
     isLoading: false,
     isFetching: false,
     isSuccess: true,
-    isError: false,
+    error: false,
     data
   });
 
@@ -127,6 +143,21 @@ describe('Details Page', () => {
     const canReadProducts = true;
     mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
     mockSingleProduct(false);
+
+    const { container } = render(<Page />);
+
+    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(1));
+    expect(container).toMatchSnapshot();
+  });
+
+  it('handles errors', async () => {
+    (useSingleProduct as jest.Mock).mockReturnValue({
+      isLoading: false,
+      isFetching: false,
+      isSuccess: false,
+      error: true,
+      data: []
+    });
 
     const { container } = render(<Page />);
 

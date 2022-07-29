@@ -29,7 +29,7 @@ describe('useProducts', () => {
 
     fetch.mockResponseOnce(JSON.stringify({ body: [...productData] }));
 
-    const { result, waitFor } = renderHook(() => useProducts(false), {
+    const { result, waitFor } = renderHook(() => useProducts('', false), {
       wrapper: createQueryWrapper()
     });
 
