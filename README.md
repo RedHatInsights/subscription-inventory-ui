@@ -17,7 +17,8 @@ An app to handle subscription management on cloud.redhat.com, built using the [S
  127.0.0.1 ci.foo.redhat.com
 
 ```
-***Note***: The above command may differ if running on a machine other than Linux
+
+**_Note_**: The above command may differ if running on a machine other than Linux
 
 3. `npm run start` or `npm run start:beta`, depending on whether you want to run in stable or beta mode.
 
