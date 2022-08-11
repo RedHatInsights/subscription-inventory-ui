@@ -60,9 +60,9 @@ const DetailsPage: FunctionComponent = () => {
               </ListItem>
               <ListItem className="pf-u-mt-0">
                 <b>Capacity: </b>
-                {data.unitOfMeasure ? (
+                {data.capacity ? (
                   <>
-                    {data.unitOfMeasure.name} <Badge isRead>{data.unitOfMeasure.quantity}</Badge>
+                    {data.capacity.name} <Badge isRead>{data.capacity.quantity}</Badge>
                   </>
                 ) : (
                   <>Not Available</>
