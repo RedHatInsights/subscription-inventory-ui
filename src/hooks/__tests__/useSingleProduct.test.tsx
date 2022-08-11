@@ -25,7 +25,7 @@ describe('useSingleProduct', () => {
       sku: 'TESTSKU',
       serviceLevel: 'TEST serviceLevel',
       serviceType: 'TEST serviceType',
-      unitOfMeasure: { name: 'test', quantity: 2 }
+      capacity: { name: 'test', quantity: 2 }
     };
 
     fetch.mockResponseOnce(JSON.stringify({ body: { ...productData } }));

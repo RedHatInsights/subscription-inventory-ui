@@ -7,7 +7,7 @@ type Product = {
   sku: string;
   serviceLevel: string;
   serviceType: string;
-  unitOfMeasure: UnitOfMeasure;
+  capacity: Capacity;
   subscriptions?: Subscription[];
 };
 
@@ -24,7 +24,7 @@ interface ProductApiData {
   body: Product[];
 }
 
-type UnitOfMeasure = {
+type Capacity = {
   name: string;
   quantity: string;
 };
@@ -59,4 +59,4 @@ const useProducts = (
   return useQuery(`products.${filter}`, () => getProducts(filter, setDelay));
 };
 
-export { Product, Subscription, UnitOfMeasure, UoMNameOrder, useProducts as default };
+export { Product, Subscription, Capacity, UoMNameOrder, useProducts as default };
