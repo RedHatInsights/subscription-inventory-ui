@@ -48,8 +48,7 @@ describe('useUser hook', () => {
 
     expect(result.current.data).toEqual({
       canReadProducts: true,
-      isOrgAdmin: true,
-      isSCACapable: true
+      isOrgAdmin: true
     });
   });
 
