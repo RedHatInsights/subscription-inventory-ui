@@ -6,37 +6,18 @@ interface User {
   accountNumber: string;
   canReadProducts: boolean;
   isOrgAdmin: boolean;
-  isSCACapable: boolean;
 }
-
-interface SCACapableStatusResponse {
-  body: {
-    id: string;
-    simpleContentAccess: 'enabled' | 'disabled';
-    simpleContentAccessCapable: boolean;
-  };
-}
-
-const fetchSCACapableStatus = (): Promise<SCACapableStatusResponse> => {
-  const jwtToken = Cookies.get('cs_jwt');
-  const { rhsmAPIBase } = getConfig();
-  return fetch(`${rhsmAPIBase}/management/v1/organization`, {
-    headers: { Authorization: `Bearer ${jwtToken}` },
-    mode: 'cors'
-  }).then((response) => response.json());
-};
 
 const getUser = (): Promise<User> => {
-  return Promise.all([authenticateUser(), fetchSCACapableStatus(), getUserRbacPermissions()]).then(
-    ([userStatus, scaStatusResponse, rawRbacPermissions]) => {
+  return Promise.all([authenticateUser(), getUserRbacPermissions()]).then(
+    ([userStatus, rawRbacPermissions]) => {
       const rbacPermissions = rawRbacPermissions.map((rawPermission) => rawPermission.permission);
       const user: User = {
         accountNumber: userStatus.identity.account_number,
         canReadProducts:
           rbacPermissions.includes('subscriptions:products:read') ||
           rbacPermissions.includes('subscriptions:*:*'),
-        isOrgAdmin: userStatus.identity.user.is_org_admin === true,
-        isSCACapable: scaStatusResponse.body.simpleContentAccessCapable === true
+        isOrgAdmin: userStatus.identity.user.is_org_admin === true
       };
       return user;
     }
@@ -47,4 +28,4 @@ const useUser = (): UseQueryResult<User, unknown> => {
   return useQuery('user', () => getUser());
 };
 
-export { fetchSCACapableStatus, getUser, SCACapableStatusResponse, useUser as default, User };
+export { getUser, useUser as default, User };
