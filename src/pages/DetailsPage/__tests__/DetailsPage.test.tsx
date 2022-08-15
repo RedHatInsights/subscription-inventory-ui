@@ -52,13 +52,11 @@ const mockAuthenticateUser = (
     isError: false,
     data: {
       isOrgAdmin: orgAdminStatus,
-      isSCACapable: true,
       canReadProducts
     }
   });
 
   queryClient.setQueryData('user', {
-    isSCACapable: true,
     isOrgAdmin: orgAdminStatus,
     canReadProducts
   });

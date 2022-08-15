@@ -43,8 +43,7 @@ const mockAuthenticateUser = (
   const user = {
     accountNumber: '8675309',
     canReadProducts: canReadProducts,
-    isOrgAdmin: orgAdminStatus,
-    isSCACapable: true
+    isOrgAdmin: orgAdminStatus
   };
   (useUser as jest.Mock).mockReturnValue({
     isLoading: false,
