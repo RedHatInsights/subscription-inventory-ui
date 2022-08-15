@@ -413,16 +413,14 @@ describe('ProductsTable', () => {
         sku: 'RH123',
         quantity: 2,
         productLine: 'consonants',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock1', quantity: 'unlimited' }
+        serviceLevel: 'Standard'
       }),
       factories.product.build({
         name: 'A',
         sku: 'MOCK123',
         quantity: 1,
         productLine: 'vowels',
-        serviceLevel: 'Standard',
-        unitOfMeasure: { name: 'Mock', quantity: '1' }
+        serviceLevel: 'Standard'
       })
     ]);
 

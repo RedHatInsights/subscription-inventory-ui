@@ -9,10 +9,10 @@ export default Factory.define<Product>(() => ({
   sku: faker.datatype.uuid(),
   serviceLevel: faker.datatype.string(),
   serviceType: faker.datatype.string(),
-  unitOfMeasure: uOMFake
+  capacity: capacityFake
 }));
 
-const uOMFake = {
+const capacityFake = {
   name: faker.datatype.string(),
   quantity: faker.datatype.string()
 };

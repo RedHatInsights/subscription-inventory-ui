@@ -72,7 +72,7 @@ const mockSingleProduct = (hasData: boolean) => {
     sku: hasData ? 'TESTSKU' : '',
     serviceLevel: hasData ? 'TEST serviceLevel' : '',
     serviceType: hasData ? 'TEST serviceType' : '',
-    unitOfMeasure: hasData ? { name: 'test', quantity: '2' } : null,
+    capacity: hasData ? { name: 'test', quantity: '2' } : null,
     subscriptions: hasData
       ? [
           {
