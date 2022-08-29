@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: subscription-inventory-ui
+objects:
+  - apiVersion: cloud.redhat.com/v1alpha1
+    kind: Frontend
+    metadata:
+      name: subscription-inventory-ui
+    spec:
+      envName: ${ENV_NAME}
+      title: Subscription Inventory
+      deploymentRepo: https://github.com/RedHatInsights/subscription-inventory-ui
+      API:
+        versions:
+          - v1
+      frontend:
+        paths:
+          - /apps/subscriptions
+      image: ${IMAGE}:${IMAGE_TAG}
+      navItems:
+        - appId: "subscriptionInventory"
+          title: "Subscription Inventory"
+          href: "/insights/subscriptions/inventory"
+          product: "Subscription Watch"
+      module:
+        manifestLocation: "/apps/subscription-inventory/fed-mods.json"
+        modules:
+          - id: "subscription-inventory"
+            module: "./RootApp"
+            routes:
+              - pathname: /insights/subscriptions/inventory
+
+parameters:
+  - name: ENV_NAME
+    required: true
+  - name: IMAGE_TAG
+    required: true
+  - name: IMAGE
+    value: quay.io/cloudservices/insights-inventory-frontend
