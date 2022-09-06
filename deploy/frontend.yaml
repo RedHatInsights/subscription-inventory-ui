@@ -37,4 +37,4 @@ parameters:
   - name: IMAGE_TAG
     required: true
   - name: IMAGE
-    value: quay.io/cloudservices/insights-inventory-frontend
+    value: quay.io/cloudservices/subscription-inventory-ui
