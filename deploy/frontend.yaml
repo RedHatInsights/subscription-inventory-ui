@@ -6,7 +6,7 @@ objects:
   - apiVersion: cloud.redhat.com/v1alpha1
     kind: Frontend
     metadata:
-      name: subscription-inventory-ui
+      name: subscription-inventory
     spec:
       envName: ${ENV_NAME}
       title: Subscription Inventory
@@ -16,7 +16,7 @@ objects:
           - v1
       frontend:
         paths:
-          - /apps/subscriptions
+          - /apps/subscriptionInventory
       image: ${IMAGE}:${IMAGE_TAG}
       navItems:
         - appId: "subscriptionInventory"
