@@ -69,6 +69,9 @@
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
     ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
     "testEnvironment": "jsdom"
   },
   "transformIgnorePatterns": [
@@ -118,7 +121,7 @@
     "@faker-js/faker": "^7.3.0",
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^1.2.1",
     "@redhat-cloud-services/frontend-components-config": "^4.6.9",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.0.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^26.0.24",
@@ -144,7 +147,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "fishery": "^2.2.2",
     "husky": "^8.0.1",
-    "identity-obj-proxy": "3.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "lint-staged": "^13.0.3",
     "node-sass": "^6.0.1",

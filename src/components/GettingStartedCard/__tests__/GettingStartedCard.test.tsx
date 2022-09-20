@@ -1,18 +1,22 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import GettingStartedCard from '../GettingStartedCard';
 
 describe('GettingStartedCard', () => {
-  it('renders a button', () => {
-    render(<GettingStartedCard />);
+  // This is an example of an unncessary test. If we write a test where 
+  // we are checking the contents of the toggle button being selected and clicked,
+  // then we don't need a test that checks if the button is there in the first place.
 
-    expect(document.body).toMatchSnapshot();
-  });
+  // it('renders a button', () => {
+  //   render(<GettingStartedCard />);
+
+  //   expect(document.body).toMatchSnapshot();
+  // });
 
   it('renders the card when the toggle is clicked', async () => {
     const { getByTestId } = render(<GettingStartedCard />);
 
     fireEvent.click(getByTestId('resources-toggle-button'));
-    expect(document.body).toMatchSnapshot();
+    expect(screen.getByText('Activate a subscription purchased from a third party.')).toBeInTheDocument();
   });
 });
