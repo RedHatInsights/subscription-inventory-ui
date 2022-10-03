@@ -22,9 +22,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
 
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const productData = {...useProducts(filter, true), error: true};
-  //const productData = useProducts(filter, true);
-  //const statusCardData = {...useStatus(), error: true};
+  const productData = useProducts(filter, true);
   const statusCardData = useStatus();
 
   const Page: FunctionComponent = () => {
