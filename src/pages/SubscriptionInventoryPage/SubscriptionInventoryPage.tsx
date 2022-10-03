@@ -22,7 +22,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
 
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const productData = { ...useProducts(filter, true), error: true };
+  const productData = {...useProducts(filter, true), error: true};
   //const productData = useProducts(filter, true);
   //const statusCardData = {...useStatus(), error: true};
   const statusCardData = useStatus();
@@ -45,42 +45,40 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
             <StackItem>
               <GettingStartedCard />
             </StackItem>
-            {!statusCardData.error && !productData.error && (
-              <>
-                <StackItem>
-                  <>
-                    {statusCardData.isLoading && <Processing />}
+            {!statusCardData.error && !productData.error &&
+            <>
+              <StackItem>
+                <>
+                  {statusCardData.isLoading && <Processing />}
 
-                    {!statusCardData.isLoading && (
-                      <StatusCountCards
-                        statusCardData={statusCardData.data}
-                        statusIsFetching={statusCardData.isFetching}
+                  {!statusCardData.isLoading && (
+                    <StatusCountCards
+                      statusCardData={statusCardData.data}
+                      statusIsFetching={statusCardData.isFetching}
+                      setFilter={setFilter}
+                    />
+                  )}
+                </>
+              </StackItem>
+              <StackItem>
+                <PageSection variant="light">
+                  <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
+                  <>
+                    {productData.isLoading && <Processing />}
+
+                    {!productData.isLoading && (
+                      <ProductsTable
+                        data={productData.data}
+                        isFetching={productData.isFetching}
+                        filter={filter}
                         setFilter={setFilter}
                       />
                     )}
                   </>
-                </StackItem>
-                <StackItem>
-                  <PageSection variant="light">
-                    <Title headingLevel="h2">
-                      All subscriptions for account {user.accountNumber}
-                    </Title>
-                    <>
-                      {productData.isLoading && <Processing />}
-
-                      {!productData.isLoading && (
-                        <ProductsTable
-                          data={productData.data}
-                          isFetching={productData.isFetching}
-                          filter={filter}
-                          setFilter={setFilter}
-                        />
-                      )}
-                    </>
-                  </PageSection>
-                </StackItem>
-              </>
-            )}
+                </PageSection>
+              </StackItem>
+            </>
+            }
             {(statusCardData.error || productData.error) && <Unavailable />}
           </Stack>
         </Main>
