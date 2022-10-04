@@ -43,40 +43,43 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
             <StackItem>
               <GettingStartedCard />
             </StackItem>
-            <StackItem>
+            {!statusCardData.error && !productData.error && (
               <>
-                {statusCardData.isLoading && !statusCardData.error && <Processing />}
+                <StackItem>
+                  <>
+                    {statusCardData.isLoading && <Processing />}
 
-                {!statusCardData.isLoading && !statusCardData.error && (
-                  <StatusCountCards
-                    statusCardData={statusCardData.data}
-                    statusIsFetching={statusCardData.isFetching}
-                    setFilter={setFilter}
-                  />
-                )}
+                    {!statusCardData.isLoading && (
+                      <StatusCountCards
+                        statusCardData={statusCardData.data}
+                        statusIsFetching={statusCardData.isFetching}
+                        setFilter={setFilter}
+                      />
+                    )}
+                  </>
+                </StackItem>
+                <StackItem>
+                  <PageSection variant="light">
+                    <Title headingLevel="h2">
+                      All subscriptions for account {user.accountNumber}
+                    </Title>
+                    <>
+                      {productData.isLoading && <Processing />}
 
-                {statusCardData.error && <Unavailable />}
+                      {!productData.isLoading && (
+                        <ProductsTable
+                          data={productData.data}
+                          isFetching={productData.isFetching}
+                          filter={filter}
+                          setFilter={setFilter}
+                        />
+                      )}
+                    </>
+                  </PageSection>
+                </StackItem>
               </>
-            </StackItem>
-            <StackItem>
-              <PageSection variant="light">
-                <Title headingLevel="h2">All subscriptions for account {user.accountNumber}</Title>
-                <>
-                  {productData.isLoading && !productData.error && <Processing />}
-
-                  {!productData.isLoading && !productData.error && (
-                    <ProductsTable
-                      data={productData.data}
-                      isFetching={productData.isFetching}
-                      filter={filter}
-                      setFilter={setFilter}
-                    />
-                  )}
-
-                  {productData.error && <Unavailable />}
-                </>
-              </PageSection>
-            </StackItem>
+            )}
+            {(statusCardData.error || productData.error) && <Unavailable />}
           </Stack>
         </Main>
       </>
