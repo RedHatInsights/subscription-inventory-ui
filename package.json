@@ -141,7 +141,7 @@
     "bdd-lazy-var": "^2.6.1",
     "cross-fetch": "^3.1.4",
     "css-loader": "6.7.1",
-    "eslint": "^8.25.0",
+    "eslint": "^8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
