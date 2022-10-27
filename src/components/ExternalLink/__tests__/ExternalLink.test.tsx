@@ -10,6 +10,6 @@ describe('External Link', () => {
     };
 
     const { getByRole } = render(<ExternalLink {...props} />);
-    expect(getByRole('link')).toHaveAttribute('href', 'foo.com')
+    expect(getByRole('link')).toHaveAttribute('href', 'foo.com');
   });
 });

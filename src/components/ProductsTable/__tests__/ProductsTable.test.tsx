@@ -6,8 +6,6 @@ import ProductsTable, { ProductsTableProps } from '../ProductsTable';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
 import { Product } from '../../../hooks/useProducts';
-import { FilterChips } from '@redhat-cloud-services/frontend-components';
-import { filter } from 'lodash';
 
 const queryClient = new QueryClient();
 
