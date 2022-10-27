@@ -7,14 +7,16 @@ import StatusCountCard, { StatusCardProps } from '../StatusCountCards';
 
 const queryClient = new QueryClient();
 
-const Cards: FunctionComponent<StatusCardProps> = ({ statusCardData, statusIsFetching }) => (
+const Cards: FunctionComponent<StatusCardProps> = ({
+  statusCardData,
+  statusIsFetching,
+  setFilter
+}) => (
   <QueryClientProvider client={queryClient}>
     <StatusCountCard
       statusCardData={statusCardData}
       statusIsFetching={statusIsFetching}
-      setFilter={() => {
-        ('');
-      }}
+      setFilter={setFilter}
     />
   </QueryClientProvider>
 );
@@ -32,77 +34,57 @@ describe('StatusCountCard', () => {
     })
   ]);
 
-  it('renders correctly', () => {
-    const { container } = render(
-      <Cards
-        statusCardData={get('data')}
-        statusIsFetching={get('fetching')}
-        setFilter={() => {
-          ('');
-        }}
-      />
-    );
-
-    expect(container).toMatchSnapshot();
-  });
+  const setFilter = jest.fn();
 
   it('can click active', () => {
-    const { container } = render(
+    render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
-        setFilter={() => {
-          'active';
-        }}
+        setFilter={setFilter}
       />
     );
 
     fireEvent.click(screen.getByText('Active'));
-    expect(container).toMatchSnapshot();
+    expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click expiringSoon', () => {
-    const { container } = render(
+    render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
-        setFilter={() => {
-          'expiringSoon';
-        }}
+        setFilter={setFilter}
       />
     );
 
     fireEvent.click(screen.getByText('Expiring soon'));
-    expect(container).toMatchSnapshot();
+    expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click expired', () => {
-    const { container } = render(
+    render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
-        setFilter={() => {
-          'expired';
-        }}
+        setFilter={setFilter}
       />
     );
 
     fireEvent.click(screen.getByText('Expired'));
-    expect(container).toMatchSnapshot();
+    expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click futureDated', () => {
-    const { container } = render(
+    render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
-        setFilter={() => {
-          'futureDated';
-        }}
+        setFilter={setFilter}
       />
     );
 
     fireEvent.click(screen.getByText('Future dated'));
-    expect(container).toMatchSnapshot();
+    expect(setFilter).toHaveBeenCalledTimes(1);
   });
 });

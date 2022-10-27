@@ -14,8 +14,11 @@ describe('Notifications', () => {
         { message: 'And this happened.', variant: 'info', key: '789' }
       ]
     });
-    render(<Notifications />);
-    expect(document.body).toMatchSnapshot();
+
+    const { getAllByText } = render(<Notifications />);
+    getAllByText('Some stuff went well!').forEach((el) => {
+      expect(el).toBeInTheDocument();
+    });
   });
 
   it('calls the remove notifications method on click of the X', () => {

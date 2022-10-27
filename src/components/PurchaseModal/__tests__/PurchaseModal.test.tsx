@@ -9,17 +9,10 @@ jest.mock('../trainingIcon.svg', () => 'Training Icon');
 jest.mock('../tryIcon.svg', () => 'Try Icon');
 
 describe('PurchaseModal', () => {
-  it('renders a button', () => {
-    render(<PurchaseModal />);
-
-    expect(document.body).toMatchSnapshot();
-  });
-
   it('renders a modal when the button is pressed', async () => {
     render(<PurchaseModal />);
 
     fireEvent.click(screen.getByText('Purchase subscriptions'));
-    await screen.findAllByText('Red Hat Marketplace');
-    expect(document.body).toMatchSnapshot();
+    expect(screen.getByText('Red Hat Marketplace')).toBeInTheDocument();
   });
 });
