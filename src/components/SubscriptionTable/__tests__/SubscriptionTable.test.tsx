@@ -154,6 +154,15 @@ describe('Subscription Table', () => {
       })
     ]);
 
+    it('pages', () => {
+      render(<Table subscriptions={get('data')} />);
+
+      const table = screen.getByLabelText('subscriptions');
+
+      expect(screen.getByText('of 2')).toBeInTheDocument();
+      expect(table.querySelectorAll('tr').length).toBe(11);
+    });
+
     it('can change page', () => {
       const { getByLabelText } = render(<Table subscriptions={get('data')} />);
 
