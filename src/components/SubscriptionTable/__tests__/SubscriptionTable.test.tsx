@@ -4,6 +4,7 @@ import SubscriptionTable, { SubscriptionTableProps } from '../SubscriptionTable'
 import { render, fireEvent, screen } from '@testing-library/react';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
+import { Subscription } from '../../../hooks/useProducts';
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,7 @@ describe('Subscription Table', () => {
     factories.subscription.build({
       number: '1234',
       contractNumber: '2345',
-      quantity: '1',
+      quantity: '',
       endDate: '2022-10-24T04:00:00.000Z',
       status: 'Active',
       startDate: '2021-10-24T04:00:00.000Z'
@@ -29,94 +30,107 @@ describe('Subscription Table', () => {
   ]);
 
   it('renders correctly', async () => {
-    const { container } = render(<Table subscriptions={get('data')} />);
+    const { getAllByText } = render(<Table subscriptions={get('data')} />);
 
-    expect(container).toMatchSnapshot();
+    getAllByText('1234').forEach((el) => {
+      expect(el).toBeInTheDocument();
+    });
   });
 
   it('shows not available for missing values', () => {
-    def('data', () => [
-      factories.subscription.build({
-        number: '',
-        contractNumber: '',
-        quantity: '',
-        endDate: '',
-        status: '',
-        startDate: ''
-      })
-    ]);
+    render(<Table subscriptions={get('data')} />);
 
-    const { container } = render(<Table subscriptions={get('data')} />);
-
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('Not Available')).toBeInTheDocument();
   });
 
   describe('sorting and searching', () => {
-    def('data', () => [
-      factories.subscription.build({
+    const formattedData: Record<string, string>[] = [
+      {
         number: '1235',
         contractNumber: '2345',
         quantity: '1',
-        endDate: '2022-10-26T04:00:00.000Z',
+        endDate: '2022-10-26',
         status: 'Active',
-        startDate: '2021-10-20T04:00:00.000Z'
-      }),
-      factories.subscription.build({
+        startDate: '2021-10-20'
+      },
+      {
         number: '1234',
         contractNumber: '2344',
         quantity: '3',
-        endDate: '2022-10-29T04:00:00.000Z',
+        endDate: '2022-10-29',
         status: 'Active',
-        startDate: '2021-10-23T04:00:00.000Z'
-      }),
-      factories.subscription.build({
+        startDate: '2021-10-23'
+      },
+      {
         number: '1236',
         contractNumber: '2346',
         quantity: '4',
-        endDate: '2022-10-27T04:00:00.000Z',
+        endDate: '2022-10-27',
         status: 'Active',
-        startDate: '2021-10-23T04:00:00.000Z'
-      })
-    ]);
+        startDate: '2021-10-21'
+      }
+    ];
 
     it('sorts by default', () => {
-      const { container } = render(<Table subscriptions={get('data')} />);
+      render(<Table subscriptions={formattedData as Subscription[]} />);
+      const table = screen.getByLabelText('subscriptions');
 
-      expect(container).toMatchSnapshot();
+      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
+        formattedData[1].number
+      );
+    });
+
+    it('sorts by Subscription Number, reverse', () => {
+      render(<Table subscriptions={formattedData as Subscription[]} />);
+      const table = screen.getByLabelText('subscriptions');
+
+      fireEvent.click(screen.getByText('Subscription number'));
+
+      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
+        formattedData[2].number
+      );
     });
 
     describe('sorting by clicked columns', () => {
       [
-        'Subscription number',
-        'Contract number',
-        'Subscription quantity',
-        'Start date',
-        'End date'
-      ].forEach((col) => {
+        ['Contract number', 'contractNumber'],
+        ['Subscription quantity', 'quantity'],
+        ['Start date', 'startDate'],
+        ['End date', 'endDate']
+      ].forEach((col, i) => {
         it(`sorts by ${col}`, () => {
-          const { container } = render(<Table subscriptions={get('data')} />);
+          render(<Table subscriptions={formattedData as Subscription[]} />);
 
-          fireEvent.click(screen.getByText(col));
-          expect(container).toMatchSnapshot();
+          const table = screen.getByLabelText('subscriptions');
+
+          fireEvent.click(screen.getByText(col[0]));
+          expect(table.children[1].firstChild.childNodes[i + 1].textContent).toEqual(
+            formattedData.sort((a, b) => (a[col[1]] < b[col[1]] ? -1 : 1))[0][col[1]]
+          );
         });
 
         it(`sorts by ${col} reversed`, () => {
-          const { container } = render(<Table subscriptions={get('data')} />);
+          render(<Table subscriptions={formattedData as Subscription[]} />);
 
-          fireEvent.click(screen.getByText(col));
-          fireEvent.click(screen.getByText(col));
-          expect(container).toMatchSnapshot();
+          const table = screen.getByLabelText('subscriptions');
+
+          fireEvent.click(screen.getByText(col[0]));
+          fireEvent.click(screen.getByText(col[0]));
+
+          expect(table.children[1].firstChild.childNodes[i + 1].textContent).toEqual(
+            formattedData.sort((a, b) => (a[col[1]] < b[col[1]] ? 1 : -1))[0][col[1]]
+          );
         });
       });
     });
 
     it('filters by subscription or contract number', () => {
-      const { container } = render(<Table subscriptions={get('data')} />);
+      render(<Table subscriptions={formattedData as Subscription[]} />);
 
       const input = screen.getByPlaceholderText('Filter by subscription or contract number');
       fireEvent.change(input, { target: { value: '35' } });
 
-      expect(container).toMatchSnapshot();
+      expect(screen.queryByText('1234')).not.toBeInTheDocument();
     });
   });
 
@@ -141,26 +155,28 @@ describe('Subscription Table', () => {
     ]);
 
     it('pages', () => {
-      const { container } = render(<Table subscriptions={get('data')} />);
-      expect(container).toMatchSnapshot();
+      render(<Table subscriptions={get('data')} />);
+      expect(screen.getByText('of 2')).toBeInTheDocument();
     });
 
     it('can change page', () => {
-      const { container } = render(<Table subscriptions={get('data')} />);
+      const { getByLabelText } = render(<Table subscriptions={get('data')} />);
 
       const nextPage = screen.getAllByLabelText('Go to next page')[0];
       fireEvent.click(nextPage);
-      expect(container).toMatchSnapshot();
+      expect(getByLabelText('Current page')).toHaveValue(2);
     });
 
     it('can change per page', () => {
-      const { container } = render(<Table subscriptions={get('data')} />);
+      render(<Table subscriptions={get('data')} />);
+
+      const table = screen.getByLabelText('subscriptions');
 
       const perPageArrow = screen.getAllByLabelText('Items per page')[0];
       fireEvent.click(perPageArrow);
       const perPageAmount = screen.getByText('20 per page');
       fireEvent.click(perPageAmount);
-      expect(container).toMatchSnapshot();
+      expect(table.querySelectorAll('tr').length).toBe(12);
     });
   });
 });

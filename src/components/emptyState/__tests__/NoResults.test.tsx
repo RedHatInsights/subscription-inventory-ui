@@ -1,8 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import NoSearchResults from '../NoSearchResults';
 
 it('renders correctly', () => {
-  const { container } = render(<NoSearchResults clearFilters={() => true} />);
-  expect(container).toMatchSnapshot();
+  render(<NoSearchResults clearFilters={() => true} />);
+  expect(
+    screen.getByText(
+      'No results match the filter criteria. Remove all filters or clear all filters to show results.'
+    )
+  ).toBeInTheDocument();
 });
