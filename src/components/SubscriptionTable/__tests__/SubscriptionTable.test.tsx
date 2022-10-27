@@ -18,7 +18,7 @@ describe('Subscription Table', () => {
   def('loading', () => false);
   def('error', () => false);
   def('fetching', () => false);
-  def('data', () => [
+  const data = [
     factories.subscription.build({
       number: '1234',
       contractNumber: '2345',
@@ -27,10 +27,10 @@ describe('Subscription Table', () => {
       status: 'Active',
       startDate: '2021-10-24T04:00:00.000Z'
     })
-  ]);
+  ];
 
   it('renders correctly', async () => {
-    const { getAllByText } = render(<Table subscriptions={get('data')} />);
+    const { getAllByText } = render(<Table subscriptions={data as Subscription[]} />);
 
     getAllByText('1234').forEach((el) => {
       expect(el).toBeInTheDocument();
@@ -38,9 +38,9 @@ describe('Subscription Table', () => {
   });
 
   it('shows not available for missing values', () => {
-    render(<Table subscriptions={get('data')} />);
-
-    expect(screen.getByText('Not Available')).toBeInTheDocument();
+    render(<Table subscriptions={data as Subscription[]} />);
+    const table = screen.getByLabelText('subscriptions');
+    expect(table.children[1].firstChild.childNodes[2].textContent).toEqual('Not Available');
   });
 
   describe('sorting and searching', () => {
@@ -154,17 +154,16 @@ describe('Subscription Table', () => {
       })
     ]);
 
-    it('pages', () => {
-      render(<Table subscriptions={get('data')} />);
-      expect(screen.getByText('of 2')).toBeInTheDocument();
-    });
-
     it('can change page', () => {
       const { getByLabelText } = render(<Table subscriptions={get('data')} />);
 
+      const table = screen.getByLabelText('subscriptions');
+
       const nextPage = screen.getAllByLabelText('Go to next page')[0];
       fireEvent.click(nextPage);
+
       expect(getByLabelText('Current page')).toHaveValue(2);
+      expect(table.querySelectorAll('tr').length).toBe(2);
     });
 
     it('can change per page', () => {
