@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -10,6 +10,7 @@ import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
 import { get, def } from 'bdd-lazy-var';
+import '@testing-library/jest-dom';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useProducts');
@@ -96,18 +97,16 @@ describe('SubscriptionInventoryPage', () => {
   });
 
   it('renders correctly', async () => {
-    const { container } = render(<PageContainer />);
-    await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
+    const { getByText } = render(<PageContainer />);
+    expect(getByText('Subscription Inventory')).toBeInTheDocument();
   });
 
   describe('when the user call fails', () => {
     def('userError', () => true);
 
     it('renders an error message when user call fails', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      const { getByText } = render(<PageContainer />);
+      expect(getByText('This page is temporarily unavailable')).toBeInTheDocument();
     });
   });
 
@@ -115,9 +114,8 @@ describe('SubscriptionInventoryPage', () => {
     def('canReadProducts', () => false);
 
     it('redirects to not authorized page', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      render(<PageContainer />);
+      expect(useUser).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -125,9 +123,8 @@ describe('SubscriptionInventoryPage', () => {
     def('productsError', () => true);
 
     it('renders the error page', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useProducts).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      const { getByText } = render(<PageContainer />);
+      expect(getByText('This page is temporarily unavailable')).toBeInTheDocument();
     });
   });
 
@@ -135,9 +132,8 @@ describe('SubscriptionInventoryPage', () => {
     def('productsLoading', () => true);
 
     it('renders the loading component', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useProducts).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      const container = render(<PageContainer />);
+      expect(container).toHaveLoader();
     });
   });
 
@@ -145,9 +141,8 @@ describe('SubscriptionInventoryPage', () => {
     def('statusCardsError', () => true);
 
     it('renders the error page', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useStatus).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      const { getByText } = render(<PageContainer />);
+      expect(getByText('This page is temporarily unavailable')).toBeInTheDocument();
     });
   });
 
@@ -155,9 +150,8 @@ describe('SubscriptionInventoryPage', () => {
     def('statusCardsLoading', () => true);
 
     it('renders the loading component', async () => {
-      const { container } = render(<PageContainer />);
-      await waitFor(() => expect(useStatus).toHaveBeenCalledTimes(1));
-      expect(container).toMatchSnapshot();
+      const container = render(<PageContainer />);
+      expect(container).toHaveLoader();
     });
   });
 });
