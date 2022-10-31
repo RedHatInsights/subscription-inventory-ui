@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, waitFor, screen, queryByText, getByText } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -11,6 +11,7 @@ import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
 import { get, def } from 'bdd-lazy-var';
 import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useProducts');
@@ -115,7 +116,9 @@ describe('SubscriptionInventoryPage', () => {
 
     it('redirects to not authorized page', async () => {
       render(<PageContainer />);
-      expect(useUser).toHaveBeenCalledTimes(1);
+      waitFor(() =>
+        expect(screen.getByAltText('You do not have access to Inventory')).toBeInTheDocument()
+      );
     });
   });
 

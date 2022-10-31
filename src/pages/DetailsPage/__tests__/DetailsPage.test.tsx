@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import DetailsPage from '../DetailsPage';
 import Authentication from '../../../components/Authentication';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, MemoryRouter, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -127,20 +127,20 @@ it("redirects when can't read products", async () => {
   const canReadProducts = false;
   mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
   mockSingleProduct(false);
-
   render(<Page />);
-  expect(useSingleProduct).toHaveBeenCalledTimes(2);
+  waitFor(() => expect(screen.getByAltText('no-permissions')).toBeInTheDocument());
 });
 
 it('renders not available for missing data', async () => {
   const isLoading = false;
   const isOrgAdmin = true;
   const canReadProducts = true;
+
   mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
   mockSingleProduct(false);
 
-  render(<Page />);
-  expect(document.querySelector('.pf-c-breadcrumb').firstChild.textContent);
+  const { queryAllByText } = render(<Page />);
+  waitFor(() => expect(queryAllByText('Not Available')).toBeInTheDocument());
 });
 
 it('handles errors', async () => {
@@ -151,6 +151,6 @@ it('handles errors', async () => {
     error: true,
     data: []
   });
-  render(<Page />);
-  expect(useSingleProduct).toHaveBeenCalledTimes(1);
+  const { getAllByText } = render(<Page />);
+  waitFor(() => expect(getAllByText('This page is temporarily unavailable')).toBeInTheDocument());
 });
