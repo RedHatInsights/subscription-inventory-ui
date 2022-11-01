@@ -2,7 +2,7 @@ import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
 import DetailsPage from '../DetailsPage';
 import Authentication from '../../../components/Authentication';
-import { BrowserRouter as Router, MemoryRouter, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
