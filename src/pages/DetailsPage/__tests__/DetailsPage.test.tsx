@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import DetailsPage from '../DetailsPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -102,64 +102,53 @@ describe('Details Page', () => {
     const isLoading = true;
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin, true);
-
-    const { container } = render(<Page />);
-
-    await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
+    const container = render(<Page />);
+    expect(container).toHaveLoader();
   });
+});
 
-  it('renders data', async () => {
-    const isLoading = false;
-    const isOrgAdmin = true;
-    const canReadProducts = true;
-    mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
-    mockSingleProduct(true);
+it('renders data', async () => {
+  const isLoading = false;
+  const isOrgAdmin = true;
+  const canReadProducts = true;
+  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockSingleProduct(true);
 
-    const { container } = render(<Page />);
-
-    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
+  const { getAllByText } = render(<Page />);
+  getAllByText('1234').forEach((el) => {
+    expect(el).toBeInTheDocument();
   });
+});
 
-  it("redirects when can't read products", async () => {
-    const isLoading = false;
-    const isOrgAdmin = true;
-    const canReadProducts = false;
-    mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
-    mockSingleProduct(false);
+it("redirects when can't read products", async () => {
+  const isLoading = false;
+  const isOrgAdmin = true;
+  const canReadProducts = false;
+  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockSingleProduct(false);
+  render(<Page />);
+  waitFor(() => expect(screen.getByAltText('no-permissions')).toBeInTheDocument());
+});
 
-    const { container } = render(<Page />);
+it('renders not available for missing data', async () => {
+  const isLoading = false;
+  const isOrgAdmin = true;
+  const canReadProducts = true;
 
-    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(2));
-    expect(container).toMatchSnapshot();
+  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockSingleProduct(false);
+  render(<Page />);
+  expect(document.querySelector('.pf-c-list').firstChild.textContent).toContain('Not Available');
+});
+
+it('handles errors', async () => {
+  (useSingleProduct as jest.Mock).mockReturnValue({
+    isLoading: false,
+    isFetching: false,
+    isSuccess: false,
+    error: true,
+    data: []
   });
-
-  it('renders not available for missing data', async () => {
-    const isLoading = false;
-    const isOrgAdmin = true;
-    const canReadProducts = true;
-    mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
-    mockSingleProduct(false);
-
-    const { container } = render(<Page />);
-
-    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
-  });
-
-  it('handles errors', async () => {
-    (useSingleProduct as jest.Mock).mockReturnValue({
-      isLoading: false,
-      isFetching: false,
-      isSuccess: false,
-      error: true,
-      data: []
-    });
-
-    const { container } = render(<Page />);
-
-    await waitFor(() => expect(useSingleProduct).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
-  });
+  const { getAllByText } = render(<Page />);
+  waitFor(() => expect(getAllByText('This page is temporarily unavailable')).toBeInTheDocument());
 });
