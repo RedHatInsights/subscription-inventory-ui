@@ -8,6 +8,7 @@ const { config: webpackConfig, plugins } = config({
   useFileHash: false,
   modules: ['subscriptionInventory'],
   useProxy: true,
+  useCache: true,
   appUrl: process.env.BETA
     ? '/beta/insights/subscriptions/inventory'
     : '/insights/subscriptions/inventory',
