@@ -10,8 +10,6 @@ import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
 import { get, def } from 'bdd-lazy-var';
-import '@testing-library/jest-dom';
-import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useProducts');
