@@ -9,7 +9,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
 import useSingleProduct from '../../../hooks/useSingleProduct';
 import { Product } from '../../../hooks/useProducts';
-import '@testing-library/jest-dom';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useSingleProduct');
@@ -138,9 +137,8 @@ it('renders not available for missing data', async () => {
 
   mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
   mockSingleProduct(false);
-
-  const { queryAllByText } = render(<Page />);
-  waitFor(() => expect(queryAllByText('Not Available')).toBeInTheDocument());
+  render(<Page />);
+  expect(document.querySelector('.pf-c-list').firstChild.textContent).toContain('Not Available');
 });
 
 it('handles errors', async () => {
