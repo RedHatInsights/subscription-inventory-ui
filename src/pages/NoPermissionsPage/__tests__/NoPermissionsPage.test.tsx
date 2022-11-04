@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import NoPermissionsPage from '../NoPermissionsPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -51,9 +51,7 @@ describe('No Permissions Page', () => {
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin);
 
-    const { container } = render(<Page />);
-
-    await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
+    const { getByText } = render(<Page />);
+    expect(getByText('You do not have access to Inventory')).toBeInTheDocument();
   });
 });
