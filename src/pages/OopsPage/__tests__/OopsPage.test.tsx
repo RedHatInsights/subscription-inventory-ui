@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import OopsPage from '../OopsPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -51,9 +51,8 @@ describe('Oops Page', () => {
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin);
 
-    const { container } = render(<Page />);
+    const { getByText } = render(<Page />);
 
-    await waitFor(() => expect(useUser).toHaveBeenCalledTimes(1));
-    expect(container).toMatchSnapshot();
+    expect(getByText('This page is temporarily unavailable')).toBeInTheDocument();
   });
 });
