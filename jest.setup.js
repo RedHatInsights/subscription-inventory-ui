@@ -18,3 +18,4 @@ const toHaveLoader = (obj) => {
 expect.extend({
   toHaveLoader
 });
+
