@@ -11,7 +11,7 @@ import { Button } from '@patternfly/react-core';
 import { useHistory } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
-  let history = useHistory();
+  const history = useHistory();
   function handleClick() {
     history.push('/');
   }
