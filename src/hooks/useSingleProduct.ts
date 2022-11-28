@@ -5,6 +5,16 @@ interface SingleProductApiData {
   body: Product;
 }
 
+class HttpError extends Error {
+  status: number;
+  statusText: string;
+  constructor(message: string, status: number, statusText: string) {
+    super(message);
+    this.status = status;
+    this.statusText = statusText;
+  }
+}
+
 const fetchProductData = async (sku: string): Promise<Product> => {
   const jwtToken = await window.insights.chrome.auth.getToken();
 
@@ -13,8 +23,11 @@ const fetchProductData = async (sku: string): Promise<Product> => {
   });
 
   if (!response.ok) {
-    console.log('error');
-    throw new Error(`Status Code ${response.status}.  Error fetching sku: ${response.statusText}.`);
+    throw new HttpError(
+      `Status Code ${response.status}.  Error fetching sku: ${response.statusText}.`,
+      response.status,
+      response.statusText
+    );
   }
 
   const productResponseData: SingleProductApiData = await response.json();
@@ -23,13 +36,22 @@ const fetchProductData = async (sku: string): Promise<Product> => {
 };
 
 const getSingleProduct = async (sku: string): Promise<Product> => {
-  const productData = await fetchProductData(sku);
+  const productData = fetchProductData(sku);
 
   return productData;
 };
 
 const useSingleProduct = (sku: string): QueryObserverResult<Product, unknown> => {
-  return useQuery(`singleProduct.${sku}`, () => getSingleProduct(sku));
+  return useQuery({
+    queryKey: `singleProduct.${sku}`,
+    queryFn: () => getSingleProduct(sku),
+    retry: (failureCount, error) => {
+      if (failureCount < 3 && !String(error).includes('404')) {
+        return true;
+      }
+      return false;
+    }
+  });
 };
 
-export { useSingleProduct as default };
+export { useSingleProduct as default, HttpError };
