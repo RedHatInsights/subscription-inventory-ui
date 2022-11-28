@@ -45,14 +45,16 @@ const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean) => {
 };
 
 describe('Not Found Page', () => {
-    it('renders correctly', async () => {
-      window.insights = {};
-      const isLoading = false;
-      const isOrgAdmin = true;
-      mockAuthenticateUser(isLoading, isOrgAdmin);
-  
-      const { getByText } = render(<Page />);
-  
-      expect(getByText('Your organization currently has no subscriptions for this product')).toBeInTheDocument();
-    });
+  it('renders correctly', async () => {
+    window.insights = {};
+    const isLoading = false;
+    const isOrgAdmin = true;
+    mockAuthenticateUser(isLoading, isOrgAdmin);
+
+    const { getByText } = render(<Page />);
+
+    expect(
+      getByText('Your organization currently has no subscriptions for this product')
+    ).toBeInTheDocument();
   });
+});

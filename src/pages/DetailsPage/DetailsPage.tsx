@@ -31,12 +31,12 @@ const DetailsPage: FunctionComponent = () => {
   const missingText = 'Not Available';
 
   const handle404Error = (error: unknown) => {
-    if (String(error).includes("404")) {
-      return true
+    if (String(error).includes('404')) {
+      return true;
     }
 
-    return false
-  }
+    return false;
+  };
 
   const Page: FunctionComponent = () => (
     <>
@@ -90,10 +90,9 @@ const DetailsPage: FunctionComponent = () => {
           </PageSection>
         </Main>
       )}
-      
+
       {error && handle404Error(error) && <NotFound />}
       {error && !handle404Error(error) && <Unavailable />}
-
     </>
   );
 
