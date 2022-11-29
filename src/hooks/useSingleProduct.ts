@@ -1,6 +1,6 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import { Product } from './useProducts';
-import  { HttpError } from '../utilities/errors'
+import { HttpError } from '../utilities/errors';
 
 interface SingleProductApiData {
   body: Product;
