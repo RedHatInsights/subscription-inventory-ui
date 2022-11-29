@@ -1,18 +1,9 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import { Product } from './useProducts';
+import  { HttpError } from '../utilities/errors'
 
 interface SingleProductApiData {
   body: Product;
-}
-
-class HttpError extends Error {
-  status: number;
-  statusText: string;
-  constructor(message: string, status: number, statusText: string) {
-    super(message);
-    this.status = status;
-    this.statusText = statusText;
-  }
 }
 
 const fetchProductData = async (sku: string): Promise<Product> => {
@@ -46,7 +37,7 @@ const useSingleProduct = (sku: string): QueryObserverResult<Product, unknown> =>
     queryKey: `singleProduct.${sku}`,
     queryFn: () => getSingleProduct(sku),
     retry: (failureCount, error) => {
-      if (failureCount < 3 && !String(error).includes('404')) {
+      if (failureCount < 3 && (error as HttpError).status != 404) {
         return true;
       }
       return false;
@@ -54,4 +45,4 @@ const useSingleProduct = (sku: string): QueryObserverResult<Product, unknown> =>
   });
 };
 
-export { useSingleProduct as default, HttpError };
+export { useSingleProduct as default };

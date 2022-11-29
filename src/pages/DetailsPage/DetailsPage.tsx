@@ -12,13 +12,14 @@ import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-com
 import React, { FunctionComponent } from 'react';
 import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
 import { Processing } from '../../components/emptyState';
-import useSingleProduct, { HttpError } from '../../hooks/useSingleProduct';
+import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import NotFound from '../NotFoundPage/NotFound';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import useFeatureFlag from '../../hooks/useFeatureFlag';
+import { HttpError } from '../../utilities/errors';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
