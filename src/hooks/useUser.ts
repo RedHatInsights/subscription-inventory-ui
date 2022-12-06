@@ -1,6 +1,5 @@
 import { useQuery, UseQueryResult } from 'react-query';
-import Cookies from 'js-cookie';
-import { getConfig, authenticateUser, getUserRbacPermissions } from '../utilities/platformServices';
+import { authenticateUser, getUserRbacPermissions } from '../utilities/platformServices';
 
 interface User {
   accountNumber: string;

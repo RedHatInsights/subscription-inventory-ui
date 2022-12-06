@@ -14,10 +14,12 @@ import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
 import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
+import NotFound from '../NotFoundPage/NotFound';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import useFeatureFlag from '../../hooks/useFeatureFlag';
+import { HttpError } from '../../utilities/errors';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -26,7 +28,6 @@ const DetailsPage: FunctionComponent = () => {
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
   const tableIsEnabled = useFeatureFlag('subscriptionInventory.detailsTable');
-
   const missingText = 'Not Available';
 
   const Page: FunctionComponent = () => (
@@ -71,19 +72,19 @@ const DetailsPage: FunctionComponent = () => {
             </List>
           </>
         )}
-
-        {error && <Unavailable />}
       </PageHeader>
-      {tableIsEnabled && (
+      {tableIsEnabled && !error && (
         <Main>
           <PageSection variant="light">
             <Title headingLevel="h2">Subscription details</Title>
             {isLoading && !error && <Processing />}
             {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
-            {error && <Unavailable />}
           </PageSection>
         </Main>
       )}
+
+      {error && (error as HttpError).status == 404 && <NotFound />}
+      {error && (error as HttpError).status != 404 && <Unavailable />}
     </>
   );
 
