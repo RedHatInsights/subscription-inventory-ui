@@ -22,7 +22,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
 
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const productData = useProducts(filter, true);
+  const productData = useProducts(filter);
   const statusCardData = useStatus();
 
   const Page: FunctionComponent = () => {
