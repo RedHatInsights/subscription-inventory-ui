@@ -14,6 +14,7 @@ import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
 import { Button, Chip, ChipGroup } from '@patternfly/react-core';
+import { ExportSubscriptions } from '../ExportSubscriptions';
 
 interface ProductsTableProps {
   data: Product[] | undefined;
@@ -153,16 +154,23 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         direction={{ default: 'column', md: 'row' }}
         justifyContent={{ default: 'justifyContentSpaceBetween' }}
       >
-        <FlexItem>
+        <Flex>
+          <FlexItem>
+            {data.length > 0 && (
+              <SearchInput
+                placeholder="Filter by Name or SKU"
+                value={searchValue}
+                onChange={handleSearch}
+                onClear={clearSearch}
+              />
+            )}
+          </FlexItem>
           {data.length > 0 && (
-            <SearchInput
-              placeholder="Filter by Name or SKU"
-              value={searchValue}
-              onChange={handleSearch}
-              onClear={clearSearch}
-            />
+            <FlexItem>
+              <ExportSubscriptions />
+            </FlexItem>
           )}
-        </FlexItem>
+        </Flex>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
       <Flex>

@@ -48,6 +48,20 @@ describe('ProductsTable', () => {
     });
   });
 
+  it('renders the export button', () => {
+    const { container } = render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
+    const buttonEl = container.querySelector('#export-button');
+    expect(buttonEl).not.toBeNull();
+    expect(buttonEl).toBeInTheDocument();
+  });
+
   describe('when row column headings are clicked', () => {
     const formattedData = [
       {
