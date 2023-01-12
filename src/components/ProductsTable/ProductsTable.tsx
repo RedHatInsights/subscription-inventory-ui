@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import {
   Flex,
@@ -156,20 +156,17 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       >
         <Flex>
           <FlexItem>
-            {data.length > 0 && (
-              <SearchInput
-                placeholder="Filter by Name or SKU"
-                value={searchValue}
-                onChange={handleSearch}
-                onClear={clearSearch}
-              />
-            )}
+            <SearchInput
+              placeholder="Filter by Name or SKU"
+              value={searchValue}
+              onChange={handleSearch}
+              onClear={clearSearch}
+              isDisabled={data.length == 0}
+            />
           </FlexItem>
-          {data.length > 0 && (
-            <FlexItem>
-              <ExportSubscriptions />
-            </FlexItem>
-          )}
+          <FlexItem>
+            <ExportSubscriptions />
+          </FlexItem>
         </Flex>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
