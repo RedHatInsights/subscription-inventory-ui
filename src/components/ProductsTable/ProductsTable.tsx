@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import {
   Flex,
@@ -14,6 +14,7 @@ import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
 import { Button, Chip, ChipGroup } from '@patternfly/react-core';
+import { ExportSubscriptions } from '../ExportSubscriptions';
 
 interface ProductsTableProps {
   data: Product[] | undefined;
@@ -153,16 +154,20 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         direction={{ default: 'column', md: 'row' }}
         justifyContent={{ default: 'justifyContentSpaceBetween' }}
       >
-        <FlexItem>
-          {data.length > 0 && (
+        <Flex>
+          <FlexItem>
             <SearchInput
               placeholder="Filter by Name or SKU"
               value={searchValue}
               onChange={handleSearch}
               onClear={clearSearch}
+              isDisabled={data.length == 0}
             />
-          )}
-        </FlexItem>
+          </FlexItem>
+          <FlexItem>
+            <ExportSubscriptions />
+          </FlexItem>
+        </Flex>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
       <Flex>
