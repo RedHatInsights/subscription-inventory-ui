@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import React, { Suspense, lazy, ReactNode } from 'react';
 import { Processing } from './components/emptyState';
 import Authentication from './components/Authentication';
@@ -8,20 +8,20 @@ const OopsPage = lazy(() => import('./pages/OopsPage'));
 const NoPermissionsPage = lazy(() => import('./pages/NoPermissionsPage'));
 const DetailsPage = lazy(() => import('./pages/DetailsPage'));
 
-export const Routes: ReactNode = () => (
+export const InventoryRoutes: ReactNode = () => (
   <div className="inventory">
     <Suspense fallback={<Processing />}>
       <Authentication>
-        <Switch>
-          <Route exact path="/" component={SubscriptionInventoryPage} />
-          <Route path="/oops" component={OopsPage} />
-          <Route path="/no-permissions" component={NoPermissionsPage} />
-          <Route path="/:SKU" component={DetailsPage} />
+        <Routes>
+          <Route path="/" element={SubscriptionInventoryPage} />
+          <Route path="/oops" element={OopsPage} />
+          <Route path="/no-permissions" element={NoPermissionsPage} />
+          <Route path="/:SKU" element={DetailsPage} />
           {/* Finally, catch all unmatched routes */}
           <Route>
-            <Redirect to="/oops" />
+            <Navigate to="/oops" />
           </Route>
-        </Switch>
+        </Routes>
       </Authentication>
     </Suspense>
   </div>

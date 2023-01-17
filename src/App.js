@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from './hooks/withRouter';
 import { connect } from 'react-redux';
-import { Routes } from './Routes';
+import { InventoryRoutes } from './Routes';
 import './App.scss';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import NotificationProvider from './contexts/NotificationProvider';
@@ -40,7 +40,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <NotificationProvider>
         <Notifications />
-        <Routes />
+        <InventoryRoutes />
       </NotificationProvider>
     </QueryClientProvider>
   );

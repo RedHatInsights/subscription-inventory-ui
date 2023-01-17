@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -16,6 +16,7 @@ import GettingStartedCard from '../../components/GettingStartedCard';
 import { Stack } from '@patternfly/react-core';
 import { StackItem } from '@patternfly/react-core';
 import StatusCountCards from '../../components/StatusCountCards';
+import { withRouter } from '../../hooks/withRouter';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const [filter, setFilter] = useState<string>('');
@@ -89,7 +90,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
   if (user.canReadProducts) {
     return <Page />;
   } else {
-    return <Redirect to="/no-permissions" />;
+    return <Navigate to="/no-permissions" />;
   }
 };
 

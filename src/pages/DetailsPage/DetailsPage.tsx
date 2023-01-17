@@ -10,7 +10,7 @@ import {
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent } from 'react';
-import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -20,6 +20,7 @@ import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import useFeatureFlag from '../../hooks/useFeatureFlag';
 import { HttpError } from '../../utilities/errors';
+import { withRouter } from '../../hooks/withRouter';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -91,7 +92,7 @@ const DetailsPage: FunctionComponent = () => {
   if (user.canReadProducts) {
     return <Page />;
   } else {
-    return <Redirect to="/no-permissions" />;
+    return <Navigate to="/no-permissions" />;
   }
 };
 

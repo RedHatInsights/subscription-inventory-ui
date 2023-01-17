@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from '../../hooks/withRouter';
 
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
