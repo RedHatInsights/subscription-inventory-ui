@@ -13,14 +13,12 @@ export const InventoryRoutes: ReactNode = () => (
     <Suspense fallback={<Processing />}>
       <Authentication>
         <Routes>
-          <Route path="/" element={SubscriptionInventoryPage} />
-          <Route path="/oops" element={OopsPage} />
-          <Route path="/no-permissions" element={NoPermissionsPage} />
-          <Route path="/:SKU" element={DetailsPage} />
+          <Route path="/" element={<SubscriptionInventoryPage />} />
+          <Route path="/oops" element={<OopsPage />} />
+          <Route path="/no-permissions" element={<NoPermissionsPage />} />
+          <Route path="/:SKU" element={<DetailsPage />} />
           {/* Finally, catch all unmatched routes */}
-          <Route>
-            <Navigate to="/oops" />
-          </Route>
+          <Route path="*" element={<Navigate to="/oops" replace />} />
         </Routes>
       </Authentication>
     </Suspense>

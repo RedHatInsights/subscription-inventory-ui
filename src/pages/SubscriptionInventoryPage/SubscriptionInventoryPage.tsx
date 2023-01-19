@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -25,6 +25,14 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
   const user: User = queryClient.getQueryData('user');
   const productData = useProducts(filter);
   const statusCardData = useStatus();
+  const redirectRoute = '/no-permissions';
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user.canReadProducts) {
+      navigate(redirectRoute);
+    }
+  }, [user.canReadProducts]);
 
   const Page: FunctionComponent = () => {
     return (
@@ -87,11 +95,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
     );
   };
 
-  if (user.canReadProducts) {
-    return <Page />;
-  } else {
-    return <Navigate to="/no-permissions" />;
-  }
+  return <Page />;
 };
 
-export default withRouter(SubscriptionInventoryPage);
+export default SubscriptionInventoryPage;

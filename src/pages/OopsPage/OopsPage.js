@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { withRouter } from '../../hooks/withRouter';
-
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 
@@ -15,4 +13,4 @@ const OopsPage = () => {
   );
 };
 
-export default withRouter(OopsPage);
+export default OopsPage;
