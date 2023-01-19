@@ -16,7 +16,6 @@ import GettingStartedCard from '../../components/GettingStartedCard';
 import { Stack } from '@patternfly/react-core';
 import { StackItem } from '@patternfly/react-core';
 import StatusCountCards from '../../components/StatusCountCards';
-import { withRouter } from '../../hooks/withRouter';
 
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const [filter, setFilter] = useState<string>('');
