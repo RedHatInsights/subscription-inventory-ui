@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import NotFound from './NotFound';
-import { withRouter } from 'react-router-dom';
 
 const NotFoundPage = () => {
   useEffect(() => {
@@ -14,4 +13,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default withRouter(NotFoundPage);
+export default NotFoundPage;

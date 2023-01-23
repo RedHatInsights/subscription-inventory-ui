@@ -8,12 +8,12 @@ import {
 } from '@patternfly/react-core';
 import { WrenchIcon } from '@patternfly/react-icons';
 import { Button } from '@patternfly/react-core';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   function handleClick() {
-    history.push('/');
+    navigate('/');
   }
   return (
     <EmptyState variant={EmptyStateVariant.large}>
