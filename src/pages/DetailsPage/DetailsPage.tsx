@@ -9,8 +9,8 @@ import {
 } from '@patternfly/react-core';
 import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
-import React, { FunctionComponent } from 'react';
-import { Link, Redirect, useParams, withRouter } from 'react-router-dom';
+import React, { FunctionComponent, useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -29,6 +29,14 @@ const DetailsPage: FunctionComponent = () => {
   const { isLoading, error, data } = useSingleProduct(SKU);
   const tableIsEnabled = useFeatureFlag('subscriptionInventory.detailsTable');
   const missingText = 'Not Available';
+  const redirectRoute = '/no-permissions';
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user.canReadProducts) {
+      navigate(redirectRoute);
+    }
+  }, [user.canReadProducts]);
 
   const Page: FunctionComponent = () => (
     <>
@@ -88,11 +96,7 @@ const DetailsPage: FunctionComponent = () => {
     </>
   );
 
-  if (user.canReadProducts) {
-    return <Page />;
-  } else {
-    return <Redirect to="/no-permissions" />;
-  }
+  return <Page />;
 };
 
-export default withRouter(DetailsPage);
+export default DetailsPage;
