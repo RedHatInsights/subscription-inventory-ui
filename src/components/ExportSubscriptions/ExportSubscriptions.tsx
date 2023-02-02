@@ -45,7 +45,14 @@ const ExportSubscriptions = () => {
   };
 
   return (
-    <Tooltip content={<div>Export your full subscription inventory to a CSV file</div>}>
+    <Tooltip
+      content={
+        <div>
+          Export your full subscription inventory to a CSV file. The CSV file includes information
+          from both the <i>All subscriptions</i> and <i>Subscription details</i> tables.
+        </div>
+      }
+    >
       <ExportIcon
         id="export-button"
         style={hovered ? hoveredStyle : defaultStyle}
