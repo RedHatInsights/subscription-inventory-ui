@@ -115,7 +115,7 @@ it('renders data', async () => {
   mockSingleProduct(true);
 
   const { getAllByText } = render(<Page />);
-  getAllByText('1234').forEach((el) => {
+  getAllByText('2345').forEach((el) => {
     expect(el).toBeInTheDocument();
   });
 });
