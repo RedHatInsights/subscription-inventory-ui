@@ -32,7 +32,7 @@ describe('Subscription Table', () => {
   it('renders correctly', async () => {
     const { getAllByText } = render(<Table subscriptions={data as Subscription[]} />);
 
-    getAllByText('1234').forEach((el) => {
+    getAllByText('2345').forEach((el) => {
       expect(el).toBeInTheDocument();
     });
   });
@@ -40,7 +40,7 @@ describe('Subscription Table', () => {
   it('shows not available for missing values', () => {
     render(<Table subscriptions={data as Subscription[]} />);
     const table = screen.getByLabelText('subscriptions');
-    expect(table.children[1].firstChild.childNodes[2].textContent).toEqual('Not Available');
+    expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('Not Available');
   });
 
   describe('sorting and searching', () => {
@@ -76,24 +76,23 @@ describe('Subscription Table', () => {
       const table = screen.getByLabelText('subscriptions');
 
       expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[1].number
+        formattedData[1].contractNumber
       );
     });
 
-    it('sorts by Subscription Number, reverse', () => {
+    it('sorts by Contract Number, reverse', () => {
       render(<Table subscriptions={formattedData as Subscription[]} />);
       const table = screen.getByLabelText('subscriptions');
 
-      fireEvent.click(screen.getByText('Subscription number'));
+      fireEvent.click(screen.getByText('Contract number'));
 
       expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[2].number
+        formattedData[2].contractNumber
       );
     });
 
     describe('sorting by clicked columns', () => {
       [
-        ['Contract number', 'contractNumber'],
         ['Subscription quantity', 'quantity'],
         ['Start date', 'startDate'],
         ['End date', 'endDate']
@@ -127,10 +126,10 @@ describe('Subscription Table', () => {
     it('filters by subscription or contract number', () => {
       render(<Table subscriptions={formattedData as Subscription[]} />);
 
-      const input = screen.getByPlaceholderText('Filter by subscription or contract number');
+      const input = screen.getByPlaceholderText('Filter by contract number');
       fireEvent.change(input, { target: { value: '35' } });
 
-      expect(screen.queryByText('1234')).not.toBeInTheDocument();
+      expect(screen.queryByText('2344')).not.toBeInTheDocument();
     });
   });
 
