@@ -12,8 +12,6 @@ export APP_ROOT=$(pwd)
 # export NODE_BUILD_VERSION=15
 COMMON_BUILDER=https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master
 
-mkdir -p $WORKSPACE/artifacts
-
 # --------------------------------------------
 # Options that must be configured by app owner
 # --------------------------------------------
@@ -30,7 +28,7 @@ BUILD_RESULTS=$?
 # Install bonfire repo/initialize
 CICD_URL=https://raw.githubusercontent.com/RedHatInsights/bonfire/master/cicd
 curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh
-cp .cicd_bootstrap.sh $WORKSPACE/artifacts/bootstrap.sh
+cat .cicd_bootstrap
 source .cicd_bootstrap.sh
 
 export DEPLOY_FRONTENDS="true"
@@ -39,6 +37,7 @@ export APP_NAME="rhsm-api-proxy"
 source "${CICD_ROOT}/deploy_ephemeral_env.sh"
 
 # Stubbed out for now
+mkdir -p $WORKSPACE/artifacts
 cat << EOF > $WORKSPACE/artifacts/junit-dummy.xml
 <testsuite tests="1">
     <testcase classname="dummy" name="dummytest"/>
