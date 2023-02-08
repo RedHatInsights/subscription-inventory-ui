@@ -12,6 +12,8 @@ export APP_ROOT=$(pwd)
 # export NODE_BUILD_VERSION=15
 COMMON_BUILDER=https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master
 
+mkdir -p $WORKSPACE/artifacts
+
 # --------------------------------------------
 # Options that must be configured by app owner
 # --------------------------------------------
@@ -37,7 +39,6 @@ export APP_NAME="rhsm-api-proxy"
 source "${CICD_ROOT}/deploy_ephemeral_env.sh"
 
 # Stubbed out for now
-mkdir -p $WORKSPACE/artifacts
 cat << EOF > $WORKSPACE/artifacts/junit-dummy.xml
 <testsuite tests="1">
     <testcase classname="dummy" name="dummytest"/>
