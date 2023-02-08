@@ -28,7 +28,7 @@ BUILD_RESULTS=$?
 # Install bonfire repo/initialize
 CICD_URL=https://raw.githubusercontent.com/RedHatInsights/bonfire/master/cicd
 curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh 
-sed -i 's/pip install --upgrade pip '\''setuptools<58'\'' wheel/cat $(which pip)\npip install --upgrade pip '\''setuptools<58'\'' wheel/' .cicd_bootstrap.sh
+sed -i 's/pip install --upgrade pip '\''setuptools<58'\'' wheel/\n-------------------\n---------------grep BINPRM_BUF_SIZE /usr/include/linux/binfmts.h\n\ncat $(which pip)\npip install --upgrade pip '\''setuptools<58'\'' wheel/' .cicd_bootstrap.sh
 source .cicd_bootstrap.sh
 
 export DEPLOY_FRONTENDS="true"
