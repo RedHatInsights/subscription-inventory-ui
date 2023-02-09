@@ -27,10 +27,7 @@ BUILD_RESULTS=$?
 # deploy to ephemeral
 # Install bonfire repo/initialize
 CICD_URL=https://raw.githubusercontent.com/RedHatInsights/bonfire/master/cicd
-curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh 
-sed -i 's/pip install --upgrade pip '\''setuptools<58'\'' wheel/python -m pip install --upgrade pip '\''setuptools<58'\'' wheel/' .cicd_bootstrap.sh
-sed -i 's/pip install --upgrade '\''crc-bonfire>=4.10.4'\''/python -m pip install --upgrade '\''crc-bonfire>=4.10.4'\''/' .cicd_bootstrap.sh
-source .cicd_bootstrap.sh
+curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh && source .cicd_bootstrap.sh
 
 export DEPLOY_FRONTENDS="true"
 export APP_NAME="rhsm-api-proxy"
