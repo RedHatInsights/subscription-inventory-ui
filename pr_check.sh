@@ -4,7 +4,7 @@
 # Export vars for helper scripts to use
 # --------------------------------------------
 # name of app-sre "application" folder this component lives in; needs to match for quay
-export COMPONENT="rhsm-api-proxy"
+export COMPONENT_NAME="subscription-inventory-ui"
 # IMAGE should match the quay repo set by app.yaml in app-interface
 export IMAGE="quay.io/cloudservices/subscription-inventory-ui"
 export WORKSPACE=${WORKSPACE:-$APP_ROOT} # if running in jenkins, use the build's workspace
@@ -23,6 +23,16 @@ set -exv
 # source is preferred to | bash -s in this case to avoid a subshell
 source <(curl -sSL $COMMON_BUILDER/src/frontend-build.sh)
 BUILD_RESULTS=$?
+
+# deploy to ephemeral
+# Install bonfire repo/initialize
+CICD_URL=https://raw.githubusercontent.com/RedHatInsights/bonfire/master/cicd
+curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh && source .cicd_bootstrap.sh
+
+export DEPLOY_FRONTENDS="true"
+export APP_NAME="rhsm-api-proxy"
+
+source "${CICD_ROOT}/deploy_ephemeral_env.sh"
 
 # Stubbed out for now
 mkdir -p $WORKSPACE/artifacts
