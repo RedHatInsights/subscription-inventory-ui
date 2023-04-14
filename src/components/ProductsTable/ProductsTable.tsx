@@ -159,7 +159,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
             <SearchInput
               placeholder="Filter by Name or SKU"
               value={searchValue}
-              onChange={handleSearch}
+              onChange={(_: React.FormEvent, v: string) => handleSearch(v)}
               onClear={clearSearch}
               isDisabled={data.length == 0}
             />
