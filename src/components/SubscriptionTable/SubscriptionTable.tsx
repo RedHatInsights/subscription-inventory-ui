@@ -160,7 +160,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
             <SearchInput
               placeholder="Filter by contract number"
               value={searchValue}
-              onChange={(val: string) => setSearchValue(val)}
+              onChange={(_: React.FormEvent, val: string) => setSearchValue(val)}
               onClear={() => setSearchValue('')}
             />
           )}
