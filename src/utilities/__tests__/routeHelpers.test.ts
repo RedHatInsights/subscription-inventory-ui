@@ -6,9 +6,9 @@ describe('utilities/getBaseName', () => {
     expect(getBaseName('/rhcs/bar/bar/baz')).toEqual('/rhcs/bar');
   });
 
-  it('should find the right base name on Beta', () => {
-    expect(getBaseName('/beta/insights/foo/bar/baz')).toEqual('/beta/insights/foo');
-    expect(getBaseName('/beta/test/fff/bar/baz')).toEqual('/beta/test/fff');
+  it('should find the right base name on Preview', () => {
+    expect(getBaseName('/preview/insights/foo/bar/baz')).toEqual('/preview/insights/foo');
+    expect(getBaseName('/preview/test/fff/bar/baz')).toEqual('/preview/test/fff');
   });
 
   it('should find the right base name not on Beta with a shorter url', () => {
