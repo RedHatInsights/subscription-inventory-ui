@@ -117,7 +117,7 @@ const PurchaseModal: FunctionComponent = () => {
           <GridItem span={6}>
             <PurchaseCard
               body="Get expert help configuring Red Hat Enterprise Linux to suit your needs."
-              ctaHref="https://access.redhat.com/support/contact/sales"
+              ctaHref="https://www.redhat.com/en/contact/sales"
               ctaText="Contact Sales"
               title="From a Red Hatter"
             />
