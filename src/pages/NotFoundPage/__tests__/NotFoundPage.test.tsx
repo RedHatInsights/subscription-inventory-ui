@@ -46,7 +46,6 @@ const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean) => {
 
 describe('Not Found Page', () => {
   it('renders correctly', async () => {
-    window.insights = {};
     const isLoading = false;
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin);

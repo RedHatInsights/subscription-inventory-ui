@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import { HttpError } from '../utilities/errors';
+import { useToken } from '../utilities/platformServices';
 
 interface ExportSubscriptionsBody {
   blob: Blob;
@@ -10,11 +11,9 @@ const parseFilename = (headers: any): string => {
   return headers.get('Content-Disposition')?.split(';')[1]?.split('=')[1]?.replaceAll('"', '');
 };
 
-const fetchExportSusbcriptionsData = async () => {
-  const jwtToken = await window.insights.chrome.auth.getToken();
-
+const fetchExportSubscriptionsData = (jwtToken: Promise<string>) => async () => {
   const response = await fetch('/api/rhsm/v2/products/export', {
-    headers: { Authorization: `Bearer ${jwtToken}` }
+    headers: { Authorization: `Bearer ${await jwtToken}` }
   });
 
   if (!response.ok) {
@@ -26,12 +25,9 @@ const fetchExportSusbcriptionsData = async () => {
   return { blob, filename } as ExportSubscriptionsBody;
 };
 
-const getExportSubscriptions = async () => {
-  return await fetchExportSusbcriptionsData();
-};
-
 const useExportSubscriptions = () => {
-  return useQuery('export', () => getExportSubscriptions(), {
+  const jwtToken = useToken();
+  return useQuery('export', () => fetchExportSubscriptionsData(jwtToken)(), {
     enabled: false,
     retry: 0
   });

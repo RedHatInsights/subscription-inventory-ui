@@ -80,7 +80,6 @@ describe('SubscriptionInventoryPage', () => {
   def('statusCardsError', () => false);
 
   beforeEach(() => {
-    window.insights = {};
     jest.resetAllMocks();
     mockAuthenticateUser(get('orgAdmin'), get('userError'), get('canReadProducts'));
     (useProducts as jest.Mock).mockReturnValue({
