@@ -1,4 +1,5 @@
 import { useQuery, QueryObserverResult } from 'react-query';
+import { useToken } from '../utilities/platformServices';
 
 type StatusCard = {
   active: number;
@@ -11,11 +12,9 @@ interface StatusApiData {
   body: StatusCard;
 }
 
-const fetchStatusData = async (): Promise<StatusCard> => {
-  const jwtToken = await window.insights.chrome.auth.getToken();
-
+const fetchStatusData = (jwtToken: Promise<string>) => async (): Promise<StatusCard> => {
   const response = await fetch('/api/rhsm/v2/products/status', {
-    headers: { Authorization: `Bearer ${jwtToken}` }
+    headers: { Authorization: `Bearer ${await jwtToken}` }
   });
 
   const statusResponseData: StatusApiData = await response.json();
@@ -23,14 +22,10 @@ const fetchStatusData = async (): Promise<StatusCard> => {
   return statusResponseData.body;
 };
 
-const getStatus = async (): Promise<StatusCard> => {
-  const statusData = await fetchStatusData();
-
-  return statusData;
-};
-
 const useStatus = (): QueryObserverResult<StatusCard, unknown> => {
-  return useQuery('status', () => getStatus());
+  const jwtToken = useToken();
+
+  return useQuery('status', () => fetchStatusData(jwtToken)());
 };
 
 export { useStatus as default, StatusCard };

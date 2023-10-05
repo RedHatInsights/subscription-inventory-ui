@@ -98,7 +98,6 @@ const mockSingleProduct = (hasData: boolean) => {
 
 describe('Details Page', () => {
   it('loader shows correctly', async () => {
-    window.insights = {};
     const isLoading = true;
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin, true);

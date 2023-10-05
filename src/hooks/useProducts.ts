@@ -1,4 +1,5 @@
 import { useQuery, QueryObserverResult } from 'react-query';
+import { useToken } from '../utilities/platformServices';
 
 type Product = {
   name: string;
@@ -31,25 +32,21 @@ type Capacity = {
 
 const UoMNameOrder = ['Cores', 'Nodes', 'Sockets'];
 
-const fetchProductData = async (filter: string): Promise<Product[]> => {
-  const jwtToken = await window.insights.chrome.auth.getToken();
+const fetchProductData =
+  (jwtToken: Promise<string>) =>
+  async (filter: string): Promise<Product[]> => {
+    const response = await fetch(`/api/rhsm/v2/products?status=${filter}`, {
+      headers: { Authorization: `Bearer ${await jwtToken}` }
+    });
 
-  const response = await fetch(`/api/rhsm/v2/products?status=${filter}`, {
-    headers: { Authorization: `Bearer ${jwtToken}` }
-  });
+    const productResponseData: ProductApiData = await response.json();
 
-  const productResponseData: ProductApiData = await response.json();
-
-  return productResponseData.body;
-};
-
-const getProducts = async (filter: string): Promise<Product[]> => {
-  const productData = await fetchProductData(filter);
-  return productData;
-};
+    return productResponseData.body;
+  };
 
 const useProducts = (filter: string): QueryObserverResult<Product[], unknown> => {
-  return useQuery(`products.${filter}`, () => getProducts(filter));
+  const jwtToken = useToken();
+  return useQuery(`products.${filter}`, () => fetchProductData(jwtToken)(filter));
 };
 
 export { Product, Subscription, Capacity, UoMNameOrder, useProducts as default };
