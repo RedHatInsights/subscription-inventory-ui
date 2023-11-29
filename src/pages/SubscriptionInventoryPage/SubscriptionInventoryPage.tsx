@@ -39,7 +39,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
         <PageHeader>
           <Split hasGutter>
             <SplitItem isFilled>
-              <PageHeaderTitle title="Subscription Inventory" />
+              <PageHeaderTitle title="Subscriptions Inventory" />
             </SplitItem>
             <SplitItem>
               <PurchaseModal />
