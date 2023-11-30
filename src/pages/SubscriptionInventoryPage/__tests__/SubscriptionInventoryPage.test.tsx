@@ -96,7 +96,7 @@ describe('SubscriptionInventoryPage', () => {
 
   it('renders correctly', async () => {
     const { getByText } = render(<PageContainer />);
-    expect(getByText('Subscription Inventory')).toBeInTheDocument();
+    expect(getByText('Subscriptions Inventory')).toBeInTheDocument();
   });
 
   describe('when the user call fails', () => {

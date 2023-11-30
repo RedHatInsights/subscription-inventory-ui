@@ -46,7 +46,7 @@ const DetailsPage: FunctionComponent = () => {
         {!isLoading && !error && (
           <>
             <Breadcrumb>
-              <BreadcrumbItem render={() => <Link to="/">Subscription Inventory</Link>} />
+              <BreadcrumbItem render={() => <Link to="/">Subscriptions Inventory</Link>} />
               <BreadcrumbItem isActive>{data.name} </BreadcrumbItem>
             </Breadcrumb>
             <PageHeaderTitle title={data.name} />

@@ -26,7 +26,7 @@ const NotFound: React.FC = () => {
         subscribed.
       </EmptyStateBody>
       <Button variant="primary" onClick={handleClick}>
-        Return to Subscription Inventory
+        Return to Subscriptions Inventory
       </Button>
     </EmptyState>
   );
