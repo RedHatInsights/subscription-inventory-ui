@@ -215,7 +215,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
                 <Td dataLabel={columnNames.name}>
                   <TextContent>
                     <Text component={TextVariants.h3}>
-                      <Link to={`/${datum.sku}`}>{datum.name}</Link>
+                      <Link to={`${datum.sku}`}>{datum.name}</Link>
                       <br />
                       <Text component={TextVariants.small}>{datum.productLine}</Text>
                     </Text>
