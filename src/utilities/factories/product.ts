@@ -5,14 +5,14 @@ import { Product } from '../../hooks/useProducts';
 export default Factory.define<Product>(() => ({
   name: faker.vehicle.model(),
   productLine: faker.vehicle.vehicle(),
-  quantity: faker.datatype.number(),
-  sku: faker.datatype.uuid(),
-  serviceLevel: faker.datatype.string(),
-  serviceType: faker.datatype.string(),
+  quantity: faker.number.int(),
+  sku: faker.string.uuid(),
+  serviceLevel: faker.string.sample(),
+  serviceType: faker.string.sample(),
   capacity: capacityFake
 }));
 
 const capacityFake = {
-  name: faker.datatype.string(),
-  quantity: faker.datatype.string()
+  name: faker.string.sample(),
+  quantity: faker.string.sample()
 };

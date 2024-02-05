@@ -137,7 +137,7 @@ it('renders not available for missing data', async () => {
   mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
   mockSingleProduct(false);
   render(<Page />);
-  expect(document.querySelector('.pf-c-list').firstChild.textContent).toContain('Not Available');
+  expect(document.querySelector('.pf-v5-c-list').firstChild.textContent).toContain('Not Available');
 });
 
 it('handles errors', async () => {

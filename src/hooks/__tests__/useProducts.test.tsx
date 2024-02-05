@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
 import { createQueryWrapper } from '../../utilities/testHelpers';
 import useProducts from '../useProducts';
@@ -29,12 +29,12 @@ describe('useProducts', () => {
 
     fetch.mockResponseOnce(JSON.stringify({ body: [...productData] }));
 
-    const { result, waitFor } = renderHook(() => useProducts(''), {
+    const { result } = renderHook(() => useProducts(''), {
       wrapper: createQueryWrapper()
     });
 
-    await waitFor(() => result.current.isSuccess);
-
-    expect(result.current.data).toEqual(productData);
+    await waitFor(() => {
+      expect(result.current.data).toEqual(productData);
+    });
   });
 });

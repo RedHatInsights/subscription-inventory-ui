@@ -3,10 +3,10 @@ import { Factory } from 'fishery';
 import { Subscription } from '../../hooks/useProducts';
 
 export default Factory.define<Subscription>(() => ({
-  quantity: faker.datatype.string(),
-  number: faker.random.numeric(3),
-  contractNumber: faker.random.numeric(3),
-  status: faker.datatype.string(),
-  endDate: faker.datatype.string(),
-  startDate: faker.datatype.string()
+  quantity: faker.string.sample(),
+  number: faker.string.numeric(3),
+  contractNumber: faker.string.numeric(3),
+  status: faker.string.sample(),
+  endDate: faker.string.sample(),
+  startDate: faker.string.sample()
 }));

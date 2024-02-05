@@ -264,7 +264,7 @@ describe('ProductsTable', () => {
     });
 
     it('can change per page', () => {
-      render(
+      const { container } = render(
         <Table
           data={get('data')}
           isFetching={get('fetching')}
@@ -275,7 +275,7 @@ describe('ProductsTable', () => {
 
       const table = screen.getByLabelText('Products');
 
-      const perPageArrow = screen.getAllByLabelText('Items per page')[0];
+      const perPageArrow = container.querySelectorAll('#options-menu-top-toggle')[0];
       fireEvent.click(perPageArrow);
       const perPageAmount = screen.getByText('20 per page');
       fireEvent.click(perPageAmount);

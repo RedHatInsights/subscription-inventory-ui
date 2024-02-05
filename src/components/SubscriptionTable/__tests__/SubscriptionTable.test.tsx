@@ -175,11 +175,11 @@ describe('Subscription Table', () => {
     });
 
     it('can change per page', () => {
-      render(<Table subscriptions={get('data')} />);
+      const { container } = render(<Table subscriptions={get('data')} />);
 
       const table = screen.getByLabelText('subscriptions');
 
-      const perPageArrow = screen.getAllByLabelText('Items per page')[0];
+      const perPageArrow = container.querySelectorAll('#options-menu-top-toggle')[0];
       fireEvent.click(perPageArrow);
       const perPageAmount = screen.getByText('20 per page');
       fireEvent.click(perPageAmount);

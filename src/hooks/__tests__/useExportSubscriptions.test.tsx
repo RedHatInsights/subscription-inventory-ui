@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import { createQueryWrapper } from '../../utilities/testHelpers';
 import useExportSubscriptions from '../useExportSubscriptions';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
@@ -29,27 +29,33 @@ describe('useExportSubscriptions', () => {
   });
 
   describe('returns a blob and filename from the API', () => {
-    fetch.mockResponse((_) =>
-      Promise.resolve({
-        body: 'test',
+    beforeEach(() => {
+      fetch.mockResponse('test', {
         headers: {
           'Content-Disposition': 'attachment; filename="test.csv"'
         }
-      })
-    );
-    const { result, waitFor } = renderHook(() => useExportSubscriptions(), {
-      wrapper: createQueryWrapper()
+      });
     });
-
-    result.current.refetch();
 
     it('has correct blob value', async () => {
-      await waitFor(() => result.current.isSuccess);
-      expect(await result.current.data.blob.text()).toEqual('test');
+      const { result } = renderHook(() => useExportSubscriptions(), {
+        wrapper: createQueryWrapper()
+      });
+
+      result.current.refetch();
+
+      await waitFor(async () => {
+        expect(await result.current.data.blob.text()).toEqual('test');
+      });
     });
     it('has correct filename', async () => {
-      await waitFor(() => result.current.isSuccess);
-      expect(result.current.data.filename).toEqual('test.csv');
+      const { result } = renderHook(() => useExportSubscriptions(), {
+        wrapper: createQueryWrapper()
+      });
+
+      result.current.refetch();
+
+      await waitFor(() => expect(result.current.data.filename).toEqual('test.csv'));
     });
   });
 });

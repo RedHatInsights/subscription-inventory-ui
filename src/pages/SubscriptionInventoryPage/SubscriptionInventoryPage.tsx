@@ -62,6 +62,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                         statusCardData={statusCardData.data}
                         statusIsFetching={statusCardData.isFetching}
                         setFilter={setFilter}
+                        filter={filter}
                       />
                     )}
                   </>
