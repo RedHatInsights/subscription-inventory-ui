@@ -27,16 +27,16 @@ BUILD_RESULTS=$?
 # deploy to ephemeral
 # Install bonfire repo/initialize
 CICD_URL=https://raw.githubusercontent.com/RedHatInsights/bonfire/master/cicd
-curl -s $CICD_URL/bootstrap.sh > .cicd_bootstrap.sh && source .cicd_bootstrap.sh
+curl -s $CICD_URL/bootstrap.sh >.cicd_bootstrap.sh && source .cicd_bootstrap.sh
 
 export DEPLOY_FRONTENDS="true"
 export APP_NAME="rhsm-api-proxy"
 
-source "${CICD_ROOT}/deploy_ephemeral_env.sh"
+# source "${CICD_ROOT}/deploy_ephemeral_env.sh"
 
 # Stubbed out for now
 mkdir -p $WORKSPACE/artifacts
-cat << EOF > $WORKSPACE/artifacts/junit-dummy.xml
+cat <<EOF >$WORKSPACE/artifacts/junit-dummy.xml
 <testsuite tests="1">
     <testcase classname="dummy" name="dummytest"/>
 </testsuite>
