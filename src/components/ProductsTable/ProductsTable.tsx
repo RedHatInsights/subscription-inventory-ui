@@ -1,5 +1,13 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
+import {
+  Table /* data-codemods */,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  ThProps
+} from '@patternfly/react-table';
 import {
   Flex,
   FlexItem,
@@ -189,7 +197,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         </FlexItem>
       </Flex>
       {/* @ts-ignore */}
-      <TableComposable aria-label="Products">
+      <Table aria-label="Products">
         <Thead>
           {/* @ts-ignore */}
           <Tr>
@@ -228,7 +236,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
             </React.Fragment>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
       {paginatedProducts.length == 0 && <NoSearchResults clearFilters={clearSearch} />}
       {pagination(PaginationVariant.bottom)}
     </>

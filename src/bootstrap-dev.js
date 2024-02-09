@@ -1,10 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react';
 import AppEntry from './AppEntry';
 import logger from 'redux-logger';
+import { createRoot } from 'react-dom/client';
 
-const root = document.getElementById('root');
+const container = document.getElementById('root');
 
-ReactDOM.render(<AppEntry logger={logger} />, root, () =>
-  root.setAttribute('data-ouia-safe', true)
-);
+const AppEntryWithCallback = () => {
+  useEffect(() => root.setAttribute('data-ouia-safe', true));
+
+  return <AppEntry logger={logger} />;
+};
+
+const root = createRoot(container);
+container.render(<AppEntryWithCallback />);

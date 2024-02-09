@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import { PageSection, Split, SplitItem, Title } from '@patternfly/react-core';
@@ -46,7 +45,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
             </SplitItem>
           </Split>
         </PageHeader>
-        <Main>
+        <PageSection>
           <Stack hasGutter>
             <StackItem>
               <GettingStartedCard />
@@ -62,6 +61,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                         statusCardData={statusCardData.data}
                         statusIsFetching={statusCardData.isFetching}
                         setFilter={setFilter}
+                        filter={filter}
                       />
                     )}
                   </>
@@ -89,7 +89,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
             )}
             {(statusCardData.error || productData.error) && <Unavailable />}
           </Stack>
-        </Main>
+        </PageSection>
       </>
     );
   };

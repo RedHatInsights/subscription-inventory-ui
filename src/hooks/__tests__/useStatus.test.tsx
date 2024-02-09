@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
 import { createQueryWrapper } from '../../utilities/testHelpers';
 import useStatus from '../useStatus';
@@ -29,12 +29,12 @@ describe('useStatus', () => {
 
     fetch.mockResponseOnce(JSON.stringify({ body: [...statusData] }));
 
-    const { result, waitFor } = renderHook(() => useStatus(), {
+    const { result } = renderHook(() => useStatus(), {
       wrapper: createQueryWrapper()
     });
 
-    await waitFor(() => result.current.isSuccess);
-
-    expect(result.current.data).toEqual(statusData);
+    await waitFor(() => {
+      expect(result.current.data).toEqual(statusData);
+    });
   });
 });

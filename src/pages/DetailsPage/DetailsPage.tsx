@@ -7,7 +7,6 @@ import {
   PageSection,
   Title
 } from '@patternfly/react-core';
-import Main from '@redhat-cloud-services/frontend-components/Main';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -20,6 +19,7 @@ import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import useFeatureFlag from '../../hooks/useFeatureFlag';
 import { HttpError } from '../../utilities/errors';
+import Section from '@redhat-cloud-services/frontend-components/Section';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -51,23 +51,23 @@ const DetailsPage: FunctionComponent = () => {
             </Breadcrumb>
             <PageHeaderTitle title={data.name} />
             <List isPlain>
-              <ListItem className="pf-u-mt-md">
+              <ListItem className="pf-v5-u-mt-md">
                 <b>SKU: </b>
                 {data.sku || missingText}
               </ListItem>
-              <ListItem className="pf-u-mt-0">
+              <ListItem className="pf-v5-u-mt-0">
                 <b>Quantity: </b>
                 {data.quantity ?? missingText}
               </ListItem>
-              <ListItem className="pf-u-mt-0">
+              <ListItem className="pf-v5-u-mt-0">
                 <b>Support level: </b>
                 {data.serviceLevel || missingText}
               </ListItem>
-              <ListItem className="pf-u-mt-0">
+              <ListItem className="pf-v5-u-mt-0">
                 <b>Support type: </b>
                 {data.serviceType || missingText}
               </ListItem>
-              <ListItem className="pf-u-mt-0">
+              <ListItem className="pf-v5-u-mt-0">
                 <b>Capacity: </b>
                 {data.capacity ? (
                   <>
@@ -82,13 +82,13 @@ const DetailsPage: FunctionComponent = () => {
         )}
       </PageHeader>
       {tableIsEnabled && !error && (
-        <Main>
+        <Section>
           <PageSection variant="light">
             <Title headingLevel="h2">Subscription details</Title>
             {isLoading && !error && <Processing />}
             {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}
           </PageSection>
-        </Main>
+        </Section>
       )}
 
       {error && (error as HttpError).status == 404 && <NotFound />}

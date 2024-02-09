@@ -1,7 +1,15 @@
 import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
 import { NoSearchResults } from '../emptyState';
 import { SearchInput } from '@patternfly/react-core';
-import { TableComposable, Tbody, Td, Th, Thead, ThProps, Tr } from '@patternfly/react-table';
+import {
+  Table /* data-codemods */,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  ThProps,
+  Tr
+} from '@patternfly/react-table';
 import { parseInt } from 'lodash';
 import React, { FunctionComponent } from 'react';
 import { Subscription } from '../../hooks/useProducts';
@@ -168,7 +176,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
       {/* @ts-ignore */}
-      <TableComposable aria-label="subscriptions" variant="compact">
+      <Table aria-label="subscriptions" variant="compact">
         <Thead>
           {/* @ts-ignore */}
           <Tr>
@@ -213,7 +221,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
             </React.Fragment>
           ))}
         </Tbody>
-      </TableComposable>
+      </Table>
       {pagedSubscriptions.length == 0 && <NoSearchResults clearFilters={clearFilters} />}
     </>
   );

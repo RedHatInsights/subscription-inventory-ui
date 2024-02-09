@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Main from '@redhat-cloud-services/frontend-components/Main';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
+import { PageSection } from '@patternfly/react-core';
 
 const OopsPage = () => {
   const chrome = useChrome();
@@ -10,9 +10,9 @@ const OopsPage = () => {
     chrome.appAction('oops-page');
   }, []);
   return (
-    <Main>
+    <PageSection>
       <Unavailable />
-    </Main>
+    </PageSection>
   );
 };
 

@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
 import { useAuthenticateUser, useUserRbacPermissions } from '../../utilities/platformServices';
 import useUser from '../useUser';
@@ -40,16 +40,16 @@ describe('useUser hook', () => {
 
     fetch.mockResponseOnce(JSON.stringify(mockSCAStatusResponse));
 
-    const { result, waitFor } = renderHook(() => useUser(), {
+    const { result } = renderHook(() => useUser(), {
       wrapper: createQueryWrapper()
     });
 
-    await waitFor(() => result.current.isSuccess);
-
-    expect(result.current.data).toEqual({
-      canReadProducts: true,
-      isOrgAdmin: true
-    });
+    await waitFor(() =>
+      expect(result.current.data).toEqual({
+        canReadProducts: true,
+        isOrgAdmin: true
+      })
+    );
   });
 
   it('does not return anything if the Authenticate User API call fails', async () => {
@@ -69,7 +69,7 @@ describe('useUser hook', () => {
       throw new Error('error');
     });
 
-    const { result, waitFor } = renderHook(() => useUser(), {
+    const { result } = renderHook(() => useUser(), {
       wrapper: createQueryWrapper()
     });
 

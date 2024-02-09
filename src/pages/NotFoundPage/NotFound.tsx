@@ -4,7 +4,8 @@ import {
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateVariant,
-  Title
+  EmptyStateHeader,
+  EmptyStateFooter
 } from '@patternfly/react-core';
 import { WrenchIcon } from '@patternfly/react-icons';
 import { Button } from '@patternfly/react-core';
@@ -16,18 +17,21 @@ const NotFound: React.FC = () => {
     navigate('/');
   }
   return (
-    <EmptyState variant={EmptyStateVariant.large}>
-      <EmptyStateIcon icon={WrenchIcon} color="grey" />
-      <Title headingLevel="h5" size="lg">
-        Your organization currently has no subscriptions for this product
-      </Title>
+    <EmptyState variant={EmptyStateVariant.lg}>
+      <EmptyStateHeader
+        titleText="Your organization currently has no subscriptions for this product"
+        icon={<EmptyStateIcon icon={WrenchIcon} color="grey" />}
+        headingLevel="h5"
+      />
       <EmptyStateBody>
         Return to your subscription inventory to view the products to which your organization is
         subscribed.
       </EmptyStateBody>
-      <Button variant="primary" onClick={handleClick}>
-        Return to Subscriptions Inventory
-      </Button>
+      <EmptyStateFooter>
+        <Button variant="primary" onClick={handleClick}>
+          Return to Subscriptions Inventory
+        </Button>
+      </EmptyStateFooter>
     </EmptyState>
   );
 };

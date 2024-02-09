@@ -37,7 +37,7 @@ describe('StatusCountCard', () => {
   const setFilter = jest.fn();
 
   it('can click active', () => {
-    render(
+    const { container } = render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
@@ -45,12 +45,12 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(screen.getByText('Active'));
+    fireEvent.click(container.querySelector('#active'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click expiringSoon', () => {
-    render(
+    const { container } = render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
@@ -58,12 +58,12 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(screen.getByText('Expiring soon'));
+    fireEvent.click(container.querySelector('#expiringSoon'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click expired', () => {
-    render(
+    const { container } = render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
@@ -71,12 +71,12 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(screen.getByText('Expired'));
+    fireEvent.click(container.querySelector('#expired'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
   it('can click futureDated', () => {
-    render(
+    const { container } = render(
       <Cards
         statusCardData={get('data')}
         statusIsFetching={get('fetching')}
@@ -84,7 +84,7 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(screen.getByText('Future dated'));
+    fireEvent.click(container.querySelector('#futureDated'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 });

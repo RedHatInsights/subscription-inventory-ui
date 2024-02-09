@@ -50,10 +50,10 @@ describe('Export Subscriptions', () => {
 
     it('sets up the link', () => {
       const { container } = render(<ExportButton />);
-      expect(document.createElement).toHaveBeenCalledTimes(1);
+      expect(document.createElement).toHaveBeenCalledTimes(2);
 
       fireEvent.click(container.querySelector('svg'));
-      expect(document.createElement).toHaveBeenCalledTimes(2);
+      expect(document.createElement).toHaveBeenCalledTimes(3);
     });
 
     it('adds the blob', () => {
