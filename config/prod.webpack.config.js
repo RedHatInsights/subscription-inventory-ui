@@ -6,13 +6,27 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { config: webpackConfig, plugins } = config({
   rootFolder: resolve(__dirname, '../'),
   modules: ['subscriptionInventory'],
-  ...(process.env.BETA && { deployment: 'beta/apps' })
+  ...(process.env.BETA && { deployment: 'beta/apps' }),
+  routes: {
+    ...(process.env.CONFIG_PORT && {
+      '/api/chrome-service/v1/static': {
+        host: `http://localhost:${process.env.CONFIG_PORT}`
+      },
+      '/api/chrome-service/v1/dashboard-templates': {
+        host: `http://localhost:${process.env.CONFIG_PORT}`
+      }
+    })
+  }
 });
 
 plugins.push(
   require('@redhat-cloud-services/frontend-components-config/federated-modules')({
     root: resolve(__dirname, '../'),
     moduleName: 'subscriptionInventory',
+    exposes: {
+      './RootApp': resolve(__dirname, '../src/AppEntry'),
+      './SubscriptionsWidget': resolve(__dirname, '../src/components/Widgets/SubscriptionsWidget')
+    },
     shared: [
       {
         'react-router-dom': { singleton: true, requiredVersion: '*' }
