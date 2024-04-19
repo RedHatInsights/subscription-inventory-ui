@@ -6,7 +6,10 @@ import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable'
 import useUser from '../../hooks/useUser';
 import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
 
-const Authentication: FC = ({ children }) => {
+interface AuthenticationProps {
+  children?: React.ReactNode;
+}
+const Authentication: FC<AuthenticationProps> = ({ children }) => {
   const queryClient = useQueryClient();
   const location = useLocation();
   const chrome = useChrome();

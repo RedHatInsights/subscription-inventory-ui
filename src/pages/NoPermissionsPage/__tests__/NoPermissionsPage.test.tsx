@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useUser from '../../../hooks/useUser';
+import '@testing-library/jest-dom';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('react-router-dom', () => ({

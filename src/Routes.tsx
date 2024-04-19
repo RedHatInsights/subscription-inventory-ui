@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import React, { Suspense, lazy, ReactNode } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Processing } from './components/emptyState';
 import Authentication from './components/Authentication';
 
@@ -8,7 +8,7 @@ const OopsPage = lazy(() => import('./pages/OopsPage'));
 const NoPermissionsPage = lazy(() => import('./pages/NoPermissionsPage'));
 const DetailsPage = lazy(() => import('./pages/DetailsPage'));
 
-export const InventoryRoutes: ReactNode = () => (
+export const InventoryRoutes: React.FC = () => (
   <div className="inventory">
     <Suspense fallback={<Processing />}>
       <Authentication>

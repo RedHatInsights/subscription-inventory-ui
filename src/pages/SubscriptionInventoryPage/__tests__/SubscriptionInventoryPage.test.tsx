@@ -132,8 +132,7 @@ describe('SubscriptionInventoryPage', () => {
     def('productsLoading', () => true);
 
     it('renders the loading component', async () => {
-      const container = render(<PageContainer />);
-      expect(container).toHaveLoader();
+      expect(screen.getByTestId('loader')).toBeInTheDocument();
     });
   });
 
@@ -150,8 +149,7 @@ describe('SubscriptionInventoryPage', () => {
     def('statusCardsLoading', () => true);
 
     it('renders the loading component', async () => {
-      const container = render(<PageContainer />);
-      expect(container).toHaveLoader();
+      expect(screen.getByTestId('loader')).toBeInTheDocument();
     });
   });
 });

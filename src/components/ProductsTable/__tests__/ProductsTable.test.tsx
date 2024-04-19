@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';
 import { get, def } from 'bdd-lazy-var';

@@ -13,8 +13,12 @@ import { Product } from '../../../hooks/useProducts';
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useSingleProduct');
 jest.mock('../../../hooks/useFeatureFlag', () => ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   __esModule: true,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   default: jest.fn((_: string) => true)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 }));
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
@@ -101,8 +105,7 @@ describe('Details Page', () => {
     const isLoading = true;
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin, true);
-    const container = render(<Page />);
-    expect(container).toHaveLoader();
+    expect(screen.getAllByRole('progressbar')).toBeInTheDocument();
   });
 });
 
