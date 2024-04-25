@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import useStatus from '../../hooks/useStatus';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -64,34 +64,38 @@ const EmptyStateSubscriptionsIcon = () => (
   </svg>
 );
 
+const cardData = {
+  active: {
+    title: 'Active',
+    variant: 'success'
+  },
+  expiringSoon: {
+    title: 'Expiring soon',
+    variant: 'warning'
+  },
+  expired: {
+    title: 'Expired',
+    variant: 'danger'
+  },
+  futureDated: {
+    title: 'Future dated',
+    customIcon: <OutlinedCalendarAltIcon />
+  }
+};
+
 const SubsWidget = () => {
   const statusCardData = useStatus();
-  const cardData = {
-    active: {
-      title: 'Active',
-      variant: 'success'
-    },
-    expiringSoon: {
-      title: 'Expiring soon',
-      variant: 'warning'
-    },
-    expired: {
-      title: 'Expired',
-      variant: 'danger'
-    },
-    futureDated: {
-      title: 'Future dated',
-      customIcon: <OutlinedCalendarAltIcon />
-    }
-  };
+  const isCardDataEmpty = useMemo(
+    () =>
+      !statusCardData.isLoading &&
+      statusCardData?.data &&
+      Object.keys(cardData).every((name: keyof typeof cardData) => statusCardData.data[name] === 0),
+    [statusCardData]
+  );
 
   return (
     <div className="subscription-inventory">
-      {!statusCardData.isLoading &&
-      statusCardData?.data &&
-      ['active', 'expiringSoon', 'expired', 'futureDated'].every(
-        (name: keyof typeof cardData) => statusCardData.data[name] === 0
-      ) ? (
+      {isCardDataEmpty ? (
         <EmptyState variant={EmptyStateVariant.large}>
           <EmptyStateIcon icon={EmptyStateSubscriptionsIcon} />
           <Title headingLevel="h4" size="lg">
