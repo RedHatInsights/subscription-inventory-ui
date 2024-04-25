@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import SubscriptionsWidget from '../SubscriptionsWidget';
 import useStatus from '../../../hooks/useStatus';
+import { BrowserRouter as Router } from 'react-router-dom';
 jest.mock('../../../hooks/useStatus');
 
 describe('SubscriptionsWidget', () => {
@@ -20,7 +21,11 @@ describe('SubscriptionsWidget', () => {
       }
     });
 
-    render(<SubscriptionsWidget />);
+    render(
+      <Router>
+        <SubscriptionsWidget />
+      </Router>
+    );
 
     expect(screen.getByText('Active')).toBeInTheDocument();
     expect(screen.getByText('Active').closest('.pf-v5-c-alert')).toHaveClass('pf-m-success');
@@ -58,7 +63,11 @@ describe('SubscriptionsWidget', () => {
       }
     });
 
-    render(<SubscriptionsWidget />);
+    render(
+      <Router>
+        <SubscriptionsWidget />
+      </Router>
+    );
 
     expect(screen.getByText('No connected subscriptions')).toBeInTheDocument();
     expect(

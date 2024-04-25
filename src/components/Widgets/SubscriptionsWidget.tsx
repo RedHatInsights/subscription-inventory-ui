@@ -125,7 +125,7 @@ const SubsWidget = () => {
                   target="_blank"
                   key={name}
                 >
-                  <Alert isInline {...cardData[name]} >
+                  <Alert isInline {...cardData[name]}>
                     {!statusCardData.isLoading && statusCardData?.data && (
                       <p>{statusCardData.data[name]}</p>
                     )}
