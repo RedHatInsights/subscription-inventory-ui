@@ -1,32 +1,25 @@
 // Importing Global Variables
 @import '~@redhat-cloud-services/frontend-components-utilities/styles/_all';
 
-.widget-subscriptions-card {
-  white-space: nowrap;
-  padding-bottom: var(--pf-global--spacer--2xl);
-}
-
-/* stylelint-disable */
-.widget-subscriptions {
+.pf-v5-l-gallery {
   container-type: inline-size;
-
+  flex-wrap: wrap;
+  .pf-v5-c-alert {
+    white-space: nowrap;
+    padding-bottom: var(--pf-global--spacer--2xl);
+  }
   @container (width < 500px) {
-    .widget-subscriptions-card {
+    .pf-v5-c-alert {
       padding-top: var(--pf-global--spacer--sm);
       padding-bottom: var(--pf-global--spacer--sm);
     }
   }
-
-  flex-wrap: wrap;
 }
-
 .pf-v5-c-empty-state {
   padding: var(--pf-global--spacer--md);
-
   &__icon {
     margin-bottom: 0;
   }
-
   &__body {
     margin-top: var(--pf-global--spacer--sm);
   }

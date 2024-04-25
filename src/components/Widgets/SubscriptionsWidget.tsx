@@ -12,7 +12,6 @@ import {
   StackItem,
   Title,
   Alert,
-  Grid,
   Gallery
 } from '@patternfly/react-core';
 import { Link } from 'react-router-dom';
@@ -111,33 +110,31 @@ const SubsWidget = () => {
           </EmptyStateBody>
         </EmptyState>
       ) : (
-        <Grid>
-          <Gallery
-            hasGutter
-            className="widget-subscriptions pf-v5-u-p-md"
-            style={{ display: 'flex', flexDirection: 'row' }}
-          >
-            {['active', 'expiringSoon', 'expired', 'futureDated'].map(
-              (name: keyof typeof cardData) => {
-                return (
-                  <Link
-                    to="/subscriptions/inventory"
-                    style={{ flex: 1, textDecoration: 'none' }}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    key={name}
-                  >
-                    <Alert isInline {...cardData[name]} className="widget-subscriptions-card">
-                      {!statusCardData.isLoading && statusCardData?.data && (
-                        <p>{statusCardData.data[name]}</p>
-                      )}
-                    </Alert>
-                  </Link>
-                );
-              }
-            )}
-          </Gallery>
-        </Grid>
+        <Gallery
+          hasGutter
+          className="pf-v5-u-p-md"
+          style={{ display: 'flex', flexDirection: 'row' }}
+        >
+          {['active', 'expiringSoon', 'expired', 'futureDated'].map(
+            (name: keyof typeof cardData) => {
+              return (
+                <Link
+                  to="/subscriptions/inventory"
+                  style={{ flex: 1, textDecoration: 'none' }}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  key={name}
+                >
+                  <Alert isInline {...cardData[name]} >
+                    {!statusCardData.isLoading && statusCardData?.data && (
+                      <p>{statusCardData.data[name]}</p>
+                    )}
+                  </Alert>
+                </Link>
+              );
+            }
+          )}
+        </Gallery>
       )}
     </div>
   );
