@@ -15,6 +15,7 @@ import {
   Grid,
   Gallery
 } from '@patternfly/react-core';
+import { Link } from 'react-router-dom';
 
 const queryClient = new QueryClient();
 
@@ -119,17 +120,19 @@ const SubsWidget = () => {
             {['active', 'expiringSoon', 'expired', 'futureDated'].map(
               (name: keyof typeof cardData) => {
                 return (
-                  <Alert
-                    style={{ flex: 1 }}
-                    isInline
-                    {...cardData[name]}
+                  <Link
+                    to="/subscriptions/inventory"
+                    style={{ flex: 1, textDecoration: 'none' }}
+                    rel="noopener noreferrer"
+                    target="_blank"
                     key={name}
-                    className="widget-subscriptions-card"
                   >
-                    {!statusCardData.isLoading && statusCardData?.data && (
-                      <p>{statusCardData.data[name]}</p>
-                    )}
-                  </Alert>
+                    <Alert isInline {...cardData[name]} className="widget-subscriptions-card">
+                      {!statusCardData.isLoading && statusCardData?.data && (
+                        <p>{statusCardData.data[name]}</p>
+                      )}
+                    </Alert>
+                  </Link>
                 );
               }
             )}
