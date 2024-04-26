@@ -6,17 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { config: webpackConfig, plugins } = config({
   rootFolder: resolve(__dirname, '../'),
   modules: ['subscriptionInventory'],
-  ...(process.env.BETA && { deployment: 'beta/apps' }),
-  routes: {
-    ...(process.env.CONFIG_PORT && {
-      '/api/chrome-service/v1/static': {
-        host: `http://localhost:${process.env.CONFIG_PORT}`
-      },
-      '/api/chrome-service/v1/dashboard-templates': {
-        host: `http://localhost:${process.env.CONFIG_PORT}`
-      }
-    })
-  }
+  ...(process.env.BETA && { deployment: 'beta/apps' })
 });
 
 plugins.push(
