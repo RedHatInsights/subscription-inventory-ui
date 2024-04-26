@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useState } from 'react';
 import { AlertActionLink } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { v4 as uuid } from 'uuid';
@@ -27,15 +28,10 @@ export type NotificationOptions = {
 const NotificationContext = React.createContext({
   notifications: [],
   addNotification: (
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     variant: NotificationVariantType,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     message: string,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     options?: NotificationOptions
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ) => null,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   removeNotification: (key: string) => null
 });
 const NotificationProvider: FC<NotificationProviderProps> = ({ children }) => {
