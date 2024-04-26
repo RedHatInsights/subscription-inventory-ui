@@ -16,6 +16,7 @@ import {
 } from '@patternfly/react-core';
 import { Link } from 'react-router-dom';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
+import { Spinner } from '@patternfly/react-core';
 
 const queryClient = new QueryClient();
 
@@ -89,8 +90,10 @@ const SubsWidget = () => {
                   key={name}
                 >
                   <Alert isInline {...cardData[name]}>
-                    {!statusCardData.isLoading && statusCardData?.data && (
+                    {!statusCardData.isLoading && statusCardData?.data ? (
                       <p>{statusCardData.data[name]}</p>
+                    ) : (
+                      <Spinner size="md" />
                     )}
                   </Alert>
                 </Link>
