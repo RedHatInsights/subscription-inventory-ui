@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { get, def } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
 import StatusCountCard, { StatusCardProps } from '../StatusCountCards';
@@ -20,7 +20,6 @@ const Cards: FunctionComponent<StatusCardProps> = ({
     />
   </QueryClientProvider>
 );
-
 describe('StatusCountCard', () => {
   def('loading', () => false);
   def('error', () => false);

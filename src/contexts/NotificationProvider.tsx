@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FC, useState } from 'react';
-import { AlertActionLink } from '@patternfly/react-core';
+import { AlertActionLink } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { v4 as uuid } from 'uuid';
 
 type NotificationVariantType = 'success' | 'danger' | 'info';
@@ -11,6 +12,9 @@ interface NotificationProps {
   timeout?: boolean;
   actionLinks?: React.ReactNode;
   downloadHref?: string;
+}
+interface NotificationProviderProps {
+  children?: React.ReactNode;
 }
 
 export type NotificationOptions = {
@@ -30,8 +34,7 @@ const NotificationContext = React.createContext({
   ) => null,
   removeNotification: (key: string) => null
 });
-
-const NotificationProvider: FC = ({ children }) => {
+const NotificationProvider: FC<NotificationProviderProps> = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
 
   const buildNotificationProps = (

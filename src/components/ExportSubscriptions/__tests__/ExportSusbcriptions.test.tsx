@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { ExportSubscriptions } from '../';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import useExportSubscriptions from '../../../hooks/useExportSubscriptions';
