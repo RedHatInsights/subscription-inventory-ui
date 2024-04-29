@@ -14,12 +14,12 @@ objects:
     spec:
       appName: rhsm-api-proxy
       testing:
-        iqePlugin: subscription_central
         iqe:
           debug: false
           dynaconfEnvName: stage
           filter: ''
           marker: 'subscriptions'
+          plugins: subscription_central
 parameters:
   - name: IMAGE_TAG
     value: ''
