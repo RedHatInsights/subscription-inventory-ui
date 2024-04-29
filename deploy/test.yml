@@ -17,8 +17,11 @@ objects:
         iqe:
           debug: false
           dynaconfEnvName: stage
-          filter: ''
           marker: 'subscriptions'
+          plugins: subscription_central
+          ui:
+            selenium:
+              deploy: true
 parameters:
   - name: IMAGE_TAG
     value: ''
