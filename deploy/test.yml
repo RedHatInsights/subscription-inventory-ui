@@ -2,7 +2,7 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: subscription-inventory-ui-regression
+  name: sub-inv-ui-test
 objects:
   - apiVersion: cloud.redhat.com/v1alpha1
     kind: ClowdJobInvocation
