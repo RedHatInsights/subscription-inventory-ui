@@ -2,12 +2,12 @@
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: subscription-inventory-ui-regression
+  name: sub-inv-ui-test
 objects:
   - apiVersion: cloud.redhat.com/v1alpha1
     kind: ClowdJobInvocation
     metadata:
-      name: subscription-inventory-ui-regression-${IMAGE_TAG}-${UID}
+      name: sub-inv-ui-test-${IMAGE_TAG}-${UID}
       annotations:
         'ignore-check.kube-linter.io/no-liveness-probe': 'probes not required on Job pods'
         'ignore-check.kube-linter.io/no-readiness-probe': 'probes not required on Job pods'
