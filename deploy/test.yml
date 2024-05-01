@@ -16,7 +16,7 @@ objects:
       testing:
         iqe:
           debug: false
-          dynaconfEnvName: stage
+          dynaconfEnvName: stage_proxy
           marker: 'subscriptions'
           plugins: subscription_central
           ui:
