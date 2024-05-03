@@ -13,6 +13,10 @@ plugins.push(
   require('@redhat-cloud-services/frontend-components-config/federated-modules')({
     root: resolve(__dirname, '../'),
     moduleName: 'subscriptionInventory',
+    exposes: {
+      './RootApp': resolve(__dirname, '../src/AppEntry'),
+      './SubscriptionsWidget': resolve(__dirname, '../src/components/Widgets/SubscriptionsWidget')
+    },
     shared: [
       {
         'react-router-dom': { singleton: true, requiredVersion: '*' }
