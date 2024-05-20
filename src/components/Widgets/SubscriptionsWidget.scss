@@ -6,12 +6,12 @@
   flex-wrap: wrap;
   .pf-v5-c-alert {
     white-space: nowrap;
-    padding-bottom: var(--pf-global--spacer--2xl);
+    padding-bottom: var(--pf-global--spacer--xl);
   }
   @container (width < 500px) {
     .pf-v5-c-alert {
       padding-top: var(--pf-global--spacer--sm);
-      padding-bottom: var(--pf-global--spacer--sm);
+      padding-bottom: var(--pf-global--spacer--md);
     }
   }
 }
