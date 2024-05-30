@@ -17,7 +17,6 @@ import NotFound from '../NotFoundPage/NotFound';
 import { useQueryClient } from 'react-query';
 import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
-import useFeatureFlag from '../../hooks/useFeatureFlag';
 import { HttpError } from '../../utilities/errors';
 import Section from '@redhat-cloud-services/frontend-components/Section';
 
@@ -27,7 +26,6 @@ const DetailsPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
-  const tableIsEnabled = useFeatureFlag('subscriptionInventory.detailsTable');
   const missingText = 'Not Available';
   const redirectRoute = '/no-permissions';
   const navigate = useNavigate();
@@ -81,7 +79,7 @@ const DetailsPage: FunctionComponent = () => {
           </>
         )}
       </PageHeader>
-      {tableIsEnabled && !error && (
+      {!error && (
         <Section>
           <PageSection variant="light">
             <Title headingLevel="h2">Subscription details</Title>
