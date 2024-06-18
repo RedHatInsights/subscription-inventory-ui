@@ -23,7 +23,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
   const user: User = queryClient.getQueryData('user');
   const productData = useProducts(filter);
   const statusCardData = useStatus();
-  const redirectRoute = '/no-permissions';
+  const redirectRoute = './no-permissions';
   const navigate = useNavigate();
 
   useEffect(() => {
