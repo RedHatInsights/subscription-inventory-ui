@@ -2,19 +2,49 @@
 @import '~@redhat-cloud-services/frontend-components-utilities/styles/_all';
 
 .pf-v5-l-gallery {
-  container-type: inline-size;
-  flex-wrap: wrap;
-  .pf-v5-c-alert {
-    white-space: nowrap;
-    padding-bottom: var(--pf-global--spacer--xl);
-  }
-  @container (width < 500px) {
-    .pf-v5-c-alert {
-      padding-top: var(--pf-global--spacer--sm);
-      padding-bottom: var(--pf-global--spacer--md);
-    }
+  height: 100%;
+  --pf-v5-l-gallery--GridTemplateColumns--min: 20%;
+  padding: var(--pf-global--spacer--md);
+}
+@container (width < 700px) {
+  .pf-v5-l-gallery {
+    --pf-v5-l-gallery--GridTemplateColumns--min: 40%;
   }
 }
+
+.alert-link {
+  height: 100%;
+  text-decoration: none;
+}
+.pf-v5-c-alert {
+  display: flex;
+  align-items: center; // Vertical Alignment
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  .pf-v5-c-alert__icon {
+    margin-bottom: var(--pf-global--spacer--md);
+    margin-right: 0;
+    .pf-v5-svg {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 30px;
+    }
+  }
+  .pf-v5-c-alert__title {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    font-weight: medium;
+  }
+  .pf-v5-c-alert__description {
+    text-align: center;
+    font-size: var(--pf-v5-global--FontSize--md);
+    font-weight: medium;
+    margin-top: 5px;
+  }
+}
+
 .pf-v5-c-empty-state {
   padding: var(--pf-global--spacer--md);
   &__icon {
