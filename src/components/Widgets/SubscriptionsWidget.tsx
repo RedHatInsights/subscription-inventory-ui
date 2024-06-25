@@ -29,15 +29,15 @@ const SubscriptionsWidget = () => {
 const cardData = {
   active: {
     title: 'Active',
-    variant: 'success'
+    variant: AlertVariant.success
   },
   expiringSoon: {
     title: 'Expiring soon',
-    variant: 'warning'
+    variant: AlertVariant.warning
   },
   expired: {
     title: 'Expired',
-    variant: 'danger'
+    variant: AlertVariant.danger
   },
   futureDated: {
     title: 'Future dated',
