@@ -11,6 +11,7 @@ import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
+import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Link } from 'react-router-dom';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
@@ -58,7 +59,7 @@ const SubsWidget = () => {
   return (
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
-        <EmptyState variant={EmptyStateVariant.large}>
+        <EmptyState variant={EmptyStateVariant.lg}>
           <EmptyStateIcon icon={EmptyStateSubscriptionsIcon} />
           <Title headingLevel="h4" size="lg">
             No connected subscriptions
