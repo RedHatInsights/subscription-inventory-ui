@@ -28,8 +28,6 @@ const SubscriptionsWidget = () => {
   );
 };
 
-console.log('test');
-
 const cardData = {
   active: {
     title: 'Active',
