@@ -27,7 +27,7 @@ const DetailsPage: FunctionComponent = () => {
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
   const missingText = 'Not Available';
-  const redirectRoute = '/no-permissions';
+  const redirectRoute = '../no-permissions';
   const navigate = useNavigate();
 
   useEffect(() => {
