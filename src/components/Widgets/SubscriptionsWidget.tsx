@@ -12,6 +12,7 @@ import {
   StackItem,
   Title,
   Alert,
+  AlertVariant,
   Gallery
 } from '@patternfly/react-core';
 import { Link } from 'react-router-dom';
@@ -31,15 +32,15 @@ const SubscriptionsWidget = () => {
 const cardData = {
   active: {
     title: 'Active',
-    variant: 'success'
+    variant: AlertVariant.success
   },
   expiringSoon: {
     title: 'Expiring soon',
-    variant: 'warning'
+    variant: AlertVariant.warning
   },
   expired: {
     title: 'Expired',
-    variant: 'danger'
+    variant: AlertVariant.danger
   },
   futureDated: {
     title: 'Future dated',
@@ -60,7 +61,7 @@ const SubsWidget = () => {
   return (
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
-        <EmptyState variant={EmptyStateVariant.large}>
+        <EmptyState variant={EmptyStateVariant.lg}>
           <EmptyStateIcon icon={EmptyStateSubscriptionsIcon} />
           <Title headingLevel="h4" size="lg">
             No connected subscriptions
@@ -74,17 +75,13 @@ const SubsWidget = () => {
           </EmptyStateBody>
         </EmptyState>
       ) : (
-        <Gallery
-          hasGutter
-          className="pf-v5-u-p-md"
-          style={{ display: 'flex', flexDirection: 'row' }}
-        >
+        <Gallery hasGutter>
           {['active', 'expiringSoon', 'expired', 'futureDated'].map(
             (name: keyof typeof cardData) => {
               return (
                 <Link
                   to="/subscriptions/inventory"
-                  style={{ flex: 1, textDecoration: 'none' }}
+                  className="alert-link"
                   rel="noopener noreferrer"
                   target="_blank"
                   key={name}
