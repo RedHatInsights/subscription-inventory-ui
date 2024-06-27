@@ -3,20 +3,21 @@ import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outli
 import useStatus from '../../hooks/useStatus';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import './SubscriptionsWidget.scss';
-import { EmptyState } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
-import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
-import { EmptyStateIcon } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
-import { EmptyStateBody } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
-import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
-import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
-import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
-import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
-import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
-import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
+import {
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  Stack,
+  StackItem,
+  Title,
+  Alert,
+  AlertVariant,
+  Gallery
+} from '@patternfly/react-core';
 import { Link } from 'react-router-dom';
-
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
-import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
+import { Spinner } from '@patternfly/react-core';
 
 const queryClient = new QueryClient();
 
