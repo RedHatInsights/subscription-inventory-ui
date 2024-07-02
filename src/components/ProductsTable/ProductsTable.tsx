@@ -1,64 +1,97 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import {
-  Table /* data-codemods */,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  ThProps
-} from '@patternfly/react-table';
-import {
-  Flex,
-  FlexItem,
-  Pagination,
-  PaginationVariant,
-  SearchInput,
-  Text,
-  TextContent,
-  TextVariants
-} from '@patternfly/react-core';
+import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
+import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Pagination } from '@patternfly/react-core/dist/dynamic/components/Pagination';
+import { PaginationVariant } from '@patternfly/react-core/dist/dynamic/components/Pagination';
+import { SearchInput } from '@patternfly/react-core/dist/dynamic/components/SearchInput';
+import { Text } from '@patternfly/react-core/dist/dynamic/components/Text';
+import { TextContent } from '@patternfly/react-core/dist/dynamic/components/Text';
+import { TextVariants } from '@patternfly/react-core/dist/dynamic/components/Text';
+import { Button } from '@patternfly/react-core/dist/dynamic/components/Button';
+import { Chip } from '@patternfly/react-core/dist/dynamic/components/Chip';
+import { ChipGroup } from '@patternfly/react-core/dist/dynamic/components/Chip';
 import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
-import { Link } from 'react-router-dom';
-import { Button, Chip, ChipGroup } from '@patternfly/react-core';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ExportSubscriptions } from '../ExportSubscriptions';
-
 interface ProductsTableProps {
   data: Product[] | undefined;
   isFetching: boolean;
   filter: string;
   setFilter(filter: string): void;
 }
-
 const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   data,
   isFetching,
   filter,
   setFilter
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const queryParams = new URLSearchParams(location.search);
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
     quantity: 'Quantity',
     serviceLevel: 'Service level'
   };
-  const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(10);
-  const [searchValue, setSearchValue] = useState('');
+  const [page, setPage] = useState(parseInt(queryParams.get('page') || '1', 10));
+  const [perPage, setPerPage] = useState(parseInt(queryParams.get('perPage') || '10', 10));
+  const [searchValue, setSearchValue] = useState(queryParams.get('search') || '');
   const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
-
+  useEffect(() => {
+    const querySearch = queryParams.get('search');
+    const queryFilter = queryParams.get('filter');
+    if (querySearch) {
+      setSearchValue(querySearch);
+    }
+    if (queryFilter) {
+      setFilter(queryFilter);
+    } else {
+      setFilter('');
+    }
+  }, [location.search]);
+  const updateQueryParams = (params: Record<string, string>) => {
+    const searchParams = new URLSearchParams(location.search);
+    Object.keys(params).forEach((key) => {
+      if (params[key]) {
+        searchParams.set(key, params[key]);
+      } else {
+        searchParams.delete(key);
+      }
+    });
+    navigate({ search: searchParams.toString() }, { replace: true });
+  };
+  const handleSearch = (searchValue: string) => {
+    setSearchValue(searchValue);
+    setPage(1);
+    updateQueryParams({ search: searchValue, page: '1' });
+  };
+  const clearSearch = () => {
+    setSearchValue('');
+    setPage(1);
+    updateQueryParams({ search: '', page: '1' });
+  };
+  const handleSetPage = (_event: React.MouseEvent, page: number) => {
+    setPage(page);
+    updateQueryParams({ page: page.toString() });
+  };
+  const handlePerPageSelect = (_event: React.MouseEvent, perPage: number) => {
+    setPerPage(perPage);
+    setPage(1);
+    updateQueryParams({ perPage: perPage.toString(), page: '1' });
+  };
   const getSortableRowValues = (product: Product): (string | number)[] => {
     const { name, sku, quantity, serviceLevel } = product;
     return [name, sku, quantity, serviceLevel];
   };
-
   const getSortParams = (columnIndex: number): ThProps['sort'] => ({
     sortBy: {
       index: activeSortIndex,
       direction: activeSortDirection,
-      defaultDirection: 'asc' // starting sort direction when first sorting a column. Defaults to 'asc'
+      defaultDirection: 'asc'
     },
     onSort: (_event, index, direction) => {
       setActiveSortIndex(index);
@@ -66,7 +99,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     },
     columnIndex
   });
-
   const sortProducts = (products: Product[], sortIndex: number) => {
     const sortedProducts = products.sort((a: any, b: any) => {
       const aValue = getSortableRowValues(a)[sortIndex] || '';
@@ -77,33 +109,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       } else if (aValue > bValue) {
         result = 1;
       }
-      return activeSortDirection == 'asc' ? result : -1 * result;
+      return activeSortDirection === 'asc' ? result : -1 * result;
     });
     return sortedProducts;
   };
-
-  const handleSetPage = (_event: React.MouseEvent, page: number) => {
-    setPage(page);
-  };
-
-  const handlePerPageSelect = (_event: React.MouseEvent, perPage: number) => {
-    setPerPage(perPage);
-    setPage(1);
-  };
-
-  const handleSearch = (searchValue: string) => {
-    setSearchValue(searchValue);
-    setPage(1);
-  };
-
-  const clearSearch = () => {
-    setSearchValue('');
-    if (filter != '') {
-      removeFilter();
-    }
-    setPage(1);
-  };
-
   const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
     return data.filter((entry: Product) => {
       const searchTerm = searchValue.toLowerCase().trim();
@@ -115,12 +124,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       );
     });
   };
-
   const countProducts = (data: Product[], searchValue: string): number => {
     const filteredData = filterDataBySearchTerm(data, searchValue);
     return filteredData.length;
   };
-
   const pagination = (variant = PaginationVariant.top) => {
     return (
       <Pagination
@@ -134,24 +141,26 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       />
     );
   };
-
   const getPage = (products: Product[]) => {
     const first = (page - 1) * perPage;
     const last = first + perPage;
     return products.slice(first, last);
   };
-
   const filterMap = new Map<string, string>([
     ['active', 'Active'],
     ['expiringSoon', 'Expiring soon'],
     ['expired', 'Expired'],
     ['futureDated', 'Future dated']
   ]);
-
   const removeFilter = () => {
     setFilter('');
+    updateQueryParams({ filter: '' });
   };
-
+  useEffect(() => {
+    if (filter) {
+      updateQueryParams({ filter });
+    }
+  }, [filter]);
   const sortedProducts = sortProducts(data, activeSortIndex);
   const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
   const paginatedProducts = getPage(searchedProducts);
