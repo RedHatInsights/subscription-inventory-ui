@@ -1,10 +1,7 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
-import { Pagination } from '@patternfly/react-core/dist/dynamic/components/Pagination';
-import { PaginationVariant } from '@patternfly/react-core/dist/dynamic/components/Pagination';
-import { SearchInput } from '@patternfly/react-core/dist/dynamic/components/SearchInput';
 import { Text } from '@patternfly/react-core/dist/dynamic/components/Text';
 import { TextContent } from '@patternfly/react-core/dist/dynamic/components/Text';
 import { TextVariants } from '@patternfly/react-core/dist/dynamic/components/Text';
@@ -13,7 +10,7 @@ import { Chip } from '@patternfly/react-core/dist/dynamic/components/Chip';
 import { ChipGroup } from '@patternfly/react-core/dist/dynamic/components/Chip';
 import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ExportSubscriptions } from '../ExportSubscriptions';
 interface ProductsTableProps {
   data: Product[] | undefined;
@@ -27,62 +24,17 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   filter,
   setFilter
 }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const queryParams = new URLSearchParams(location.search);
+  console.log('Current filter:', filter);
+  console.log('Data:', data);
+
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
     quantity: 'Quantity',
     serviceLevel: 'Service level'
   };
-  const [page, setPage] = useState(parseInt(queryParams.get('page') || '1', 10));
-  const [perPage, setPerPage] = useState(parseInt(queryParams.get('perPage') || '10', 10));
-  const [searchValue, setSearchValue] = useState(queryParams.get('search') || '');
-  const [activeSortIndex, setActiveSortIndex] = React.useState<number>(0);
-  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc'>('asc');
-  useEffect(() => {
-    const querySearch = queryParams.get('search');
-    const queryFilter = queryParams.get('filter');
-    if (querySearch) {
-      setSearchValue(querySearch);
-    }
-    if (queryFilter) {
-      setFilter(queryFilter);
-    } else {
-      setFilter('');
-    }
-  }, [location.search]);
-  const updateQueryParams = (params: Record<string, string>) => {
-    const searchParams = new URLSearchParams(location.search);
-    Object.keys(params).forEach((key) => {
-      if (params[key]) {
-        searchParams.set(key, params[key]);
-      } else {
-        searchParams.delete(key);
-      }
-    });
-    navigate({ search: searchParams.toString() }, { replace: true });
-  };
-  const handleSearch = (searchValue: string) => {
-    setSearchValue(searchValue);
-    setPage(1);
-    updateQueryParams({ search: searchValue, page: '1' });
-  };
-  const clearSearch = () => {
-    setSearchValue('');
-    setPage(1);
-    updateQueryParams({ search: '', page: '1' });
-  };
-  const handleSetPage = (_event: React.MouseEvent, page: number) => {
-    setPage(page);
-    updateQueryParams({ page: page.toString() });
-  };
-  const handlePerPageSelect = (_event: React.MouseEvent, perPage: number) => {
-    setPerPage(perPage);
-    setPage(1);
-    updateQueryParams({ perPage: perPage.toString(), page: '1' });
-  };
+  const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
+  const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
   const getSortableRowValues = (product: Product): (string | number)[] => {
     const { name, sku, quantity, serviceLevel } = product;
     return [name, sku, quantity, serviceLevel];
@@ -100,7 +52,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     columnIndex
   });
   const sortProducts = (products: Product[], sortIndex: number) => {
-    const sortedProducts = products.sort((a: any, b: any) => {
+    const sortedProducts = products.sort((a, b) => {
       const aValue = getSortableRowValues(a)[sortIndex] || '';
       const bValue = getSortableRowValues(b)[sortIndex] || '';
       let result = 0;
@@ -113,39 +65,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     });
     return sortedProducts;
   };
-  const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
-    return data.filter((entry: Product) => {
-      const searchTerm = searchValue.toLowerCase().trim();
-      const name = (entry.name || '').toLowerCase();
-      const productLine = (entry.productLine || '').toLowerCase();
-      const sku = (entry.sku || '').toLowerCase();
-      return (
-        name.includes(searchTerm) || productLine.includes(searchTerm) || sku.includes(searchTerm)
-      );
-    });
-  };
-  const countProducts = (data: Product[], searchValue: string): number => {
-    const filteredData = filterDataBySearchTerm(data, searchValue);
-    return filteredData.length;
-  };
-  const pagination = (variant = PaginationVariant.top) => {
-    return (
-      <Pagination
-        isDisabled={isFetching}
-        itemCount={countProducts(data, searchValue)}
-        perPage={perPage}
-        page={page}
-        onSetPage={handleSetPage}
-        onPerPageSelect={handlePerPageSelect}
-        variant={variant}
-      />
-    );
-  };
-  const getPage = (products: Product[]) => {
-    const first = (page - 1) * perPage;
-    const last = first + perPage;
-    return products.slice(first, last);
-  };
   const filterMap = new Map<string, string>([
     ['active', 'Active'],
     ['expiringSoon', 'Expiring soon'],
@@ -154,17 +73,19 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   ]);
   const removeFilter = () => {
     setFilter('');
-    updateQueryParams({ filter: '' });
   };
-  useEffect(() => {
-    if (filter) {
-      updateQueryParams({ filter });
-    }
-  }, [filter]);
-  const sortedProducts = sortProducts(data, activeSortIndex);
-  const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
-  const paginatedProducts = getPage(searchedProducts);
-
+  const sortedProducts = data ? sortProducts(data, activeSortIndex) : [];
+  const filteredProducts = sortedProducts.filter((product) => {
+    if (!filter) return true;
+    // Log the product and its subscriptions
+    console.log('Filtering product:', product);
+    const result = product.subscriptions?.some(
+      (subscription) => subscription.status.toLowerCase() === filter.toLowerCase()
+    );
+    // Log the result of the filtering condition
+    console.log(`Filtering product ${product.name} with filter "${filter}" resulted in:`, result);
+    return result;
+  });
   return (
     <>
       <Flex
@@ -173,29 +94,19 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       >
         <Flex>
           <FlexItem>
-            <SearchInput
-              placeholder="Filter by Name or SKU"
-              value={searchValue}
-              onChange={(_: React.FormEvent, v: string) => handleSearch(v)}
-              onClear={clearSearch}
-              isDisabled={data.length == 0}
-            />
-          </FlexItem>
-          <FlexItem>
             <ExportSubscriptions />
           </FlexItem>
         </Flex>
-        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
       <Flex>
         <FlexItem>
-          {filter != '' && (
-            <ChipGroup categoryName="Status">
+          <ChipGroup categoryName="Status">
+            {filter != '' && (
               <Chip id="status-chip" key={filter} onClick={removeFilter}>
                 {filterMap.get(filter)}
               </Chip>
-            </ChipGroup>
-          )}
+            )}
+          </ChipGroup>
         </FlexItem>
         <FlexItem>
           {filter != '' && (
@@ -205,10 +116,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           )}
         </FlexItem>
       </Flex>
-      {/* @ts-ignore */}
       <Table aria-label="Products">
         <Thead>
-          {/* @ts-ignore */}
           <Tr>
             <Th sort={getSortParams(0)} width={50}>
               {columnNames.name}
@@ -225,31 +134,26 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           </Tr>
         </Thead>
         <Tbody>
-          {paginatedProducts.map((datum, rowIndex) => (
-            <React.Fragment key={rowIndex}>
-              {/* @ts-ignore */}
-              <Tr>
-                <Td dataLabel={columnNames.name}>
-                  <TextContent>
-                    <Text component={TextVariants.h3}>
-                      <Link to={`${datum.sku}`}>{datum.name}</Link>
-                      <br />
-                      <Text component={TextVariants.small}>{datum.productLine}</Text>
-                    </Text>
-                  </TextContent>
-                </Td>
-                <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
-                <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
-                <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
-              </Tr>
-            </React.Fragment>
+          {filteredProducts.map((datum, rowIndex) => (
+            <Tr key={rowIndex}>
+              <Td dataLabel={columnNames.name}>
+                <TextContent>
+                  <Text component={TextVariants.h3}>
+                    <Link to={`${datum.sku}`}>{datum.name}</Link>
+                    <br />
+                    <Text component={TextVariants.small}>{datum.productLine}</Text>
+                  </Text>
+                </TextContent>
+              </Td>
+              <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
+              <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>
+              <Td dataLabel={columnNames.serviceLevel}>{datum.serviceLevel}</Td>
+            </Tr>
           ))}
         </Tbody>
       </Table>
-      {paginatedProducts.length == 0 && <NoSearchResults clearFilters={clearSearch} />}
-      {pagination(PaginationVariant.bottom)}
+      {filteredProducts.length === 0 && <NoSearchResults clearFilters={removeFilter} />}
     </>
   );
 };
-
 export { ProductsTable as default, ProductsTableProps };

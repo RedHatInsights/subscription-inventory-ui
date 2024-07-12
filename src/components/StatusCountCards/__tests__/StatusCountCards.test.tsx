@@ -44,7 +44,7 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(container.querySelector('#active'));
+    fireEvent.click(container.querySelector('#active-card'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
@@ -57,7 +57,7 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(container.querySelector('#expiringSoon'));
+    fireEvent.click(container.querySelector('#expiringSoon-card'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
@@ -70,7 +70,7 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(container.querySelector('#expired'));
+    fireEvent.click(container.querySelector('#expired-card'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 
@@ -83,7 +83,7 @@ describe('StatusCountCard', () => {
       />
     );
 
-    fireEvent.click(container.querySelector('#futureDated'));
+    fireEvent.click(container.querySelector('#futureDated-card'));
     expect(setFilter).toHaveBeenCalledTimes(1);
   });
 });

@@ -246,41 +246,6 @@ describe('ProductsTable', () => {
         serviceLevel: 'Standard'
       })
     ]);
-
-    it('can change page', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const nextPage = screen.getAllByLabelText('Go to next page')[0];
-      fireEvent.click(nextPage);
-      const currentPage = screen.getAllByLabelText('Current page');
-      expect(currentPage[0]).toHaveValue(2);
-    });
-
-    it('can change per page', () => {
-      const { container } = render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      const perPageArrow = container.querySelectorAll('#options-menu-top-toggle')[0];
-      fireEvent.click(perPageArrow);
-      const perPageAmount = screen.getByText('20 per page');
-      fireEvent.click(perPageAmount);
-      expect(table.querySelectorAll('tr').length).toBe(12);
-    });
   });
 
   describe('when the search is used', () => {
@@ -314,83 +279,6 @@ describe('ProductsTable', () => {
         serviceLevel: undefined
       })
     ]);
-
-    it('refines the results by name', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const input = screen.getByPlaceholderText('Filter by Name or SKU');
-      fireEvent.change(input, { target: { value: 'Z' } });
-      expect(screen.queryByText('A')).not.toBeInTheDocument();
-    });
-
-    it('refines the results by product line', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const input = screen.getByPlaceholderText('Filter by Name or SKU');
-      fireEvent.change(input, { target: { value: 'vowels' } });
-      expect(screen.queryByText('consonants')).not.toBeInTheDocument();
-    });
-
-    it('can be cleared', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const input = screen.getByPlaceholderText('Filter by Name or SKU');
-      fireEvent.change(input, { target: { value: 'Z' } });
-      const clear = screen.getByLabelText('Reset');
-      fireEvent.click(clear);
-      expect(screen.queryByText('A')).toBeInTheDocument();
-    });
-
-    it('renders an empty state when no results are found', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const input = screen.getByPlaceholderText('Filter by Name or SKU');
-      fireEvent.change(input, { target: { value: 'ZZZ' } });
-      expect(screen.getByText('No results found')).toBeInTheDocument();
-    });
-
-    it('refines the results by sku', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const input = screen.getByPlaceholderText('Filter by Name or SKU');
-      fireEvent.change(input, { target: { value: 'RH123' } });
-      expect(screen.queryByText('Fake123')).not.toBeInTheDocument();
-    });
   });
 
   describe('when the active filter is set', () => {
