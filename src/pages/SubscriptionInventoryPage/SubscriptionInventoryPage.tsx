@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import PageHeader from '@redhat-cloud-services/frontend-components/PageHeader';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import { PageSection } from '@patternfly/react-core/dist/dynamic/components/Page';
@@ -18,35 +18,29 @@ import GettingStartedCard from '../../components/GettingStartedCard';
 import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import StatusCountCards from '../../components/StatusCountCards';
-
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
   const navigate = useNavigate();
-  const location = useLocation();
-  const [filter, setFilter] = useState<string>(() => {
-    const params = new URLSearchParams(location.search);
-    return params.get('status') || '';
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [filter, setFilter] = useState<string>(() => searchParams.get('status') || '');
   useEffect(() => {
     if (!user.canReadProducts) {
       navigate('./no-permissions');
     }
   }, [user.canReadProducts, navigate]);
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    setFilter(params.get('status') || '');
-  }, [location.search]);
+    setFilter(searchParams.get('status') || '');
+  }, [searchParams]);
   const productData = useProducts(filter);
   const statusCardData = useStatus();
   const updateFilter = (newFilter: string) => {
-    const params = new URLSearchParams(location.search);
     if (newFilter) {
-      params.set('status', newFilter);
+      searchParams.set('status', newFilter);
     } else {
-      params.delete('status');
+      searchParams.delete('status');
     }
-    navigate({ search: params.toString() });
+    setSearchParams(searchParams);
   };
   return (
     <>

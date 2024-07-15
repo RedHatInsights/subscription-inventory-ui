@@ -77,13 +77,9 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const sortedProducts = data ? sortProducts(data, activeSortIndex) : [];
   const filteredProducts = sortedProducts.filter((product) => {
     if (!filter) return true;
-    // Log the product and its subscriptions
-    console.log('Filtering product:', product);
     const result = product.subscriptions?.some(
       (subscription) => subscription.status.toLowerCase() === filter.toLowerCase()
     );
-    // Log the result of the filtering condition
-    console.log(`Filtering product ${product.name} with filter "${filter}" resulted in:`, result);
     return result;
   });
   return (

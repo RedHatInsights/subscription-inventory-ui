@@ -61,339 +61,356 @@ describe('ProductsTable', () => {
     expect(buttonEl).not.toBeNull();
     expect(buttonEl).toBeInTheDocument();
   });
-
-  describe('when row column headings are clicked', () => {
-    const formattedData = [
-      {
-        name: 'Z',
-        sku: 'RH1234',
-        quantity: 1,
-        productLine: 'letters',
-        serviceLevel: 'Layered'
-      },
-      {
-        name: 'A',
-        sku: 'MOCK123',
-        quantity: 3,
-        productLine: 'vowels',
-        serviceLevel: 'Standard'
-      },
-      {
-        name: 'A',
-        sku: 'MOCK123',
-        quantity: 0,
-        productLine: 'vowels',
-        serviceLevel: 'Standard'
-      },
-      {
-        name: '',
-        sku: 'AMOCK1234',
-        quantity: 2,
-        productLine: 'consonants',
-        serviceLevel: 'Standard'
-      }
-    ];
-
-    it('sorts by name by default', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[0].productLine
-      );
-    });
-
-    it('can sort by name, reversed', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('Name'));
-      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[0].name + formattedData[0].productLine
-      );
-    });
-
-    it('can sort by quantity', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('Quantity'));
-      expect(parseInt(table.children[1].firstChild.childNodes[2].textContent)).toEqual(0);
-    });
-
-    it('can sort by quantity, reversed', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('Quantity'));
-      fireEvent.click(screen.getByText('Quantity'));
-      expect(parseInt(table.children[1].firstChild.childNodes[2].textContent)).toEqual(3);
-    });
-
-    it('can sort by sku', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('SKU'));
-      expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('AMOCK1234');
-    });
-
-    it('can sort by sku, reversed', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('SKU'));
-      fireEvent.click(screen.getByText('SKU'));
-      expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('RH1234');
-    });
-
-    it('can sort by serviceLevel', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('Service level'));
-      expect(table.children[1].firstChild.childNodes[3].textContent).toEqual('Layered');
-    });
-
-    it('can sort by serviceLevel, reversed', () => {
-      render(
-        <Table
-          data={formattedData as Product[]}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={setFilter}
-        />
-      );
-
-      const table = screen.getByLabelText('Products');
-
-      fireEvent.click(screen.getByText('Service level'));
-      fireEvent.click(screen.getByText('Service level'));
-      expect(table.children[1].firstChild.childNodes[3].textContent).toEqual('Standard');
-    });
+  it('renders correctly with empty data', () => {
+    render(<Table data={[]} isFetching={false} filter={''} setFilter={setFilter} />);
+    expect(screen.getByText('No results found')).toBeInTheDocument();
   });
 
-  describe('when using pagination', () => {
-    def('data', () => [
-      ...factories.product.buildList(10, {
-        name: 'A',
-        sku: 'MOCK123',
-        quantity: 1,
-        productLine: 'letters',
-        serviceLevel: 'Standard'
-      }),
-      factories.product.build({
-        name: 'Z',
-        sku: 'RH123',
-        quantity: 2,
-        productLine: 'letters',
-        serviceLevel: 'Standard'
-      })
-    ]);
+  it('handles null data gracefully', () => {
+    render(<Table data={null} isFetching={false} filter={''} setFilter={setFilter} />);
+    expect(screen.getByText('No results found')).toBeInTheDocument();
   });
 
-  describe('when the search is used', () => {
-    def('data', () => [
-      factories.product.build({
-        name: 'Z',
-        sku: 'RH123',
-        quantity: 2,
-        productLine: 'consonants',
-        serviceLevel: 'Standard'
-      }),
-      factories.product.build({
-        name: 'A',
-        sku: 'MOCK123',
-        quantity: 1,
-        productLine: 'vowels',
-        serviceLevel: 'Standard'
-      }),
-      factories.product.build({
-        name: 'P',
-        sku: 'Fake123',
-        quantity: 1,
-        productLine: 'consonants',
-        serviceLevel: 'Standard'
-      }),
-      factories.product.build({
-        name: undefined,
-        sku: undefined,
-        quantity: 0,
-        productLine: undefined,
-        serviceLevel: undefined
-      })
-    ]);
+  it('calls setFilter when Clear filters button is clicked', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={'active'}
+        setFilter={setFilter}
+      />
+    );
+    fireEvent.click(screen.getByText('Clear filters'));
+    expect(setFilter).toHaveBeenCalledWith('');
+  });
+  it('shows the correct filter chip', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={'active'}
+        setFilter={setFilter}
+      />
+    );
+    expect(screen.getByText('Active')).toBeInTheDocument();
+  });
+});
+it('displays all products when no filter is applied', () => {
+  const data = [
+    factories.product.build({
+      name: 'Product 1',
+      sku: 'SKU1',
+      quantity: 1,
+      serviceLevel: 'active'
+    }),
+    factories.product.build({
+      name: 'Product 2',
+      sku: 'SKU2',
+      quantity: 2,
+      serviceLevel: 'inactive'
+    })
+  ];
+  render(<Table data={data} isFetching={false} filter={''} setFilter={setFilter} />);
+  expect(screen.getByText('Product 1')).toBeInTheDocument();
+  expect(screen.getByText('Product 2')).toBeInTheDocument();
+});
+
+it('removes filter when chip close button is clicked', () => {
+  render(<Table data={get('data')} isFetching={false} filter={'active'} setFilter={setFilter} />);
+  const chipCloseButton = screen.getByRole('button', { name: /close active/i });
+  fireEvent.click(chipCloseButton);
+  expect(setFilter).toHaveBeenCalledWith('');
+});
+
+describe('when row column headings are clicked', () => {
+  const formattedData = [
+    {
+      name: 'Z',
+      sku: 'RH1234',
+      quantity: 1,
+      productLine: 'letters',
+      serviceLevel: 'Layered'
+    },
+    {
+      name: 'A',
+      sku: 'MOCK123',
+      quantity: 3,
+      productLine: 'vowels',
+      serviceLevel: 'Standard'
+    },
+    {
+      name: 'A',
+      sku: 'MOCK123',
+      quantity: 0,
+      productLine: 'vowels',
+      serviceLevel: 'Standard'
+    },
+    {
+      name: '',
+      sku: 'AMOCK1234',
+      quantity: 2,
+      productLine: 'consonants',
+      serviceLevel: 'Standard'
+    }
+  ];
+
+  it('sorts by name by default', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
+
+    const table = screen.getByLabelText('Products');
+
+    expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
+      formattedData[0].productLine
+    );
   });
 
-  describe('when the active filter is set', () => {
-    def('data', () => [
-      factories.product.build({
-        name: 'Z',
-        sku: 'RH123',
-        quantity: 2,
-        productLine: 'consonants',
-        serviceLevel: 'Standard'
-      }),
-      factories.product.build({
-        name: 'A',
-        sku: 'MOCK123',
-        quantity: 1,
-        productLine: 'vowels',
-        serviceLevel: 'Standard'
-      })
-    ]);
+  it('can sort by name, reversed', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
 
-    it('renders with filter enabled', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={'active'}
-          setFilter={() => {
-            'active';
-          }}
-        />
-      );
+    const table = screen.getByLabelText('Products');
 
-      expect(screen.getByText('Active')).toBeInTheDocument();
-    });
-
-    it('renders status filter', async () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={'active'}
-          setFilter={setFilter}
-        />
-      );
-
-      expect(screen.getByRole('button', { name: 'close Active' }));
-    });
-
-    it('renders Clear filers', async () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={'active'}
-          setFilter={setFilter}
-        />
-      );
-      expect(screen.getByRole('button', { name: 'Clear filters' })).toBeInTheDocument();
-    });
+    fireEvent.click(screen.getByText('Name'));
+    expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
+      formattedData[0].name + formattedData[0].productLine
+    );
   });
 
-  describe('when the expiringSoon filter is set', () => {
-    def('filter', () => 'expiringSoon');
+  it('can sort by quantity', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
 
-    it('renders with filter enabled', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={() => {
-            'expiringSoon';
-          }}
-        />
-      );
+    const table = screen.getByLabelText('Products');
 
-      expect(screen.getByText('Expiring soon')).toBeInTheDocument();
-    });
+    fireEvent.click(screen.getByText('Quantity'));
+    expect(parseInt(table.children[1].firstChild.childNodes[2].textContent)).toEqual(0);
   });
 
-  describe('when the expired filter is set', () => {
-    def('filter', () => 'expired');
+  it('can sort by quantity, reversed', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
 
-    it('renders with filter enabled', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={() => {
-            'expired';
-          }}
-        />
-      );
+    const table = screen.getByLabelText('Products');
 
-      expect(screen.getByText('Expired')).toBeInTheDocument();
-    });
+    fireEvent.click(screen.getByText('Quantity'));
+    fireEvent.click(screen.getByText('Quantity'));
+    expect(parseInt(table.children[1].firstChild.childNodes[2].textContent)).toEqual(3);
   });
 
-  describe('when the futureDated filter is set', () => {
-    def('filter', () => 'futureDated');
+  it('can sort by sku', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
 
-    it('renders with filter enabled', () => {
-      render(
-        <Table
-          data={get('data')}
-          isFetching={get('fetching')}
-          filter={get('filter')}
-          setFilter={() => {
-            'futureDated';
-          }}
-        />
-      );
+    const table = screen.getByLabelText('Products');
 
-      expect(screen.getByText('Future dated')).toBeInTheDocument();
-    });
+    fireEvent.click(screen.getByText('SKU'));
+    expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('AMOCK1234');
   });
+
+  it('can sort by sku, reversed', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
+
+    const table = screen.getByLabelText('Products');
+
+    fireEvent.click(screen.getByText('SKU'));
+    fireEvent.click(screen.getByText('SKU'));
+    expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('RH1234');
+  });
+
+  it('can sort by serviceLevel', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
+
+    const table = screen.getByLabelText('Products');
+
+    fireEvent.click(screen.getByText('Service level'));
+    expect(table.children[1].firstChild.childNodes[3].textContent).toEqual('Layered');
+  });
+
+  it('can sort by serviceLevel, reversed', () => {
+    render(
+      <Table
+        data={formattedData as Product[]}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={setFilter}
+      />
+    );
+
+    const table = screen.getByLabelText('Products');
+
+    fireEvent.click(screen.getByText('Service level'));
+    fireEvent.click(screen.getByText('Service level'));
+    expect(table.children[1].firstChild.childNodes[3].textContent).toEqual('Standard');
+  });
+});
+
+describe('when the active filter is set', () => {
+  def('data', () => [
+    factories.product.build({
+      name: 'Z',
+      sku: 'RH123',
+      quantity: 2,
+      productLine: 'consonants',
+      serviceLevel: 'Standard'
+    }),
+    factories.product.build({
+      name: 'A',
+      sku: 'MOCK123',
+      quantity: 1,
+      productLine: 'vowels',
+      serviceLevel: 'Standard'
+    })
+  ]);
+
+  it('renders with filter enabled', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={'active'}
+        setFilter={() => {
+          'active';
+        }}
+      />
+    );
+
+    expect(screen.getByText('Active')).toBeInTheDocument();
+  });
+
+  it('renders status filter', async () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={'active'}
+        setFilter={setFilter}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'close Active' }));
+  });
+
+  it('renders Clear filers', async () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={'active'}
+        setFilter={setFilter}
+      />
+    );
+    expect(screen.getByRole('button', { name: 'Clear filters' })).toBeInTheDocument();
+  });
+});
+
+describe('when the expiringSoon filter is set', () => {
+  def('filter', () => 'expiringSoon');
+
+  it('renders with filter enabled', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={() => {
+          'expiringSoon';
+        }}
+      />
+    );
+
+    expect(screen.getByText('Expiring soon')).toBeInTheDocument();
+  });
+});
+
+describe('when the expired filter is set', () => {
+  def('filter', () => 'expired');
+
+  it('renders with filter enabled', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={() => {
+          'expired';
+        }}
+      />
+    );
+
+    expect(screen.getByText('Expired')).toBeInTheDocument();
+  });
+});
+
+describe('when the futureDated filter is set', () => {
+  def('filter', () => 'futureDated');
+
+  it('renders with filter enabled', () => {
+    render(
+      <Table
+        data={get('data')}
+        isFetching={get('fetching')}
+        filter={get('filter')}
+        setFilter={() => {
+          'futureDated';
+        }}
+      />
+    );
+
+    expect(screen.getByText('Future dated')).toBeInTheDocument();
+  });
+});
+it('renders "No results found" when there are no products', () => {
+  render(<Table data={get('data')} isFetching={false} filter={''} setFilter={setFilter} />);
+  expect(screen.getByText('No results found')).toBeInTheDocument();
+});
+it('removes filter when chip close button is clicked', () => {
+  render(<Table data={get('data')} isFetching={false} filter={'active'} setFilter={setFilter} />);
+  const chipCloseButton = screen.getByRole('button', { name: /close active/i });
+  fireEvent.click(chipCloseButton);
+  expect(setFilter).toHaveBeenCalledWith('');
 });
