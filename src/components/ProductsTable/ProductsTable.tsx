@@ -81,9 +81,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   };
   const clearSearch = () => {
     setSearchValue('');
-    if (filter !== '') {
-      removeFilter();
-    }
     setPage(1);
   };
   const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
@@ -101,19 +98,17 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     const filteredData = filterDataBySearchTerm(data, searchValue);
     return filteredData.length;
   };
-  const pagination = (variant = PaginationVariant.top) => {
-    return (
-      <Pagination
-        isDisabled={isFetching}
-        itemCount={countProducts(data, searchValue)}
-        perPage={perPage}
-        page={page}
-        onSetPage={handleSetPage}
-        onPerPageSelect={handlePerPageSelect}
-        variant={variant}
-      />
-    );
-  };
+  const pagination = (variant = PaginationVariant.top) => (
+    <Pagination
+      isDisabled={isFetching}
+      itemCount={countProducts(data, searchValue)}
+      perPage={perPage}
+      page={page}
+      onSetPage={handleSetPage}
+      onPerPageSelect={handlePerPageSelect}
+      variant={variant}
+    />
+  );
   const getPage = (products: Product[]) => {
     const first = (page - 1) * perPage;
     const last = first + perPage;
@@ -129,13 +124,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     setFilter('');
   };
   const sortedProducts = data ? sortProducts(data, activeSortIndex) : [];
-  const filteredProducts = sortedProducts.filter((product) => {
-    if (!filter) return true;
-    return product.subscriptions?.some(
-      (subscription) => subscription.status.toLowerCase() === filter.toLowerCase()
-    );
-  });
-  const searchedProducts = filterDataBySearchTerm(filteredProducts, searchValue);
+  const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
   const paginatedProducts = getPage(searchedProducts);
   return (
     <>
