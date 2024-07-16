@@ -1,7 +1,10 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Pagination } from '@patternfly/react-core/dist/dynamic/components/Pagination';
+import { PaginationVariant } from '@patternfly/react-core/dist/dynamic/components/Pagination';
+import { SearchInput } from '@patternfly/react-core/dist/dynamic/components/SearchInput';
 import { Text } from '@patternfly/react-core/dist/dynamic/components/Text';
 import { TextContent } from '@patternfly/react-core/dist/dynamic/components/Text';
 import { TextVariants } from '@patternfly/react-core/dist/dynamic/components/Text';
@@ -24,15 +27,15 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   filter,
   setFilter
 }) => {
-  console.log('Current filter:', filter);
-  console.log('Data:', data);
-
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
     quantity: 'Quantity',
     serviceLevel: 'Service level'
   };
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
+  const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
   const getSortableRowValues = (product: Product): (string | number)[] => {
@@ -65,6 +68,57 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     });
     return sortedProducts;
   };
+  const handleSetPage = (_event: React.MouseEvent, page: number) => {
+    setPage(page);
+  };
+  const handlePerPageSelect = (_event: React.MouseEvent, perPage: number) => {
+    setPerPage(perPage);
+    setPage(1);
+  };
+  const handleSearch = (searchValue: string) => {
+    setSearchValue(searchValue);
+    setPage(1);
+  };
+  const clearSearch = () => {
+    setSearchValue('');
+    if (filter !== '') {
+      removeFilter();
+    }
+    setPage(1);
+  };
+  const filterDataBySearchTerm = (data: Product[], searchValue: string): Product[] => {
+    return data.filter((entry: Product) => {
+      const searchTerm = searchValue.toLowerCase().trim();
+      const name = (entry.name || '').toLowerCase();
+      const productLine = (entry.productLine || '').toLowerCase();
+      const sku = (entry.sku || '').toLowerCase();
+      return (
+        name.includes(searchTerm) || productLine.includes(searchTerm) || sku.includes(searchTerm)
+      );
+    });
+  };
+  const countProducts = (data: Product[], searchValue: string): number => {
+    const filteredData = filterDataBySearchTerm(data, searchValue);
+    return filteredData.length;
+  };
+  const pagination = (variant = PaginationVariant.top) => {
+    return (
+      <Pagination
+        isDisabled={isFetching}
+        itemCount={countProducts(data, searchValue)}
+        perPage={perPage}
+        page={page}
+        onSetPage={handleSetPage}
+        onPerPageSelect={handlePerPageSelect}
+        variant={variant}
+      />
+    );
+  };
+  const getPage = (products: Product[]) => {
+    const first = (page - 1) * perPage;
+    const last = first + perPage;
+    return products.slice(first, last);
+  };
   const filterMap = new Map<string, string>([
     ['active', 'Active'],
     ['expiringSoon', 'Expiring soon'],
@@ -77,11 +131,12 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const sortedProducts = data ? sortProducts(data, activeSortIndex) : [];
   const filteredProducts = sortedProducts.filter((product) => {
     if (!filter) return true;
-    const result = product.subscriptions?.some(
+    return product.subscriptions?.some(
       (subscription) => subscription.status.toLowerCase() === filter.toLowerCase()
     );
-    return result;
   });
+  const searchedProducts = filterDataBySearchTerm(filteredProducts, searchValue);
+  const paginatedProducts = getPage(searchedProducts);
   return (
     <>
       <Flex
@@ -90,22 +145,32 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       >
         <Flex>
           <FlexItem>
+            <SearchInput
+              placeholder="Filter by Name or SKU"
+              value={searchValue}
+              onChange={(_: React.FormEvent, v: string) => handleSearch(v)}
+              onClear={clearSearch}
+              isDisabled={data?.length === 0}
+            />
+          </FlexItem>
+          <FlexItem>
             <ExportSubscriptions />
           </FlexItem>
         </Flex>
+        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
       <Flex>
         <FlexItem>
-          <ChipGroup categoryName="Status">
-            {filter != '' && (
+          {filter !== '' && (
+            <ChipGroup categoryName="Status">
               <Chip id="status-chip" key={filter} onClick={removeFilter}>
                 {filterMap.get(filter)}
               </Chip>
-            )}
-          </ChipGroup>
+            </ChipGroup>
+          )}
         </FlexItem>
         <FlexItem>
-          {filter != '' && (
+          {filter !== '' && (
             <Button variant="link" isInline onClick={removeFilter}>
               Clear filters
             </Button>
@@ -130,7 +195,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           </Tr>
         </Thead>
         <Tbody>
-          {filteredProducts.map((datum, rowIndex) => (
+          {paginatedProducts.map((datum, rowIndex) => (
             <Tr key={rowIndex}>
               <Td dataLabel={columnNames.name}>
                 <TextContent>
@@ -148,7 +213,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           ))}
         </Tbody>
       </Table>
-      {filteredProducts.length === 0 && <NoSearchResults clearFilters={removeFilter} />}
+      {paginatedProducts.length === 0 && <NoSearchResults clearFilters={clearSearch} />}
+      {pagination(PaginationVariant.bottom)}
     </>
   );
 };
