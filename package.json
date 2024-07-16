@@ -12,7 +12,7 @@
     "lint:js": "eslint config src",
     "lint:js:fix": "eslint config src --fix",
     "lint:sass": "stylelint 'src/**/*.scss' --config .stylelintrc.json",
-    "lint:staged": "pretty-quick --staged && lint-staged",
+    "lint:staged": "lint-staged",
     "nightly": "npm run deploy",
     "postinstall": "rm -rf .cache",
     "prod": "NODE_ENV=production webpack-dev-server --config config/dev.webpack.config.js",
