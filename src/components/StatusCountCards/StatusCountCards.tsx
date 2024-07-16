@@ -18,6 +18,7 @@ interface StatusCardProps {
   setFilter(filter: string): void;
   filter?: string;
 }
+
 const StatusCountCards: FunctionComponent<StatusCardProps> = ({
   statusCardData,
   setFilter,
@@ -38,29 +39,41 @@ const StatusCountCards: FunctionComponent<StatusCardProps> = ({
     },
     futureDated: { friendlyName: 'Future dated', icon: <OutlinedCalendarAltIcon /> }
   };
+
   return (
     <Grid hasGutter>
       <Gallery hasGutter style={{ display: 'flex', flexDirection: 'row' }}>
-        {['active', 'expiringSoon', 'expired', 'futureDated'].map((name: keyof typeof cardData) => (
-          <Card
-            id={`${name}-card`}
-            style={{ flex: 1 }}
-            isSelected={filter === name}
-            isClickable
-            key={name}
-            onClick={() => setFilter(name)}
-          >
-            <CardHeader>{cardData[name].friendlyName}</CardHeader>
-            <CardBody>
-              <Flex spaceItems={{ default: 'spaceItemsSm' }}>
-                <FlexItem>{cardData[name].icon}</FlexItem>
-                <FlexItem>{statusCardData ? statusCardData[name] : '0'}</FlexItem>
-              </Flex>
-            </CardBody>
-          </Card>
-        ))}
+        {['active', 'expiringSoon', 'expired', 'futureDated'].map((name: keyof typeof cardData) => {
+          return (
+            <Card
+              id={`${name}-card`}
+              style={{ flex: 1 }}
+              isSelected={filter == name}
+              isClickable
+              key={name}
+            >
+              <CardHeader
+                selectableActions={{
+                  selectableActionId: name,
+                  onClickAction: () => setFilter(name),
+                  selectableActionAriaLabelledby: `${name}-set-filter`,
+                  name: `${name}-card`
+                }}
+              >
+                {cardData[name].friendlyName}
+              </CardHeader>
+              <CardBody>
+                <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                  <FlexItem>{cardData[name].icon}</FlexItem>
+                  <FlexItem>{statusCardData[name]}</FlexItem>
+                </Flex>
+              </CardBody>
+            </Card>
+          );
+        })}
       </Gallery>
     </Grid>
   );
 };
+
 export { StatusCountCards as default, StatusCardProps };
