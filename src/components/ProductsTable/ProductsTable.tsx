@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
@@ -38,6 +38,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
   const getSortableRowValues = (product: Product): (string | number)[] => {
     const { name, sku, quantity, serviceLevel } = product;
     return [name, sku, quantity, serviceLevel];
