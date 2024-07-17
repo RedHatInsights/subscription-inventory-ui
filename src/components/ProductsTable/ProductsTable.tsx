@@ -15,6 +15,7 @@ import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
 import { ExportSubscriptions } from '../ExportSubscriptions';
+
 interface ProductsTableProps {
   data: Product[] | undefined;
   isFetching: boolean;
