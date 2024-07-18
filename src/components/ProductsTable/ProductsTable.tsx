@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
@@ -15,7 +15,6 @@ import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
 import { ExportSubscriptions } from '../ExportSubscriptions';
-
 interface ProductsTableProps {
   data: Product[] | undefined;
   isFetching: boolean;
@@ -39,6 +38,16 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [isInvalidFilter, setIsInvalidFilter] = useState(false);
+  const validFilters = ['active', 'expiringSoon', 'expired', 'futureDated'];
+  useEffect(() => {
+    if (filter && !validFilters.includes(filter)) {
+      setIsInvalidFilter(true);
+      setFilter('');
+    } else {
+      setIsInvalidFilter(false);
+    }
+  }, [filter, setFilter]);
   const getSortableRowValues = (product: Product): (string | number)[] => {
     const { name, sku, quantity, serviceLevel } = product;
     return [name, sku, quantity, serviceLevel];
@@ -151,7 +160,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       </Flex>
       <Flex>
         <FlexItem>
-          {filter !== '' && (
+          {filter !== '' && validFilters.includes(filter) && (
             <ChipGroup categoryName="Status">
               <Chip id="status-chip" key={filter} onClick={removeFilter}>
                 {filterMap.get(filter)}
@@ -160,13 +169,18 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           )}
         </FlexItem>
         <FlexItem>
-          {filter !== '' && (
+          {filter !== '' && validFilters.includes(filter) && (
             <Button variant="link" isInline onClick={removeFilter}>
               Clear filters
             </Button>
           )}
         </FlexItem>
       </Flex>
+      {isInvalidFilter && (
+        <Text component={TextVariants.h4} style={{ color: 'red', marginBottom: '1rem' }}>
+          Invalid filter applied. Showing all products.
+        </Text>
+      )}
       <Table aria-label="Products">
         <Thead>
           <Tr>
