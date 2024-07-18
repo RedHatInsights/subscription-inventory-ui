@@ -38,14 +38,10 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const [searchValue, setSearchValue] = useState('');
   const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
-  const [isInvalidFilter, setIsInvalidFilter] = useState(false);
   const validFilters = ['active', 'expiringSoon', 'expired', 'futureDated'];
   useEffect(() => {
     if (filter && !validFilters.includes(filter)) {
-      setIsInvalidFilter(true);
       setFilter('');
-    } else {
-      setIsInvalidFilter(false);
     }
   }, [filter, setFilter]);
   const getSortableRowValues = (product: Product): (string | number)[] => {
@@ -176,11 +172,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           )}
         </FlexItem>
       </Flex>
-      {isInvalidFilter && (
-        <Text component={TextVariants.h4} style={{ color: 'red', marginBottom: '1rem' }}>
-          Invalid filter applied. Showing all products.
-        </Text>
-      )}
       <Table aria-label="Products">
         <Thead>
           <Tr>
