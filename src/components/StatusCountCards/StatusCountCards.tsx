@@ -1,11 +1,16 @@
 import React, { FunctionComponent } from 'react';
-import { Card, CardBody, Flex, FlexItem, Gallery, Grid } from '@patternfly/react-core';
+import { Card } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardBody } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
+import { Grid } from '@patternfly/react-core/dist/dynamic/layouts/Grid';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import { StatusCard } from '../../hooks/useStatus';
-import { CardHeader } from '@patternfly/react-core';
+import { CardHeader } from '@patternfly/react-core/dist/dynamic/components/Card';
 
 interface StatusCardProps {
   statusCardData: StatusCard | undefined;
