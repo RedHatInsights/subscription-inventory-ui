@@ -27,23 +27,19 @@ const SubscriptionsWidget = () => {
 const cardData = {
   active: {
     title: 'Active',
-    variant: AlertVariant.success,
-    filter: 'active'
+    variant: AlertVariant.success
   },
   expiringSoon: {
     title: 'Expiring soon',
-    variant: AlertVariant.warning,
-    filter: 'expiringSoon'
+    variant: AlertVariant.warning
   },
   expired: {
     title: 'Expired',
-    variant: AlertVariant.danger,
-    filter: 'expired'
+    variant: AlertVariant.danger
   },
   futureDated: {
     title: 'Future dated',
-    customIcon: <OutlinedCalendarAltIcon />,
-    filter: 'futureDated'
+    customIcon: <OutlinedCalendarAltIcon />
   }
 };
 const SubsWidget = () => {
@@ -77,7 +73,7 @@ const SubsWidget = () => {
             (name: keyof typeof cardData) => {
               return (
                 <Link
-                  to={`/subscriptions/inventory?filter=${cardData[name].filter}`}
+                  to={`/subscriptions/inventory?filter=${name}`}
                   className="alert-link"
                   rel="noopener noreferrer"
                   target="_blank"
