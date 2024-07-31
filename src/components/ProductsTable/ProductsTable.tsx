@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
@@ -22,18 +22,13 @@ interface ProductsTableProps {
   filter: string;
   setFilter(filter: string): void;
 }
-const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
-};
 const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   data,
   isFetching,
   filter,
   setFilter
 }) => {
-  const query = useQuery();
   const navigate = useNavigate();
-  const initialFilter = query.get('filter') || '';
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
@@ -46,11 +41,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const [activeSortIndex, setActiveSortIndex] = useState<number>(0);
   const [activeSortDirection, setActiveSortDirection] = useState<'asc' | 'desc'>('asc');
   const validFilters = ['active', 'expiringSoon', 'expired', 'futureDated'];
-  useEffect(() => {
-    if (initialFilter && validFilters.includes(initialFilter)) {
-      setFilter(initialFilter);
-    }
-  }, [initialFilter, setFilter]);
   useEffect(() => {
     if (filter && !validFilters.includes(filter)) {
       setFilter('');
@@ -208,7 +198,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
               <Td dataLabel={columnNames.name}>
                 <TextContent>
                   <Text component={TextVariants.h3}>
-                    <Link to={`/products/${datum.sku}`}>{datum.name}</Link>
+                    <Link to={`${datum.sku}`}>{datum.name}</Link>
                     <br />
                     <Text component={TextVariants.small}>{datum.productLine}</Text>
                   </Text>

@@ -73,7 +73,7 @@ const SubsWidget = () => {
             (name: keyof typeof cardData) => {
               return (
                 <Link
-                  to={`/subscriptions/inventory?filter=${name}`}
+                  to={`/subscriptions/inventory?status=${name}`}
                   className="alert-link"
                   rel="noopener noreferrer"
                   target="_blank"
