@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Table, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
@@ -28,7 +27,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   filter,
   setFilter
 }) => {
-  const navigate = useNavigate();
   const columnNames = {
     name: 'Name',
     sku: 'SKU',
@@ -130,7 +128,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   ]);
   const removeFilter = () => {
     setFilter('');
-    navigate('/subscriptions/inventory');
   };
   const sortedProducts = data ? sortProducts(data, activeSortIndex) : [];
   const searchedProducts = filterDataBySearchTerm(sortedProducts, searchValue);
