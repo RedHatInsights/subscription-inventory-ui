@@ -3,24 +3,20 @@ import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outli
 import useStatus from '../../hooks/useStatus';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import './SubscriptionsWidget.scss';
-import {
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  Stack,
-  StackItem,
-  Title,
-  Alert,
-  AlertVariant,
-  Gallery
-} from '@patternfly/react-core';
+import { EmptyState } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateIcon } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateBody } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
+import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
+import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
+import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
+import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
+import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Link } from 'react-router-dom';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
-import { Spinner } from '@patternfly/react-core';
-
+import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
 const queryClient = new QueryClient();
-
 const SubscriptionsWidget = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -28,7 +24,6 @@ const SubscriptionsWidget = () => {
     </QueryClientProvider>
   );
 };
-
 const cardData = {
   active: {
     title: 'Active',
@@ -47,7 +42,6 @@ const cardData = {
     customIcon: <OutlinedCalendarAltIcon />
   }
 };
-
 const SubsWidget = () => {
   const statusCardData = useStatus();
   const isCardDataEmpty = useMemo(
@@ -57,7 +51,6 @@ const SubsWidget = () => {
       Object.keys(cardData).every((name: keyof typeof cardData) => statusCardData.data[name] === 0),
     [statusCardData]
   );
-
   return (
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
@@ -80,7 +73,7 @@ const SubsWidget = () => {
             (name: keyof typeof cardData) => {
               return (
                 <Link
-                  to="/subscriptions/inventory"
+                  to={`/subscriptions/inventory?status=${name}`}
                   className="alert-link"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -102,5 +95,4 @@ const SubsWidget = () => {
     </div>
   );
 };
-
 export default SubscriptionsWidget;
