@@ -91,7 +91,7 @@
     "@patternfly/react-core": "^5.0.0",
     "@patternfly/react-table": "^5.0.0",
     "@redhat-cloud-services/frontend-components": "^4.2.3",
-    "@redhat-cloud-services/frontend-components-utilities": "^4.0.4",
+    "@redhat-cloud-services/frontend-components-utilities": "^4.0.17",
     "@unleash/proxy-client-react": "^3.6.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "classnames": "^2.5.1",
