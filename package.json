@@ -122,7 +122,7 @@
     "@babel/preset-flow": "^7.17.12",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.23.3",
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.0.3",
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^2.0.3",
     "@redhat-cloud-services/frontend-components-config": "^6.2.3",
     "@redhat-cloud-services/frontend-components-config-utilities": "^3.2.2",
