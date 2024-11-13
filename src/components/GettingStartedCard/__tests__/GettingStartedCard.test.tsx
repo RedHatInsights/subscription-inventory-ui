@@ -3,12 +3,18 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import GettingStartedCard from '../GettingStartedCard';
 
 describe('GettingStartedCard', () => {
-  it('renders the card when the toggle is clicked', async () => {
+  it('Card should be open by default', async () => {
     const { getByTestId } = render(<GettingStartedCard />);
+    const element = getByTestId('resources-toggle-button');
+    const attributeValue = element.getAttribute('aria-expanded');
+    expect(attributeValue).toBe('true');
+  });
 
-    fireEvent.click(getByTestId('resources-toggle-button'));
-    expect(
-      screen.getByText('Activate a subscription purchased from a third party.')
-    ).toBeInTheDocument();
+  it('closes the card when the toggle is clicked', async () => {
+    const { getByTestId } = render(<GettingStartedCard />);
+    const element = getByTestId('resources-toggle-button');
+    fireEvent.click(element);
+    const attributeValue = element.getAttribute('aria-expanded');
+    expect(attributeValue).toBe('false');
   });
 });
