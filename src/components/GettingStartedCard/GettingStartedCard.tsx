@@ -21,7 +21,7 @@ import RocketIcon from '@patternfly/react-icons/dist/js/icons/rocket-icon';
 import GraduationCapIcon from '@patternfly/react-icons/dist/js/icons/graduation-cap-icon';
 
 const GettingStartedCard: FunctionComponent = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const onExpand = () => {
     setIsExpanded(!isExpanded);
