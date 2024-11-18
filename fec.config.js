@@ -29,7 +29,7 @@ module.exports = {
     ],
     exposes: {
       './RootApp': resolve(__dirname, './src/AppEntry'),
-      './SubscriptionsWidget': resolve(__dirname, '../src/components/Widgets/SubscriptionsWidget')
+      './SubscriptionsWidget': resolve(__dirname, './src/components/Widgets/SubscriptionsWidget')
     }
   }
 };
