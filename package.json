@@ -86,7 +86,7 @@
     "@babel/runtime": "^7.26.0",
     "@patternfly/patternfly": "^5.4.1",
     "@patternfly/react-core": "^5.0.0",
-    "@patternfly/react-table": "^5.0.0",
+    "@patternfly/react-table": "^6.0.0",
     "@redhat-cloud-services/frontend-components": "^4.2.3",
     "@redhat-cloud-services/frontend-components-utilities": "^4.0.19",
     "@unleash/proxy-client-react": "^3.6.0",
