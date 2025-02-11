@@ -1,6 +1,9 @@
-import { Flex, FlexItem, Pagination, PaginationVariant } from '@patternfly/react-core';
+import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Pagination } from '@patternfly/react-core/dist/dynamic/components/Pagination';
+import { PaginationVariant } from '@patternfly/react-core/dist/dynamic/components/Pagination';
 import { NoSearchResults } from '../emptyState';
-import { SearchInput } from '@patternfly/react-core';
+import { SearchInput } from '@patternfly/react-core/dist/dynamic/components/SearchInput';
 import {
   Table /* data-codemods */,
   Tbody,

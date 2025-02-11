@@ -1,18 +1,16 @@
 import React, { FunctionComponent, useState } from 'react';
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  CardExpandableContent,
-  Flex,
-  Grid,
-  Label,
-  Level,
-  List,
-  ListItem
-} from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/dynamic/components/Button';
+import { Card } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardHeader } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardTitle } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardBody } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardExpandableContent } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Grid } from '@patternfly/react-core/dist/dynamic/layouts/Grid';
+import { Label } from '@patternfly/react-core/dist/dynamic/components/Label';
+import { Level } from '@patternfly/react-core/dist/dynamic/layouts/Level';
+import { List } from '@patternfly/react-core/dist/dynamic/components/List';
+import { ListItem } from '@patternfly/react-core/dist/dynamic/components/List';
 import ExternalLink from '../ExternalLink';
 import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
 import ClipboardCheckIcon from '@patternfly/react-icons/dist/js/icons/clipboard-check-icon';

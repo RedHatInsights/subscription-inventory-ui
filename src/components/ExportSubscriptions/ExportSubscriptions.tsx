@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useExportSubscriptions from '../../hooks/useExportSubscriptions';
 import ExportIcon from '@patternfly/react-icons/dist/js/icons/export-icon';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip } from '@patternfly/react-core/dist/dynamic/components/Tooltip';
 import useNotifications from '../../hooks/useNotifications';
 
 const ExportSubscriptions = () => {
