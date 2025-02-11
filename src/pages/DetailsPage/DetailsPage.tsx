@@ -20,6 +20,7 @@ import Section from '@redhat-cloud-services/frontend-components/Section';
 import { Popover } from '@patternfly/react-core/dist/dynamic/components/Popover';
 import { QuestionCircleIcon } from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
 import { ExternalLinkAltIcon } from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import ExternalLink from '../../components/ExternalLink';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -91,9 +92,7 @@ const DetailsPage: FunctionComponent = () => {
                         value, usage of the virt-who utility is required for proper subscription
                         reporting. Learn more about working with virtual machines and
                         hypervisor-based subscriptions.{' '}
-                        <a href={docsLink} target="_blank" rel="noreferrer">
-                          <ExternalLinkAltIcon />
-                        </a>
+                        <ExternalLink href={docsLink}> </ExternalLink>
                       </p>
                     }
                   >
