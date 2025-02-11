@@ -1,18 +1,16 @@
 import React, { FunctionComponent, useState } from 'react';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Flex,
-  FlexItem,
-  Grid,
-  GridItem,
-  Modal,
-  ModalVariant,
-  Title
-} from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core/dist/dynamic/components/Button';
+import { Card } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardBody } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardFooter } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { CardTitle } from '@patternfly/react-core/dist/dynamic/components/Card';
+import { Flex } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
+import { Grid } from '@patternfly/react-core/dist/dynamic/layouts/Grid';
+import { GridItem } from '@patternfly/react-core/dist/dynamic/layouts/Grid';
+import { Modal } from '@patternfly/react-core/dist/dynamic/components/Modal';
+import { ModalVariant } from '@patternfly/react-core/dist/dynamic/components/Modal';
+import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import ExternalLink from '../ExternalLink';
 import onlineIcon from './onlineIcon.svg';
 import salesIcon from './salesIcon.svg';

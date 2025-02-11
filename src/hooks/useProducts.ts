@@ -10,6 +10,7 @@ type Product = {
   serviceType: string;
   capacity: Capacity;
   subscriptions?: Subscription[];
+  virtLimit?: string;
 };
 
 type Subscription = {
