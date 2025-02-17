@@ -1,12 +1,10 @@
-import {
-  Badge,
-  Breadcrumb,
-  BreadcrumbItem,
-  List,
-  ListItem,
-  PageSection,
-  Title
-} from '@patternfly/react-core';
+import { Badge } from '@patternfly/react-core/dist/dynamic/components/Badge';
+import { Breadcrumb } from '@patternfly/react-core/dist/dynamic/components/Breadcrumb';
+import { BreadcrumbItem } from '@patternfly/react-core/dist/dynamic/components/Breadcrumb';
+import { List } from '@patternfly/react-core/dist/dynamic/components/List';
+import { ListItem } from '@patternfly/react-core/dist/dynamic/components/List';
+import { PageSection } from '@patternfly/react-core/dist/dynamic/components/Page';
+import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -19,6 +17,10 @@ import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import { HttpError } from '../../utilities/errors';
 import Section from '@redhat-cloud-services/frontend-components/Section';
+import { Popover } from '@patternfly/react-core/dist/dynamic/components/Popover';
+import { QuestionCircleIcon } from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
+import { ExternalLinkAltIcon } from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
+import ExternalLink from '../../components/ExternalLink';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -28,6 +30,8 @@ const DetailsPage: FunctionComponent = () => {
   const { isLoading, error, data } = useSingleProduct(SKU);
   const missingText = 'Not Available';
   const redirectRoute = '../no-permissions';
+  const docsLink =
+    'https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_rhel_system_registration/adv-reg-rhel-config-vm-sub_';
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,6 +78,29 @@ const DetailsPage: FunctionComponent = () => {
                 ) : (
                   <>Not Available</>
                 )}
+              </ListItem>
+              <ListItem className="pf-v5-u-mt-0">
+                <b>
+                  Virtual Guest Limit{' '}
+                  <Popover
+                    aria-label="Learn more about Virtual Guest Limit"
+                    bodyContent={
+                      <p>
+                        The maximum number of virtual machines that can run on a system at no
+                        additional cost if the system using this subscription is deployed as a
+                        hypervisor to host virtual machines. When this field displays a non-zero
+                        value, usage of the virt-who utility is required for proper subscription
+                        reporting. Learn more about working with virtual machines and
+                        hypervisor-based subscriptions.{' '}
+                        <ExternalLink href={docsLink}> </ExternalLink>
+                      </p>
+                    }
+                  >
+                    <QuestionCircleIcon onClick={(e) => e.stopPropagation()} />
+                  </Popover>
+                  :{' '}
+                </b>
+                {data.virtLimit != undefined && data.virtLimit != '' ? data.virtLimit : missingText}
               </ListItem>
             </List>
           </>

@@ -1,14 +1,12 @@
 import React from 'react';
-import {
-  EmptyState,
-  EmptyStateBody,
-  EmptyStateIcon,
-  EmptyStateVariant,
-  EmptyStateHeader,
-  EmptyStateFooter
-} from '@patternfly/react-core';
-import { WrenchIcon } from '@patternfly/react-icons';
-import { Button } from '@patternfly/react-core';
+import { EmptyState } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateBody } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateIcon } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateHeader } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import { EmptyStateFooter } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
+import WrenchIcon from '@patternfly/react-icons/dist/dynamic/icons/wrench-icon';
+import { Button } from '@patternfly/react-core/dist/dynamic/components/Button';
 import { useNavigate } from 'react-router-dom';
 
 const NotFound: React.FC = () => {

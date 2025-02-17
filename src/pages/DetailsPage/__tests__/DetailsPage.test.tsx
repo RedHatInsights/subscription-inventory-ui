@@ -78,7 +78,8 @@ const mockSingleProduct = (hasData: boolean) => {
             startDate: '2021-10-24T04:00:00.000Z'
           }
         ]
-      : []
+      : [],
+    virtLimit: hasData ? 'TEST VirtLimit' : null
   };
 
   (useSingleProduct as jest.Mock).mockReturnValue({
