@@ -107,7 +107,7 @@
     "redux-promise-middleware": "^6.2.0",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
-    "unleash-proxy-client": "^2.5.0",
+    "unleash-proxy-client": "^3.7.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
