@@ -166,7 +166,7 @@
     "prop-types": "15.8.1",
     "sass-loader": "^14.1.1",
     "source-map-explorer": "^2.5.3",
-    "stylelint": "^15.11.0",
+    "stylelint": "^16.15.0",
     "stylelint-config-recommended-scss": "^13.1.0",
     "stylelint-scss": "^5.2.1",
     "ts-patch": "^3.2.1",
