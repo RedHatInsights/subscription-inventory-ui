@@ -143,7 +143,7 @@
     "bdd-lazy-var": "^2.6.1",
     "cross-fetch": "^4.0.0",
     "css-loader": "^7.1.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^5.2.1",
