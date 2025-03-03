@@ -89,7 +89,7 @@
     "@patternfly/react-table": "^5.0.0",
     "@redhat-cloud-services/frontend-components": "^4.2.3",
     "@redhat-cloud-services/frontend-components-utilities": "^4.0.19",
-    "@unleash/proxy-client-react": "^3.6.0",
+    "@unleash/proxy-client-react": "^4.5.2",
     "babel-plugin-transform-imports": "^2.0.0",
     "classnames": "^2.5.1",
     "escape-string-regexp": "^5.0.0",
