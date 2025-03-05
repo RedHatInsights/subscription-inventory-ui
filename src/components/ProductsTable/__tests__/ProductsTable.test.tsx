@@ -26,7 +26,6 @@ describe('ProductsTable', () => {
   def('data', () => [
     factories.product.build({
       name: 'A',
-      productLine: 'letters',
       sku: 'MOCK123',
       quantity: 3,
       serviceLevel: 'Standard'
@@ -68,28 +67,24 @@ describe('ProductsTable', () => {
         name: 'Z',
         sku: 'RH1234',
         quantity: 1,
-        productLine: 'letters',
         serviceLevel: 'Layered'
       },
       {
         name: 'A',
         sku: 'MOCK123',
         quantity: 3,
-        productLine: 'vowels',
         serviceLevel: 'Standard'
       },
       {
         name: 'A',
         sku: 'MOCK123',
         quantity: 0,
-        productLine: 'vowels',
         serviceLevel: 'Standard'
       },
       {
         name: '',
         sku: 'AMOCK1234',
         quantity: 2,
-        productLine: 'consonants',
         serviceLevel: 'Standard'
       }
     ];
@@ -106,9 +101,7 @@ describe('ProductsTable', () => {
 
       const table = screen.getByLabelText('Products');
 
-      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[0].productLine
-      );
+      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(formattedData[0].name);
     });
 
     it('can sort by name, reversed', () => {
@@ -124,9 +117,7 @@ describe('ProductsTable', () => {
       const table = screen.getByLabelText('Products');
 
       fireEvent.click(screen.getByText('Name'));
-      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(
-        formattedData[0].name + formattedData[0].productLine
-      );
+      expect(table.children[1].firstChild.childNodes[0].textContent).toEqual(formattedData[0].name);
     });
 
     it('can sort by quantity', () => {
@@ -168,14 +159,12 @@ describe('ProductsTable', () => {
           name: 'A',
           sku: 'MOCK123',
           quantity: 1,
-          productLine: 'letters',
           serviceLevel: 'Standard'
         }),
         factories.product.build({
           name: 'Z',
           sku: 'RH123',
           quantity: 2,
-          productLine: 'letters',
           serviceLevel: 'Standard'
         })
       ]);
