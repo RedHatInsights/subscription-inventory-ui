@@ -2,9 +2,10 @@
 @import '~@redhat-cloud-services/frontend-components-utilities/styles/all';
 
 .pf-v5-l-gallery {
-  height: 100%;
+  height: calc(100% - 36px);
   --pf-v5-l-gallery--GridTemplateColumns--min: 20%;
   padding: var(--pf-global--spacer--md);
+  margin: 16px;
 }
 @container (width < 700px) {
   .pf-v5-l-gallery {
