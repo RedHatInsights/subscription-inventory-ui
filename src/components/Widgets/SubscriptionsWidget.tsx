@@ -76,7 +76,7 @@ const SubsWidget = () => {
                   to={`/subscriptions/inventory?status=${name}`}
                   className="alert-link"
                   rel="noopener noreferrer"
-                  target="_blank"
+                  target="_self"
                   key={name}
                 >
                   <Alert isInline {...cardData[name]}>
