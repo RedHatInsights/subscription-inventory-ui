@@ -93,11 +93,8 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
     return data.filter((entry: Product) => {
       const searchTerm = searchValue.toLowerCase().trim();
       const name = (entry.name || '').toLowerCase();
-      const productLine = (entry.productLine || '').toLowerCase();
       const sku = (entry.sku || '').toLowerCase();
-      return (
-        name.includes(searchTerm) || productLine.includes(searchTerm) || sku.includes(searchTerm)
-      );
+      return name.includes(searchTerm) || sku.includes(searchTerm);
     });
   };
   const countProducts = (data: Product[], searchValue: string): number => {
@@ -197,7 +194,6 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
                   <Text component={TextVariants.h3}>
                     <Link to={`${datum.sku}`}>{datum.name}</Link>
                     <br />
-                    <Text component={TextVariants.small}>{datum.productLine}</Text>
                   </Text>
                 </TextContent>
               </Td>
