@@ -122,7 +122,7 @@
     "@faker-js/faker": "^9.0.3",
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^2.0.3",
     "@redhat-cloud-services/frontend-components-config": "^6.3.5",
-    "@redhat-cloud-services/frontend-components-config-utilities": "^3.2.2",
+    "@redhat-cloud-services/frontend-components-config-utilities": "^4.2.0",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.23",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^16.1.0",
