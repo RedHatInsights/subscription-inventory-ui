@@ -73,7 +73,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                 )}
               </StackItem>
               <StackItem>
-                <PageSection variant="light">
+                <PageSection variant="default">
                   <Title headingLevel="h2">
                     All subscriptions for account {user.accountNumber}
                   </Title>

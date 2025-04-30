@@ -108,7 +108,7 @@ const DetailsPage: FunctionComponent = () => {
       </PageHeader>
       {!error && (
         <Section>
-          <PageSection variant="light">
+          <PageSection variant="default">
             <Title headingLevel="h2">Subscription details</Title>
             {isLoading && !error && <Processing />}
             {!isLoading && !error && <SubscriptionTable subscriptions={data?.subscriptions} />}

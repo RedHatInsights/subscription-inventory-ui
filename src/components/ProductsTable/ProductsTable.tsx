@@ -5,12 +5,11 @@ import { FlexItem } from '@patternfly/react-core/dist/dynamic/layouts/Flex';
 import { Pagination } from '@patternfly/react-core/dist/dynamic/components/Pagination';
 import { PaginationVariant } from '@patternfly/react-core/dist/dynamic/components/Pagination';
 import { SearchInput } from '@patternfly/react-core/dist/dynamic/components/SearchInput';
-import { Text } from '@patternfly/react-core/dist/dynamic/components/Text';
-import { TextContent } from '@patternfly/react-core/dist/dynamic/components/Text';
-import { TextVariants } from '@patternfly/react-core/dist/dynamic/components/Text';
 import { Button } from '@patternfly/react-core/dist/dynamic/components/Button';
-import { Chip } from '@patternfly/react-core/dist/dynamic/components/Chip';
-import { ChipGroup } from '@patternfly/react-core/dist/dynamic/components/Chip';
+import { Label } from '@patternfly/react-core/dist/dynamic/components/Label';
+import { LabelGroup } from '@patternfly/react-core/dist/dynamic/components/Label';
+import { Content } from '@patternfly/react-core/dist/dynamic/components/Content';
+import { ContentVariants } from '@patternfly/react-core/dist/dynamic/components/Content';
 import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
@@ -154,11 +153,11 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       <Flex>
         <FlexItem>
           {filter !== '' && validFilters.includes(filter) && (
-            <ChipGroup categoryName="Status">
-              <Chip id="status-chip" key={filter} onClick={removeFilter}>
+            <LabelGroup categoryName="Status">
+              <Label id="status-chip" key={filter} onClick={removeFilter}>
                 {filterMap.get(filter)}
-              </Chip>
-            </ChipGroup>
+              </Label>
+            </LabelGroup>
           )}
         </FlexItem>
         <FlexItem>
@@ -190,12 +189,12 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
           {paginatedProducts.map((datum, rowIndex) => (
             <Tr key={rowIndex}>
               <Td dataLabel={columnNames.name}>
-                <TextContent>
-                  <Text component={TextVariants.h3}>
+                <Content>
+                  <Content component={ContentVariants.h3}>
                     <Link to={`${datum.sku}`}>{datum.name}</Link>
                     <br />
-                  </Text>
-                </TextContent>
+                  </Content>
+                </Content>
               </Td>
               <Td dataLabel={columnNames.sku}>{datum.sku}</Td>
               <Td dataLabel={columnNames.quantity}>{datum.quantity}</Td>

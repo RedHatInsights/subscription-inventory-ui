@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import NotFoundPage from '../NotFoundPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -50,10 +50,12 @@ describe('Not Found Page', () => {
     const isOrgAdmin = true;
     mockAuthenticateUser(isLoading, isOrgAdmin);
 
-    const { getByText } = render(<Page />);
+    render(<Page />);
 
     expect(
-      getByText('Your organization currently has no subscriptions for this product')
+      screen.getByText(
+        /Return to your subscription inventory to view the products to which your organization is subscribed/i
+      )
     ).toBeInTheDocument();
   });
 });

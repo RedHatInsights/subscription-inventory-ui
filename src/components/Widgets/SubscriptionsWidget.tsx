@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import './SubscriptionsWidget.scss';
 import { EmptyState } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
 import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
-import { EmptyStateIcon } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
 import { EmptyStateBody } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
 import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
@@ -14,7 +13,6 @@ import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Link } from 'react-router-dom';
-import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
 import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
 const queryClient = new QueryClient();
 const SubscriptionsWidget = () => {
@@ -55,7 +53,6 @@ const SubsWidget = () => {
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
         <EmptyState variant={EmptyStateVariant.lg}>
-          <EmptyStateIcon icon={EmptyStateSubscriptionsIcon} />
           <Title headingLevel="h4" size="lg">
             No connected subscriptions
           </Title>
