@@ -12,7 +12,12 @@ interface NoSearchResultsProps {
 
 const NoSearchResults: FunctionComponent<NoSearchResultsProps> = ({ clearFilters }) => {
   return (
-    <EmptyState variant={EmptyStateVariant.sm}>
+    <EmptyState
+      variant={EmptyStateVariant.sm}
+      titleText="No results found"
+      headingLevel="h2"
+      icon={SearchIcon}
+    >
       <EmptyStateBody>
         No results match the filter criteria. Remove all filters or clear all filters to show
         results.

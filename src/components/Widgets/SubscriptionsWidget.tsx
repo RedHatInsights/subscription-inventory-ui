@@ -8,12 +8,13 @@ import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/component
 import { EmptyStateBody } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
 import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
-import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Link } from 'react-router-dom';
 import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
+import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
+
 const queryClient = new QueryClient();
 const SubscriptionsWidget = () => {
   return (
@@ -52,10 +53,12 @@ const SubsWidget = () => {
   return (
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
-        <EmptyState variant={EmptyStateVariant.lg}>
-          <Title headingLevel="h4" size="lg">
-            No connected subscriptions
-          </Title>
+        <EmptyState
+          variant={EmptyStateVariant.lg}
+          icon={EmptyStateSubscriptionsIcon}
+          titleText="No connected subscriptions"
+          headingLevel="h4"
+        >
           <EmptyStateBody>
             <Stack>
               <StackItem>

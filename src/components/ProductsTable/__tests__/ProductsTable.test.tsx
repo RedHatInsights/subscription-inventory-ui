@@ -422,7 +422,7 @@ describe('ProductsTable', () => {
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'ZZZ' } });
-      expect(screen.getByText(/No results/i)).toBeInTheDocument();
+      expect(screen.getAllByText(/no results/i).length).toBeGreaterThan(0);
     });
 
     describe('when the expiringSoon filter is set', () => {
