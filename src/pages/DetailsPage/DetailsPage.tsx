@@ -53,23 +53,23 @@ const DetailsPage: FunctionComponent = () => {
             </Breadcrumb>
             <PageHeaderTitle title={data.name} />
             <List isPlain>
-              <ListItem className="pf-v5-u-mt-md">
+              <ListItem className="pf-v6-u-mt-md">
                 <b>SKU: </b>
                 {data.sku || missingText}
               </ListItem>
-              <ListItem className="pf-v5-u-mt-0">
+              <ListItem className="pf-v6-u-mt-0">
                 <b>Quantity: </b>
                 {data.quantity ?? missingText}
               </ListItem>
-              <ListItem className="pf-v5-u-mt-0">
+              <ListItem className="pf-v6-u-mt-0">
                 <b>Support level: </b>
                 {data.serviceLevel || missingText}
               </ListItem>
-              <ListItem className="pf-v5-u-mt-0">
+              <ListItem className="pf-v6-u-mt-0">
                 <b>Support type: </b>
                 {data.serviceType || missingText}
               </ListItem>
-              <ListItem className="pf-v5-u-mt-0">
+              <ListItem className="pf-v6-u-mt-0">
                 <b>Capacity: </b>
                 {data.capacity ? (
                   <>
@@ -79,7 +79,7 @@ const DetailsPage: FunctionComponent = () => {
                   <>Not Available</>
                 )}
               </ListItem>
-              <ListItem className="pf-v5-u-mt-0">
+              <ListItem className="pf-v6-u-mt-0">
                 <b>
                   Virtual Guest Limit{' '}
                   <Popover
