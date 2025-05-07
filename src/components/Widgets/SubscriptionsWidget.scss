@@ -1,5 +1,5 @@
 // Importing Global Variables
-@import '~@patternfly/patternfly/sass-utilities/all';
+@import '@patternfly/patternfly/sass-utilities/index';
 
 .pf-l-gallery {
   height: calc(100% - 36px);
