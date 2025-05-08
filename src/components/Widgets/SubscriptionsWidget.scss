@@ -1,15 +1,16 @@
 // Importing Global Variables
 @import '@patternfly/patternfly/sass-utilities/index';
 
-.pf-l-gallery {
+.pf-v6-l-gallery {
   height: calc(100% - 36px);
-  --pf-l-gallery--GridTemplateColumns--min: 20%;
-  padding: var(--pf-global--spacer--md);
+  --pf-v6-l-gallery--GridTemplateColumns--min: 20%;
+  padding: var(--pf-t--global--spacer--md);
   margin: 16px;
 }
+
 @container (width < 700px) {
-  .pf-l-gallery {
-    --pf-l-gallery--GridTemplateColumns--min: 40%;
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--min: 40%;
   }
 }
 
@@ -17,14 +18,15 @@
   height: 100%;
   text-decoration: none;
 }
-.pf-c-alert {
+
+ .pf-v6-c-alert {
   display: flex;
   align-items: center; // Vertical Alignment
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  .pf-c-alert__icon {
-    margin-bottom: var(--pf-global--spacer--md);
+  .pf-v6-c-alert__icon {
+    margin-bottom: var(--pf-t-global--spacer--md);
     margin-right: 0;
     .pf-v6-svg {
       margin-left: auto;
@@ -32,27 +34,29 @@
       font-size: 30px;
     }
   }
-  .pf-c-alert__title {
+   
+  .pf-v6-c-alert__title {
     vertical-align: middle;
     text-align: center;
     font-size: 14px;
     font-weight: medium;
   }
-  .pf-c-alert__description {
+   
+  .pf-v6-c-alert__description {
     text-align: center;
-    font-size: var(--pf-global--FontSize--md);
+    font-size: var(--pf-t--global--spacer--md);
     font-weight: 500;
     margin-top: 5px;
   }
 }
 
-.pf-c-empty-state {
+.pf-v6-c-empty-state {
   height: 100%;
-  padding: var(--pf-global--spacer--md);
+  padding: var(--pf-t--global--spacer--md);
   &__icon {
     margin-bottom: 0;
   }
   &__body {
-    margin-top: var(--pf-global--spacer--sm);
+    margin-top: var(--pf-t--global--spacer--sm);
   }
 }
