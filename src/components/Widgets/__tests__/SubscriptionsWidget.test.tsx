@@ -28,27 +28,27 @@ describe('SubscriptionsWidget', () => {
     );
 
     expect(screen.getByText('Active')).toBeInTheDocument();
-    expect(screen.getByText('Active').closest('.pf-v5-c-alert')).toHaveClass('pf-m-success');
+    expect(screen.getByText('Active').closest('.pf-v6-c-alert')).toHaveClass('pf-m-success');
     expect(
-      screen.getByText('Active').closest('.pf-v5-c-alert').querySelector('p')
+      screen.getByText('Active').closest('.pf-v6-c-alert').querySelector('p')
     ).toHaveTextContent('5');
 
     expect(screen.getByText('Expiring soon')).toBeInTheDocument();
-    expect(screen.getByText('Expiring soon').closest('.pf-v5-c-alert')).toHaveClass('pf-m-warning');
+    expect(screen.getByText('Expiring soon').closest('.pf-v6-c-alert')).toHaveClass('pf-m-warning');
     expect(
-      screen.getByText('Expiring soon').closest('.pf-v5-c-alert').querySelector('p')
+      screen.getByText('Expiring soon').closest('.pf-v6-c-alert').querySelector('p')
     ).toHaveTextContent('2');
 
     expect(screen.getByText('Expired')).toBeInTheDocument();
-    expect(screen.getByText('Expired').closest('.pf-v5-c-alert')).toHaveClass('pf-m-danger');
+    expect(screen.getByText('Expired').closest('.pf-v6-c-alert')).toHaveClass('pf-m-danger');
     expect(
-      screen.getByText('Expired').closest('.pf-v5-c-alert').querySelector('p')
+      screen.getByText('Expired').closest('.pf-v6-c-alert').querySelector('p')
     ).toHaveTextContent('1');
 
     expect(screen.getByText('Future dated')).toBeInTheDocument();
-    expect(screen.getByText('Future dated').closest('.pf-v5-c-alert')).toHaveClass('pf-m-custom');
+    expect(screen.getByText('Future dated').closest('.pf-v6-c-alert')).toHaveClass('pf-m-custom');
     expect(
-      screen.getByText('Future dated').closest('.pf-v5-c-alert').querySelector('p')
+      screen.getByText('Future dated').closest('.pf-v6-c-alert').querySelector('p')
     ).toHaveTextContent('3');
   });
 

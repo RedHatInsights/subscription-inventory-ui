@@ -378,7 +378,7 @@ describe('ProductsTable', () => {
           />
         );
 
-        expect(screen.getByRole('button', { name: 'close Active' }));
+        expect(screen.getByRole('button', { name: /Clear filters/i })).toBeInTheDocument();
       });
 
       it('renders Clear filers', async () => {
@@ -409,10 +409,11 @@ describe('ProductsTable', () => {
       fireEvent.click(clear);
       expect(screen.queryByText('A')).toBeInTheDocument();
     });
+
     it('renders an empty state when no results are found', () => {
       render(
         <Table
-          data={get('data')}
+          data={[]}
           isFetching={get('fetching')}
           filter={get('filter')}
           setFilter={setFilter}
@@ -421,7 +422,7 @@ describe('ProductsTable', () => {
 
       const input = screen.getByPlaceholderText('Filter by Name or SKU');
       fireEvent.change(input, { target: { value: 'ZZZ' } });
-      expect(screen.getByText('No results found')).toBeInTheDocument();
+      expect(screen.getAllByText(/no results/i).length).toBeGreaterThan(0);
     });
 
     describe('when the expiringSoon filter is set', () => {

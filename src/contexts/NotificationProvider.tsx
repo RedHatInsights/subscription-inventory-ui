@@ -25,15 +25,24 @@ export type NotificationOptions = {
   keyOfAlertToReplace?: string;
 };
 
-const NotificationContext = React.createContext({
-  notifications: [],
+interface NotificationContextType {
+  notifications: NotificationProps[];
   addNotification: (
     variant: NotificationVariantType,
     message: string,
     options?: NotificationOptions
-  ) => null,
-  removeNotification: (key: string) => null
+  ) => string;
+  removeNotification: (key: string) => void;
+}
+
+const NotificationContext = React.createContext<NotificationContextType>({
+  notifications: [],
+  addNotification: () => '',
+  removeNotification: () => {
+    throw new Error(' removeNotification must be used within a NotificationProvider');
+  }
 });
+
 const NotificationProvider: FC<NotificationProviderProps> = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
 
