@@ -23,9 +23,7 @@ export const InventoryRoutes: React.FC = () => {
             <Route path="/no-permissions" element={<NoPermissionsPage />} />
             <Route path="/:SKU" element={<DetailsPage />} />
 
-            {(shouldShowWidgetTest || false) && (
-              <Route path="/widget-test" element={<SubsWidget />} />
-            )}
+            {shouldShowWidgetTest && <Route path="/widget-test" element={<SubsWidget />} />}
 
             {/* Finally, catch all unmatched routes */}
             <Route path="*" element={<Navigate to="/oops" replace />} />
