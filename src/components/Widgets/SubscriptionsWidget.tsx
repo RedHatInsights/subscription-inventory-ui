@@ -52,7 +52,6 @@ export const SubsWidget = () => {
   );
   return (
     <div className="subscription-inventory">
-      <Navigate to="/" />
       {isCardDataEmpty ? (
         <EmptyState
           variant={EmptyStateVariant.lg}
