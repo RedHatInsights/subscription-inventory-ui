@@ -11,7 +11,7 @@ import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
 
@@ -41,7 +41,7 @@ const cardData = {
     customIcon: <OutlinedCalendarAltIcon />
   }
 };
-const SubsWidget = () => {
+export const SubsWidget = () => {
   const statusCardData = useStatus();
   const isCardDataEmpty = useMemo(
     () =>
@@ -52,6 +52,7 @@ const SubsWidget = () => {
   );
   return (
     <div className="subscription-inventory">
+      <Navigate to="/" />
       {isCardDataEmpty ? (
         <EmptyState
           variant={EmptyStateVariant.lg}
