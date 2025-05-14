@@ -18,16 +18,11 @@ objects:
         paths:
           - /apps/subscriptionInventory
       image: ${IMAGE}:${IMAGE_TAG}
-      navItems:
-        - appId: "subscriptionInventory"
-          title: "Subscription Inventory"
-          href: "/insights/subscriptions/inventory"
-          product: "Subscription Watch"
       module:
-        manifestLocation: "/apps/subscription-inventory/fed-mods.json"
+        manifestLocation: '/apps/subscription-inventory/fed-mods.json'
         modules:
-          - id: "subscription-inventory"
-            module: "./RootApp"
+          - id: 'subscription-inventory'
+            module: './RootApp'
             routes:
               - pathname: /insights/subscriptions/inventory
 
