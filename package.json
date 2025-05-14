@@ -83,7 +83,7 @@
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.26.9",
+    "@babel/runtime": "^7.27.1",
     "@patternfly/patternfly": "^6.2.3",
     "@patternfly/react-core": "^6.2.0",
     "@patternfly/react-table": "^6.2.0",
