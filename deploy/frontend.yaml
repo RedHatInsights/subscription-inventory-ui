@@ -1,13 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/RedHatInsights/frontend-components/refs/heads/master/packages/config-utils/src/feo/spec/frontend-crd.schema.json
+---
 apiVersion: v1
 kind: Template
 metadata:
-  name: subscription-inventory-ui
+  name: subscription-inventory
 objects:
   - apiVersion: cloud.redhat.com/v1alpha1
     kind: Frontend
     metadata:
       name: subscription-inventory
     spec:
+      feoConfigEnabled: true
       envName: ${ENV_NAME}
       title: Subscription Inventory
       deploymentRepo: https://github.com/RedHatInsights/subscription-inventory-ui
@@ -16,20 +19,28 @@ objects:
           - v1
       frontend:
         paths:
-          - /apps/subscriptionInventory
+          - /apps/subscription-inventory
       image: ${IMAGE}:${IMAGE_TAG}
-      navItems:
-        - appId: "subscriptionInventory"
-          title: "Subscription Inventory"
-          href: "/insights/subscriptions/inventory"
-          product: "Subscription Watch"
+      searchEntries:
+        - id: 'subscription-inventory'
+          title: Subscriptions Inventory
+          href: /subscriptions/inventory
+          description: View your purchased subscriptions and explore more information about each one
+      bundleSegments:
+        - segmentId: subscription-inventory
+          bundleId: subscriptions
+          navItems:
+            - id: subscription-inventory
+              title: Subscriptions Inventory
+              href: /subscriptions/inventory
+          position: 100
       module:
-        manifestLocation: "/apps/subscription-inventory/fed-mods.json"
+        manifestLocation: '/apps/subscription-inventory/fed-mods.json'
         modules:
-          - id: "subscription-inventory"
-            module: "./RootApp"
+          - id: 'subscription-inventory'
+            module: './RootApp'
             routes:
-              - pathname: /insights/subscriptions/inventory
+              - pathname: /subscriptions/inventory
 
 parameters:
   - name: ENV_NAME
