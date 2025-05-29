@@ -14,6 +14,9 @@ import { Product } from '../../hooks/useProducts';
 import { NoSearchResults } from '../emptyState';
 import { Link } from 'react-router-dom';
 import { ExportSubscriptions } from '../ExportSubscriptions';
+import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
+import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
+
 interface ProductsTableProps {
   data: Product[] | undefined;
   isFetching: boolean;
@@ -130,44 +133,48 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
   const paginatedProducts = getPage(searchedProducts);
   return (
     <>
-      <Flex
-        direction={{ default: 'column', md: 'row' }}
-        justifyContent={{ default: 'justifyContentSpaceBetween' }}
-      >
-        <Flex>
-          <FlexItem>
-            <SearchInput
-              placeholder="Filter by Name or SKU"
-              value={searchValue}
-              onChange={(_: React.FormEvent, v: string) => handleSearch(v)}
-              onClear={clearSearch}
-              isDisabled={data?.length === 0}
-            />
-          </FlexItem>
-          <FlexItem>
-            <ExportSubscriptions />
-          </FlexItem>
-        </Flex>
-        <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
-      </Flex>
-      <Flex>
-        <FlexItem>
-          {filter !== '' && validFilters.includes(filter) && (
-            <LabelGroup categoryName="Status">
-              <Label id="status-chip" key={filter} onClick={removeFilter}>
-                {filterMap.get(filter)}
-              </Label>
-            </LabelGroup>
-          )}
-        </FlexItem>
-        <FlexItem>
-          {filter !== '' && validFilters.includes(filter) && (
-            <Button variant="link" isInline onClick={removeFilter}>
-              Clear filters
-            </Button>
-          )}
-        </FlexItem>
-      </Flex>
+      <Stack hasGutter>
+        {/* Search + export + pagination */}
+        <StackItem>
+          <Flex
+            direction={{ default: 'column', md: 'row' }}
+            justifyContent={{ default: 'justifyContentSpaceBetween' }}
+            alignItems={{ default: 'alignItemsCenter' }}
+            flexWrap={{ default: 'wrap' }}
+          >
+            <Flex gap={{ default: 'gapMd' }} alignItems={{ default: 'alignItemsCenter' }}>
+              <FlexItem>
+                <SearchInput
+                  placeholder="Filter by Name or SKU"
+                  value={searchValue}
+                  onChange={(_: React.FormEvent, v: string) => handleSearch(v)}
+                  onClear={clearSearch}
+                  isDisabled={data?.length === 0}
+                />
+              </FlexItem>
+              <FlexItem>
+                <ExportSubscriptions />
+              </FlexItem>
+            </Flex>
+            <FlexItem>{pagination()}</FlexItem>
+          </Flex>
+        </StackItem>
+        {/* Status chip + clear filters */}
+        {filter !== '' && validFilters.includes(filter) && (
+          <StackItem>
+            <Flex gap={{ default: 'gapMd' }} alignItems={{ default: 'alignItemsCenter' }}>
+              <LabelGroup categoryName="Status">
+                <Label id="status-chip" key={filter} onClick={removeFilter}>
+                  {filterMap.get(filter)}
+                </Label>
+              </LabelGroup>
+              <Button variant="link" isInline onClick={removeFilter}>
+                Clear filters
+              </Button>
+            </Flex>
+          </StackItem>
+        )}
+      </Stack>
       <Table aria-label="Products">
         <Thead>
           <Tr>
