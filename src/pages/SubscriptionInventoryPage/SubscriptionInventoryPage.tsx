@@ -73,20 +73,20 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                 )}
               </StackItem>
               <StackItem>
-                <PageSection variant="default">
-                  <Title headingLevel="h2">
-                    All subscriptions for account {user.accountNumber}
-                  </Title>
-                  {productData.isLoading && <Processing />}
-                  {!productData.isLoading && (
-                    <ProductsTable
-                      data={productData.data}
-                      isFetching={productData.isFetching}
-                      filter={filter}
-                      setFilter={updateFilter}
-                    />
-                  )}
-                </PageSection>
+                <Title headingLevel="h2" className="pf-v5-u-mb-md">
+                  All subscriptions for account {user.accountNumber}
+                </Title>
+              </StackItem>
+              <StackItem>
+                {productData.isLoading && <Processing />}
+                {!productData.isLoading && (
+                  <ProductsTable
+                    data={productData.data}
+                    isFetching={productData.isFetching}
+                    filter={filter}
+                    setFilter={updateFilter}
+                  />
+                )}
               </StackItem>
             </>
           )}
