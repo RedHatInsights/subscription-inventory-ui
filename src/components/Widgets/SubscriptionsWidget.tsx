@@ -11,7 +11,7 @@ import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { Alert } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { AlertVariant } from '@patternfly/react-core/dist/dynamic/components/Alert';
 import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
 
