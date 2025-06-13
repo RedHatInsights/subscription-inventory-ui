@@ -7,6 +7,7 @@ interface ExportSubscriptionsBody {
   filename: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- outside of update scope, fix later
 const parseFilename = (headers: any): string => {
   return headers.get('Content-Disposition')?.split(';')[1]?.split('=')[1]?.replaceAll('"', '');
 };

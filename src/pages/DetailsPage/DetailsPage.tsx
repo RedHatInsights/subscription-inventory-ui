@@ -19,7 +19,6 @@ import { HttpError } from '../../utilities/errors';
 import Section from '@redhat-cloud-services/frontend-components/Section';
 import { Popover } from '@patternfly/react-core/dist/dynamic/components/Popover';
 import { QuestionCircleIcon } from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
-import { ExternalLinkAltIcon } from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import ExternalLink from '../../components/ExternalLink';
 
 const DetailsPage: FunctionComponent = () => {

@@ -25,7 +25,7 @@ const Authentication: FC<AuthenticationProps> = ({ children }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    isSuccess && chrome.hideGlobalFilter(true);
+    if (isSuccess) chrome.hideGlobalFilter(true);
   }, [isSuccess]);
 
   if (isError === true) {
