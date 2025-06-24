@@ -85,8 +85,9 @@ const PurchaseModal: FunctionComponent = () => {
         onClose={handleToggle}
         title="Purchase Subscriptions"
         variant={ModalVariant.medium}
+        className="pf-v6-u-p-lg"
       >
-        <Grid hasGutter>
+        <Grid hasGutter className="pf-v6-u-m-0">
           <GridItem span={12}>
             <SectionHeading icon={onlineIcon} title="Online" />
           </GridItem>
