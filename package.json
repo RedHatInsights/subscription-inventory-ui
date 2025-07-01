@@ -89,7 +89,7 @@
     "@patternfly/react-table": "^6.2.0",
     "@patternfly/react-tokens": "^6.2.2",
     "@redhat-cloud-services/frontend-components": "^6.0.2",
-    "@redhat-cloud-services/frontend-components-utilities": "^6.0.2",
+    "@redhat-cloud-services/frontend-components-utilities": "^6.1.0",
     "@unleash/proxy-client-react": "^4.5.2",
     "babel-plugin-transform-imports": "^2.0.0",
     "classnames": "^2.5.1",
