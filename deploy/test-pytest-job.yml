@@ -1,0 +1,63 @@
+---
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: sub-inv-ui-pytest
+objects:
+  - apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: sub-inv-ui-pytest-${IMAGE_TAG}-${UID}
+      annotations:
+        'ignore-check.kube-linter.io/no-liveness-probe': 'probes not required on Job pods'
+        'ignore-check.kube-linter.io/no-readiness-probe': 'probes not required on Job pods'
+      labels:
+        image-tag: ${IMAGE_TAG}
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          imagePullSecrets:
+            - name: quay-cloudservices-pull
+          restartPolicy: Never
+          containers:
+            - name: sub-inv-ui-pytest-${IMAGE_TAG}-${UID}
+              image: ${TEST_IMAGE}:latest
+              imagePullPolicy: Always
+              env:
+                - name: TEST_SUITE
+                  value: ${TEST_SUITE}
+              volumeMounts:
+                - name: nonprod-itpntautomation
+                  mountPath: /etc/pki/tls/certs/enterprise_services
+                  readOnly: true
+              resources:
+                limits:
+                  cpu: '1'
+                  memory: 1.5Gi
+                requests:
+                  cpu: 250m
+                  memory: 512Mi
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+          volumes:
+            - name: nonprod-itpntautomation
+              secret:
+                secretName: nonprod-itpntautomation
+                items:
+                  - key: pem
+                    path: nonprod-itpntautomation.pem
+parameters:
+  - name: IMAGE_TAG
+    value: ''
+    required: true
+  - name: UID
+    description: 'Unique job name suffix'
+    generate: expression
+    from: '[a-z0-9]{6}'
+  - name: TEST_IMAGE
+    description: 'container image path for the test suite'
+    value: quay.io/cloudservices/subscription-central-automation
+  - name: TEST_SUITE
+    description: 'test suite to run'
+    value: subs-inventory
