@@ -14,6 +14,7 @@ import { Gallery } from '@patternfly/react-core/dist/dynamic/layouts/Gallery';
 import { Link } from 'react-router-dom';
 import { Spinner } from '@patternfly/react-core/dist/dynamic/components/Spinner';
 import EmptyStateSubscriptionsIcon from './public/images/SubscriptionsWidgetEmptyStateIcon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
 
 const queryClient = new QueryClient();
 const SubscriptionsWidget = () => {
@@ -50,6 +51,8 @@ export const SubsWidget = () => {
       Object.keys(cardData).every((name: keyof typeof cardData) => statusCardData.data[name] === 0),
     [statusCardData]
   );
+  const isCardError = statusCardData.isError;
+
   return (
     <div className="subscription-inventory">
       {isCardDataEmpty ? (
@@ -64,6 +67,19 @@ export const SubsWidget = () => {
               <StackItem>
                 We cannot find any Red Hat subscriptions attached to your account
               </StackItem>
+            </Stack>
+          </EmptyStateBody>
+        </EmptyState>
+      ) : isCardError ? (
+        <EmptyState
+          variant={EmptyStateVariant.lg}
+          icon={ExclamationCircleIcon}
+          titleText="Whoops!"
+          headingLevel="h4"
+        >
+          <EmptyStateBody>
+            <Stack>
+              <StackItem>Something went wrong, try again later</StackItem>
             </Stack>
           </EmptyStateBody>
         </EmptyState>
