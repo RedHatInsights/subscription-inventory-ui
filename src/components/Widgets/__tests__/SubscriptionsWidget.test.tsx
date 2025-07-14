@@ -74,4 +74,21 @@ describe('SubscriptionsWidget', () => {
       screen.getByText('We cannot find any Red Hat subscriptions attached to your account')
     ).toBeInTheDocument();
   });
+
+  it('handles errors gracefully', () => {
+    (useStatus as jest.Mock).mockReturnValue({
+      isLoading: false,
+      data: undefined,
+      isError: true
+    });
+
+    render(
+      <Router>
+        <SubscriptionsWidget />
+      </Router>
+    );
+
+    expect(screen.getByText('Whoops!')).toBeInTheDocument();
+    expect(screen.getByText('Something went wrong, try again later')).toBeInTheDocument();
+  });
 });
