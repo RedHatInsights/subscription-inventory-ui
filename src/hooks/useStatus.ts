@@ -1,5 +1,6 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import { useToken } from '../utilities/platformServices';
+import { HttpError } from '../utilities/errors';
 
 type StatusCard = {
   active: number;
@@ -16,6 +17,10 @@ const fetchStatusData = (jwtToken: Promise<string>) => async (): Promise<StatusC
   const response = await fetch('/api/rhsm/v2/products/status', {
     headers: { Authorization: `Bearer ${await jwtToken}` }
   });
+
+  if (!response.ok) {
+    throw new HttpError('Failed to fetch status data', response.status, response.statusText);
+  }
 
   const statusResponseData: StatusApiData = await response.json();
 

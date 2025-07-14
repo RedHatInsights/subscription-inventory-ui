@@ -1,5 +1,6 @@
 import { useQuery, QueryObserverResult } from 'react-query';
 import { useToken } from '../utilities/platformServices';
+import { HttpError } from '../utilities/errors';
 
 type Product = {
   name: string;
@@ -39,6 +40,10 @@ const fetchProductData =
     const response = await fetch(`/api/rhsm/v2/products?status=${filter}`, {
       headers: { Authorization: `Bearer ${await jwtToken}` }
     });
+
+    if (!response.ok) {
+      throw new HttpError('Failed to fetch products', response.status, response.statusText);
+    }
 
     const productResponseData: ProductApiData = await response.json();
 
