@@ -109,7 +109,7 @@
     "ts-loader": "^9.5.2",
     "typescript": "^5.2.2",
     "unleash-proxy-client": "^3.7.6",
-    "uuid": "^9.0.0"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
