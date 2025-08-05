@@ -1,61 +1,70 @@
 // Importing Global Variables
 @import '@patternfly/patternfly/sass-utilities/index';
 
-.pf-v6-l-gallery {
-  height: calc(100% - 36px);
-  --pf-v6-l-gallery--GridTemplateColumns--min: 20%;
-  margin: 16px;
-}
-
-@container (width < 700px) {
+.subscription-inventory-widget {
+  container-name: subscriptions-widget;
+  container-type: inline-size;
+  height: 100%;
   .pf-v6-l-gallery {
-    --pf-v6-l-gallery--GridTemplateColumns--min: 40%;
+    height: calc(100% - 36px);
+    margin: 16px;
   }
-}
 
-.alert-link {
-  height: 100%;
-  text-decoration: none;
-}
+  .alert-link {
+    height: 100%;
+    text-decoration: none;
+  }
 
-.pf-v6-c-alert {
-  display: flex;
-  align-items: center; // Vertical Alignment
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  .pf-v6-c-alert__icon {
-    margin-bottom: var(--pf-t-global--spacer--md);
-    margin-right: 0;
-    .pf-v6-svg {
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 30px;
+  .pf-v6-c-alert {
+    display: flex;
+    align-items: center; // Vertical Alignment
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    .pf-v6-c-alert__icon {
+      margin-bottom: var(--pf-t-global--spacer--md);
+      margin-right: 0;
+      .pf-v6-svg {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+      }
+    }
+
+    .pf-v6-c-alert__title {
+      vertical-align: middle;
+      text-align: center;
+      font-size: 14px;
+      font-weight: medium;
+    }
+
+    .pf-v6-c-alert__description {
+      text-align: center;
+      font-size: var(--pf-t--global--spacer--md);
+      font-weight: 500;
+      margin-top: 5px;
     }
   }
 
-  .pf-v6-c-alert__title {
-    vertical-align: middle;
-    text-align: center;
-    font-size: 14px;
-    font-weight: medium;
-  }
-
-  .pf-v6-c-alert__description {
-    text-align: center;
-    font-size: var(--pf-t--global--spacer--md);
-    font-weight: 500;
-    margin-top: 5px;
+  .pf-v6-c-empty-state {
+    height: 100%;
+    padding: var(--pf-t--global--spacer--md);
+    &__icon {
+      margin-bottom: 0;
+    }
+    &__body {
+      margin-top: var(--pf-t--global--spacer--sm);
+    }
   }
 }
 
-.pf-v6-c-empty-state {
-  height: 100%;
-  padding: var(--pf-t--global--spacer--md);
-  &__icon {
-    margin-bottom: 0;
+@container subscriptions-widget (width >= 700px) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--min: 20%;
   }
-  &__body {
-    margin-top: var(--pf-t--global--spacer--sm);
+}
+@container subscriptions-widget (width < 700px) {
+  .pf-v6-l-gallery {
+    --pf-v6-l-gallery--GridTemplateColumns--min: 40%;
   }
 }

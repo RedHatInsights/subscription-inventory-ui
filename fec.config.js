@@ -14,6 +14,7 @@ module.exports = {
       IS_DEV: process.env.NODE_ENV === 'development'
     })
   ],
+  sassPrefix: '.subscription-inventory, .subscriptionInventory',
   hotReload: process.env.HOT === 'true',
   ...(process.env.port ? { port: parseInt(process.env.port) } : {}),
   moduleFederation: {

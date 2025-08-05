@@ -54,7 +54,7 @@ export const SubsWidget = () => {
   const isCardError = statusCardData.isError;
 
   return (
-    <div className="subscription-inventory">
+    <div className="subscription-inventory-widget">
       {isCardDataEmpty ? (
         <EmptyState
           variant={EmptyStateVariant.lg}
