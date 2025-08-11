@@ -93,20 +93,13 @@ const PurchaseModal: FunctionComponent = () => {
           </GridItem>
           <GridItem span={6}>
             <PurchaseCard
-              body="A simpler way to buy and manage enterprise software, with automated deployment to any cloud."
-              ctaHref="https://marketplace.redhat.com"
-              ctaText="Go to the Marketplace"
-              title="Red Hat Marketplace"
-            />
-          </GridItem>
-          <GridItem span={6}>
-            <PurchaseCard
               body="Easily configure and buy Red Hat Enterprise Linux in our online store."
               ctaHref="https://www.redhat.com/store"
               ctaText="Go to the Red Hat Store"
               title="Red Hat Store"
             />
           </GridItem>
+          <GridItem span={6}></GridItem>
           <GridItem span={6}>
             <SectionHeading icon={salesIcon} title="Sales" />
           </GridItem>
