@@ -13,6 +13,6 @@ describe('PurchaseModal', () => {
     render(<PurchaseModal />);
 
     fireEvent.click(screen.getByText('Purchase subscriptions'));
-    expect(screen.getByText('Red Hat Marketplace')).toBeInTheDocument();
+    expect(screen.getByText('Red Hat Store')).toBeInTheDocument();
   });
 });
