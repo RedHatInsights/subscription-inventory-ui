@@ -18,17 +18,17 @@ import GettingStartedCard from '../../components/GettingStartedCard';
 import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import StatusCountCards from '../../components/StatusCountCards';
+import NoPermissionsPage from '../NoPermissionsPage';
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData('user');
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [filter, setFilter] = useState<string>(() => searchParams.get('status') || '');
-  useEffect(() => {
-    if (!user.canReadProducts) {
-      navigate('./no-permissions');
-    }
-  }, [user.canReadProducts, navigate]);
+
+  if (!user.canReadProducts) {
+    return <NoPermissionsPage />;
+  }
+
   useEffect(() => {
     setFilter(searchParams.get('status') || '');
   }, [searchParams]);

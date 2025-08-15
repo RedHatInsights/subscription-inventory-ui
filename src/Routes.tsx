@@ -7,7 +7,6 @@ import { SubsWidget } from './components/Widgets/SubscriptionsWidget';
 
 const SubscriptionInventoryPage = lazy(() => import('./pages/SubscriptionInventoryPage'));
 const OopsPage = lazy(() => import('./pages/OopsPage'));
-const NoPermissionsPage = lazy(() => import('./pages/NoPermissionsPage'));
 const DetailsPage = lazy(() => import('./pages/DetailsPage'));
 
 export const InventoryRoutes: React.FC = () => {
@@ -20,7 +19,6 @@ export const InventoryRoutes: React.FC = () => {
           <Routes>
             <Route path="/" element={<SubscriptionInventoryPage />} />
             <Route path="/oops" element={<OopsPage />} />
-            <Route path="/no-permissions" element={<NoPermissionsPage />} />
             <Route path="/:SKU" element={<DetailsPage />} />
 
             {shouldShowWidgetTest && <Route path="/widget-test" element={<SubsWidget />} />}
