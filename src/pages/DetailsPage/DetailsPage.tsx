@@ -6,8 +6,8 @@ import { ListItem } from '@patternfly/react-core/dist/dynamic/components/List';
 import { PageSection } from '@patternfly/react-core/dist/dynamic/components/Page';
 import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import PageHeader, { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
-import React, { FunctionComponent, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { FunctionComponent } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -20,6 +20,7 @@ import Section from '@redhat-cloud-services/frontend-components/Section';
 import { Popover } from '@patternfly/react-core/dist/dynamic/components/Popover';
 import { QuestionCircleIcon } from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
 import ExternalLink from '../../components/ExternalLink';
+import NoPermissionsPage from '../NoPermissionsPage';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
@@ -28,16 +29,12 @@ const DetailsPage: FunctionComponent = () => {
   const user: User = queryClient.getQueryData('user');
   const { isLoading, error, data } = useSingleProduct(SKU);
   const missingText = 'Not Available';
-  const redirectRoute = '../no-permissions';
   const docsLink =
     'https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_rhel_system_registration/adv-reg-rhel-config-vm-sub_';
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user.canReadProducts) {
-      navigate(redirectRoute);
-    }
-  }, [user.canReadProducts]);
+  if (!user?.canReadProducts) {
+    return <NoPermissionsPage />;
+  }
 
   const Page: FunctionComponent = () => (
     <>
