@@ -75,7 +75,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
               </StackItem>
               <StackItem>
                 <Title headingLevel="h2" className="pf-v5-u-mb-md">
-                  All subscriptions for account {user.accountNumber}
+                  Subscriptions for account {user.accountNumber}
                 </Title>
               </StackItem>
               <StackItem>
