@@ -11,7 +11,7 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["tekton"],
+      "matchManagers": ["tekton", "npm"],
       "automerge": true
     }
   ]
