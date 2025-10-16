@@ -7,7 +7,7 @@
     "enabled": true
   },
   "npm": {
-    "enabled": false
+    "enabled": true
   },
   "packageRules": [
     {
