@@ -5,7 +5,7 @@ import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { init } from '../../../store';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUser from '../../../hooks/useUser';
 import useSingleProduct from '../../../hooks/useSingleProduct';
 import { Product } from '../../../hooks/useProducts';
@@ -52,7 +52,7 @@ const mockAuthenticateUser = (
     }
   });
 
-  queryClient.setQueryData('user', {
+  queryClient.setQueryData(['user'], {
     isOrgAdmin: orgAdminStatus,
     canReadProducts
   });
@@ -90,7 +90,7 @@ const mockSingleProduct = (hasData: boolean) => {
     data
   });
 
-  queryClient.setQueryData('singleProduct.TESTSKU', data);
+  queryClient.setQueryData(['singleProduct', 'TESTSKU'], data);
 };
 
 describe('Details Page', () => {

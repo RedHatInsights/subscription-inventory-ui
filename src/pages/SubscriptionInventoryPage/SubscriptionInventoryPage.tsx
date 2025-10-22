@@ -7,7 +7,7 @@ import { Split } from '@patternfly/react-core/dist/dynamic/layouts/Split';
 import { SplitItem } from '@patternfly/react-core/dist/dynamic/layouts/Split';
 import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { useQueryClient } from 'react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { User } from '../../hooks/useUser';
 import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
@@ -21,7 +21,7 @@ import StatusCountCards from '../../components/StatusCountCards';
 import NoPermissionsPage from '../NoPermissionsPage';
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
-  const user: User = queryClient.getQueryData('user');
+  const user: User = queryClient.getQueryData(['user']);
   const [searchParams, setSearchParams] = useSearchParams();
   const [filter, setFilter] = useState<string>(() => searchParams.get('status') || '');
 

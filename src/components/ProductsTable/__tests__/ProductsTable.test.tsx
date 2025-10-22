@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ProductsTable, { ProductsTableProps } from '../ProductsTable';

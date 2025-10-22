@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { ExportSubscriptions } from '../';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useExportSubscriptions from '../../../hooks/useExportSubscriptions';
 import useNotifications from '../../../hooks/useNotifications';
 

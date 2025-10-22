@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { HttpError } from '../utilities/errors';
 import { useToken } from '../utilities/platformServices';
 
@@ -28,7 +28,9 @@ const fetchExportSubscriptionsData = (jwtToken: Promise<string>) => async () => 
 
 const useExportSubscriptions = () => {
   const jwtToken = useToken();
-  return useQuery('export', () => fetchExportSubscriptionsData(jwtToken)(), {
+  return useQuery({
+    queryKey: ['export'],
+    queryFn: () => fetchExportSubscriptionsData(jwtToken)(),
     enabled: false,
     retry: 0
   });

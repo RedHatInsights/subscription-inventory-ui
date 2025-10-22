@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SubscriptionTable, { SubscriptionTableProps } from '../SubscriptionTable';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { get, def } from 'bdd-lazy-var';

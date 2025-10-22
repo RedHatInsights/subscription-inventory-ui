@@ -12,7 +12,7 @@ import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import NotFound from '../NotFoundPage/NotFound';
-import { useQueryClient } from 'react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import { HttpError } from '../../utilities/errors';
@@ -26,7 +26,7 @@ const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
 
   const queryClient = useQueryClient();
-  const user: User = queryClient.getQueryData('user');
+  const user: User = queryClient.getQueryData(['user']);
   const { isLoading, error, data } = useSingleProduct(SKU);
   const missingText = 'Not Available';
   const docsLink =

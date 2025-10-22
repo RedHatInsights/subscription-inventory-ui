@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/js/icons/outlined-calendar-alt-icon';
 import useStatus from '../../hooks/useStatus';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './SubscriptionsWidget.scss';
 import { EmptyState } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
 import { EmptyStateVariant } from '@patternfly/react-core/dist/dynamic/components/EmptyState';
