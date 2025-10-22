@@ -5,7 +5,7 @@ import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { init } from '../../../store';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
@@ -54,7 +54,7 @@ const mockAuthenticateUser = (
   });
 
   if (isError === false) {
-    queryClient.setQueryData('user', user);
+    queryClient.setQueryData(['user'], user);
   }
 };
 

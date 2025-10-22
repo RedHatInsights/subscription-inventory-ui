@@ -1,4 +1,4 @@
-import { useQuery, QueryObserverResult } from 'react-query';
+import { useQuery, QueryObserverResult } from '@tanstack/react-query';
 import { useToken } from '../utilities/platformServices';
 import { HttpError } from '../utilities/errors';
 
@@ -52,7 +52,10 @@ const fetchProductData =
 
 const useProducts = (filter: string): QueryObserverResult<Product[], unknown> => {
   const jwtToken = useToken();
-  return useQuery(`products.${filter}`, () => fetchProductData(jwtToken)(filter));
+  return useQuery({
+    queryKey: ['products', filter],
+    queryFn: () => fetchProductData(jwtToken)(filter)
+  });
 };
 
 export { Product, Subscription, Capacity, UoMNameOrder, useProducts as default };

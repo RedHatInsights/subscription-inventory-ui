@@ -1,4 +1,4 @@
-import { useQuery, QueryObserverResult } from 'react-query';
+import { useQuery, QueryObserverResult } from '@tanstack/react-query';
 import { Product } from './useProducts';
 import { HttpError } from '../utilities/errors';
 import { useToken } from '../utilities/platformServices';
@@ -31,7 +31,7 @@ const useSingleProduct = (sku: string): QueryObserverResult<Product, unknown> =>
   const jwtToken = useToken();
 
   return useQuery({
-    queryKey: `singleProduct.${sku}`,
+    queryKey: ['singleProduct', sku],
     queryFn: () => fetchSingleProduct(jwtToken)(sku),
     retry: (failureCount, error) => {
       if (failureCount < 3 && (error as HttpError).status != 404) {

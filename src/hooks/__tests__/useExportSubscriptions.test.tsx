@@ -25,7 +25,8 @@ describe('useExportSubscriptions', () => {
       wrapper: createQueryWrapper()
     });
 
-    expect(result.current.isIdle).toBeTruthy();
+    expect(result.current.status).toBe('loading');
+    expect(result.current.fetchStatus).toBe('idle');
   });
 
   describe('returns a blob and filename from the API', () => {

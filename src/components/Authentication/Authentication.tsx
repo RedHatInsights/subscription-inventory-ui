@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { useQueryClient } from 'react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 import { Processing } from '../emptyState';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
@@ -21,7 +21,7 @@ const Authentication: FC<AuthenticationProps> = ({ children }) => {
      * On every rerender, based on URL change (location.pathname),
      * reset the user's status to loading before authenticating again.
      */
-    queryClient.invalidateQueries('user');
+    queryClient.invalidateQueries({ queryKey: ['user'] });
   }, [location.pathname]);
 
   useEffect(() => {

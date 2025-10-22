@@ -1,4 +1,4 @@
-import { useQuery, QueryObserverResult } from 'react-query';
+import { useQuery, QueryObserverResult } from '@tanstack/react-query';
 import { useToken } from '../utilities/platformServices';
 import { HttpError } from '../utilities/errors';
 
@@ -30,7 +30,7 @@ const fetchStatusData = (jwtToken: Promise<string>) => async (): Promise<StatusC
 const useStatus = (): QueryObserverResult<StatusCard, unknown> => {
   const jwtToken = useToken();
 
-  return useQuery('status', () => fetchStatusData(jwtToken)());
+  return useQuery({ queryKey: ['status'], queryFn: () => fetchStatusData(jwtToken)() });
 };
 
 export { useStatus as default, StatusCard };
