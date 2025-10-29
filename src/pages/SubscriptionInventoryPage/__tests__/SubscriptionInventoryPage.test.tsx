@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
-import { get, def } from 'bdd-lazy-var';
+import { def, get } from 'bdd-lazy-var';
 
 jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useProducts');

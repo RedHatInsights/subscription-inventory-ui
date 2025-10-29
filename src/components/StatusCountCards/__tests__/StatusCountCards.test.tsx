@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, fireEvent } from '@testing-library/react';
-import { get, def } from 'bdd-lazy-var';
+import { fireEvent, render } from '@testing-library/react';
+import { def, get } from 'bdd-lazy-var';
 import factories from '../../../utilities/factories';
 import StatusCountCard, { StatusCardProps } from '../StatusCountCards';
 
