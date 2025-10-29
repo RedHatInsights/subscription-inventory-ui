@@ -1,4 +1,4 @@
-import { useQuery, QueryObserverResult } from '@tanstack/react-query';
+import { QueryObserverResult, useQuery } from '@tanstack/react-query';
 import { Product } from './useProducts';
 import { HttpError } from '../utilities/errors';
 import { useToken } from '../utilities/platformServices';

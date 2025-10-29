@@ -9,8 +9,8 @@ import {
   Tbody,
   Td,
   Th,
-  Thead,
   ThProps,
+  Thead,
   Tr
 } from '@patternfly/react-table';
 import { parseInt } from 'lodash';
@@ -178,10 +178,8 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
         </FlexItem>
         <FlexItem align={{ default: 'alignRight' }}>{pagination()}</FlexItem>
       </Flex>
-      {/* @ts-ignore */}
       <Table aria-label="subscriptions" variant="compact">
         <Thead>
-          {/* @ts-ignore */}
           <Tr>
             <Th sort={getSortParams(0)} width={20}>
               {columnNames.contractNumber}
@@ -200,7 +198,6 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
         <Tbody>
           {pagedSubscriptions.map((subscription, i) => (
             <React.Fragment key={i}>
-              {/* @ts-ignore */}
               <Tr>
                 <Td dataLabel={columnNames.contractNumber}>
                   {subscription.contractNumber == -1
