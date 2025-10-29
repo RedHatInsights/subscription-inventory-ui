@@ -8,7 +8,7 @@
   },
   "npm": {
     "enabled": true,
-    "schedule": ["0 0 1 * *"]
+    "schedule": ["* * 1 * *"]
   },
   "packageRules": [
     {
