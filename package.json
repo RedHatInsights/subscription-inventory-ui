@@ -91,7 +91,7 @@
     "@redhat-cloud-services/frontend-components": "^7.0.0",
     "@redhat-cloud-services/frontend-components-utilities": "^6.1.0",
     "@tanstack/react-query": "^4.0.5",
-    "@unleash/proxy-client-react": "^4.5.2",
+    "@unleash/proxy-client-react": "^5.0.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "classnames": "^2.5.1",
     "escape-string-regexp": "^5.0.0",
