@@ -25,7 +25,7 @@ describe('useExportSubscriptions', () => {
       wrapper: createQueryWrapper()
     });
 
-    expect(result.current.status).toBe('loading');
+    expect(result.current.status).toBe('pending');
     expect(result.current.fetchStatus).toBe('idle');
   });
 
