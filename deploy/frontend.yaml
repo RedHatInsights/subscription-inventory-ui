@@ -41,6 +41,28 @@ objects:
             module: './RootApp'
             routes:
               - pathname: /subscriptions/inventory
+      widgetRegistry:
+        - scope: subscriptionInventory
+          module: './SubscriptionsWidget'
+          config:
+            title: Subscriptions
+            icon: CreditCardIcon
+            headerLink:
+              title: Manage subscriptions
+              href: /subscriptions/inventory
+            permissions:
+              - method: featureFlag
+                args:
+                  - 'chrome-service.subscriptions-widget.enabled'
+                  - true
+              - method: hasPermissions
+                args:
+                  - - 'subscriptions:products:read'
+          defaults:
+            w: 4
+            h: 4
+            maxH: 10
+            minH: 1
 
 parameters:
   - name: ENV_NAME
