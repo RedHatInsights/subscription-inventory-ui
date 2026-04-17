@@ -122,7 +122,7 @@
     "@babel/preset-typescript": "^7.27.1",
     "@faker-js/faker": "^9.0.3",
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^3.0.0",
-    "@redhat-cloud-services/frontend-components-config": "^6.8.3",
+    "@redhat-cloud-services/frontend-components-config": "^6.8.4",
     "@redhat-cloud-services/frontend-components-config-utilities": "^4.5.1",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.25",
     "@testing-library/jest-dom": "^6.6.3",
