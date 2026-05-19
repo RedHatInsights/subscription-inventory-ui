@@ -72,12 +72,11 @@
       "<rootDir>/jest.setup.js"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "jest-jasmine2"
+    "testRunner": "jest-jasmine2",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(@patternfly|uuid))"
+    ]
   },
-  "transformIgnorePatterns": [
-    "/node_modules/(?!@redhat-cloud-services)",
-    "/node_modules/(?!@patternfly)"
-  ],
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
