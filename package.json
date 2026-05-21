@@ -157,7 +157,6 @@
     "jest-jasmine": "^0.0.0",
     "jest-jasmine2": "^30.0.0",
     "lint-staged": "^16.2.3",
-    "node-sass": "^9.0.0",
     "npm-run-all2": "8.0.4",
     "null-loader": "^4.0.1",
     "postcss": "^8.5.1",

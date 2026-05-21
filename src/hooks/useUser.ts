@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { useAuthenticateUser, useUserRbacPermissions } from '../utilities/platformServices';
+import { authenticateUser, getUserRbacPermissions } from '../utilities/platformServices';
+import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
 
 interface User {
   accountNumber: string;
@@ -8,14 +9,13 @@ interface User {
 }
 
 const useUser = () => {
-  const authenticateUser = useAuthenticateUser();
-  const userRbacPermissions = useUserRbacPermissions();
+  const chrome = useChrome();
 
   return useQuery({
     queryKey: ['user'],
     queryFn: async () => {
-      const userStatus = await authenticateUser;
-      const rawRbacPermissions = await userRbacPermissions;
+      const userStatus = await authenticateUser(chrome);
+      const rawRbacPermissions = await getUserRbacPermissions(chrome);
       const rbacPermissions = rawRbacPermissions.map((rawPermission) => rawPermission.permission);
       const user: User = {
         accountNumber: userStatus.identity.account_number,
