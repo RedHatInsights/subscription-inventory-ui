@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import fetch, { enableFetchMocks } from 'jest-fetch-mock';
-import { useAuthenticateUser, useUserRbacPermissions } from '../../utilities/platformServices';
+import { authenticateUser, getUserRbacPermissions } from '../../utilities/platformServices';
 import useUser from '../useUser';
 import { createQueryWrapper } from '../../utilities/testHelpers';
 
@@ -12,13 +12,18 @@ beforeEach(() => {
 
 jest.mock('../../utilities/platformServices', () => ({
   ...(jest.requireActual('../../utilities/platformServices') as Record<string, unknown>),
-  useAuthenticateUser: jest.fn(),
-  useUserRbacPermissions: jest.fn()
+  authenticateUser: jest.fn(),
+  getUserRbacPermissions: jest.fn()
+}));
+
+jest.mock('@redhat-cloud-services/frontend-components/useChrome', () => ({
+  __esModule: true,
+  default: () => ({})
 }));
 
 describe('useUser hook', () => {
   it('gets the user permissions back from two API calls', async () => {
-    (useAuthenticateUser as jest.Mock).mockResolvedValue({
+    (authenticateUser as jest.Mock).mockResolvedValue({
       identity: {
         user: {
           is_org_admin: true
@@ -34,7 +39,7 @@ describe('useUser hook', () => {
       }
     };
 
-    (useUserRbacPermissions as jest.Mock).mockResolvedValue([
+    (getUserRbacPermissions as jest.Mock).mockResolvedValue([
       { permission: 'subscriptions:products:read' }
     ]);
 
@@ -64,7 +69,7 @@ describe('useUser hook', () => {
     };
     fetch.mockResponseOnce(JSON.stringify(mockSCAStatusResponse));
 
-    (useAuthenticateUser as jest.Mock).mockImplementation(async () => {
+    (authenticateUser as jest.Mock).mockImplementation(async () => {
       await new Promise((res) => setTimeout(res, 5));
       throw new Error('error');
     });

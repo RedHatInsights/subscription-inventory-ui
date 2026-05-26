@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- outside of update scope, fix later*/
 import config, { EnvironmentConfig } from './config/config';
 import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
+import { ChromeAPI } from '@redhat-cloud-services/types';
 
 interface AuthenticateUserResponse {
   entitlements: {
@@ -26,9 +27,7 @@ interface AuthenticateUserResponse {
   };
 }
 
-const useAuthenticateUser = async (): Promise<AuthenticateUserResponse> => {
-  const chrome = useChrome();
-
+const authenticateUser = async (chrome: ChromeAPI): Promise<AuthenticateUserResponse> => {
   try {
     const user = await chrome.auth.getUser();
 
@@ -49,8 +48,7 @@ interface RbacPermission {
   permission: string;
   resourceDefinitions: Record<string, any>[];
 }
-const useUserRbacPermissions = (): Promise<RbacPermission[]> => {
-  const chrome = useChrome();
+const getUserRbacPermissions = (chrome: ChromeAPI): Promise<RbacPermission[]> => {
   return chrome.getUserPermissions('subscriptions');
 };
 
@@ -74,9 +72,9 @@ const useToken = () => {
 export {
   AuthenticateUserResponse,
   RbacPermission,
-  useAuthenticateUser,
+  authenticateUser,
   useConfig,
   useEnvironment,
-  useUserRbacPermissions,
+  getUserRbacPermissions,
   useToken
 };
