@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 import { InventoryRoutes } from './Routes';
 import './App.scss';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -36,4 +35,4 @@ const App = () => {
   );
 };
 
-export default connect()(App);
+export default App;
