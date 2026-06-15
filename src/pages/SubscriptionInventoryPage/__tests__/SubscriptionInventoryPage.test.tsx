@@ -3,8 +3,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
 import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { init } from '../../../store';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
@@ -26,11 +24,9 @@ const queryClient = new QueryClient();
 const PageContainer = () => (
   <QueryClientProvider client={queryClient}>
     <Authentication>
-      <Provider store={init().getStore()}>
-        <Router>
-          <SubscriptionInventoryPage />
-        </Router>
-      </Provider>
+      <Router>
+        <SubscriptionInventoryPage />
+      </Router>
     </Authentication>
   </QueryClientProvider>
 );
