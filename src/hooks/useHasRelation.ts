@@ -17,7 +17,7 @@ interface HasRelationResult {
 }
 
 /**
- * useHasRelation checks if the current user has a given relation on the default workspace
+ * useHasRelation checks if the current user has a given relation on their org
  */
 export const useHasRelation = (relation: Relation): HasRelationResult => {
   const accessCheckContext = useAccessCheckContext();
