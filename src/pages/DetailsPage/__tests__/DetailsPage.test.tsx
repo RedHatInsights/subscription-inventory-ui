@@ -7,8 +7,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUser from '../../../hooks/useUser';
 import useSingleProduct from '../../../hooks/useSingleProduct';
 import { Product } from '../../../hooks/useProducts';
+import { useHasRelation } from '../../../hooks/useHasRelation';
 
 jest.mock('../../../hooks/useUser');
+jest.mock('../../../hooks/useHasRelation');
 jest.mock('../../../hooks/useSingleProduct');
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
@@ -32,25 +34,26 @@ const Page = () => (
   </QueryClientProvider>
 );
 
-const mockAuthenticateUser = (
-  isLoading: boolean,
-  orgAdminStatus: boolean,
-  canReadProducts: boolean
-) => {
+const mockKesselCheck = (canReadProducts: boolean) => {
+  (useHasRelation as jest.Mock).mockReturnValue({
+    isLoading: false,
+    has: canReadProducts
+  });
+};
+
+const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean) => {
   (useUser as jest.Mock).mockReturnValue({
     isLoading: isLoading,
     isFetching: false,
     isSuccess: true,
     isError: false,
     data: {
-      isOrgAdmin: orgAdminStatus,
-      canReadProducts
+      isOrgAdmin: orgAdminStatus
     }
   });
 
   queryClient.setQueryData(['user'], {
-    isOrgAdmin: orgAdminStatus,
-    canReadProducts
+    isOrgAdmin: orgAdminStatus
   });
 };
 
@@ -93,7 +96,8 @@ describe('Details Page', () => {
   it('loader shows correctly', async () => {
     const isLoading = true;
     const isOrgAdmin = true;
-    mockAuthenticateUser(isLoading, isOrgAdmin, true);
+    mockKesselCheck(true);
+    mockAuthenticateUser(isLoading, isOrgAdmin);
     const container = render(<Page />);
     expect(container).toHaveLoader();
   });
@@ -102,8 +106,8 @@ describe('Details Page', () => {
 it('renders data', async () => {
   const isLoading = false;
   const isOrgAdmin = true;
-  const canReadProducts = true;
-  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockKesselCheck(true);
+  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(true);
 
   const { getAllByText } = render(<Page />);
@@ -115,8 +119,8 @@ it('renders data', async () => {
 it("redirects when can't read products", async () => {
   const isLoading = false;
   const isOrgAdmin = true;
-  const canReadProducts = false;
-  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockKesselCheck(false);
+  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(false);
   render(<Page />);
   waitFor(() => expect(screen.getByAltText('no-permissions')).toBeInTheDocument());
@@ -125,10 +129,10 @@ it("redirects when can't read products", async () => {
 it('renders not available for missing data', async () => {
   const isLoading = false;
   const isOrgAdmin = true;
-  const canReadProducts = true;
 
-  mockAuthenticateUser(isLoading, isOrgAdmin, canReadProducts);
+  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(false);
+  mockKesselCheck(true);
   render(<Page />);
   expect(document.querySelector('.pf-v6-c-list').firstChild.textContent).toContain('Not Available');
 });

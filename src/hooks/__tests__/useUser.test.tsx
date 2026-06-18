@@ -51,7 +51,6 @@ describe('useUser hook', () => {
 
     await waitFor(() =>
       expect(result.current.data).toEqual({
-        canReadProducts: true,
         isOrgAdmin: true
       })
     );
