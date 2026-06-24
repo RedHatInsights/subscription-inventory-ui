@@ -19,18 +19,13 @@ import { Stack } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import { StackItem } from '@patternfly/react-core/dist/dynamic/layouts/Stack';
 import StatusCountCards from '../../components/StatusCountCards';
 import NoPermissionsPage from '../NoPermissionsPage';
-import { Relation, useHasRelation } from '../../hooks/useHasRelation';
 const SubscriptionInventoryPage: FunctionComponent = () => {
   const queryClient = useQueryClient();
   const user: User = queryClient.getQueryData(['user']);
   const [searchParams, setSearchParams] = useSearchParams();
   const [filter, setFilter] = useState<string>(() => searchParams.get('status') || '');
 
-  const { has: canReadProducts, isLoading: canReadIsLoading } = useHasRelation(
-    Relation.INVENTORY_VIEW
-  );
-
-  if (!canReadProducts && !canReadIsLoading) {
+  if (!user?.canReadProducts) {
     return <NoPermissionsPage />;
   }
 
@@ -50,60 +45,55 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
 
   return (
     <>
-      {canReadIsLoading && <Processing />}
-      {!canReadIsLoading && (
-        <>
-          <PageHeader>
-            <Split hasGutter>
-              <SplitItem isFilled>
-                <PageHeaderTitle title="Subscriptions Inventory" />
-              </SplitItem>
-              <SplitItem>
-                <PurchaseModal />
-              </SplitItem>
-            </Split>
-          </PageHeader>
-          <PageSection>
-            <Stack hasGutter>
+      <PageHeader>
+        <Split hasGutter>
+          <SplitItem isFilled>
+            <PageHeaderTitle title="Subscriptions Inventory" />
+          </SplitItem>
+          <SplitItem>
+            <PurchaseModal />
+          </SplitItem>
+        </Split>
+      </PageHeader>
+      <PageSection>
+        <Stack hasGutter>
+          <StackItem>
+            <GettingStartedCard />
+          </StackItem>
+          {!statusCardData.error && !productData.error && (
+            <>
               <StackItem>
-                <GettingStartedCard />
+                {statusCardData.isLoading && <Processing />}
+                {!statusCardData.isLoading && (
+                  <StatusCountCards
+                    statusCardData={statusCardData.data}
+                    statusIsFetching={statusCardData.isFetching}
+                    setFilter={updateFilter}
+                    filter={filter}
+                  />
+                )}
               </StackItem>
-              {!statusCardData.error && !productData.error && (
-                <>
-                  <StackItem>
-                    {statusCardData.isLoading && <Processing />}
-                    {!statusCardData.isLoading && (
-                      <StatusCountCards
-                        statusCardData={statusCardData.data}
-                        statusIsFetching={statusCardData.isFetching}
-                        setFilter={updateFilter}
-                        filter={filter}
-                      />
-                    )}
-                  </StackItem>
-                  <StackItem>
-                    <Title headingLevel="h2" className="pf-v5-u-mb-md">
-                      Subscriptions for account {user.accountNumber}
-                    </Title>
-                  </StackItem>
-                  <StackItem>
-                    {productData.isLoading && <Processing />}
-                    {!productData.isLoading && (
-                      <ProductsTable
-                        data={productData.data}
-                        isFetching={productData.isFetching}
-                        filter={filter}
-                        setFilter={updateFilter}
-                      />
-                    )}
-                  </StackItem>
-                </>
-              )}
-              {(statusCardData.error || productData.error) && <Unavailable />}
-            </Stack>
-          </PageSection>
-        </>
-      )}
+              <StackItem>
+                <Title headingLevel="h2" className="pf-v5-u-mb-md">
+                  Subscriptions for account {user.accountNumber}
+                </Title>
+              </StackItem>
+              <StackItem>
+                {productData.isLoading && <Processing />}
+                {!productData.isLoading && (
+                  <ProductsTable
+                    data={productData.data}
+                    isFetching={productData.isFetching}
+                    filter={filter}
+                    setFilter={updateFilter}
+                  />
+                )}
+              </StackItem>
+            </>
+          )}
+          {(statusCardData.error || productData.error) && <Unavailable />}
+        </Stack>
+      </PageSection>
     </>
   );
 };

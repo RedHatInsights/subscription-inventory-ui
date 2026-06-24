@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import NotificationProvider from './contexts/NotificationProvider';
 import Notifications from './components/Notifications';
 import useChrome from '@redhat-cloud-services/frontend-components/useChrome';
-import { AccessCheck } from '@project-kessel/react-kessel-access-check';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,14 +26,12 @@ const App = () => {
   }, []);
 
   return (
-    <AccessCheck.Provider baseUrl={window.location.origin} apiPath="/api/kessel/v1beta2">
-      <QueryClientProvider client={queryClient}>
-        <NotificationProvider>
-          <Notifications />
-          <InventoryRoutes />
-        </NotificationProvider>
-      </QueryClientProvider>
-    </AccessCheck.Provider>
+    <QueryClientProvider client={queryClient}>
+      <NotificationProvider>
+        <Notifications />
+        <InventoryRoutes />
+      </NotificationProvider>
+    </QueryClientProvider>
   );
 };
 

@@ -12,6 +12,8 @@ import { Processing } from '../../components/emptyState';
 import useSingleProduct from '../../hooks/useSingleProduct';
 import Unavailable from '@redhat-cloud-services/frontend-components/Unavailable';
 import NotFound from '../NotFoundPage/NotFound';
+import { useQueryClient } from '@tanstack/react-query';
+import { User } from '../../hooks/useUser';
 import SubscriptionTable from '../../components/SubscriptionTable';
 import { HttpError } from '../../utilities/errors';
 import Section from '@redhat-cloud-services/frontend-components/Section';
@@ -19,95 +21,87 @@ import { Popover } from '@patternfly/react-core/dist/dynamic/components/Popover'
 import { QuestionCircleIcon } from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
 import ExternalLink from '../../components/ExternalLink';
 import NoPermissionsPage from '../NoPermissionsPage';
-import { Relation, useHasRelation } from '../../hooks/useHasRelation';
 
 const DetailsPage: FunctionComponent = () => {
   const { SKU } = useParams<{ SKU: string }>();
 
+  const queryClient = useQueryClient();
+  const user: User = queryClient.getQueryData(['user']);
   const { isLoading, error, data } = useSingleProduct(SKU);
   const missingText = 'Not Available';
   const docsLink =
     'https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_rhel_system_registration/adv-reg-rhel-config-vm-sub_';
 
-  const { has: canReadProducts, isLoading: canReadProductsIsLoading } = useHasRelation(
-    Relation.INVENTORY_VIEW
-  );
-
-  if (!canReadProducts && !canReadProductsIsLoading) {
+  if (!user?.canReadProducts) {
     return <NoPermissionsPage />;
   }
 
   const Page: FunctionComponent = () => (
     <>
-      {canReadProductsIsLoading && <Processing />}
-      {!canReadProductsIsLoading && (
-        <PageHeader>
-          {isLoading && !error && <Processing />}
+      <PageHeader>
+        {isLoading && !error && <Processing />}
 
-          {!isLoading && !error && (
-            <>
-              <Breadcrumb>
-                <BreadcrumbItem render={() => <Link to="../">Subscriptions Inventory</Link>} />
-                <BreadcrumbItem isActive>{data.name} </BreadcrumbItem>
-              </Breadcrumb>
-              <PageHeaderTitle title={data.name} />
-              <List isPlain>
-                <ListItem className="pf-v6-u-mt-md">
-                  <b>SKU: </b>
-                  {data.sku || missingText}
-                </ListItem>
-                <ListItem className="pf-v6-u-mt-0">
-                  <b>Quantity: </b>
-                  {data.quantity ?? missingText}
-                </ListItem>
-                <ListItem className="pf-v6-u-mt-0">
-                  <b>Support level: </b>
-                  {data.serviceLevel || missingText}
-                </ListItem>
-                <ListItem className="pf-v6-u-mt-0">
-                  <b>Support type: </b>
-                  {data.serviceType || missingText}
-                </ListItem>
-                <ListItem className="pf-v6-u-mt-0">
-                  <b>Capacity: </b>
-                  {data.capacity ? (
-                    <>
-                      {data.capacity.name} <Badge isRead>{data.capacity.quantity}</Badge>
-                    </>
-                  ) : (
-                    <>Not Available</>
-                  )}
-                </ListItem>
-                <ListItem className="pf-v6-u-mt-0">
-                  <b>
-                    Virtual Guest Limit{' '}
-                    <Popover
-                      aria-label="Learn more about Virtual Guest Limit"
-                      bodyContent={
-                        <p>
-                          The maximum number of virtual machines that can run on a system at no
-                          additional cost if the system using this subscription is deployed as a
-                          hypervisor to host virtual machines. When this field displays a non-zero
-                          value, usage of the virt-who utility is required for proper subscription
-                          reporting. Learn more about working with virtual machines and
-                          hypervisor-based subscriptions.{' '}
-                          <ExternalLink href={docsLink}> </ExternalLink>
-                        </p>
-                      }
-                    >
-                      <QuestionCircleIcon onClick={(e) => e.stopPropagation()} />
-                    </Popover>
-                    :{' '}
-                  </b>
-                  {data.virtLimit != undefined && data.virtLimit != ''
-                    ? data.virtLimit
-                    : missingText}
-                </ListItem>
-              </List>
-            </>
-          )}
-        </PageHeader>
-      )}
+        {!isLoading && !error && (
+          <>
+            <Breadcrumb>
+              <BreadcrumbItem render={() => <Link to="../">Subscriptions Inventory</Link>} />
+              <BreadcrumbItem isActive>{data.name} </BreadcrumbItem>
+            </Breadcrumb>
+            <PageHeaderTitle title={data.name} />
+            <List isPlain>
+              <ListItem className="pf-v6-u-mt-md">
+                <b>SKU: </b>
+                {data.sku || missingText}
+              </ListItem>
+              <ListItem className="pf-v6-u-mt-0">
+                <b>Quantity: </b>
+                {data.quantity ?? missingText}
+              </ListItem>
+              <ListItem className="pf-v6-u-mt-0">
+                <b>Support level: </b>
+                {data.serviceLevel || missingText}
+              </ListItem>
+              <ListItem className="pf-v6-u-mt-0">
+                <b>Support type: </b>
+                {data.serviceType || missingText}
+              </ListItem>
+              <ListItem className="pf-v6-u-mt-0">
+                <b>Capacity: </b>
+                {data.capacity ? (
+                  <>
+                    {data.capacity.name} <Badge isRead>{data.capacity.quantity}</Badge>
+                  </>
+                ) : (
+                  <>Not Available</>
+                )}
+              </ListItem>
+              <ListItem className="pf-v6-u-mt-0">
+                <b>
+                  Virtual Guest Limit{' '}
+                  <Popover
+                    aria-label="Learn more about Virtual Guest Limit"
+                    bodyContent={
+                      <p>
+                        The maximum number of virtual machines that can run on a system at no
+                        additional cost if the system using this subscription is deployed as a
+                        hypervisor to host virtual machines. When this field displays a non-zero
+                        value, usage of the virt-who utility is required for proper subscription
+                        reporting. Learn more about working with virtual machines and
+                        hypervisor-based subscriptions.{' '}
+                        <ExternalLink href={docsLink}> </ExternalLink>
+                      </p>
+                    }
+                  >
+                    <QuestionCircleIcon onClick={(e) => e.stopPropagation()} />
+                  </Popover>
+                  :{' '}
+                </b>
+                {data.virtLimit != undefined && data.virtLimit != '' ? data.virtLimit : missingText}
+              </ListItem>
+            </List>
+          </>
+        )}
+      </PageHeader>
       {!error && (
         <Section>
           <PageSection variant="default">

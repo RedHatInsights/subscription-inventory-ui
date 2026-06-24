@@ -8,10 +8,8 @@ import useUser from '../../../hooks/useUser';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
 import { def, get } from 'bdd-lazy-var';
-import { useHasRelation } from '../../../hooks/useHasRelation';
 
 jest.mock('../../../hooks/useUser');
-jest.mock('../../../hooks/useHasRelation');
 jest.mock('../../../hooks/useProducts');
 jest.mock('../../../hooks/useStatus');
 jest.mock('react-router-dom', () => ({
@@ -33,16 +31,14 @@ const PageContainer = () => (
   </QueryClientProvider>
 );
 
-const mockKesselCheck = (canReadProducts: boolean) => {
-  (useHasRelation as jest.Mock).mockReturnValue({
-    isLoading: false,
-    has: canReadProducts
-  });
-};
-
-const mockAuthenticateUser = (orgAdminStatus: boolean, isError: boolean) => {
+const mockAuthenticateUser = (
+  orgAdminStatus: boolean,
+  isError: boolean,
+  canReadProducts: boolean
+) => {
   const user = {
     accountNumber: '8675309',
+    canReadProducts: canReadProducts,
     isOrgAdmin: orgAdminStatus
   };
   (useUser as jest.Mock).mockReturnValue({
@@ -81,8 +77,7 @@ describe('SubscriptionInventoryPage', () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
-    mockKesselCheck(get('canReadProducts'));
-    mockAuthenticateUser(get('orgAdmin'), get('userError'));
+    mockAuthenticateUser(get('orgAdmin'), get('userError'), get('canReadProducts'));
     (useProducts as jest.Mock).mockReturnValue({
       isLoading: get('productsLoading'),
       error: get('productsError'),

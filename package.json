@@ -84,7 +84,6 @@
     "@patternfly/react-core": "^6.2.0",
     "@patternfly/react-table": "^6.3.1",
     "@patternfly/react-tokens": "^6.2.2",
-    "@project-kessel/react-kessel-access-check": "^0.5.1",
     "@redhat-cloud-services/frontend-components": "^7.3.1",
     "@redhat-cloud-services/frontend-components-utilities": "^7.2.0",
     "@tanstack/react-query": "^5.0.0",
