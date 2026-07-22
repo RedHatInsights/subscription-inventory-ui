@@ -6,14 +6,7 @@ interface ExternalLinkProps {
   children: ReactNode | string;
   href: string;
   variant?:
-    | 'link'
-    | 'primary'
-    | 'secondary'
-    | 'tertiary'
-    | 'danger'
-    | 'warning'
-    | 'plain'
-    | 'control';
+    'link' | 'primary' | 'secondary' | 'tertiary' | 'danger' | 'warning' | 'plain' | 'control';
 }
 
 const ExternalLink: FC<ExternalLinkProps> = ({ children, href, variant = 'link' }) => {
