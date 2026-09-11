@@ -7,8 +7,7 @@ import { Split } from '@patternfly/react-core/dist/dynamic/layouts/Split';
 import { SplitItem } from '@patternfly/react-core/dist/dynamic/layouts/Split';
 import { Title } from '@patternfly/react-core/dist/dynamic/components/Title';
 import { PageHeaderTitle } from '@redhat-cloud-services/frontend-components/PageHeader';
-import { useQueryClient } from '@tanstack/react-query';
-import { User } from '../../hooks/useUser';
+import useAccountNumber from '../../hooks/useAccountNumber';
 import ProductsTable from '../../components/ProductsTable';
 import { Processing } from '../../components/emptyState';
 import useProducts from '../../hooks/useProducts';
@@ -21,8 +20,7 @@ import StatusCountCards from '../../components/StatusCountCards';
 import NoPermissionsPage from '../NoPermissionsPage';
 import { Relation, useHasRelation } from '../../hooks/useHasRelation';
 const SubscriptionInventoryPage: FunctionComponent = () => {
-  const queryClient = useQueryClient();
-  const user: User = queryClient.getQueryData(['user']);
+  const { data: accountNumber } = useAccountNumber();
   const [searchParams, setSearchParams] = useSearchParams();
   const [filter, setFilter] = useState<string>(() => searchParams.get('status') || '');
 
@@ -83,7 +81,7 @@ const SubscriptionInventoryPage: FunctionComponent = () => {
                   </StackItem>
                   <StackItem>
                     <Title headingLevel="h2" className="pf-v5-u-mb-md">
-                      Subscriptions for account {user.accountNumber}
+                      Subscriptions for account {accountNumber}
                     </Title>
                   </StackItem>
                   <StackItem>

@@ -1,22 +1,16 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import DetailsPage from '../DetailsPage';
-import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import useUser from '../../../hooks/useUser';
 import useSingleProduct from '../../../hooks/useSingleProduct';
 import { Product } from '../../../hooks/useProducts';
 import { useHasRelation } from '../../../hooks/useHasRelation';
 
-jest.mock('../../../hooks/useUser');
 jest.mock('../../../hooks/useHasRelation');
 jest.mock('../../../hooks/useSingleProduct');
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
-  useLocation: () => ({
-    pathname: '/'
-  }),
   useParams: () => ({
     SKU: 'TESTSKU'
   })
@@ -26,11 +20,9 @@ const queryClient = new QueryClient();
 
 const Page = () => (
   <QueryClientProvider client={queryClient}>
-    <Authentication>
-      <Router>
-        <DetailsPage />
-      </Router>
-    </Authentication>
+    <Router>
+      <DetailsPage />
+    </Router>
   </QueryClientProvider>
 );
 
@@ -38,22 +30,6 @@ const mockKesselCheck = (canReadProducts: boolean) => {
   (useHasRelation as jest.Mock).mockReturnValue({
     isLoading: false,
     has: canReadProducts
-  });
-};
-
-const mockAuthenticateUser = (isLoading: boolean, orgAdminStatus: boolean) => {
-  (useUser as jest.Mock).mockReturnValue({
-    isLoading: isLoading,
-    isFetching: false,
-    isSuccess: true,
-    isError: false,
-    data: {
-      isOrgAdmin: orgAdminStatus
-    }
-  });
-
-  queryClient.setQueryData(['user'], {
-    isOrgAdmin: orgAdminStatus
   });
 };
 
@@ -94,20 +70,15 @@ const mockSingleProduct = (hasData: boolean) => {
 
 describe('Details Page', () => {
   it('loader shows correctly', async () => {
-    const isLoading = true;
-    const isOrgAdmin = true;
-    mockKesselCheck(true);
-    mockAuthenticateUser(isLoading, isOrgAdmin);
+    (useHasRelation as jest.Mock).mockReturnValue({ isLoading: true, has: false });
+    mockSingleProduct(true);
     const container = render(<Page />);
     expect(container).toHaveLoader();
   });
 });
 
 it('renders data', async () => {
-  const isLoading = false;
-  const isOrgAdmin = true;
   mockKesselCheck(true);
-  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(true);
 
   const { getAllByText } = render(<Page />);
@@ -117,20 +88,13 @@ it('renders data', async () => {
 });
 
 it("redirects when can't read products", async () => {
-  const isLoading = false;
-  const isOrgAdmin = true;
   mockKesselCheck(false);
-  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(false);
   render(<Page />);
   waitFor(() => expect(screen.getByAltText('no-permissions')).toBeInTheDocument());
 });
 
 it('renders not available for missing data', async () => {
-  const isLoading = false;
-  const isOrgAdmin = true;
-
-  mockAuthenticateUser(isLoading, isOrgAdmin);
   mockSingleProduct(false);
   mockKesselCheck(true);
   render(<Page />);
