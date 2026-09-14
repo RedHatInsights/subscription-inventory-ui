@@ -1,35 +1,26 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import SubscriptionInventoryPage from '../SubscriptionInventoryPage';
-import Authentication from '../../../components/Authentication';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import useUser from '../../../hooks/useUser';
+import useAccountNumber from '../../../hooks/useAccountNumber';
 import useProducts from '../../../hooks/useProducts';
 import useStatus from '../../../hooks/useStatus';
 import { def, get } from 'bdd-lazy-var';
 import { useHasRelation } from '../../../hooks/useHasRelation';
 
-jest.mock('../../../hooks/useUser');
+jest.mock('../../../hooks/useAccountNumber');
 jest.mock('../../../hooks/useHasRelation');
 jest.mock('../../../hooks/useProducts');
 jest.mock('../../../hooks/useStatus');
-jest.mock('react-router-dom', () => ({
-  ...(jest.requireActual('react-router-dom') as Record<string, unknown>),
-  useLocation: () => ({
-    pathname: '/'
-  })
-}));
 
 const queryClient = new QueryClient();
 
 const PageContainer = () => (
   <QueryClientProvider client={queryClient}>
-    <Authentication>
-      <Router>
-        <SubscriptionInventoryPage />
-      </Router>
-    </Authentication>
+    <Router>
+      <SubscriptionInventoryPage />
+    </Router>
   </QueryClientProvider>
 );
 
@@ -38,24 +29,6 @@ const mockKesselCheck = (canReadProducts: boolean) => {
     isLoading: false,
     has: canReadProducts
   });
-};
-
-const mockAuthenticateUser = (orgAdminStatus: boolean, isError: boolean) => {
-  const user = {
-    accountNumber: '8675309',
-    isOrgAdmin: orgAdminStatus
-  };
-  (useUser as jest.Mock).mockReturnValue({
-    isLoading: false,
-    isFetching: false,
-    isSuccess: true,
-    isError: isError,
-    data: user
-  });
-
-  if (isError === false) {
-    queryClient.setQueryData(['user'], user);
-  }
 };
 
 // eslint-disable-next-line react/display-name
@@ -71,8 +44,6 @@ jest.mock('../../../components/PurchaseModal/trainingIcon.svg', () => 'Training 
 jest.mock('../../../components/PurchaseModal/tryIcon.svg', () => 'Try Icon');
 
 describe('SubscriptionInventoryPage', () => {
-  def('orgAdmin', () => false);
-  def('userError', () => false);
   def('canReadProducts', () => true);
   def('productsLoading', () => false);
   def('productsError', () => false);
@@ -82,7 +53,7 @@ describe('SubscriptionInventoryPage', () => {
   beforeEach(() => {
     jest.resetAllMocks();
     mockKesselCheck(get('canReadProducts'));
-    mockAuthenticateUser(get('orgAdmin'), get('userError'));
+    (useAccountNumber as jest.Mock).mockReturnValue({ data: '8675309' });
     (useProducts as jest.Mock).mockReturnValue({
       isLoading: get('productsLoading'),
       error: get('productsError'),
@@ -100,13 +71,9 @@ describe('SubscriptionInventoryPage', () => {
     expect(getByText('Subscriptions Inventory')).toBeInTheDocument();
   });
 
-  describe('when the user call fails', () => {
-    def('userError', () => true);
-
-    it('renders an error message when user call fails', async () => {
-      const { getByText } = render(<PageContainer />);
-      expect(getByText('This page is temporarily unavailable')).toBeInTheDocument();
-    });
+  it('renders the account number', async () => {
+    const { getByText } = render(<PageContainer />);
+    expect(getByText('Subscriptions for account 8675309')).toBeInTheDocument();
   });
 
   describe('when the user does not have proper permissions', () => {
