@@ -109,7 +109,7 @@
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^3.0.0",
     "@redhat-cloud-services/frontend-components-config": "^6.8.4",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.25",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^16.1.0",
     "@types/jest": "^30.0.0",
     "@types/react": "^18.2.6",
