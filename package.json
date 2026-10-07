@@ -128,7 +128,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.0",
     "jest-environment-jsdom": "^30.0.0",
-    "jest-fetch-mock": "^3.0.3",
+    "jest-fetch-mock": "^4.0.0",
     "jest-jasmine": "^0.0.0",
     "jest-jasmine2": "^30.0.0",
     "lint-staged": "^16.2.3",
