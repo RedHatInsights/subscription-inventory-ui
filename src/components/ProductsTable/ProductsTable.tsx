@@ -195,7 +195,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         <Tbody>
           {paginatedProducts.map((datum, rowIndex) => (
             <Tr key={rowIndex}>
-              <Td dataLabel={columnNames.name}>
+              <Td modifier="truncate" dataLabel={columnNames.name}>
                 <Content>
                   <Content component={ContentVariants.h3}>
                     <Link to={`${datum.sku}`}>{datum.name}</Link>
