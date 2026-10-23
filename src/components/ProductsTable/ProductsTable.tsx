@@ -178,7 +178,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
       <Table aria-label="Products">
         <Thead>
           <Tr>
-            <Th sort={getSortParams(0)} width={50}>
+            <Th modifier="truncate" sort={getSortParams(0)} width={50}>
               {columnNames.name}
             </Th>
             <Th sort={getSortParams(1)} width={10}>
@@ -195,7 +195,7 @@ const ProductsTable: FunctionComponent<ProductsTableProps> = ({
         <Tbody>
           {paginatedProducts.map((datum, rowIndex) => (
             <Tr key={rowIndex}>
-              <Td dataLabel={columnNames.name}>
+              <Td modifier="truncate" dataLabel={columnNames.name}>
                 <Content>
                   <Content component={ContentVariants.h3}>
                     <Link to={`${datum.sku}`}>{datum.name}</Link>
