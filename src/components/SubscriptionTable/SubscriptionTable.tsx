@@ -112,12 +112,13 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
       const aValue = a[keys[index]];
       const bValue = b[keys[index]];
 
-      if (aValue < bValue) {
+      if (keys[index] === 'number') {
+        result = Number(aValue) - Number(bValue);
+      } else if (aValue < bValue) {
         result = -1;
       } else if (aValue > bValue) {
         result = 1;
       }
-
       return activeSortDirection == 'asc' ? result : -1 * result;
     });
   };

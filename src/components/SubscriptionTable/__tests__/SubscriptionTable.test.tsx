@@ -127,8 +127,13 @@ describe('Subscription Table', () => {
       render(<Table subscriptions={formattedData as Subscription[]} />);
 
       const input = screen.getByPlaceholderText('Filter by contract or subscription number');
+      fireEvent.change(input, { target: { value: '45' } });
+
+      expect(screen.getByText('2345')).toBeInTheDocument();
+
       fireEvent.change(input, { target: { value: '35' } });
 
+      expect(screen.getByText('1235')).toBeInTheDocument();
       expect(screen.queryByText('2344')).not.toBeInTheDocument();
     });
     it('filters by subscription number', () => {
