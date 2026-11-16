@@ -26,6 +26,7 @@ interface TypeCorrectedSubscription {
   startDate: Date;
   endDate: Date;
   quantity: number;
+  number: string;
 }
 
 const printDate = (date: Date) => {
@@ -57,6 +58,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
   const castData: TypeCorrectedSubscription[] = subscriptions.map((subscription) => {
     return {
       contractNumber: safeParseInt(subscription.contractNumber),
+      number: subscription.number,
       startDate: safeParseDate(subscription.startDate),
       endDate: safeParseDate(subscription.endDate),
       quantity: safeParseInt(subscription.quantity)
@@ -75,6 +77,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
 
   const columnNames = {
     contractNumber: 'Contract number',
+    number: 'Subscription number',
     quantity: 'Subscription quantity',
     startDate: 'Start date',
     endDate: 'End date'
@@ -99,6 +102,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
   ): TypeCorrectedSubscription[] => {
     const keys = [
       'contractNumber',
+      'number',
       'quantity',
       'startDate',
       'endDate'
@@ -123,12 +127,16 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
     search: string
   ): TypeCorrectedSubscription[] => {
     search = search.trim();
+
     return subscriptions.filter((subscription) => {
-      const cn =
-        subscription.contractNumber != -1
+      const contractNumber =
+        subscription.contractNumber !== -1
           ? subscription.contractNumber.toString()
           : 'Not Available';
-      return cn.includes(search);
+
+      const subscriptionNumber = subscription.number ?? '';
+
+      return contractNumber.includes(search) || subscriptionNumber.includes(search);
     });
   };
 
@@ -169,7 +177,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
         <FlexItem>
           {castData.length > 0 && (
             <SearchInput
-              placeholder="Filter by contract number"
+              placeholder="Filter by contract or subscription number"
               value={searchValue}
               onChange={(_: React.FormEvent, val: string) => setSearchValue(val)}
               onClear={() => setSearchValue('')}
@@ -184,13 +192,16 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
             <Th sort={getSortParams(0)} width={20}>
               {columnNames.contractNumber}
             </Th>
-            <Th sort={getSortParams(1)} width={25}>
+            <Th sort={getSortParams(1)} width={20}>
+              {columnNames.number}
+            </Th>
+            <Th sort={getSortParams(2)} width={25}>
               {columnNames.quantity}
             </Th>
-            <Th sort={getSortParams(2)} width={15}>
+            <Th sort={getSortParams(3)} width={15}>
               {columnNames.startDate}
             </Th>
-            <Th sort={getSortParams(3)} width={15}>
+            <Th sort={getSortParams(4)} width={15}>
               {columnNames.endDate}
             </Th>
           </Tr>
@@ -204,6 +215,7 @@ const SubscriptionTable: FunctionComponent<SubscriptionTableProps> = ({ subscrip
                     ? 'Not Available'
                     : subscription.contractNumber}
                 </Td>
+                <Td dataLabel={columnNames.number}>{subscription.number || 'Not Available'}</Td>
                 <Td dataLabel={columnNames.quantity}>
                   {subscription.quantity == -1 ? 'Not Available' : subscription.quantity}
                 </Td>

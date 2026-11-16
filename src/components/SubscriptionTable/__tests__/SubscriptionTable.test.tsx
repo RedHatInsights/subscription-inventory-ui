@@ -40,7 +40,7 @@ describe('Subscription Table', () => {
   it('shows not available for missing values', () => {
     render(<Table subscriptions={data as Subscription[]} />);
     const table = screen.getByLabelText('subscriptions');
-    expect(table.children[1].firstChild.childNodes[1].textContent).toEqual('Not Available');
+    expect(table.children[1].firstChild.childNodes[2].textContent).toEqual('Not Available');
   });
 
   describe('sorting and searching', () => {
@@ -103,7 +103,7 @@ describe('Subscription Table', () => {
           const table = screen.getByLabelText('subscriptions');
 
           fireEvent.click(screen.getByText(col[0]));
-          expect(table.children[1].firstChild.childNodes[i + 1].textContent).toEqual(
+          expect(table.children[1].firstChild.childNodes[i + 2].textContent).toEqual(
             formattedData.sort((a, b) => (a[col[1]] < b[col[1]] ? -1 : 1))[0][col[1]]
           );
         });
@@ -116,7 +116,7 @@ describe('Subscription Table', () => {
           fireEvent.click(screen.getByText(col[0]));
           fireEvent.click(screen.getByText(col[0]));
 
-          expect(table.children[1].firstChild.childNodes[i + 1].textContent).toEqual(
+          expect(table.children[1].firstChild.childNodes[i + 2].textContent).toEqual(
             formattedData.sort((a, b) => (a[col[1]] < b[col[1]] ? 1 : -1))[0][col[1]]
           );
         });
@@ -126,10 +126,62 @@ describe('Subscription Table', () => {
     it('filters by subscription or contract number', () => {
       render(<Table subscriptions={formattedData as Subscription[]} />);
 
-      const input = screen.getByPlaceholderText('Filter by contract number');
+      const input = screen.getByPlaceholderText('Filter by contract or subscription number');
       fireEvent.change(input, { target: { value: '35' } });
 
       expect(screen.queryByText('2344')).not.toBeInTheDocument();
+    });
+    it('filters by subscription number', () => {
+      render(<Table subscriptions={formattedData as Subscription[]} />);
+
+      const input = screen.getByPlaceholderText('Filter by contract or subscription number');
+
+      fireEvent.change(input, { target: { value: '1234' } });
+
+      const table = screen.getByLabelText('subscriptions');
+      const rows = table.querySelectorAll('tbody tr');
+
+      expect(rows).toHaveLength(1);
+      expect(rows[0].children[1]).toHaveTextContent('1234');
+      expect(rows[0].children[0]).toHaveTextContent('2344');
+    });
+
+    it('filters by contract number', () => {
+      render(<Table subscriptions={formattedData as Subscription[]} />);
+
+      const input = screen.getByPlaceholderText('Filter by contract or subscription number');
+
+      fireEvent.change(input, { target: { value: '2346' } });
+
+      const table = screen.getByLabelText('subscriptions');
+      const rows = table.querySelectorAll('tbody tr');
+
+      expect(rows).toHaveLength(1);
+      expect(rows[0].children[0]).toHaveTextContent('2346');
+      expect(rows[0].children[1]).toHaveTextContent('1236');
+    });
+    it('sorts by Subscription number ascending', () => {
+      render(<Table subscriptions={[...formattedData] as Subscription[]} />);
+
+      const table = screen.getByLabelText('subscriptions');
+
+      fireEvent.click(screen.getByText('Subscription number'));
+
+      const cells = table.querySelectorAll('tbody tr td:nth-child(2)');
+
+      expect(Array.from(cells).map((cell) => cell.textContent)).toEqual(['1234', '1235', '1236']);
+    });
+    it('sorts by Subscription number descending', () => {
+      render(<Table subscriptions={[...formattedData] as Subscription[]} />);
+
+      const table = screen.getByLabelText('subscriptions');
+
+      fireEvent.click(screen.getByText('Subscription number'));
+      fireEvent.click(screen.getByText('Subscription number'));
+
+      const cells = table.querySelectorAll('tbody tr td:nth-child(2)');
+
+      expect(Array.from(cells).map((cell) => cell.textContent)).toEqual(['1236', '1235', '1234']);
     });
   });
 
@@ -185,5 +237,38 @@ describe('Subscription Table', () => {
       fireEvent.click(perPageAmount);
       expect(table.querySelectorAll('tr').length).toBe(12);
     });
+  });
+  it('renders subscription number next to contract number', () => {
+    render(<Table subscriptions={data as Subscription[]} />);
+
+    const table = screen.getByLabelText('subscriptions');
+    const headers = table.querySelectorAll('thead th');
+    const cells = table.querySelectorAll('tbody tr:first-child td');
+
+    expect(headers[0]).toHaveTextContent('Contract number');
+    expect(headers[1]).toHaveTextContent('Subscription number');
+    expect(headers[2]).toHaveTextContent('Subscription quantity');
+
+    expect(cells[0]).toHaveTextContent('2345');
+    expect(cells[1]).toHaveTextContent('1234');
+  });
+
+  it('shows not available for missing subscription number', () => {
+    const missingNumber = [
+      factories.subscription.build({
+        number: '',
+        contractNumber: '',
+        quantity: '1'
+      })
+    ];
+
+    render(<Table subscriptions={missingNumber as Subscription[]} />);
+
+    const table = screen.getByLabelText('subscriptions');
+    const cells = table.querySelectorAll('tbody tr:first-child td');
+
+    expect(cells[0]).toHaveTextContent('Not Available');
+    expect(cells[1]).toHaveTextContent('Not Available');
+    expect(cells[2]).toHaveTextContent('1');
   });
 });
